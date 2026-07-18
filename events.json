@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_3d4458d9",
+        "id": "gi_84b9e245",
         "gameId": "gi",
         "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
         "description": "In-Game, Anniversary Standard 5-Star Character Selection",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
     },
     {
-        "id": "gi_ee741f1b",
+        "id": "gi_228b8164",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 4",
         "description": "In-Game",
@@ -24,7 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-05-18"
     },
     {
-        "id": "gi_9b0ccc70",
+        "id": "gi_817a2145",
         "gameId": "gi",
         "title": "Test Run - Sandrone, Citlali, Beidou, Diona, Freminet",
         "description": "In-Game, Test Run",
@@ -36,7 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-07-01"
     },
     {
-        "id": "gi_c36ec939",
+        "id": "gi_6cc5ada6",
         "gameId": "gi",
         "title": "Chronicle of the Fatebound Sea",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
@@ -44,11 +44,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-10T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/9d/Chronicle_of_the_Fatebound_Sea.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-07-01"
     },
     {
-        "id": "gi_23aa2877",
+        "id": "gi_9d9c2d16",
         "gameId": "gi",
         "title": "Whispers of Stars and Smoke Discount",
         "description": "In-Game, Discount",
@@ -56,11 +56,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-10T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/9e/Whispers_of_Stars_and_Smoke_Discount.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Whispers_of_Stars_and_Smoke_Discount"
     },
     {
-        "id": "gi_151bc003",
+        "id": "gi_f23045f8",
         "gameId": "gi",
         "title": "Sunny Summer",
         "description": "In-Game, Battle Pass",
@@ -68,11 +68,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-10T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/2/27/Battle_Pass_Sunny_Summer.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Sunny_Summer"
     },
     {
-        "id": "gi_2b0648d1",
+        "id": "gi_2118257d",
         "gameId": "gi",
         "title": "Sunny Summer Fontinalia",
         "description": "In-Game, Flagship",
@@ -80,11 +80,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-11T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/9c/Sunny_Summer_Fontinalia_Event.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Sunny_Summer_Fontinalia_(Event)"
     },
     {
-        "id": "gi_641dc45b",
+        "id": "gi_decd397d",
         "gameId": "gi",
         "title": "Nod-Krai: Where Roads Are Pledged to Cross",
         "description": "In-Game, Repertoire of Myriad Melodies Update",
@@ -92,11 +92,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-11T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/c/c7/Nod-Krai_Where_Roads_Are_Pledged_to_Cross.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Nod-Krai:_Where_Roads_Are_Pledged_to_Cross_(Event)"
     },
     {
-        "id": "gi_c735de18",
+        "id": "gi_17fe30fe",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Endless Swarm",
         "description": "In-Game, The Forge Realm's Temper",
@@ -104,11 +104,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-12T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/1/15/The_Forge_Realm%27s_Temper_Endless_Swarm_2026-07-01.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-07-01"
     },
     {
-        "id": "gi_a04f996f",
+        "id": "gi_cca19acb",
         "gameId": "gi",
         "title": "Raiment Collection: Mellow Warmth",
         "description": "In-Game, Miliastra Wonderland",
@@ -116,11 +116,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-12T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/99/Raiment_Collection_Mellow_Warmth.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-07-01"
     },
     {
-        "id": "gi_f7a1f63d",
+        "id": "gi_3eb8b8c1",
         "gameId": "gi",
         "title": "When We Look Up at the Moon",
         "description": "In-Game, Exploration Mission",
@@ -128,11 +128,11 @@
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-09-22T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/5/5e/When_We_Look_Up_at_the_Moon.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
     },
     {
-        "id": "gi_db731955",
+        "id": "gi_54104bb9",
         "gameId": "gi",
         "title": "Stygian Onslaught: Savage Tremors",
         "description": "In-Game, Stygian Onslaught",
@@ -140,11 +140,11 @@
         "startTime": "2026-07-08T00:00:00",
         "endTime": "2026-08-11T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/b/b0/Stygian_Onslaught_2025-10-29.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-07-08"
     },
     {
-        "id": "gi_cd22fad2",
+        "id": "gi_b295bf12",
         "gameId": "gi",
         "title": "Have a Smashing Summer With Miliastra Wonderland!",
         "description": "Web",
@@ -152,11 +152,11 @@
         "startTime": "2026-07-15T00:00:00",
         "endTime": "2026-07-28T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/e/e3/Have_a_Smashing_Summer_With_Miliastra_Wonderland%21.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Have_a_Smashing_Summer_With_Miliastra_Wonderland!"
     },
     {
-        "id": "gi_14ca7ddc",
+        "id": "gi_9c4a7273",
         "gameId": "gi",
         "title": "Final Long-Range Sightlines",
         "description": "In-Game",
@@ -164,11 +164,11 @@
         "startTime": "2026-07-17T00:00:00",
         "endTime": "2026-07-27T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/3/30/Final_Long-Range_Sightlines.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Final_Long-Range_Sightlines"
     },
     {
-        "id": "gi_3856d097",
+        "id": "gi_69b876ca",
         "gameId": "gi",
         "title": "Heated Battle Mode: Automatic Artistry",
         "description": "In-Game, Heated Battle Mode",
@@ -176,29 +176,29 @@
         "startTime": "2026-07-18T00:00:00",
         "endTime": "2026-08-03T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAQAICTAEAOw%3D%3D",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/f/f0/Heated_Battle_Mode_Automatic_Artistry_2026-07-18.png/revision/latest",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Heated_Battle_Mode/2026-07-18"
     },
     {
-        "id": "hsr_af9c045a",
+        "id": "hsr_9d3e9ede",
         "gameId": "hsr",
         "title": "Character Banner: Acheron (Dummy)",
         "description": "Boosted drop rate for Acheron",
         "longDescription": "This is a placeholder long description for the dummy Acheron banner. Real data will be fetched when Honkai Star Rail parser is implemented.",
-        "startTime": "2026-07-18T06:41:14.142264",
-        "endTime": "2026-07-18T06:41:14.142264",
+        "startTime": "2026-07-18T13:48:57.362021",
+        "endTime": "2026-07-18T13:48:57.362021",
         "type": "BANNER",
         "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c8/Item_Star_Rail_Special_Pass.png",
         "detailUrl": null
     },
     {
-        "id": "wuwa_28a2c7c3",
+        "id": "wuwa_bb49b039",
         "gameId": "wuwa",
         "title": "Resonator Convene: Yinlin (Dummy)",
         "description": "Featured resonator Yinlin",
         "longDescription": "This is a placeholder long description for Wuthering Waves event.",
-        "startTime": "2026-07-18T06:41:14.142264",
-        "endTime": "2026-07-18T06:41:14.142264",
+        "startTime": "2026-07-18T13:48:57.362021",
+        "endTime": "2026-07-18T13:48:57.362021",
         "type": "BANNER",
         "imageUrl": null,
         "detailUrl": null

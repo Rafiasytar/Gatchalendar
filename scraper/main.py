@@ -137,7 +137,9 @@ def scrape_genshin_events():
                         # Cek gambar dari tabel
                         img_tag = cols[0].find('img')
                         if img_tag:
-                            image_url = img_tag.get('src') or img_tag.get('data-src')
+                            image_url = img_tag.get('data-src') or img_tag.get('src')
+                            if image_url and image_url.startswith("data:image"):
+                                image_url = None
                             if image_url and '/revision/latest' in image_url:
                                 image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
                                 
