@@ -542,6 +542,9 @@ def scrape_zzz_events():
                                     except:
                                         pass
                                         
+                            if not start_time or not end_time:
+                                continue
+                                        
                             image_url = None
                             try:
                                 print(f"Fetching fallback image for ZZZ Banner: {title}")
@@ -585,17 +588,16 @@ def scrape_zzz_events():
     return events
 
 def scrape_endfield_events():
-    print("Fetching Arknights Endfield events (Mocked for now)...")
-    now = datetime.utcnow()
+    print("Fetching Arknights Endfield events (Mocked actual schedule)...")
     events = [
         {
             "id": f"endfield_{uuid.uuid4().hex[:8]}",
             "gameId": "endfield",
-            "title": "Welcome to Talos-II",
-            "description": "Launch Event",
-            "longDescription": "Special login event to celebrate the release of Arknights: Endfield.",
-            "startTime": (now - timedelta(days=2)).isoformat() + "Z",
-            "endTime": (now + timedelta(days=14)).isoformat() + "Z",
+            "title": "[Gaze Towards the Northern Exclusion] Guide Event",
+            "description": "Guide Event",
+            "longDescription": "Complete specified missions in the [Yinglung Pass] and [North Wuling Exclusion Zone] areas.",
+            "startTime": "2026-07-16T12:00:00",
+            "endTime": "2026-08-09T03:59:59",
             "type": "IN_GAME_EVENT",
             "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
             "detailUrl": None
@@ -603,13 +605,37 @@ def scrape_endfield_events():
         {
             "id": f"endfield_{uuid.uuid4().hex[:8]}",
             "gameId": "endfield",
-            "title": "Perlica's Journey",
+            "title": "[Gaze North to the Rift] Sign-In Event",
+            "description": "Sign-In Event",
+            "longDescription": "Sign in for 7 days to earn rewards, including [Gaze North to the Rift HH Permit] x5.",
+            "startTime": "2026-07-16T12:00:00",
+            "endTime": "2026-08-09T03:59:59",
+            "type": "LOGIN_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
+            "detailUrl": None
+        },
+        {
+            "id": f"endfield_{uuid.uuid4().hex[:8]}",
+            "gameId": "endfield",
+            "title": "[HEAT RAGE! MEGA ARENA!] Challenge Event",
+            "description": "Challenge Event",
+            "longDescription": "Complete challenge stages to claim [Oroberyl] x1200, the [Portrait Frame: Heat Ragers' Party], and [Mark of Perseverance].",
+            "startTime": "2026-07-30T12:00:00",
+            "endTime": "2026-08-13T03:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
+            "detailUrl": None
+        },
+        {
+            "id": f"endfield_{uuid.uuid4().hex[:8]}",
+            "gameId": "endfield",
+            "title": "Headhunting: Arcane",
             "description": "Featured Headhunt",
-            "longDescription": "Rate up for Perlica.",
-            "startTime": (now - timedelta(days=1)).isoformat() + "Z",
-            "endTime": (now + timedelta(days=10)).isoformat() + "Z",
+            "longDescription": "Rate up for 6-star Operator Arcane.",
+            "startTime": "2026-07-16T12:00:00",
+            "endTime": "2026-08-09T03:59:59",
             "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/c/c5/Perlica.png",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
             "detailUrl": None
         }
     ]
