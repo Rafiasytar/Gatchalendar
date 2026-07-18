@@ -16,6 +16,10 @@ import java.time.temporal.ChronoUnit
 import coil.compose.AsyncImage
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.background
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.Alignment
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -93,55 +97,79 @@ fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
+            .height(180.dp)
             .clickable { onClick() },
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+        shape = MaterialTheme.shapes.medium
     ) {
-        Row(
-            modifier = Modifier.padding(16.dp),
-            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
-        ) {
+        Box(modifier = Modifier.fillMaxSize()) {
+            // Background Image
             if (event.imageUrl != null) {
                 AsyncImage(
                     model = event.imageUrl,
                     contentDescription = null,
-                    modifier = Modifier
-                        .size(64.dp)
-                        .padding(end = 12.dp),
+                    modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop
                 )
+                
+                // Gradient overlay for text readability
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(Color.Transparent, Color.Black.copy(alpha = 0.8f)),
+                                startY = 100f
+                            )
+                        )
+                )
+            } else {
+                // Fallback background if no image
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.secondaryContainer)
+                )
             }
-            Column(
-                modifier = Modifier.weight(1f)
+
+            // Time left badge (Top Right)
+            Surface(
+                color = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.9f),
+                shape = MaterialTheme.shapes.small,
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(8.dp)
             ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
+                Text(
+                    text = timeLeftText,
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onErrorContainer,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+                )
+            }
+
+            // Event Details (Bottom)
+            Column(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .fillMaxWidth()
+                    .padding(16.dp)
             ) {
                 Text(
                     text = event.title,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier.weight(1f)
+                    color = if (event.imageUrl != null) Color.White else MaterialTheme.colorScheme.onSecondaryContainer,
+                    maxLines = 1
                 )
+                Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = timeLeftText,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.error,
-                    fontWeight = FontWeight.Bold
+                    text = "Game: ${event.gameId.uppercase()} | Type: ${event.type.name.replace("_", " ")}",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = if (event.imageUrl != null) Color.LightGray else MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.8f)
                 )
             }
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = "Game: ${event.gameId.uppercase()} | Type: ${event.type.name}",
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.primary
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = event.description,
-                style = MaterialTheme.typography.bodyMedium
-            )
-        }
         }
     }
 }
