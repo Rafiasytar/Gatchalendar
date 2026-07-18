@@ -119,7 +119,7 @@ def scrape_genshin_events():
                             continue
                             
                         type_enum = "IN_GAME_EVENT"
-                        if "Banner" in event_type_text or "Character Selection" in event_type_text:
+                        if "Banner" in event_type_text or "Character Selection" in event_type_text or "Test Run" in event_type_text or "Epitome Invocation" in event_type_text or "Wishes" in event_type_text:
                             type_enum = "BANNER"
                             
                         image_url = None
