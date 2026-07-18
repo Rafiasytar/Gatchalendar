@@ -19,7 +19,8 @@ import java.time.LocalDateTime
 fun GameCalendarScreen(
     game: Game,
     events: List<GameEvent>,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onEventClick: (GameEvent) -> Unit
 ) {
     val gameEvents = events.filter { it.gameId == game.id }
         .sortedBy { it.endTime }
@@ -61,7 +62,10 @@ fun GameCalendarScreen(
                 }
             } else {
                 items(gameEvents) { event ->
-                    EventCard(event = event)
+                    EventCard(
+                        event = event,
+                        onClick = { onEventClick(event) }
+                    )
                 }
             }
         }

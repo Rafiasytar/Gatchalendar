@@ -15,6 +15,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.gachalendar.ui.CombinedCalendarScreen
 import com.example.gachalendar.ui.DashboardScreen
+import com.example.gachalendar.ui.EventDetailScreen
 import com.example.gachalendar.ui.GameCalendarScreen
 import com.example.gachalendar.ui.theme.GachalendarTheme
 import com.example.gachalendar.viewmodel.GachaViewModel
@@ -55,7 +56,10 @@ fun GachalendarApp() {
         composable("combined_calendar") {
             CombinedCalendarScreen(
                 events = events,
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                onEventClick = { event ->
+                    navController.navigate("eventDetail/${event.id}")
+                }
             )
         }
         
@@ -70,6 +74,23 @@ fun GachalendarApp() {
                 GameCalendarScreen(
                     game = game,
                     events = events,
+                    onBackClick = { navController.popBackStack() },
+                    onEventClick = { event ->
+                        navController.navigate("eventDetail/${event.id}")
+                    }
+                )
+            }
+        }
+
+        composable(
+            "eventDetail/{eventId}",
+            arguments = listOf(navArgument("eventId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val eventId = backStackEntry.arguments?.getString("eventId")
+            val event = events.find { it.id == eventId }
+            if (event != null) {
+                EventDetailScreen(
+                    event = event,
                     onBackClick = { navController.popBackStack() }
                 )
             }

@@ -59,6 +59,20 @@ def scrape_genshin_events():
                         if "Banner" in event_type_text or "Character Selection" in event_type_text:
                             type_enum = "BANNER"
                             
+                        # Cari URL Gambar dan Detail
+                        image_url = None
+                        detail_url = None
+                        img_tag = cols[0].find('img')
+                        if img_tag:
+                            image_url = img_tag.get('src') or img_tag.get('data-src')
+                            # Membersihkan URL gambar agar ukurannya asli (bukan thumbnail)
+                            if image_url and '/revision/latest' in image_url:
+                                image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
+                                
+                        a_tag = cols[0].find('a')
+                        if a_tag and a_tag.get('href'):
+                            detail_url = "https://genshin-impact.fandom.com" + a_tag.get('href')
+                            
                         event = {
                             "id": f"gi_{uuid.uuid4().hex[:8]}",
                             "gameId": "gi",
@@ -66,7 +80,9 @@ def scrape_genshin_events():
                             "description": event_type_text,
                             "startTime": start_time,
                             "endTime": end_time,
-                            "type": type_enum
+                            "type": type_enum,
+                            "imageUrl": image_url,
+                            "detailUrl": detail_url
                         }
                         events.append(event)
     except Exception as e:
@@ -85,7 +101,9 @@ def get_dummy_events():
             "description": "Boosted drop rate for Acheron",
             "startTime": now.isoformat(),
             "endTime": now.isoformat(),
-            "type": "BANNER"
+            "type": "BANNER",
+            "imageUrl": None,
+            "detailUrl": None
         },
         {
             "id": f"wuwa_{uuid.uuid4().hex[:8]}",
@@ -94,7 +112,9 @@ def get_dummy_events():
             "description": "Featured resonator Yinlin",
             "startTime": now.isoformat(),
             "endTime": now.isoformat(),
-            "type": "BANNER"
+            "type": "BANNER",
+            "imageUrl": None,
+            "detailUrl": None
         }
     ]
 

@@ -16,7 +16,9 @@ data class GameEvent(
     val description: String,
     val startTime: LocalDateTime,
     val endTime: LocalDateTime,
-    val type: EventType
+    val type: EventType,
+    val imageUrl: String? = null,
+    val detailUrl: String? = null
 )
 
 enum class EventType {

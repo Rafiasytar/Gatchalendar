@@ -13,12 +13,16 @@ import androidx.compose.ui.unit.dp
 import com.example.gachalendar.model.GameEvent
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
+import coil.compose.AsyncImage
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.foundation.clickable
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CombinedCalendarScreen(
     events: List<GameEvent>,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onEventClick: (GameEvent) -> Unit
 ) {
     // Sort events by end time (closest to ending first)
     val activeEvents = events
@@ -62,7 +66,10 @@ fun CombinedCalendarScreen(
                 }
             } else {
                 items(activeEvents) { event ->
-                    EventCard(event = event)
+                    EventCard(
+                        event = event,
+                        onClick = { onEventClick(event) }
+                    )
                 }
             }
         }
@@ -70,7 +77,7 @@ fun CombinedCalendarScreen(
 }
 
 @Composable
-fun EventCard(event: GameEvent) {
+fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
     val now = LocalDateTime.now()
     val daysLeft = ChronoUnit.DAYS.between(now, event.endTime)
     val hoursLeft = ChronoUnit.HOURS.between(now, event.endTime) % 24
@@ -84,12 +91,28 @@ fun EventCard(event: GameEvent) {
     }
 
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick() },
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
         ) {
+            if (event.imageUrl != null) {
+                AsyncImage(
+                    model = event.imageUrl,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(64.dp)
+                        .padding(end = 12.dp),
+                    contentScale = ContentScale.Crop
+                )
+            }
+            Column(
+                modifier = Modifier.weight(1f)
+            ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -118,6 +141,7 @@ fun EventCard(event: GameEvent) {
                 text = event.description,
                 style = MaterialTheme.typography.bodyMedium
             )
+        }
         }
     }
 }
