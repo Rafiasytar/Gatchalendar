@@ -31,7 +31,7 @@ fun EventDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Event Details") },
+                title = { Text("Detail Event") },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -105,7 +105,7 @@ fun EventDetailScreen(
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = event.type.name.replace("_", " "),
+                            text = if (event.type.name == "BANNER") "Banner Karakter" else "Event Dalam Gim",
                             style = MaterialTheme.typography.bodyLarge,
                             fontWeight = FontWeight.Medium
                         )

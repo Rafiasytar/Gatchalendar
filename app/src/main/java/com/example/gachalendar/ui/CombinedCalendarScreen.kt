@@ -20,6 +20,12 @@ import androidx.compose.foundation.background
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.Alignment
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.LaunchedEffect
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,7 +42,7 @@ fun CombinedCalendarScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Combined Calendar") },
+                title = { Text("Kalender Gabungan") },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
                         Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
@@ -58,7 +64,7 @@ fun CombinedCalendarScreen(
         ) {
             item {
                 Text(
-                    text = "Active Events & Banners",
+                    text = "Event & Banner Aktif",
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(bottom = 8.dp)
@@ -66,7 +72,7 @@ fun CombinedCalendarScreen(
             }
             if (activeEvents.isEmpty()) {
                 item {
-                    Text("No active events currently.")
+                    Text("Tidak ada event aktif saat ini.")
                 }
             } else {
                 items(activeEvents) { event ->
@@ -82,16 +88,32 @@ fun CombinedCalendarScreen(
 
 @Composable
 fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
-    val now = LocalDateTime.now()
-    val daysLeft = ChronoUnit.DAYS.between(now, event.endTime)
-    val hoursLeft = ChronoUnit.HOURS.between(now, event.endTime) % 24
+    var currentTime by remember { mutableStateOf(LocalDateTime.now()) }
+    
+    LaunchedEffect(Unit) {
+        while (true) {
+            delay(1000L)
+            currentTime = LocalDateTime.now()
+        }
+    }
 
-    val timeLeftText = if (daysLeft > 0) {
-        "$daysLeft days $hoursLeft hrs left"
-    } else if (hoursLeft > 0) {
-        "$hoursLeft hrs left"
+    val totalSeconds = ChronoUnit.SECONDS.between(currentTime, event.endTime)
+
+    val timeLeftText = if (totalSeconds > 0) {
+        val daysLeft = totalSeconds / (24 * 3600)
+        val hoursLeft = (totalSeconds % (24 * 3600)) / 3600
+        val minutesLeft = (totalSeconds % 3600) / 60
+        val secondsLeft = totalSeconds % 60
+
+        if (daysLeft > 0) {
+            "$daysLeft hari, $hoursLeft jam, $minutesLeft mnt, $secondsLeft dtk"
+        } else if (hoursLeft > 0) {
+            "$hoursLeft jam, $minutesLeft mnt, $secondsLeft dtk"
+        } else {
+            "$minutesLeft mnt, $secondsLeft dtk"
+        }
     } else {
-        "Ending soon!"
+        "Event Telah Berakhir!"
     }
 
     Card(
@@ -179,7 +201,7 @@ fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Game: ${event.gameId.uppercase()} | Type: ${event.type.name.replace("_", " ")}",
+                    text = "Gim: ${event.gameId.uppercase()} | Tipe: ${if (event.type.name == "BANNER") "Banner Karakter" else "Event Dalam Gim"}",
                     style = MaterialTheme.typography.labelSmall,
                     color = if (event.imageUrl != null) Color.LightGray else MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.8f)
                 )
