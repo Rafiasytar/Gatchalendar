@@ -3,7 +3,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import uuid
 import time
 
@@ -243,6 +243,34 @@ def scrape_hsr_events():
                         if image_url and '/revision/latest' in image_url:
                             image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
                             
+                    if not image_url and a_tags:
+                        page_title = a_tags[-1].get('title')
+                        if page_title:
+                            if "/" in page_title:
+                                page_title = page_title.split("/")[0]
+                            try:
+                                print(f"Fetching fallback image for HSR: {page_title}")
+                                url_query = "https://honkai-star-rail.fandom.com/api.php"
+                                params_query = {
+                                    "action": "query",
+                                    "prop": "pageimages",
+                                    "titles": page_title,
+                                    "pithumbsize": 500,
+                                    "redirects": 1,
+                                    "format": "json"
+                                }
+                                res_query = requests.get(url_query, params=params_query, headers=headers).json()
+                                pages = res_query.get('query', {}).get('pages', {})
+                                for page_id, page_data in pages.items():
+                                    if 'thumbnail' in page_data and 'source' in page_data['thumbnail']:
+                                        image_url = page_data['thumbnail']['source']
+                                        if image_url and '/revision/latest' in image_url:
+                                            image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
+                                        break
+                                time.sleep(0.5)
+                            except Exception as e:
+                                print(f"Failed to get fallback image for HSR {page_title}: {e}")
+                            
                     event = {
                         "id": f"hsr_{uuid.uuid4().hex[:8]}",
                         "gameId": "hsr",
@@ -345,12 +373,31 @@ def main():
     print(f"Berhasil mendapatkan {len(wuwa_events)} event Wuthering Waves.")
     
     all_events = genshin_events + hsr_events + wuwa_events
+    
+    # Filter event yang sudah berakhir berdasarkan waktu Indonesia (WIB / UTC+7)
+    indo_tz = timezone(timedelta(hours=7))
+    now_indo = datetime.now(indo_tz).replace(tzinfo=None)
+    
+    active_events = []
+    for event in all_events:
+        if event.get("endTime"):
+            try:
+                # dt berbentuk datetime naif misal 2026-03-05 00:00:00
+                dt = datetime.fromisoformat(event["endTime"])
+                # Tambahkan toleransi 1 hari (karena end_date bisa jadi hari H sampai 23:59)
+                end_time_plus_1 = dt + timedelta(days=1)
+                if end_time_plus_1 < now_indo:
+                    print(f"Skipping expired event: {event['title']} (Ended: {dt})")
+                    continue
+            except Exception as e:
+                pass
+        active_events.append(event)
 
     output_file = "events.json"
     with open(output_file, 'w') as f:
-        json.dump(all_events, f, indent=4)
+        json.dump(active_events, f, indent=4)
         
-    print(f"Berhasil menyimpan {len(all_events)} event ke dalam {output_file}")
+    print(f"Berhasil menyimpan {len(active_events)} event aktif ke dalam {output_file}")
 
 if __name__ == "__main__":
     main()
