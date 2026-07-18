@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_aca75719",
+        "id": "gi_f5fa619a",
         "gameId": "gi",
         "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
         "description": "In-Game, Anniversary Standard 5-Star Character Selection",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
     },
     {
-        "id": "gi_d0535aea",
+        "id": "gi_830a2a69",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 4",
         "description": "In-Game",
@@ -24,7 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-05-18"
     },
     {
-        "id": "gi_45507a90",
+        "id": "gi_84ed7ff5",
         "gameId": "gi",
         "title": "Test Run - Sandrone, Citlali, Beidou, Diona, Freminet",
         "description": "In-Game, Test Run",
@@ -36,7 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-07-01"
     },
     {
-        "id": "gi_57f51332",
+        "id": "gi_99062a3c",
         "gameId": "gi",
         "title": "Chronicle of the Fatebound Sea",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
@@ -48,7 +48,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-07-01"
     },
     {
-        "id": "gi_28189bea",
+        "id": "gi_ebf8be5b",
         "gameId": "gi",
         "title": "Whispers of Stars and Smoke Discount",
         "description": "In-Game, Discount",
@@ -60,7 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Whispers_of_Stars_and_Smoke_Discount"
     },
     {
-        "id": "gi_01b82d4f",
+        "id": "gi_1c5c8b74",
         "gameId": "gi",
         "title": "Sunny Summer",
         "description": "In-Game, Battle Pass",
@@ -72,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Sunny_Summer"
     },
     {
-        "id": "gi_0b8393a1",
+        "id": "gi_fcb83ca8",
         "gameId": "gi",
         "title": "Sunny Summer Fontinalia",
         "description": "In-Game, Flagship",
@@ -84,7 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Sunny_Summer_Fontinalia_(Event)"
     },
     {
-        "id": "gi_1d756512",
+        "id": "gi_46746db2",
         "gameId": "gi",
         "title": "Nod-Krai: Where Roads Are Pledged to Cross",
         "description": "In-Game, Repertoire of Myriad Melodies Update",
@@ -96,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Nod-Krai:_Where_Roads_Are_Pledged_to_Cross_(Event)"
     },
     {
-        "id": "gi_d32557f8",
+        "id": "gi_9fd7185a",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Endless Swarm",
         "description": "In-Game, The Forge Realm's Temper",
@@ -108,7 +108,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-07-01"
     },
     {
-        "id": "gi_40ff4da0",
+        "id": "gi_cb8a0a76",
         "gameId": "gi",
         "title": "Raiment Collection: Mellow Warmth",
         "description": "In-Game, Miliastra Wonderland",
@@ -120,7 +120,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-07-01"
     },
     {
-        "id": "gi_6b128d45",
+        "id": "gi_dbee07df",
         "gameId": "gi",
         "title": "When We Look Up at the Moon",
         "description": "In-Game, Exploration Mission",
@@ -132,7 +132,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
     },
     {
-        "id": "gi_1e89bb42",
+        "id": "gi_4a61d221",
         "gameId": "gi",
         "title": "Stygian Onslaught: Savage Tremors",
         "description": "In-Game, Stygian Onslaught",
@@ -144,7 +144,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-07-08"
     },
     {
-        "id": "gi_8e8a585d",
+        "id": "gi_752e247d",
         "gameId": "gi",
         "title": "Have a Smashing Summer With Miliastra Wonderland!",
         "description": "Web",
@@ -156,7 +156,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Have_a_Smashing_Summer_With_Miliastra_Wonderland!"
     },
     {
-        "id": "gi_0428244d",
+        "id": "gi_7f9d484a",
         "gameId": "gi",
         "title": "Final Long-Range Sightlines",
         "description": "In-Game",
@@ -168,7 +168,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Final_Long-Range_Sightlines"
     },
     {
-        "id": "gi_901d69b2",
+        "id": "gi_9acb1da7",
         "gameId": "gi",
         "title": "Heated Battle Mode: Automatic Artistry",
         "description": "In-Game, Heated Battle Mode",
@@ -180,27 +180,195 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Heated_Battle_Mode/2026-07-18"
     },
     {
-        "id": "hsr_2a7bb480",
+        "id": "hsr_07909b22",
         "gameId": "hsr",
-        "title": "Character Banner: Acheron (Dummy)",
-        "description": "Boosted drop rate for Acheron",
-        "longDescription": "This is a placeholder long description for the dummy Acheron banner. Real data will be fetched when Honkai Star Rail parser is implemented.",
-        "startTime": "2026-07-18T07:10:57.587899",
-        "endTime": "2026-07-18T07:10:57.587899",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c8/Item_Star_Rail_Special_Pass.png",
+        "title": "Stellar Companions 2026-04-22",
+        "description": "In-Game",
+        "longDescription": "Stellar Companions 2026-04-22 is a Honkai Star Rail event of type In-Game.",
+        "startTime": "2026-04-22T00:00:00",
+        "endTime": "2026-08-26T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/0/01/Event_Stellar_Companions_2026-04-22.png/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "wuwa_dd5e6926",
-        "gameId": "wuwa",
-        "title": "Resonator Convene: Yinlin (Dummy)",
-        "description": "Featured resonator Yinlin",
-        "longDescription": "This is a placeholder long description for Wuthering Waves event.",
-        "startTime": "2026-07-18T07:10:57.587899",
-        "endTime": "2026-07-18T07:10:57.587899",
-        "type": "BANNER",
+        "id": "hsr_9327a8ff",
+        "gameId": "hsr",
+        "title": "Honkai: Star Rail x Round1",
+        "description": "Collaboration",
+        "longDescription": "Honkai: Star Rail x Round1 is a Honkai Star Rail event of type Collaboration.",
+        "startTime": "2026-05-22T00:00:00",
+        "endTime": "2026-08-23T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/a6/Honkai_Star_Rail_x_Round1_Collaboration.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_59695f1a",
+        "gameId": "hsr",
+        "title": "Cyclical Extrapolation: Painted Trailblazing",
+        "description": "Cyclical Extrapolation",
+        "longDescription": "Cyclical Extrapolation: Painted Trailblazing is a Honkai Star Rail event of type Cyclical Extrapolation.",
+        "startTime": "2026-07-13T00:00:00",
+        "endTime": "2026-07-20T00:00:00",
+        "type": "IN_GAME_EVENT",
         "imageUrl": null,
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_a796f23a",
+        "gameId": "hsr",
+        "title": "Nameless Honor 2026-07-15",
+        "description": "In-Game, Nameless Honor",
+        "longDescription": "Nameless Honor 2026-07-15 is a Honkai Star Rail event of type In-Game, Nameless Honor.",
+        "startTime": "2026-07-15T00:00:00",
+        "endTime": "2026-08-24T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/2/28/Event_Nameless_Honor.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_d42c88d2",
+        "gameId": "hsr",
+        "title": "Fate Gift 2026-07-15",
+        "description": "In-Game, Collaboration",
+        "longDescription": "Fate Gift 2026-07-15 is a Honkai Star Rail event of type In-Game, Collaboration.",
+        "startTime": "2026-07-15T00:00:00",
+        "endTime": "2026-08-25T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": null,
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_96139f60",
+        "gameId": "hsr",
+        "title": "Gift of Odyssey 2026-07-15",
+        "description": "In-Game, Login",
+        "longDescription": "Gift of Odyssey 2026-07-15 is a Honkai Star Rail event of type In-Game, Login.",
+        "startTime": "2026-07-15T00:00:00",
+        "endTime": "2026-08-25T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/5/53/Event_Gift_of_Odyssey_2026-07-15.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_dc390134",
+        "gameId": "hsr",
+        "title": "Antigraft Brickbuster",
+        "description": "In-Game",
+        "longDescription": "Antigraft Brickbuster is a Honkai Star Rail event of type In-Game.",
+        "startTime": "2026-07-15T00:00:00",
+        "endTime": "2026-08-26T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/f/fd/Event_Antigraft_Brickbuster.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_71743531",
+        "gameId": "hsr",
+        "title": "Fashion Guide of the Cosmos: Resonant Rave",
+        "description": "In-Game",
+        "longDescription": "Fashion Guide of the Cosmos: Resonant Rave is a Honkai Star Rail event of type In-Game.",
+        "startTime": "2026-07-15T00:00:00",
+        "endTime": "2026-08-26T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/33/Event_Fashion_Guide_of_the_Cosmos_Resonant_Rave.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_f7acfcb2",
+        "gameId": "hsr",
+        "title": "Aptitude Showcase - Himeko \u2022 Nova, Sparxie, Dan Heng \u2022 Permansor Terrae, Evernight, Serval, Moze, Hanya",
+        "description": "In-Game",
+        "longDescription": "Aptitude Showcase - Himeko \u2022 Nova, Sparxie, Dan Heng \u2022 Permansor Terrae, Evernight, Serval, Moze, Hanya is a Honkai Star Rail event of type In-Game.",
+        "startTime": "2026-07-15T00:00:00",
+        "endTime": "2026-08-05T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/3/37/Aptitude_Showcase_-_Himeko_%E2%80%A2_Nova%2C_Sparxie%2C_Dan_Heng_%E2%80%A2_Permansor_Terrae%2C_Evernight%2C_Serval%2C_Moze%2C_Hanya.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_2035c227",
+        "gameId": "wuwa",
+        "title": "Wuthering Waves Battle Rush 2026-02-05",
+        "description": "Version 3.1",
+        "longDescription": "Wuthering Waves Battle Rush 2026-02-05 is a Wuthering Waves event in Version 3.1.",
+        "startTime": "2026-02-05T00:00:00",
+        "endTime": "2026-03-05T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1d/Wuthering_Waves_Battle_Rush_2026-02-05.jpg/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_8ae9c2ac",
+        "gameId": "wuwa",
+        "title": "Wuthering Waves Fan Creation Event \"For You Who Walk in Snow\"",
+        "description": "Version 3.1",
+        "longDescription": "Wuthering Waves Fan Creation Event \"For You Who Walk in Snow\" is a Wuthering Waves event in Version 3.1.",
+        "startTime": "2026-02-05T00:00:00",
+        "endTime": "2026-03-08T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/4/47/Wuthering_Waves_Fan_Creation_Event_2026-02-05.jpg/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_81ad2799",
+        "gameId": "wuwa",
+        "title": "Wuthering Waves Battle Rush 2026-03-19",
+        "description": "Version 3.2",
+        "longDescription": "Wuthering Waves Battle Rush 2026-03-19 is a Wuthering Waves event in Version 3.2.",
+        "startTime": "2026-03-19T00:00:00",
+        "endTime": "2026-04-16T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/d/d6/Wuthering_Waves_Battle_Rush_2026-03-19.jpg/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_bed25980",
+        "gameId": "wuwa",
+        "title": "Wuthering Waves Fan Creation Event \"Resolution to Illuminate the Shadows\"",
+        "description": "Version 3.2",
+        "longDescription": "Wuthering Waves Fan Creation Event \"Resolution to Illuminate the Shadows\" is a Wuthering Waves event in Version 3.2.",
+        "startTime": "2026-03-19T00:00:00",
+        "endTime": "2026-04-20T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1f/Wuthering_Waves_Fan_Creation_Event_2026-03-19.jpg/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_938150d9",
+        "gameId": "wuwa",
+        "title": "Gifts of Aftertune",
+        "description": "Version 3.5",
+        "longDescription": "Gifts of Aftertune is a Wuthering Waves event in Version 3.5.",
+        "startTime": "2026-07-10T00:00:00",
+        "endTime": "2026-08-19T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/4/4c/Gifts_of_Aftertune.jpg/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_11211fc4",
+        "gameId": "wuwa",
+        "title": "Glamour Couture 2026-07-10",
+        "description": "Version 3.5",
+        "longDescription": "Glamour Couture 2026-07-10 is a Wuthering Waves event in Version 3.5.",
+        "startTime": "2026-07-10T00:00:00",
+        "endTime": "2026-08-19T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/1/1c/Glamour_Couture_2026-07-10.jpg/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_6e37cc7b",
+        "gameId": "wuwa",
+        "title": "Wuthering Waves Battle Rush 2026-07-10",
+        "description": "Version 3.5",
+        "longDescription": "Wuthering Waves Battle Rush 2026-07-10 is a Wuthering Waves event in Version 3.5.",
+        "startTime": "2026-07-10T00:00:00",
+        "endTime": "2026-08-07T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/6/69/Wuthering_Waves_Battle_Rush_2026-07-10.jpg/revision/latest",
         "detailUrl": null
     }
 ]

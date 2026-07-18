@@ -192,42 +192,159 @@ def scrape_genshin_events():
         
     return events
 
-def get_dummy_events():
-    now = datetime.now()
-    return [
-        {
-            "id": f"hsr_{uuid.uuid4().hex[:8]}",
-            "gameId": "hsr",
-            "title": "Character Banner: Acheron (Dummy)",
-            "description": "Boosted drop rate for Acheron",
-            "longDescription": "This is a placeholder long description for the dummy Acheron banner. Real data will be fetched when Honkai Star Rail parser is implemented.",
-            "startTime": now.isoformat(),
-            "endTime": now.isoformat(),
-            "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c8/Item_Star_Rail_Special_Pass.png",
-            "detailUrl": None
-        },
-        {
-            "id": f"wuwa_{uuid.uuid4().hex[:8]}",
-            "gameId": "wuwa",
-            "title": "Resonator Convene: Yinlin (Dummy)",
-            "description": "Featured resonator Yinlin",
-            "longDescription": "This is a placeholder long description for Wuthering Waves event.",
-            "startTime": now.isoformat(),
-            "endTime": now.isoformat(),
-            "type": "BANNER",
-            "imageUrl": None,
-            "detailUrl": None
-        }
-    ]
+def scrape_hsr_events():
+    url = "https://honkai-star-rail.fandom.com/api.php"
+    params = {
+        "action": "parse",
+        "page": "Events",
+        "format": "json",
+        "prop": "text"
+    }
+    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
+    events = []
+    
+    try:
+        print("Fetching Honkai Star Rail events...")
+        response = requests.get(url, params=params, headers=headers)
+        data = response.json()
+        html_content = data['parse']['text']['*']
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        tables = soup.find_all('table', class_='wikitable')
+        if tables:
+            rows = tables[0].find_all('tr')[1:] # Current events table
+            for row in rows:
+                cols = row.find_all(['th', 'td'])
+                if len(cols) >= 3:
+                    name_td = cols[0]
+                    a_tags = name_td.find_all('a')
+                    title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
+                    
+                    duration_text = cols[1].text.strip()
+                    type_text = cols[2].text.strip()
+                    
+                    dates = re.findall(r'([A-Z][a-z]+ \d{1,2}, \d{4})', duration_text)
+                    if len(dates) >= 2:
+                        start_time = parse_date(dates[0])
+                        end_time = parse_date(dates[1])
+                    else:
+                        continue
+                        
+                    type_enum = "IN_GAME_EVENT"
+                    if "Warp" in title or "Warp" in type_text or "Character Event" in title:
+                        type_enum = "BANNER"
+                        
+                    image_url = None
+                    img = name_td.find('img')
+                    if img:
+                        image_url = img.get('data-src') or img.get('src')
+                        if image_url and image_url.startswith("data:image"):
+                            image_url = None
+                        if image_url and '/revision/latest' in image_url:
+                            image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
+                            
+                    event = {
+                        "id": f"hsr_{uuid.uuid4().hex[:8]}",
+                        "gameId": "hsr",
+                        "title": title,
+                        "description": type_text,
+                        "longDescription": f"{title} is a Honkai Star Rail event of type {type_text}.",
+                        "startTime": start_time,
+                        "endTime": end_time,
+                        "type": type_enum,
+                        "imageUrl": image_url,
+                        "detailUrl": None
+                    }
+                    events.append(event)
+    except Exception as e:
+        print(f"Failed to scrape HSR events: {e}")
+        
+    return events
+
+def scrape_wuwa_events():
+    url = "https://wutheringwaves.fandom.com/api.php"
+    params = {
+        "action": "parse",
+        "page": "Event",
+        "format": "json",
+        "prop": "text"
+    }
+    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
+    events = []
+    
+    try:
+        print("Fetching Wuthering Waves events...")
+        response = requests.get(url, params=params, headers=headers)
+        data = response.json()
+        html_content = data['parse']['text']['*']
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        for h in soup.find_all(['h2', 'h3']):
+            span = h.find('span', class_='mw-headline')
+            if span and span.text == 'Current':
+                table = h.find_next_sibling('table', class_='article-table')
+                if table:
+                    rows = table.find_all('tr')[1:]
+                    for row in rows:
+                        cols = row.find_all(['th', 'td'])
+                        if len(cols) >= 3:
+                            name_td = cols[0]
+                            a_tags = name_td.find_all('a')
+                            title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
+                            
+                            duration_text = cols[1].text.strip()
+                            version_text = cols[2].text.strip()
+                            
+                            dates = re.findall(r'([A-Z][a-z]+ \d{1,2}, \d{4})', duration_text)
+                            if len(dates) >= 2:
+                                start_time = parse_date(dates[0])
+                                end_time = parse_date(dates[1])
+                            else:
+                                continue
+                                
+                            type_enum = "IN_GAME_EVENT"
+                            if "Convene" in title or "Resonator" in title:
+                                type_enum = "BANNER"
+                                
+                            image_url = None
+                            img = name_td.find('img')
+                            if img:
+                                image_url = img.get('data-src') or img.get('src')
+                                if image_url and image_url.startswith("data:image"):
+                                    image_url = None
+                                if image_url and '/revision/latest' in image_url:
+                                    image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
+                                    
+                            event = {
+                                "id": f"wuwa_{uuid.uuid4().hex[:8]}",
+                                "gameId": "wuwa",
+                                "title": title,
+                                "description": f"Version {version_text}",
+                                "longDescription": f"{title} is a Wuthering Waves event in Version {version_text}.",
+                                "startTime": start_time,
+                                "endTime": end_time,
+                                "type": type_enum,
+                                "imageUrl": image_url,
+                                "detailUrl": None
+                            }
+                            events.append(event)
+    except Exception as e:
+        print(f"Failed to scrape WuWa events: {e}")
+        
+    return events
 
 def main():
     print("Mulai mengambil data jadwal event dari internet...")
     genshin_events = scrape_genshin_events()
     print(f"Berhasil mendapatkan {len(genshin_events)} event Genshin Impact.")
     
-    other_events = get_dummy_events()
-    all_events = genshin_events + other_events
+    hsr_events = scrape_hsr_events()
+    print(f"Berhasil mendapatkan {len(hsr_events)} event Honkai Star Rail.")
+    
+    wuwa_events = scrape_wuwa_events()
+    print(f"Berhasil mendapatkan {len(wuwa_events)} event Wuthering Waves.")
+    
+    all_events = genshin_events + hsr_events + wuwa_events
 
     output_file = "events.json"
     with open(output_file, 'w') as f:
