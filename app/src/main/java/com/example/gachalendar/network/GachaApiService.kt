@@ -15,8 +15,8 @@ interface GachaApiService {
 }
 
 object RetrofitInstance {
-    // TODO: Ganti URL ini dengan URL GitHub Pages Anda nanti (misalnya: https://username.github.io/Gachalendar/)
-    private const val BASE_URL = "https://raw.githubusercontent.com/username/Gachalendar/main/"
+    // Mengarah ke GitHub Pages milik Anda
+    private const val BASE_URL = "https://rafiasytar.github.io/Gatchalendar/"
 
     private val gson = GsonBuilder()
         .registerTypeAdapter(LocalDateTime::class.java, JsonDeserializer { json, _, _ ->
