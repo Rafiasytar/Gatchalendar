@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_0b55c2b0",
+        "id": "gi_3d4458d9",
         "gameId": "gi",
         "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
         "description": "In-Game, Anniversary Standard 5-Star Character Selection",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
     },
     {
-        "id": "gi_bd0578d4",
+        "id": "gi_ee741f1b",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 4",
         "description": "In-Game",
@@ -24,7 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-05-18"
     },
     {
-        "id": "gi_88dfaa8a",
+        "id": "gi_9b0ccc70",
         "gameId": "gi",
         "title": "Test Run - Sandrone, Citlali, Beidou, Diona, Freminet",
         "description": "In-Game, Test Run",
@@ -36,7 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-07-01"
     },
     {
-        "id": "gi_9a9b867b",
+        "id": "gi_c36ec939",
         "gameId": "gi",
         "title": "Chronicle of the Fatebound Sea",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
@@ -48,7 +48,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-07-01"
     },
     {
-        "id": "gi_fb65b545",
+        "id": "gi_23aa2877",
         "gameId": "gi",
         "title": "Whispers of Stars and Smoke Discount",
         "description": "In-Game, Discount",
@@ -60,7 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Whispers_of_Stars_and_Smoke_Discount"
     },
     {
-        "id": "gi_03d7ced1",
+        "id": "gi_151bc003",
         "gameId": "gi",
         "title": "Sunny Summer",
         "description": "In-Game, Battle Pass",
@@ -72,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Sunny_Summer"
     },
     {
-        "id": "gi_ef728b45",
+        "id": "gi_2b0648d1",
         "gameId": "gi",
         "title": "Sunny Summer Fontinalia",
         "description": "In-Game, Flagship",
@@ -84,7 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Sunny_Summer_Fontinalia_(Event)"
     },
     {
-        "id": "gi_7c8c683f",
+        "id": "gi_641dc45b",
         "gameId": "gi",
         "title": "Nod-Krai: Where Roads Are Pledged to Cross",
         "description": "In-Game, Repertoire of Myriad Melodies Update",
@@ -96,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Nod-Krai:_Where_Roads_Are_Pledged_to_Cross_(Event)"
     },
     {
-        "id": "gi_ff0b42d3",
+        "id": "gi_c735de18",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Endless Swarm",
         "description": "In-Game, The Forge Realm's Temper",
@@ -108,7 +108,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-07-01"
     },
     {
-        "id": "gi_7663b1e7",
+        "id": "gi_a04f996f",
         "gameId": "gi",
         "title": "Raiment Collection: Mellow Warmth",
         "description": "In-Game, Miliastra Wonderland",
@@ -120,7 +120,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-07-01"
     },
     {
-        "id": "gi_70f16de5",
+        "id": "gi_f7a1f63d",
         "gameId": "gi",
         "title": "When We Look Up at the Moon",
         "description": "In-Game, Exploration Mission",
@@ -132,7 +132,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
     },
     {
-        "id": "gi_7b9be6d1",
+        "id": "gi_db731955",
         "gameId": "gi",
         "title": "Stygian Onslaught: Savage Tremors",
         "description": "In-Game, Stygian Onslaught",
@@ -144,7 +144,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-07-08"
     },
     {
-        "id": "gi_e062b620",
+        "id": "gi_cd22fad2",
         "gameId": "gi",
         "title": "Have a Smashing Summer With Miliastra Wonderland!",
         "description": "Web",
@@ -156,7 +156,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Have_a_Smashing_Summer_With_Miliastra_Wonderland!"
     },
     {
-        "id": "gi_bcff4f68",
+        "id": "gi_14ca7ddc",
         "gameId": "gi",
         "title": "Final Long-Range Sightlines",
         "description": "In-Game",
@@ -168,7 +168,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Final_Long-Range_Sightlines"
     },
     {
-        "id": "gi_807e4fb8",
+        "id": "gi_3856d097",
         "gameId": "gi",
         "title": "Heated Battle Mode: Automatic Artistry",
         "description": "In-Game, Heated Battle Mode",
@@ -180,25 +180,25 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Heated_Battle_Mode/2026-07-18"
     },
     {
-        "id": "hsr_81d0d572",
+        "id": "hsr_af9c045a",
         "gameId": "hsr",
         "title": "Character Banner: Acheron (Dummy)",
         "description": "Boosted drop rate for Acheron",
         "longDescription": "This is a placeholder long description for the dummy Acheron banner. Real data will be fetched when Honkai Star Rail parser is implemented.",
-        "startTime": "2026-07-18T13:35:08.887479",
-        "endTime": "2026-07-18T13:35:08.887479",
+        "startTime": "2026-07-18T06:41:14.142264",
+        "endTime": "2026-07-18T06:41:14.142264",
         "type": "BANNER",
         "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c8/Item_Star_Rail_Special_Pass.png",
         "detailUrl": null
     },
     {
-        "id": "wuwa_a8cd5f43",
+        "id": "wuwa_28a2c7c3",
         "gameId": "wuwa",
         "title": "Resonator Convene: Yinlin (Dummy)",
         "description": "Featured resonator Yinlin",
         "longDescription": "This is a placeholder long description for Wuthering Waves event.",
-        "startTime": "2026-07-18T13:35:08.887479",
-        "endTime": "2026-07-18T13:35:08.887479",
+        "startTime": "2026-07-18T06:41:14.142264",
+        "endTime": "2026-07-18T06:41:14.142264",
         "type": "BANNER",
         "imageUrl": null,
         "detailUrl": null
