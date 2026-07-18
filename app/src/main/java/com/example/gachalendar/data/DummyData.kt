@@ -11,7 +11,7 @@ object DummyData {
         Game(id = "hsr", name = "Honkai: Star Rail", developer = "Hoyoverse"),
         Game(id = "zzz", name = "Zenless Zone Zero", developer = "Hoyoverse"),
         Game(id = "wuwa", name = "Wuthering Waves", developer = "Kuro Games"),
-        Game(id = "ark", name = "Arknights", developer = "Hypergryph")
+        Game(id = "endfield", name = "Arknights Endfield", developer = "Hypergryph")
     )
 
     val events = listOf(

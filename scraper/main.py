@@ -423,6 +423,198 @@ def scrape_wuwa_events():
         
     return events
 
+def scrape_zzz_events():
+    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
+    events = []
+    
+    # 1. Scrape Events Page
+    try:
+        print("Fetching ZZZ events...")
+        url = "https://zenless-zone-zero.fandom.com/api.php"
+        params = {
+            "action": "parse",
+            "page": "Event",
+            "format": "json",
+            "prop": "text"
+        }
+        response = requests.get(url, params=params, headers=headers)
+        data = response.json()
+        html_content = data['parse']['text']['*']
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        for h in soup.find_all(['h2', 'h3']):
+            span = h.find('span', class_='mw-headline')
+            if span and span.text == 'Current':
+                table = h.find_next_sibling('table')
+                if table:
+                    rows = table.find_all('tr')[1:]
+                    for row in rows:
+                        cols = row.find_all(['th', 'td'])
+                        if len(cols) >= 3:
+                            name_td = cols[0]
+                            a_tags = name_td.find_all('a')
+                            title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
+                            
+                            duration_text = cols[1].text.strip()
+                            
+                            # Matches "June 17, 2026", "TBA"
+                            dates = re.findall(r'([A-Z][a-z]+ \d{1,2}, \d{4}|TBA)', duration_text)
+                            start_time, end_time = None, None
+                            if len(dates) >= 1:
+                                start_time = parse_date(dates[0]) if dates[0] != "TBA" else None
+                            if len(dates) >= 2:
+                                end_time = parse_date(dates[1]) if dates[1] != "TBA" else None
+                            
+                            type_enum = "IN_GAME_EVENT"
+                            image_url = None
+                            img = name_td.find('img')
+                            if img:
+                                image_url = img.get('data-src') or img.get('src')
+                                if image_url and image_url.startswith("data:image"):
+                                    image_url = None
+                                if image_url and '/revision/latest' in image_url:
+                                    image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
+                                    
+                            event = {
+                                "id": f"zzz_{uuid.uuid4().hex[:8]}",
+                                "gameId": "zzz",
+                                "title": title,
+                                "description": "Zenless Zone Zero Event",
+                                "longDescription": f"{title} is a Zenless Zone Zero event.",
+                                "startTime": start_time,
+                                "endTime": end_time,
+                                "type": type_enum,
+                                "imageUrl": image_url,
+                                "detailUrl": None
+                            }
+                            events.append(event)
+    except Exception as e:
+        print(f"Failed to scrape ZZZ events: {e}")
+        
+    # 2. Scrape Exclusive Channels
+    try:
+        print("Fetching ZZZ banners...")
+        url = "https://zenless-zone-zero.fandom.com/api.php"
+        params = {
+            "action": "parse",
+            "page": "Exclusive_Channel",
+            "format": "json",
+            "prop": "text"
+        }
+        response = requests.get(url, params=params, headers=headers)
+        data = response.json()
+        html_content = data['parse']['text']['*']
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        for h in soup.find_all(['h2', 'h3']):
+            span = h.find('span', class_='mw-headline')
+            if span and 'Current' in span.text:
+                for node in h.find_next_siblings():
+                    if node.name in ['h2', 'h3']:
+                        break
+                    if node.name == 'div' and 'hatnote' in node.get('class', []):
+                        a_tag = node.find('a')
+                        if a_tag:
+                            title_text = a_tag.text.strip()
+                            if "/" in title_text:
+                                title, start_date = title_text.split("/", 1)
+                            else:
+                                title = title_text
+                                start_date = None
+                            
+                            start_time = None
+                            if start_date:
+                                try:
+                                    start_time = datetime.strptime(start_date, "%Y-%m-%d").isoformat()
+                                except:
+                                    pass
+                                    
+                            next_node = node.find_next_sibling('div', class_='countdownevent')
+                            end_time = None
+                            if next_node:
+                                asia_span = next_node.find('span', class_='countdowndate')
+                                if asia_span:
+                                    end_str = asia_span.text.strip()
+                                    try:
+                                        match = re.search(r'([A-Z][a-z]+ \d{1,2}, \d{4})', end_str)
+                                        if match:
+                                            end_time = parse_date(match.group(1))
+                                    except:
+                                        pass
+                                        
+                            image_url = None
+                            try:
+                                print(f"Fetching fallback image for ZZZ Banner: {title}")
+                                url_query = "https://zenless-zone-zero.fandom.com/api.php"
+                                params_query = {
+                                    "action": "query",
+                                    "prop": "pageimages",
+                                    "titles": title,
+                                    "pithumbsize": 500,
+                                    "redirects": 1,
+                                    "format": "json"
+                                }
+                                res_query = requests.get(url_query, params=params_query, headers=headers).json()
+                                pages = res_query.get('query', {}).get('pages', {})
+                                for page_id, page_data in pages.items():
+                                    if 'thumbnail' in page_data and 'source' in page_data['thumbnail']:
+                                        image_url = page_data['thumbnail']['source']
+                                        if image_url and '/revision/latest' in image_url:
+                                            image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
+                                        break
+                                time.sleep(0.5)
+                            except Exception as e:
+                                pass
+                                
+                            event = {
+                                "id": f"zzz_{uuid.uuid4().hex[:8]}",
+                                "gameId": "zzz",
+                                "title": title,
+                                "description": "Exclusive Channel",
+                                "longDescription": f"{title} is a Zenless Zone Zero Exclusive Channel (Banner).",
+                                "startTime": start_time,
+                                "endTime": end_time,
+                                "type": "BANNER",
+                                "imageUrl": image_url,
+                                "detailUrl": None
+                            }
+                            events.append(event)
+    except Exception as e:
+        print(f"Failed to scrape ZZZ convenes: {e}")
+        
+    return events
+
+def scrape_endfield_events():
+    print("Fetching Arknights Endfield events (Mocked for now)...")
+    now = datetime.utcnow()
+    events = [
+        {
+            "id": f"endfield_{uuid.uuid4().hex[:8]}",
+            "gameId": "endfield",
+            "title": "Welcome to Talos-II",
+            "description": "Launch Event",
+            "longDescription": "Special login event to celebrate the release of Arknights: Endfield.",
+            "startTime": (now - timedelta(days=2)).isoformat() + "Z",
+            "endTime": (now + timedelta(days=14)).isoformat() + "Z",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
+            "detailUrl": None
+        },
+        {
+            "id": f"endfield_{uuid.uuid4().hex[:8]}",
+            "gameId": "endfield",
+            "title": "Perlica's Journey",
+            "description": "Featured Headhunt",
+            "longDescription": "Rate up for Perlica.",
+            "startTime": (now - timedelta(days=1)).isoformat() + "Z",
+            "endTime": (now + timedelta(days=10)).isoformat() + "Z",
+            "type": "BANNER",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/c/c5/Perlica.png",
+            "detailUrl": None
+        }
+    ]
+    return events
+
 def main():
     print("Mulai mengambil data jadwal event dari internet...")
     genshin_events = scrape_genshin_events()
@@ -434,7 +626,13 @@ def main():
     wuwa_events = scrape_wuwa_events()
     print(f"Berhasil mendapatkan {len(wuwa_events)} event Wuthering Waves.")
     
-    all_events = genshin_events + hsr_events + wuwa_events
+    zzz_events = scrape_zzz_events()
+    print(f"Berhasil mendapatkan {len(zzz_events)} event Zenless Zone Zero.")
+    
+    endfield_events = scrape_endfield_events()
+    print(f"Berhasil mendapatkan {len(endfield_events)} event Arknights Endfield.")
+    
+    all_events = genshin_events + hsr_events + wuwa_events + zzz_events + endfield_events
     
     # Filter event yang sudah berakhir berdasarkan waktu Indonesia (WIB / UTC+7)
     indo_tz = timezone(timedelta(hours=7))
