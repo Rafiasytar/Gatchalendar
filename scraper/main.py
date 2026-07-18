@@ -290,18 +290,19 @@ def scrape_hsr_events():
     return events
 
 def scrape_wuwa_events():
-    url = "https://wutheringwaves.fandom.com/api.php"
-    params = {
-        "action": "parse",
-        "page": "Event",
-        "format": "json",
-        "prop": "text"
-    }
     headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
     events = []
     
+    # 1. Scrape Events Page
     try:
         print("Fetching Wuthering Waves events...")
+        url = "https://wutheringwaves.fandom.com/api.php"
+        params = {
+            "action": "parse",
+            "page": "Event",
+            "format": "json",
+            "prop": "text"
+        }
         response = requests.get(url, params=params, headers=headers)
         data = response.json()
         html_content = data['parse']['text']['*']
@@ -331,8 +332,6 @@ def scrape_wuwa_events():
                                 continue
                                 
                             type_enum = "IN_GAME_EVENT"
-                            if "Convene" in title or "Resonator" in title:
-                                type_enum = "BANNER"
                                 
                             image_url = None
                             img = name_td.find('img')
@@ -358,6 +357,69 @@ def scrape_wuwa_events():
                             events.append(event)
     except Exception as e:
         print(f"Failed to scrape WuWa events: {e}")
+        
+    # 2. Scrape Convene Banners Page
+    try:
+        print("Fetching Wuthering Waves convenes...")
+        url = "https://wutheringwaves.fandom.com/api.php"
+        params = {
+            "action": "parse",
+            "page": "Featured_Resonator_Convene",
+            "format": "json",
+            "prop": "text"
+        }
+        response = requests.get(url, params=params, headers=headers)
+        data = response.json()
+        html_content = data['parse']['text']['*']
+        soup = BeautifulSoup(html_content, 'html.parser')
+        
+        for h in soup.find_all(['h2', 'h3']):
+            span = h.find('span', class_='mw-headline')
+            if span and span.text == 'List of Featured Resonator Convenes':
+                table = h.find_next_sibling('table')
+                if table:
+                    rows = table.find_all('tr')[1:]
+                    for row in rows:
+                        cols = row.find_all(['th', 'td'])
+                        # Format is typically Image, Name, Start, End, Version
+                        if len(cols) >= 4:
+                            name_td = cols[1]
+                            a_tags = name_td.find_all('a')
+                            title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
+                            
+                            start_text = cols[2].text.strip()
+                            end_text = cols[3].text.strip()
+                            
+                            start_time = parse_date(start_text)
+                            end_time = parse_date(end_text)
+                            
+                            if not start_time or not end_time:
+                                continue
+                                
+                            image_url = None
+                            img = cols[0].find('img')
+                            if img:
+                                image_url = img.get('data-src') or img.get('src')
+                                if image_url and image_url.startswith("data:image"):
+                                    image_url = None
+                                if image_url and '/revision/latest' in image_url:
+                                    image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
+                                    
+                            event = {
+                                "id": f"wuwa_{uuid.uuid4().hex[:8]}",
+                                "gameId": "wuwa",
+                                "title": title,
+                                "description": "Resonator Convene",
+                                "longDescription": f"{title} is a Wuthering Waves Resonator Convene (Banner).",
+                                "startTime": start_time,
+                                "endTime": end_time,
+                                "type": "BANNER",
+                                "imageUrl": image_url,
+                                "detailUrl": None
+                            }
+                            events.append(event)
+    except Exception as e:
+        print(f"Failed to scrape WuWa convenes: {e}")
         
     return events
 
