@@ -154,6 +154,26 @@ def scrape_genshin_events():
                                 image_url = details['image_url']
                             time.sleep(0.5) # Jeda ringan agar tidak di-block
                             
+                        # Attempt to fetch character card for Test Run if no image
+                        if not image_url and "Test Run -" in name:
+                            try:
+                                chars = name.split("Test Run -")[1].strip()
+                                first_char = chars.split(",")[0].strip()
+                                print(f"Fetching character card for: {first_char}")
+                                char_url = f"https://genshin-impact.fandom.com/api.php?action=query&prop=pageimages&titles={first_char}&pithumbsize=1000&format=json"
+                                char_res = requests.get(char_url, headers={'User-Agent': 'Gachalendar-Bot/1.0'}).json()
+                                pages = char_res.get('query', {}).get('pages', {})
+                                for page_id, page_data in pages.items():
+                                    if 'thumbnail' in page_data:
+                                        raw_thumb = page_data['thumbnail']['source']
+                                        if '/revision/latest' in raw_thumb:
+                                            image_url = raw_thumb.split('/revision/latest')[0] + '/revision/latest'
+                                        else:
+                                            image_url = raw_thumb
+                                        break
+                            except Exception as e:
+                                print(f"Failed to fetch char card: {e}")
+                            
                         event = {
                             "id": f"gi_{uuid.uuid4().hex[:8]}",
                             "gameId": "gi",
