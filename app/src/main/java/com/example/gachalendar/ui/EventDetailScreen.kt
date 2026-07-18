@@ -120,7 +120,7 @@ fun EventDetailScreen(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = event.description,
+                    text = event.longDescription ?: event.description,
                     style = MaterialTheme.typography.bodyMedium
                 )
                 

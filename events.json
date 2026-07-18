@@ -1,9 +1,10 @@
 [
     {
-        "id": "gi_568d72fd",
+        "id": "gi_0b55c2b0",
         "gameId": "gi",
         "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
         "description": "In-Game, Anniversary Standard 5-Star Character Selection",
+        "longDescription": "Uncover Lunar Realms, Hone the Eventide Radiance is an Event in Version \"Luna I\". Including Character Ascension Materials, Character Level-Up Materials, Character and Weapon Enhancement Materials, and Local Specialties to level character to Lv. 60.",
         "startTime": "2025-10-22T00:00:00",
         "endTime": "2026-09-23T00:00:00",
         "type": "BANNER",
@@ -11,10 +12,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
     },
     {
-        "id": "gi_e81eb9ef",
+        "id": "gi_bd0578d4",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 4",
         "description": "In-Game",
+        "longDescription": "To Temper Thyself and Journey Far is a Recurring Event where players participate in daily challenges to unlock a 5-star character's Stella Fortuna and other rewards.",
         "startTime": "2026-05-18T00:00:00",
         "endTime": "2026-08-10T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -22,21 +24,23 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-05-18"
     },
     {
-        "id": "gi_c367294b",
+        "id": "gi_88dfaa8a",
         "gameId": "gi",
         "title": "Test Run - Sandrone, Citlali, Beidou, Diona, Freminet",
         "description": "In-Game, Test Run",
+        "longDescription": "Test Run - Character Trial Event is a Recurring Event that allow players to try out the promoted characters' gameplay in special Domains for a Character Trial. The character's combat specs are fixed, and food items cannot be used. By completing each challenge for the first time, players can gain various rewards such as Primogems, Adventurer's Experience, Mystic Enhancement Ore, Mora, Local Specialties, Character and Weapon Enhancement Materials.",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-07-21T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": null,
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/e/e0/Icon_Emoji_Paimon%27s_Paintings_16_Paimon_1.png",
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-07-01"
     },
     {
-        "id": "gi_6eb2329b",
+        "id": "gi_9a9b867b",
         "gameId": "gi",
         "title": "Chronicle of the Fatebound Sea",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
+        "longDescription": "Miliastra Pass is a recurring Event for Miliastra Wonderland. It is a Battle Pass that uses Chronicle EXP gained from weekly and BP period quests to reward  Geodes of Replication, Cosmetics, Interactive Expressions, Lustrous Materials, Lobby Facilities, and Chronicle Caches. It includes the Chronicles of the Sky (basic edition), Chronicles of the Realms, and Epic of the Realms.",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-10T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -44,10 +48,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-07-01"
     },
     {
-        "id": "gi_20d80cae",
+        "id": "gi_fb65b545",
         "gameId": "gi",
         "title": "Whispers of Stars and Smoke Discount",
         "description": "In-Game, Discount",
+        "longDescription": "Whispers of Stars and Smoke Discount is a Discount Event in Version \"Luna VIII.\"",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-10T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -55,10 +60,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Whispers_of_Stars_and_Smoke_Discount"
     },
     {
-        "id": "gi_6a130fdf",
+        "id": "gi_03d7ced1",
         "gameId": "gi",
         "title": "Sunny Summer",
         "description": "In-Game, Battle Pass",
+        "longDescription": "The Battle Pass is a recurring Event unlocked at Adventure Rank 20. Once unlocked, players can complete various daily, weekly, and BP Period missions in order to gain Battle Pass EXP (BEP).",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-10T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -66,10 +72,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Sunny_Summer"
     },
     {
-        "id": "gi_2a52a991",
+        "id": "gi_ef728b45",
         "gameId": "gi",
         "title": "Sunny Summer Fontinalia",
         "description": "In-Game, Flagship",
+        "longDescription": "Sunny Summer Fontinalia is a Flagship Event in Version \"Luna VIII.\" Reach 200  Venue Popularity to invite  Charlotte.",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-11T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -77,10 +84,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Sunny_Summer_Fontinalia_(Event)"
     },
     {
-        "id": "gi_3a53dc5a",
+        "id": "gi_7c8c683f",
         "gameId": "gi",
         "title": "Nod-Krai: Where Roads Are Pledged to Cross",
         "description": "In-Game, Repertoire of Myriad Melodies Update",
+        "longDescription": "Nod-Krai: Where Roads Are Pledged to Cross is an Event in Version \"Luna VIII.\"",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-11T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -88,10 +96,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Nod-Krai:_Where_Roads_Are_Pledged_to_Cross_(Event)"
     },
     {
-        "id": "gi_92d529ee",
+        "id": "gi_ff0b42d3",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Endless Swarm",
         "description": "In-Game, The Forge Realm's Temper",
+        "longDescription": "The Forge Realm's Temper is a PvE Event gamemode for Genius Invokation TCG. The Forge Realm's Temper has 28 occurrences:",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-12T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -99,10 +108,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-07-01"
     },
     {
-        "id": "gi_490e31ee",
+        "id": "gi_7663b1e7",
         "gameId": "gi",
         "title": "Raiment Collection: Mellow Warmth",
         "description": "In-Game, Miliastra Wonderland",
+        "longDescription": "Raiment Collection is a Recurring Event in Miliastra Wonderland that rewards a free 4-Star Cosmetic Set for completing tasks. Raiment Collection has 5 occurrences:",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-08-12T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -110,10 +120,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-07-01"
     },
     {
-        "id": "gi_f73ea33c",
+        "id": "gi_70f16de5",
         "gameId": "gi",
         "title": "When We Look Up at the Moon",
         "description": "In-Game, Exploration Mission",
+        "longDescription": "When We Look Up at the Moon is an Event in Version \"Luna VIII.\"",
         "startTime": "2026-07-01T00:00:00",
         "endTime": "2026-09-22T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -121,10 +132,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
     },
     {
-        "id": "gi_0dbd67a3",
+        "id": "gi_7b9be6d1",
         "gameId": "gi",
         "title": "Stygian Onslaught: Savage Tremors",
         "description": "In-Game, Stygian Onslaught",
+        "longDescription": "Stygian Onslaught is a permanent challenge event. In this mode, the player must fight three powerful enemies, either a Normal Boss or Local Legend equivalent in three separate battlefields. The player must also defeat the enemy within a specific amount of time.",
         "startTime": "2026-07-08T00:00:00",
         "endTime": "2026-08-11T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -132,10 +144,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-07-08"
     },
     {
-        "id": "gi_f9aed0e7",
+        "id": "gi_e062b620",
         "gameId": "gi",
         "title": "Have a Smashing Summer With Miliastra Wonderland!",
         "description": "Web",
+        "longDescription": "Have a Smashing Summer With Miliastra Wonderland! is a Web Event in Version \"Luna VIII.\" July 15, 2026 \u2013 July 28, 2026 03:59:59 (Server Time)",
         "startTime": "2026-07-15T00:00:00",
         "endTime": "2026-07-28T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -143,10 +156,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Have_a_Smashing_Summer_With_Miliastra_Wonderland!"
     },
     {
-        "id": "gi_b4d3c2fd",
+        "id": "gi_bcff4f68",
         "gameId": "gi",
         "title": "Final Long-Range Sightlines",
         "description": "In-Game",
+        "longDescription": "Final Long-Range Sightlines is an Event in Version \"Luna VIII.\" Unlocks 2026-07-17 10:00",
         "startTime": "2026-07-17T00:00:00",
         "endTime": "2026-07-27T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -154,10 +168,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Final_Long-Range_Sightlines"
     },
     {
-        "id": "gi_1a29f5ae",
+        "id": "gi_807e4fb8",
         "gameId": "gi",
         "title": "Heated Battle Mode: Automatic Artistry",
         "description": "In-Game, Heated Battle Mode",
+        "longDescription": "Heated Battle Mode is a gamemode in Genius Invokation TCG available for a limited time available on a regular basis each Version. Each version will have a special rules that may lead to a completely different experience from the usual gameplay of Genius Invokation TCG.",
         "startTime": "2026-07-18T00:00:00",
         "endTime": "2026-08-03T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -165,23 +180,25 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Heated_Battle_Mode/2026-07-18"
     },
     {
-        "id": "hsr_b75803d6",
+        "id": "hsr_81d0d572",
         "gameId": "hsr",
         "title": "Character Banner: Acheron (Dummy)",
         "description": "Boosted drop rate for Acheron",
-        "startTime": "2026-07-18T06:28:51.081584",
-        "endTime": "2026-07-18T06:28:51.081584",
+        "longDescription": "This is a placeholder long description for the dummy Acheron banner. Real data will be fetched when Honkai Star Rail parser is implemented.",
+        "startTime": "2026-07-18T13:35:08.887479",
+        "endTime": "2026-07-18T13:35:08.887479",
         "type": "BANNER",
-        "imageUrl": null,
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/c/c8/Item_Star_Rail_Special_Pass.png",
         "detailUrl": null
     },
     {
-        "id": "wuwa_d639406f",
+        "id": "wuwa_a8cd5f43",
         "gameId": "wuwa",
         "title": "Resonator Convene: Yinlin (Dummy)",
         "description": "Featured resonator Yinlin",
-        "startTime": "2026-07-18T06:28:51.081584",
-        "endTime": "2026-07-18T06:28:51.081584",
+        "longDescription": "This is a placeholder long description for Wuthering Waves event.",
+        "startTime": "2026-07-18T13:35:08.887479",
+        "endTime": "2026-07-18T13:35:08.887479",
         "type": "BANNER",
         "imageUrl": null,
         "detailUrl": null
