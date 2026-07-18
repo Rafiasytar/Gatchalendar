@@ -60,14 +60,15 @@ fun EventDetailScreen(
                     contentScale = ContentScale.Crop
                 )
             } else {
-                Box(
+                val fallbackRes = if (event.type.name == "BANNER") com.example.gachalendar.R.drawable.placeholder_banner else com.example.gachalendar.R.drawable.placeholder_event
+                androidx.compose.foundation.Image(
+                    painter = androidx.compose.ui.res.painterResource(id = fallbackRes),
+                    contentDescription = "Placeholder",
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(250.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text("No Image Available")
-                }
+                    contentScale = ContentScale.Crop
+                )
             }
 
             Column(modifier = Modifier.padding(16.dp)) {

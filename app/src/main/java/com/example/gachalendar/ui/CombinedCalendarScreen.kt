@@ -124,11 +124,25 @@ fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
                         )
                 )
             } else {
-                // Fallback background if no image
+                // Fallback local image if no URL
+                val fallbackRes = if (event.type.name == "BANNER") com.example.gachalendar.R.drawable.placeholder_banner else com.example.gachalendar.R.drawable.placeholder_event
+                androidx.compose.foundation.Image(
+                    painter = androidx.compose.ui.res.painterResource(id = fallbackRes),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
+                
+                // Gradient overlay for text readability
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.secondaryContainer)
+                        .background(
+                            Brush.verticalGradient(
+                                colors = listOf(Color.Transparent, Color.Black.copy(alpha = 0.8f)),
+                                startY = 100f
+                            )
+                        )
                 )
             }
 

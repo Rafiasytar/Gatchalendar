@@ -154,13 +154,6 @@ def scrape_genshin_events():
                                 image_url = details['image_url']
                             time.sleep(0.5) # Jeda ringan agar tidak di-block
                             
-                        # Fallback default image jika masih kosong
-                        if not image_url:
-                            if type_enum == "BANNER":
-                                image_url = "https://static.wikia.nocookie.net/gensin-impact/images/8/82/Item_Intertwined_Fate.png"
-                            else:
-                                image_url = "https://static.wikia.nocookie.net/gensin-impact/images/e/e0/Icon_Emoji_Paimon%27s_Paintings_16_Paimon_1.png"
-                            
                         event = {
                             "id": f"gi_{uuid.uuid4().hex[:8]}",
                             "gameId": "gi",
