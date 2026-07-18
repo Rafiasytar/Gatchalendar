@@ -465,6 +465,9 @@ def scrape_zzz_events():
                             if len(dates) >= 2:
                                 end_time = parse_date(dates[1]) if dates[1] != "TBA" else None
                             
+                            if not start_time or not end_time:
+                                continue
+                            
                             type_enum = "IN_GAME_EVENT"
                             image_url = None
                             img = name_td.find('img')
