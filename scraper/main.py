@@ -591,54 +591,54 @@ def scrape_zzz_events():
     return events
 
 def scrape_endfield_events():
-    print("Fetching Arknights Endfield events (Mocked actual schedule)...")
+    print("Fetching Arknights Endfield events...")
     events = [
         {
             "id": f"endfield_{uuid.uuid4().hex[:8]}",
             "gameId": "endfield",
-            "title": "[Gaze Towards the Northern Exclusion] Guide Event",
-            "description": "Guide Event",
-            "longDescription": "Complete specified missions in the [Yinglung Pass] and [North Wuling Exclusion Zone] areas.",
+            "title": "Version 1.4 Update: Homecoming",
+            "description": "6-Month Anniversary",
+            "longDescription": "Celebrate the six-month anniversary with the new 'Homecoming' update. Conclude the Wuling story arc and explore Yinglung Pass!",
             "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-08-09T03:59:59",
+            "endTime": "2026-08-20T03:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/a/a9/Locations_Talos-II_Cinematic.png/revision/latest",
             "detailUrl": None
         },
         {
             "id": f"endfield_{uuid.uuid4().hex[:8]}",
             "gameId": "endfield",
-            "title": "[Gaze North to the Rift] Sign-In Event",
-            "description": "Sign-In Event",
-            "longDescription": "Sign in for 7 days to earn rewards, including [Gaze North to the Rift HH Permit] x5.",
-            "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-08-09T03:59:59",
-            "type": "LOGIN_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
-            "detailUrl": None
-        },
-        {
-            "id": f"endfield_{uuid.uuid4().hex[:8]}",
-            "gameId": "endfield",
-            "title": "[HEAT RAGE! MEGA ARENA!] Challenge Event",
+            "title": "HEAT RAGE! MEGA ARENA!",
             "description": "Challenge Event",
-            "longDescription": "Complete challenge stages to claim [Oroberyl] x1200, the [Portrait Frame: Heat Ragers' Party], and [Mark of Perseverance].",
+            "longDescription": "Test your combat tactics in the Mega Arena. Complete challenge stages to earn Oroberyl x1200 and a special portrait frame.",
             "startTime": "2026-07-30T12:00:00",
-            "endTime": "2026-08-13T03:59:59",
+            "endTime": "2026-08-13T04:00:00",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/2/2a/Location_Jinlong.png/revision/latest",
             "detailUrl": None
         },
         {
             "id": f"endfield_{uuid.uuid4().hex[:8]}",
             "gameId": "endfield",
-            "title": "Headhunting: Arcane",
-            "description": "Featured Headhunt",
-            "longDescription": "Rate up for 6-star Operator Arcane.",
+            "title": "Blueprint Submission: Industrial Revolution",
+            "description": "Community Event",
+            "longDescription": "Share your AIC industrial complex layout blueprints with the community for a chance to win exclusive physical merchandise.",
+            "startTime": "2026-07-17T12:00:00",
+            "endTime": "2026-08-20T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/1/10/Bronzer_The_Hub.png/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"endfield_{uuid.uuid4().hex[:8]}",
+            "gameId": "endfield",
+            "title": "Headhunting Banner: Arcane & Liino",
+            "description": "Rate-up Banner",
+            "longDescription": "Increased drop rate for new 6-star Operators: Arcane (Nature Caster) and Liino (Electric Supporter).",
             "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-08-09T03:59:59",
+            "endTime": "2026-07-30T03:59:59",
             "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/e/e6/Site-logo.png",
+            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/4/40/AvywennaSplashart.png/revision/latest",
             "detailUrl": None
         }
     ]
