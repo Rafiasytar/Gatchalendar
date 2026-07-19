@@ -102,7 +102,7 @@ fun TimelineView(
                         .width(dayWidth)
                         .fillMaxHeight()
                         .background(
-                            if (isToday) MaterialTheme.colorScheme.primary.copy(alpha = 0.03f)
+                            if (isToday) MaterialTheme.colorScheme.primary.copy(alpha = 0.05f)
                             else Color.Transparent
                         )
                 ) {
@@ -112,8 +112,8 @@ fun TimelineView(
                             .fillMaxHeight()
                             .width(1.dp)
                             .background(
-                                if (isToday) MaterialTheme.colorScheme.primary.copy(alpha = 0.3f)
-                                else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f)
+                                if (isToday) MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
+                                else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.15f)
                             )
                             .align(Alignment.CenterStart)
                     )
@@ -250,21 +250,48 @@ fun TimelineView(
                                         .clip(RoundedCornerShape(22.dp))
                                         .clickable { onEventClick(event) },
                                     shape = RoundedCornerShape(22.dp),
+                                    color = Color.Transparent,
                                     tonalElevation = 4.dp
                                 ) {
+                                    val gradientColors = remember(event.gameId) { getGameGradientColors(event.gameId) }
                                     Box(
-                                        modifier = Modifier
-                                            .fillMaxSize()
-                                            .background(getGameGradient(event.gameId))
+                                        modifier = Modifier.fillMaxSize()
                                     ) {
-                                        // Left accent bar
+                                        // 1. Full Background Image
+                                        if (event.imageUrl != null) {
+                                            AsyncImage(
+                                                model = event.imageUrl,
+                                                contentDescription = null,
+                                                contentScale = ContentScale.Crop,
+                                                modifier = Modifier.fillMaxSize()
+                                            )
+                                        }
+
+                                        // 2. Horizontal gradient overlay: Game theme (left) to transparent (right)
+                                        Box(
+                                            modifier = Modifier
+                                                .fillMaxSize()
+                                                .background(
+                                                    Brush.horizontalGradient(
+                                                        colors = listOf(
+                                                            gradientColors[0].copy(alpha = 0.95f),
+                                                            gradientColors[0].copy(alpha = 0.85f),
+                                                            gradientColors[1].copy(alpha = 0.5f),
+                                                            Color.Transparent
+                                                        )
+                                                    )
+                                                )
+                                        )
+
+                                        // 3. Left accent bar
                                         Box(
                                             modifier = Modifier
                                                 .fillMaxHeight()
-                                                .width(6.dp)
-                                                .background(Color.White.copy(alpha = 0.4f))
+                                                .width(5.dp)
+                                                .background(Color.White.copy(alpha = 0.5f))
                                         )
 
+                                        // 4. Content Text and Mini Thumbnail
                                         Row(
                                             modifier = Modifier
                                                 .fillMaxSize()
@@ -282,7 +309,6 @@ fun TimelineView(
                                                 modifier = Modifier.weight(1f)
                                             )
 
-                                            // Miniature event visual on the right (like paimon.moe)
                                             if (event.imageUrl != null) {
                                                 AsyncImage(
                                                     model = event.imageUrl,
@@ -291,6 +317,7 @@ fun TimelineView(
                                                     modifier = Modifier
                                                         .size(36.dp)
                                                         .clip(RoundedCornerShape(18.dp))
+                                                        .background(Color.White.copy(alpha = 0.2f))
                                                 )
                                             }
                                         }
@@ -305,15 +332,15 @@ fun TimelineView(
     }
 }
 
-private fun getGameGradient(gameId: String): Brush {
+private fun getGameGradientColors(gameId: String): List<Color> {
     return when (gameId.lowercase()) {
-        "genshin" -> Brush.horizontalGradient(listOf(Color(0xFF3E90F7), Color(0xFF00E5FF)))
-        "hsr" -> Brush.horizontalGradient(listOf(Color(0xFF8C52FF), Color(0xFFC09FFA)))
-        "wuwa" -> Brush.horizontalGradient(listOf(Color(0xFF2D2D2D), Color(0xFFF5A623)))
-        "zzz" -> Brush.horizontalGradient(listOf(Color(0xFF00FF66), Color(0xFF1E293B)))
-        "endfield" -> Brush.horizontalGradient(listOf(Color(0xFFFF6B00), Color(0xFFFF9E00)))
-        "nte" -> Brush.horizontalGradient(listOf(Color(0xFF00B0FF), Color(0xFF0D47A1)))
-        "p5x" -> Brush.horizontalGradient(listOf(Color(0xFFD50000), Color(0xFF2E2E2E)))
-        else -> Brush.horizontalGradient(listOf(Color(0xFF757575), Color(0xFF9E9E9E)))
+        "gi", "genshin" -> listOf(Color(0xFF1A365D), Color(0xFF0F1E36)) // Deep blue
+        "hsr" -> listOf(Color(0xFF3B1E5F), Color(0xFF201035)) // Cosmic Purple
+        "wuwa" -> listOf(Color(0xFF232323), Color(0xFF141414)) // Dark grey
+        "zzz" -> listOf(Color(0xFF0A2E1C), Color(0xFF04120B)) // Neon dark green
+        "endfield" -> listOf(Color(0xFF6B3000), Color(0xFF381A00)) // Deep industrial orange
+        "nte" -> listOf(Color(0xFF0B4E5B), Color(0xFF052A30)) // Cyber Teal
+        "p5x" -> listOf(Color(0xFF6B0B0B), Color(0xFF3B0505)) // Crimson red
+        else -> listOf(Color(0xFF2E2E2E), Color(0xFF1A1A1A))
     }
 }
