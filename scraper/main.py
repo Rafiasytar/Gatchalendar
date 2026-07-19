@@ -656,7 +656,7 @@ def scrape_nte_events():
             "startTime": "2026-07-08T00:00:00",
             "endTime": "2026-07-29T23:59:59",
             "type": "LOGIN_EVENT",
-            "imageUrl": "https://play-lh.googleusercontent.com/j0vcnOVC_LPH4b8IGUsiW9Hz2mdXphG-nJ8Qh7WES_hqY0UZuqdvvaf1aBlTv_LtPg",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
             "detailUrl": None
         },
         {
@@ -668,7 +668,7 @@ def scrape_nte_events():
             "startTime": "2026-07-17T12:00:00",
             "endTime": "2026-08-19T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": None,
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
             "detailUrl": None
         },
         {
@@ -680,7 +680,7 @@ def scrape_nte_events():
             "startTime": "2026-07-08T12:00:00",
             "endTime": "2026-08-19T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": None,
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
             "detailUrl": None
         },
         {
@@ -692,7 +692,7 @@ def scrape_nte_events():
             "startTime": "2026-07-08T12:00:00",
             "endTime": "2026-07-29T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": None,
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
             "detailUrl": None
         }
     ]
@@ -710,7 +710,7 @@ def scrape_p5x_events():
             "startTime": "2026-07-16T12:00:00",
             "endTime": "2026-07-30T03:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://play-lh.googleusercontent.com/vxEZDRLLlnk2Ri_o8vQqmBK6ruhKOVL6I6oLw1fWQYw4ZcQYHkMsfLr8flsU3VGoZO4",
+            "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/7f/P5X_Minami_Miyashita_Marian_Summer_Background.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -722,7 +722,7 @@ def scrape_p5x_events():
             "startTime": "2026-07-16T12:00:00",
             "endTime": "2026-07-30T03:59:59",
             "type": "BANNER",
-            "imageUrl": "https://play-lh.googleusercontent.com/vxEZDRLLlnk2Ri_o8vQqmBK6ruhKOVL6I6oLw1fWQYw4ZcQYHkMsfLr8flsU3VGoZO4",
+            "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/75/P5X_Minami_Summer_wallpaper.jpeg/revision/latest",
             "detailUrl": None
         },
         {
@@ -734,7 +734,7 @@ def scrape_p5x_events():
             "startTime": "2026-06-26T12:00:00",
             "endTime": "2026-07-26T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": None,
+            "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a2/P5X_Wallpaper_3.jpeg/revision/latest",
             "detailUrl": None
         }
     ]
