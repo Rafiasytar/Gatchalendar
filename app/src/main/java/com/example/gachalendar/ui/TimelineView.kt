@@ -3,6 +3,7 @@ package com.example.gachalendar.ui
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,7 +36,7 @@ fun TimelineView(
 ) {
     val dayWidth = 64.dp
     val laneHeight = 60.dp
-    val headerHeight = 70.dp
+    val headerHeight = 80.dp
 
     // Define timeline range (from 7 days ago to 23 days in the future, total 31 days)
     val today = remember { LocalDate.now() }
@@ -86,14 +87,15 @@ fun TimelineView(
     }
 
     val horizontalScrollState = rememberScrollState()
+    val verticalScrollState = rememberScrollState()
 
-    // Main scrollable timeline container
+    // Main horizontal scroll container
     Box(
         modifier = modifier
             .fillMaxSize()
             .horizontalScroll(horizontalScrollState)
     ) {
-        // Background Grid Lines
+        // Background Grid Lines (static vertically)
         Row(modifier = Modifier.fillMaxHeight()) {
             dates.forEach { date ->
                 val isToday = date == today
@@ -134,16 +136,18 @@ fun TimelineView(
             )
         }
 
-        // Content: Day Header and Lanes
+        // Content: Sticky Day Header at top, Vertically scrollable Lanes below
         Column(
-            modifier = Modifier.width((totalDays * 64).dp)
+            modifier = Modifier
+                .width((totalDays * 64).dp)
+                .fillMaxHeight()
         ) {
-            // Header Row (Months & Days)
+            // 1. Header Row (Months & Days) - Fixed at the top of the column
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(headerHeight)
-                    .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.9f))
+                    .background(MaterialTheme.colorScheme.surface)
             ) {
                 dates.forEach { date ->
                     val isToday = date == today
@@ -155,11 +159,11 @@ fun TimelineView(
                         modifier = Modifier
                             .width(dayWidth)
                             .fillMaxHeight()
-                            .padding(vertical = 8.dp),
+                            .padding(vertical = 6.dp),
                         horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.SpaceBetween
+                        verticalArrangement = Arrangement.Top
                     ) {
-                        // Month label (show if it's the start of grid or the 1st of the month)
+                        // Month label (uniform height/presence to avoid vertical shifts)
                         if (date == startGridDate || date.dayOfMonth == 1) {
                             Text(
                                 text = date.format(monthFormatter),
@@ -169,8 +173,13 @@ fun TimelineView(
                                 fontSize = 10.sp
                             )
                         } else {
-                            Spacer(modifier = Modifier.height(12.dp))
+                            Text(
+                                text = "",
+                                fontSize = 10.sp
+                            )
                         }
+
+                        Spacer(modifier = Modifier.height(4.dp))
 
                         // Day Number
                         Surface(
@@ -186,6 +195,8 @@ fun TimelineView(
                                 fontSize = 14.sp
                             )
                         }
+
+                        Spacer(modifier = Modifier.height(2.dp))
 
                         // Day of Week
                         Text(
@@ -206,10 +217,12 @@ fun TimelineView(
                     .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f))
             )
 
-            // Event Lanes Row
+            // 2. Event Lanes Row - Vertically Scrollable
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .weight(1f)
+                    .verticalScroll(verticalScrollState)
                     .padding(vertical = 12.dp)
             ) {
                 if (lanes.isEmpty()) {
@@ -255,35 +268,49 @@ fun TimelineView(
                                 ) {
                                     val gradientColors = remember(event.gameId) { getGameGradientColors(event.gameId) }
                                     Box(
-                                        modifier = Modifier.fillMaxSize()
-                                    ) {
-                                        // 1. Full Background Image
-                                        if (event.imageUrl != null) {
-                                            AsyncImage(
-                                                model = event.imageUrl,
-                                                contentDescription = null,
-                                                contentScale = ContentScale.Crop,
-                                                modifier = Modifier.fillMaxSize()
-                                            )
-                                        }
-
-                                        // 2. Horizontal gradient overlay: Game theme (left) to transparent (right)
-                                        Box(
-                                            modifier = Modifier
-                                                .fillMaxSize()
-                                                .background(
-                                                    Brush.horizontalGradient(
-                                                        colors = listOf(
-                                                            gradientColors[0].copy(alpha = 0.95f),
-                                                            gradientColors[0].copy(alpha = 0.85f),
-                                                            gradientColors[1].copy(alpha = 0.5f),
-                                                            Color.Transparent
-                                                        )
+                                        modifier = Modifier
+                                            .fillMaxSize()
+                                            .background(
+                                                Brush.horizontalGradient(
+                                                    colors = listOf(
+                                                        gradientColors[0],
+                                                        gradientColors[1]
                                                     )
                                                 )
-                                        )
+                                            )
+                                    ) {
+                                        // 1. Full Background Image aligned and faded on the right (60% width max)
+                                        if (event.imageUrl != null) {
+                                            Box(
+                                                modifier = Modifier
+                                                    .fillMaxHeight()
+                                                    .fillMaxWidth(0.6f)
+                                                    .align(Alignment.CenterEnd)
+                                            ) {
+                                                AsyncImage(
+                                                    model = event.imageUrl,
+                                                    contentDescription = null,
+                                                    contentScale = ContentScale.Crop,
+                                                    alignment = Alignment.CenterEnd,
+                                                    modifier = Modifier.fillMaxSize()
+                                                )
+                                                // Smooth fade to left
+                                                Box(
+                                                    modifier = Modifier
+                                                        .fillMaxSize()
+                                                        .background(
+                                                            Brush.horizontalGradient(
+                                                                colors = listOf(
+                                                                    gradientColors[0],
+                                                                    Color.Transparent
+                                                                )
+                                                            )
+                                                        )
+                                                )
+                                            }
+                                        }
 
-                                        // 3. Left accent bar
+                                        // 2. Left accent bar
                                         Box(
                                             modifier = Modifier
                                                 .fillMaxHeight()
@@ -291,7 +318,7 @@ fun TimelineView(
                                                 .background(Color.White.copy(alpha = 0.5f))
                                         )
 
-                                        // 4. Content Text and Mini Thumbnail
+                                        // 3. Content Text and Mini Thumbnail
                                         Row(
                                             modifier = Modifier
                                                 .fillMaxSize()
