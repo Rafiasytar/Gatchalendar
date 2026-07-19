@@ -647,25 +647,123 @@ def scrape_endfield_events():
 def scrape_nte_events():
     print("Fetching Neverness to Everness events...")
     events = [
+        # === Banners (Rate Up) ===
         {
             "id": f"nte_{uuid.uuid4().hex[:8]}",
             "gameId": "nte",
-            "title": "Circle Gift (7-day Login)",
-            "description": "Login Event",
-            "longDescription": "A 7-day login event rewarding players with ten solid dice during Version 1.2.",
-            "startTime": "2026-07-08T00:00:00",
+            "title": "Shinku Perks (Before the Dawn)",
+            "description": "Character Banner",
+            "longDescription": "Rate up banner for the new 5-star Cosmos Esper, Shinku! Play her trial stage and unlock her signature weapon.",
+            "startTime": "2026-07-08T12:00:00",
             "endTime": "2026-07-29T23:59:59",
-            "type": "LOGIN_EVENT",
+            "type": "BANNER",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Iroi Perks (The Lifeline)",
+            "description": "Character Banner",
+            "longDescription": "Rate up banner for the new 5-star Sunward Island Esper, Iroi! Deploy her on the battlefield alongside her loyal companions.",
+            "startTime": "2026-07-29T12:00:00",
+            "endTime": "2026-08-19T23:59:59",
+            "type": "BANNER",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "detailUrl": None
+        },
+        # === Limited Time Events ===
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "999 Nights Tabletop Mode",
+            "description": "Version 1.2 Main Event",
+            "longDescription": "Explore the supernatural urban city in a new tabletop board game mode. Gather tokens to redeem exclusive rewards, dye, and upgrade items.",
+            "startTime": "2026-07-08T12:00:00",
+            "endTime": "2026-08-19T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Stamina Recharge Event",
+            "description": "Limited Resource Buff",
+            "longDescription": "Get double reward drops from select Anomaly Hunts and simulation challenges daily up to 3 times.",
+            "startTime": "2026-07-13T04:00:00",
+            "endTime": "2026-07-20T03:59:59",
+            "type": "IN_GAME_EVENT",
             "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
             "detailUrl": None
         },
         {
             "id": f"nte_{uuid.uuid4().hex[:8]}",
             "gameId": "nte",
-            "title": "Shadow-n-Seek (Asymmetric PvP)",
-            "description": "PvP Game Mode",
-            "longDescription": "An asymmetric PvP mode where players are randomly assigned as Hider or Hunter. Earn Paper Cup Phone currency to spend in the Shadebound Shop.",
-            "startTime": "2026-07-17T12:00:00",
+            "title": "Beyond the Rails (Blazing Circle)",
+            "description": "Limited Time Event",
+            "longDescription": "Challenge special city tracks using your customizable vehicles. Beat the target time to earn Annulith and car dyes.",
+            "startTime": "2026-07-16T12:00:00",
+            "endTime": "2026-07-30T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Gold Clash Challenge",
+            "description": "Limited Time Event",
+            "longDescription": "Fight waves of enemies within a time limit. Earn high scores to unlock rewards including Annulith and leveling guides.",
+            "startTime": "2026-07-20T12:00:00",
+            "endTime": "2026-08-03T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Shadow-n-Seek",
+            "description": "Asymmetric PvP Event",
+            "longDescription": "Participate in hide and seek matches in the neon city. Hunter and Hider roles earn special event currency for the exchange shop.",
+            "startTime": "2026-07-25T12:00:00",
+            "endTime": "2026-08-08T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Fishing Frenzy Tournament",
+            "description": "Limited Time Event",
+            "longDescription": "Catch rare Anomalous fish in Hethereau's waters. Place trophies in your garage or trade them for premium items.",
+            "startTime": "2026-08-03T12:00:00",
+            "endTime": "2026-08-19T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Pixel Surge Mini-game",
+            "description": "Retro Arcade Event",
+            "longDescription": "Play classic arcade cabinets at Eibon antique shop and complete daily high score challenges.",
+            "startTime": "2026-08-03T12:00:00",
+            "endTime": "2026-08-10T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Warren Lucky Flip",
+            "description": "Card Flip Event",
+            "longDescription": "Spend event tickets to flip cards and match matching pairs. Jackpot board rewards character and vehicle cosmetics.",
+            "startTime": "2026-08-05T12:00:00",
             "endTime": "2026-08-19T23:59:59",
             "type": "IN_GAME_EVENT",
             "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
@@ -674,24 +772,73 @@ def scrape_nte_events():
         {
             "id": f"nte_{uuid.uuid4().hex[:8]}",
             "gameId": "nte",
-            "title": "999 Nights Tabletop Mode",
-            "description": "New Game Mode",
-            "longDescription": "Features a new tabletop-style game mode with various rewards in the new Version 1.2 '999 Nights' update.",
-            "startTime": "2026-07-08T12:00:00",
-            "endTime": "2026-08-19T23:59:59",
+            "title": "Fons Rush Event",
+            "description": "Double Drops Event",
+            "longDescription": "Claim double rewards from Leyline-style Fons extractors for 7 days.",
+            "startTime": "2026-08-10T04:00:00",
+            "endTime": "2026-08-17T03:59:59",
             "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Going, Going, Gone Auction",
+            "description": "Auction Event",
+            "longDescription": "Bid on antique relics and oddities with other anomaly hunters to win exclusive home furniture blueprints.",
+            "startTime": "2026-08-12T12:00:00",
+            "endTime": "2026-08-26T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "detailUrl": None
+        },
+        # === Endgame Content ===
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Anomaly Hunt: Weekly Boss Challenge",
+            "description": "Weekly Reset Endgame",
+            "longDescription": "Defeat Level 5+ Anomaly bosses to earn high-tier upgrading materials and currency. Adjust your team element composition to exploit weekly boss weaknesses.",
+            "startTime": "2026-07-13T04:00:00",
+            "endTime": "2026-07-20T03:59:59",
+            "type": "ENDGAME",
             "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
             "detailUrl": None
         },
         {
             "id": f"nte_{uuid.uuid4().hex[:8]}",
             "gameId": "nte",
-            "title": "Mews Flash",
-            "description": "Progress Event",
-            "longDescription": "Earn extra rewards from a friendly cat by increasing your level before the event ends.",
-            "startTime": "2026-07-08T12:00:00",
-            "endTime": "2026-07-29T23:59:59",
-            "type": "IN_GAME_EVENT",
+            "title": "Anomaly Hunt: Weekly Boss Challenge (Upcoming)",
+            "description": "Weekly Reset Endgame",
+            "longDescription": "Defeat Level 5+ Anomaly bosses to earn high-tier upgrading materials and currency.",
+            "startTime": "2026-07-20T04:00:00",
+            "endTime": "2026-07-27T03:59:59",
+            "type": "ENDGAME",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Dreamwalk Corridor: Season 1",
+            "description": "Bi-weekly Abyss Reset",
+            "longDescription": "Conquer deep dreams in the Corridor to earn Annulith and character ascension resources. Floors reset bi-weekly with varying elemental buffs.",
+            "startTime": "2026-07-15T04:00:00",
+            "endTime": "2026-07-29T03:59:59",
+            "type": "ENDGAME",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Dreamwalk Corridor: Season 2",
+            "description": "Bi-weekly Abyss Reset",
+            "longDescription": "Floors reset bi-weekly with varying elemental buffs. Conquer deep dreams in the Corridor to earn Annulith.",
+            "startTime": "2026-07-29T04:00:00",
+            "endTime": "2026-08-12T03:59:59",
+            "type": "ENDGAME",
             "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
             "detailUrl": None
         }
@@ -771,6 +918,13 @@ def main():
     
     active_events = []
     for event in all_events:
+        # Classify Event Type based on title keywords
+        title_lower = event.get("title", "").lower()
+        if any(kw in title_lower for kw in ["abyss", "theatre", "theater", "shiyu defense", "memory of chaos", "pure fiction", "apocalyptic shadow", "tower of adversity", "divergent universe", "simulated universe", "anomaly hunt", "dreamwalk corridor"]):
+            event["type"] = "ENDGAME"
+        elif any(kw in title_lower for kw in ["banner", "convene", "headhunting", "gaze north to the rift hh permit"]):
+            event["type"] = "BANNER"
+
         if event.get("endTime"):
             try:
                 # dt berbentuk datetime naif misal 2026-03-05 00:00:00

@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.gachalendar.model.GameEvent
+import com.example.gachalendar.model.EventType
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import coil.compose.AsyncImage
@@ -26,6 +27,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.LaunchedEffect
 import kotlinx.coroutines.delay
+import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -40,6 +42,29 @@ fun CombinedCalendarScreen(
         .sortedBy { it.endTime }
 
     var isTimelineView by remember { mutableStateOf(false) }
+    var selectedTab by remember { mutableStateOf(0) }
+
+    val filteredActiveEvents = remember(activeEvents, selectedTab) {
+        activeEvents.filter { event ->
+            when (selectedTab) {
+                0 -> event.type == EventType.BANNER
+                1 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
+                2 -> event.type == EventType.ENDGAME
+                else -> true
+            }
+        }
+    }
+
+    val filteredAllEvents = remember(events, selectedTab) {
+        events.filter { event ->
+            when (selectedTab) {
+                0 -> event.type == EventType.BANNER
+                1 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
+                2 -> event.type == EventType.ENDGAME
+                else -> true
+            }
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -67,38 +92,49 @@ fun CombinedCalendarScreen(
             }
         }
     ) { paddingValues ->
-        if (isTimelineView) {
-            TimelineView(
-                events = events,
-                onEventClick = onEventClick,
-                modifier = Modifier.padding(paddingValues)
-            )
-        } else {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues)
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                item {
-                    Text(
-                        text = "Event & Banner Aktif",
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(bottom = 8.dp)
-                    )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+        ) {
+            TabRow(selectedTabIndex = selectedTab) {
+                Tab(selected = selectedTab == 0, onClick = { selectedTab = 0 }) {
+                    Text("Banner Rate Up", modifier = Modifier.padding(12.dp), fontWeight = FontWeight.Bold, fontSize = 12.sp)
                 }
-                if (activeEvents.isEmpty()) {
-                    item {
-                        Text("Tidak ada event aktif saat ini.")
-                    }
+                Tab(selected = selectedTab == 1, onClick = { selectedTab = 1 }) {
+                    Text("Event Terbatas", modifier = Modifier.padding(12.dp), fontWeight = FontWeight.Bold, fontSize = 12.sp)
+                }
+                Tab(selected = selectedTab == 2, onClick = { selectedTab = 2 }) {
+                    Text("Konten Endgame", modifier = Modifier.padding(12.dp), fontWeight = FontWeight.Bold, fontSize = 12.sp)
+                }
+            }
+
+            Box(modifier = Modifier.weight(1f)) {
+                if (isTimelineView) {
+                    TimelineView(
+                        events = filteredAllEvents,
+                        onEventClick = onEventClick,
+                        modifier = Modifier.fillMaxSize()
+                    )
                 } else {
-                    items(activeEvents) { event ->
-                        EventCard(
-                            event = event,
-                            onClick = { onEventClick(event) }
-                        )
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        if (filteredActiveEvents.isEmpty()) {
+                            item {
+                                Text("Tidak ada event aktif di kategori ini saat ini.", modifier = Modifier.padding(8.dp))
+                            }
+                        } else {
+                            items(filteredActiveEvents) { event ->
+                                EventCard(
+                                    event = event,
+                                    onClick = { onEventClick(event) }
+                                )
+                            }
+                        }
                     }
                 }
             }

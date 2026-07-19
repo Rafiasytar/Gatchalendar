@@ -27,5 +27,6 @@ enum class EventType {
     IN_GAME_EVENT,
     LOGIN_EVENT,
     MAINTENANCE,
-    OTHER
+    OTHER,
+    ENDGAME
 }
