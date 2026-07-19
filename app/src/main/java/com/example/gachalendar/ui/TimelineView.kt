@@ -104,7 +104,7 @@ fun TimelineView(
                         .width(dayWidth)
                         .fillMaxHeight()
                         .background(
-                            if (isToday) MaterialTheme.colorScheme.primary.copy(alpha = 0.05f)
+                            if (isToday) Color.White.copy(alpha = 0.05f)
                             else Color.Transparent
                         )
                 ) {
@@ -114,8 +114,8 @@ fun TimelineView(
                             .fillMaxHeight()
                             .width(1.dp)
                             .background(
-                                if (isToday) MaterialTheme.colorScheme.primary.copy(alpha = 0.4f)
-                                else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.15f)
+                                if (isToday) Color.White.copy(alpha = 0.3f)
+                                else Color.White.copy(alpha = 0.08f)
                             )
                             .align(Alignment.CenterStart)
                     )
@@ -132,7 +132,7 @@ fun TimelineView(
                     .fillMaxHeight()
                     .width(2.dp)
                     .offset(x = todayOffset)
-                    .background(Color.Red.copy(alpha = 0.7f))
+                    .background(Color.Red.copy(alpha = 0.6f))
             )
         }
 
@@ -147,7 +147,7 @@ fun TimelineView(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(headerHeight)
-                    .background(MaterialTheme.colorScheme.surface)
+                    .background(Color.Black.copy(alpha = 0.3f))
             ) {
                 dates.forEach { date ->
                     val isToday = date == today
@@ -163,13 +163,13 @@ fun TimelineView(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Top
                     ) {
-                        // Month label (uniform height/presence to avoid vertical shifts)
+                        // Month label
                         if (date == startGridDate || date.dayOfMonth == 1) {
                             Text(
                                 text = date.format(monthFormatter),
                                 style = MaterialTheme.typography.labelSmall,
                                 fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.primary,
+                                color = Color.White,
                                 fontSize = 10.sp
                             )
                         } else {
@@ -184,8 +184,8 @@ fun TimelineView(
                         // Day Number
                         Surface(
                             shape = RoundedCornerShape(8.dp),
-                            color = if (isToday) MaterialTheme.colorScheme.primary else Color.Transparent,
-                            contentColor = if (isToday) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface
+                            color = if (isToday) Color(0xFF3F51B5) else Color.Transparent,
+                            contentColor = Color.White
                         ) {
                             Text(
                                 text = date.format(dayFormatter),
@@ -202,7 +202,7 @@ fun TimelineView(
                         Text(
                             text = date.format(dayNameFormatter),
                             style = MaterialTheme.typography.bodySmall,
-                            color = if (isToday) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                            color = if (isToday) Color.White else Color.White.copy(alpha = 0.6f),
                             fontSize = 11.sp
                         )
                     }
@@ -214,7 +214,7 @@ fun TimelineView(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(1.dp)
-                    .background(MaterialTheme.colorScheme.onSurface.copy(alpha = 0.12f))
+                    .background(Color.White.copy(alpha = 0.15f))
             )
 
             // 2. Event Lanes Row - Vertically Scrollable
@@ -232,7 +232,7 @@ fun TimelineView(
                             .height(200.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("No active events currently.", color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
+                        Text("Tidak ada event aktif di kategori ini.", color = Color.White.copy(alpha = 0.5f))
                     }
                 } else {
                     lanes.forEach { lane ->

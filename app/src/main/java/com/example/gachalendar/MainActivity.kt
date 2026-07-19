@@ -62,7 +62,8 @@ fun GachalendarApp() {
                 onBackClick = { navController.popBackStack() },
                 onEventClick = { event ->
                     navController.navigate("eventDetail/${event.id}")
-                }
+                },
+                onRefresh = { viewModel.refreshEvents() }
             )
         }
         
@@ -80,7 +81,8 @@ fun GachalendarApp() {
                     onBackClick = { navController.popBackStack() },
                     onEventClick = { event ->
                         navController.navigate("eventDetail/${event.id}")
-                    }
+                    },
+                    onRefresh = { viewModel.refreshEvents() }
                 )
             }
         }
