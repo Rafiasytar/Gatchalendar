@@ -39,6 +39,8 @@ fun CombinedCalendarScreen(
         .filter { it.endTime.isAfter(LocalDateTime.now()) }
         .sortedBy { it.endTime }
 
+    var isTimelineView by remember { mutableStateOf(false) }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -53,33 +55,51 @@ fun CombinedCalendarScreen(
                     titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
+        },
+        floatingActionButton = {
+            ExtendedFloatingActionButton(
+                onClick = { isTimelineView = !isTimelineView },
+                containerColor = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary,
+                elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 8.dp)
+            ) {
+                Text(if (isTimelineView) "List View" else "Timeline View", fontWeight = FontWeight.Bold)
+            }
         }
     ) { paddingValues ->
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-                .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            item {
-                Text(
-                    text = "Event & Banner Aktif",
-                    style = MaterialTheme.typography.titleLarge,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(bottom = 8.dp)
-                )
-            }
-            if (activeEvents.isEmpty()) {
+        if (isTimelineView) {
+            TimelineView(
+                events = events,
+                onEventClick = onEventClick,
+                modifier = Modifier.padding(paddingValues)
+            )
+        } else {
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues)
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
                 item {
-                    Text("Tidak ada event aktif saat ini.")
-                }
-            } else {
-                items(activeEvents) { event ->
-                    EventCard(
-                        event = event,
-                        onClick = { onEventClick(event) }
+                    Text(
+                        text = "Event & Banner Aktif",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(bottom = 8.dp)
                     )
+                }
+                if (activeEvents.isEmpty()) {
+                    item {
+                        Text("Tidak ada event aktif saat ini.")
+                    }
+                } else {
+                    items(activeEvents) { event ->
+                        EventCard(
+                            event = event,
+                            onClick = { onEventClick(event) }
+                        )
+                    }
                 }
             }
         }
