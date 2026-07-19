@@ -42,8 +42,11 @@ fun GachalendarApp() {
 
     NavHost(navController = navController, startDestination = "dashboard") {
         composable("dashboard") {
+            val isLoading by viewModel.isLoading.collectAsState()
             DashboardScreen(
                 games = games,
+                isRefreshing = isLoading,
+                onRefresh = { viewModel.refreshEvents() },
                 onGameClick = { gameId ->
                     navController.navigate("game_calendar/$gameId")
                 },

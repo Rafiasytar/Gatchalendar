@@ -6,12 +6,15 @@ import com.google.gson.JsonDeserializer
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 interface GachaApiService {
     @GET("events.json")
-    suspend fun getEvents(): List<GameEvent>
+    suspend fun getEvents(
+        @Query("t") timestamp: Long? = null
+    ): List<GameEvent>
 }
 
 object RetrofitInstance {

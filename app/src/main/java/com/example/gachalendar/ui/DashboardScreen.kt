@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -29,6 +30,8 @@ import com.example.gachalendar.model.Game
 @Composable
 fun DashboardScreen(
     games: List<Game>,
+    isRefreshing: Boolean,
+    onRefresh: () -> Unit,
     onGameClick: (String) -> Unit,
     onCombinedCalendarClick: () -> Unit
 ) {
@@ -59,7 +62,9 @@ fun DashboardScreen(
             }
         }
     ) { paddingValues ->
-        Box(
+        PullToRefreshBox(
+            isRefreshing = isRefreshing,
+            onRefresh = onRefresh,
             modifier = Modifier
                 .fillMaxSize()
                 .background(
@@ -70,11 +75,11 @@ fun DashboardScreen(
                         )
                     )
                 )
+                .padding(paddingValues)
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(paddingValues)
                     .padding(horizontal = 20.dp)
             ) {
                 Text(

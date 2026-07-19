@@ -28,17 +28,27 @@ class GachaViewModel : ViewModel() {
         fetchEvents()
     }
 
-    private fun fetchEvents() {
+    fun refreshEvents() {
+        fetchEvents(isForceRefresh = true)
+    }
+
+    private fun fetchEvents(isForceRefresh: Boolean = false) {
         viewModelScope.launch {
             _isLoading.value = true
             try {
                 // Fetch data from API
-                val fetchedEvents = RetrofitInstance.api.getEvents()
+                val fetchedEvents = if (isForceRefresh) {
+                    RetrofitInstance.api.getEvents(System.currentTimeMillis())
+                } else {
+                    RetrofitInstance.api.getEvents()
+                }
                 _events.value = fetchedEvents
                 _errorMessage.value = null
             } catch (e: Exception) {
                 // If API fails, fallback to DummyData for now so the app doesn't break
-                _events.value = DummyData.events
+                if (_events.value.isEmpty()) {
+                    _events.value = DummyData.events
+                }
                 _errorMessage.value = "Failed to fetch from server, using local data."
             } finally {
                 _isLoading.value = false

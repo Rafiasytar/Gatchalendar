@@ -645,28 +645,52 @@ def scrape_endfield_events():
     return events
 
 def scrape_nte_events():
-    print("Fetching Neverness to Everness events (Mocked actual schedule)...")
+    print("Fetching Neverness to Everness events...")
     events = [
         {
             "id": f"nte_{uuid.uuid4().hex[:8]}",
             "gameId": "nte",
-            "title": "[Neverness to Everness] Closed Beta Test Applications",
-            "description": "Beta Event",
-            "longDescription": "Apply for the upcoming Closed Beta Test for Neverness to Everness SEA server.",
-            "startTime": "2026-07-10T12:00:00",
-            "endTime": "2026-08-15T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://play-lh.googleusercontent.com/j0vcnOVC_LPH4b8IGUsiW9Hz2mdXphG-nJ8Qh7WES_hqY0UZuqdvvaf1aBlTv_LtPg", # Fallback image
+            "title": "Circle Gift (7-day Login)",
+            "description": "Login Event",
+            "longDescription": "A 7-day login event rewarding players with ten solid dice during Version 1.2.",
+            "startTime": "2026-07-08T00:00:00",
+            "endTime": "2026-07-29T23:59:59",
+            "type": "LOGIN_EVENT",
+            "imageUrl": "https://play-lh.googleusercontent.com/j0vcnOVC_LPH4b8IGUsiW9Hz2mdXphG-nJ8Qh7WES_hqY0UZuqdvvaf1aBlTv_LtPg",
             "detailUrl": None
         },
         {
             "id": f"nte_{uuid.uuid4().hex[:8]}",
             "gameId": "nte",
-            "title": "[Pre-Registration] Milestone Rewards",
-            "description": "Pre-Registration",
-            "longDescription": "Register now to unlock exclusive milestone rewards upon official launch.",
-            "startTime": "2026-07-01T00:00:00",
-            "endTime": "2026-10-01T00:00:00",
+            "title": "Shadow-n-Seek (Asymmetric PvP)",
+            "description": "PvP Game Mode",
+            "longDescription": "An asymmetric PvP mode where players are randomly assigned as Hider or Hunter. Earn Paper Cup Phone currency to spend in the Shadebound Shop.",
+            "startTime": "2026-07-17T12:00:00",
+            "endTime": "2026-08-19T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": None,
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "999 Nights Tabletop Mode",
+            "description": "New Game Mode",
+            "longDescription": "Features a new tabletop-style game mode with various rewards in the new Version 1.2 '999 Nights' update.",
+            "startTime": "2026-07-08T12:00:00",
+            "endTime": "2026-08-19T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": None,
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "Mews Flash",
+            "description": "Progress Event",
+            "longDescription": "Earn extra rewards from a friendly cat by increasing your level before the event ends.",
+            "startTime": "2026-07-08T12:00:00",
+            "endTime": "2026-07-29T23:59:59",
             "type": "IN_GAME_EVENT",
             "imageUrl": None,
             "detailUrl": None
@@ -680,11 +704,23 @@ def scrape_p5x_events():
         {
             "id": f"p5x_{uuid.uuid4().hex[:8]}",
             "gameId": "p5x",
-            "title": "Phantom Banner: Joker",
+            "title": "Haunted Beach Shack: The Curse of Shirosato Beach",
+            "description": "Version 4.5 Event",
+            "longDescription": "Explore Shirosato Beach and complete event missions for exclusive summer rewards.",
+            "startTime": "2026-07-16T12:00:00",
+            "endTime": "2026-07-30T03:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://play-lh.googleusercontent.com/vxEZDRLLlnk2Ri_o8vQqmBK6ruhKOVL6I6oLw1fWQYw4ZcQYHkMsfLr8flsU3VGoZO4",
+            "detailUrl": None
+        },
+        {
+            "id": f"p5x_{uuid.uuid4().hex[:8]}",
+            "gameId": "p5x",
+            "title": "Character Banner: Beachflower Minami",
             "description": "Featured Phantom Thief",
-            "longDescription": "Rate up for 5-star character Joker in the limited banner.",
-            "startTime": "2026-07-15T12:00:00",
-            "endTime": "2026-08-05T03:59:59",
+            "longDescription": "Boosted drop rate for 5-star Phantom Thief 'Beachflower Minami' in the limited summer banner.",
+            "startTime": "2026-07-16T12:00:00",
+            "endTime": "2026-07-30T03:59:59",
             "type": "BANNER",
             "imageUrl": "https://play-lh.googleusercontent.com/vxEZDRLLlnk2Ri_o8vQqmBK6ruhKOVL6I6oLw1fWQYw4ZcQYHkMsfLr8flsU3VGoZO4",
             "detailUrl": None
@@ -692,23 +728,11 @@ def scrape_p5x_events():
         {
             "id": f"p5x_{uuid.uuid4().hex[:8]}",
             "gameId": "p5x",
-            "title": "[Palace Infiltration] SEA Launch Event",
-            "description": "In-Game Event",
-            "longDescription": "Complete Palace missions to earn exclusive SEA launch rewards.",
-            "startTime": "2026-07-10T12:00:00",
-            "endTime": "2026-08-10T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": None,
-            "detailUrl": None
-        },
-        {
-            "id": f"p5x_{uuid.uuid4().hex[:8]}",
-            "gameId": "p5x",
-            "title": "7-Day Login Rewards",
-            "description": "Login Event",
-            "longDescription": "Log in consecutively for 7 days to earn premium currency and a free character.",
-            "startTime": "2026-07-10T12:00:00",
-            "endTime": "2026-08-01T23:59:59",
+            "title": "1st Anniversary Party",
+            "description": "Anniversary Event",
+            "longDescription": "Collect Wish Candy and Scratch-Off Packs to earn a 5☆ Thief Select Ticket and other anniversary rewards.",
+            "startTime": "2026-06-26T12:00:00",
+            "endTime": "2026-07-26T23:59:59",
             "type": "IN_GAME_EVENT",
             "imageUrl": None,
             "detailUrl": None
