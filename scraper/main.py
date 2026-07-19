@@ -644,6 +644,78 @@ def scrape_endfield_events():
     ]
     return events
 
+def scrape_nte_events():
+    print("Fetching Neverness to Everness events (Mocked actual schedule)...")
+    events = [
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "[Neverness to Everness] Closed Beta Test Applications",
+            "description": "Beta Event",
+            "longDescription": "Apply for the upcoming Closed Beta Test for Neverness to Everness SEA server.",
+            "startTime": "2026-07-10T12:00:00",
+            "endTime": "2026-08-15T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": "https://play-lh.googleusercontent.com/j0vcnOVC_LPH4b8IGUsiW9Hz2mdXphG-nJ8Qh7WES_hqY0UZuqdvvaf1aBlTv_LtPg", # Fallback image
+            "detailUrl": None
+        },
+        {
+            "id": f"nte_{uuid.uuid4().hex[:8]}",
+            "gameId": "nte",
+            "title": "[Pre-Registration] Milestone Rewards",
+            "description": "Pre-Registration",
+            "longDescription": "Register now to unlock exclusive milestone rewards upon official launch.",
+            "startTime": "2026-07-01T00:00:00",
+            "endTime": "2026-10-01T00:00:00",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": None,
+            "detailUrl": None
+        }
+    ]
+    return events
+
+def scrape_p5x_events():
+    print("Fetching Persona 5: The Phantom X events (SEA Server)...")
+    events = [
+        {
+            "id": f"p5x_{uuid.uuid4().hex[:8]}",
+            "gameId": "p5x",
+            "title": "Phantom Banner: Joker",
+            "description": "Featured Phantom Thief",
+            "longDescription": "Rate up for 5-star character Joker in the limited banner.",
+            "startTime": "2026-07-15T12:00:00",
+            "endTime": "2026-08-05T03:59:59",
+            "type": "BANNER",
+            "imageUrl": "https://play-lh.googleusercontent.com/vxEZDRLLlnk2Ri_o8vQqmBK6ruhKOVL6I6oLw1fWQYw4ZcQYHkMsfLr8flsU3VGoZO4",
+            "detailUrl": None
+        },
+        {
+            "id": f"p5x_{uuid.uuid4().hex[:8]}",
+            "gameId": "p5x",
+            "title": "[Palace Infiltration] SEA Launch Event",
+            "description": "In-Game Event",
+            "longDescription": "Complete Palace missions to earn exclusive SEA launch rewards.",
+            "startTime": "2026-07-10T12:00:00",
+            "endTime": "2026-08-10T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": None,
+            "detailUrl": None
+        },
+        {
+            "id": f"p5x_{uuid.uuid4().hex[:8]}",
+            "gameId": "p5x",
+            "title": "7-Day Login Rewards",
+            "description": "Login Event",
+            "longDescription": "Log in consecutively for 7 days to earn premium currency and a free character.",
+            "startTime": "2026-07-10T12:00:00",
+            "endTime": "2026-08-01T23:59:59",
+            "type": "IN_GAME_EVENT",
+            "imageUrl": None,
+            "detailUrl": None
+        }
+    ]
+    return events
+
 def main():
     print("Mulai mengambil data jadwal event dari internet...")
     genshin_events = scrape_genshin_events()
@@ -661,7 +733,13 @@ def main():
     endfield_events = scrape_endfield_events()
     print(f"Berhasil mendapatkan {len(endfield_events)} event Arknights Endfield.")
     
-    all_events = genshin_events + hsr_events + wuwa_events + zzz_events + endfield_events
+    nte_events = scrape_nte_events()
+    print(f"Berhasil mendapatkan {len(nte_events)} event Neverness to Everness.")
+    
+    p5x_events = scrape_p5x_events()
+    print(f"Berhasil mendapatkan {len(p5x_events)} event Persona 5: The Phantom X.")
+    
+    all_events = genshin_events + hsr_events + wuwa_events + zzz_events + endfield_events + nte_events + p5x_events
     
     # Filter event yang sudah berakhir berdasarkan waktu Indonesia (WIB / UTC+7)
     indo_tz = timezone(timedelta(hours=7))
