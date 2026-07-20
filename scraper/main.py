@@ -657,7 +657,7 @@ def scrape_nte_events():
             "startTime": "2026-07-08T12:00:00",
             "endTime": "2026-07-29T23:59:59",
             "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/23/Shinku_-_Board.jpg/revision/latest",
             "detailUrl": None
         },
         {
@@ -669,7 +669,7 @@ def scrape_nte_events():
             "startTime": "2026-07-29T12:00:00",
             "endTime": "2026-08-19T23:59:59",
             "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/5/55/Iroi_Introduction.png/revision/latest",
             "detailUrl": None
         },
         # === Limited Time Events ===
@@ -682,7 +682,7 @@ def scrape_nte_events():
             "startTime": "2026-07-08T12:00:00",
             "endTime": "2026-08-19T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/d/dc/ETD6_999_Nights.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -694,7 +694,7 @@ def scrape_nte_events():
             "startTime": "2026-07-13T04:00:00",
             "endTime": "2026-07-20T03:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/c/cb/Version_1.2_Event_Calendar_Wallpaper_%28Desktop%29.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -706,7 +706,7 @@ def scrape_nte_events():
             "startTime": "2026-07-16T12:00:00",
             "endTime": "2026-07-30T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/1/15/Version_1.2_Event_Calendar_Wallpaper_%28Mobile%29.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -718,7 +718,7 @@ def scrape_nte_events():
             "startTime": "2026-07-20T12:00:00",
             "endTime": "2026-08-03T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/f/f1/Version_1.2_Preview_Special_Program_Premiere_Announcement.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -730,7 +730,7 @@ def scrape_nte_events():
             "startTime": "2026-07-25T12:00:00",
             "endTime": "2026-08-08T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/b/b5/MP_-_Shinku.jpg/revision/latest",
             "detailUrl": None
         },
         {
@@ -742,7 +742,7 @@ def scrape_nte_events():
             "startTime": "2026-08-03T12:00:00",
             "endTime": "2026-08-19T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/38/Iroi.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -754,7 +754,7 @@ def scrape_nte_events():
             "startTime": "2026-08-03T12:00:00",
             "endTime": "2026-08-10T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/5/5a/Shinku_Dawn_Patrol_Portrait.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -778,7 +778,7 @@ def scrape_nte_events():
             "startTime": "2026-08-10T04:00:00",
             "endTime": "2026-08-17T03:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/33/1.1_Wallpaper.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/c/cb/Version_1.2_Event_Calendar_Wallpaper_%28Desktop%29.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -790,7 +790,7 @@ def scrape_nte_events():
             "startTime": "2026-08-12T12:00:00",
             "endTime": "2026-08-26T23:59:59",
             "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/f/f1/Version_1.2_Preview_Special_Program_Premiere_Announcement.png/revision/latest",
             "detailUrl": None
         },
         # === Endgame Content ===
@@ -803,7 +803,7 @@ def scrape_nte_events():
             "startTime": "2026-07-13T04:00:00",
             "endTime": "2026-07-20T03:59:59",
             "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/d/d8/Anomaly_Sighting_Records_-_Sighting_1.2.jpg/revision/latest",
             "detailUrl": None
         },
         {
@@ -815,7 +815,7 @@ def scrape_nte_events():
             "startTime": "2026-07-20T04:00:00",
             "endTime": "2026-07-27T03:59:59",
             "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/d/d8/Anomaly_Sighting_Records_-_Sighting_1.2.jpg/revision/latest",
             "detailUrl": None
         },
         {
@@ -827,7 +827,7 @@ def scrape_nte_events():
             "startTime": "2026-07-15T04:00:00",
             "endTime": "2026-07-29T03:59:59",
             "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/39/Iroi_-_Dreamwalk.png/revision/latest",
             "detailUrl": None
         },
         {
@@ -839,7 +839,7 @@ def scrape_nte_events():
             "startTime": "2026-07-29T04:00:00",
             "endTime": "2026-08-12T03:59:59",
             "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/7/71/1.2_Creation_Submission.jpg/revision/latest",
+            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/39/Iroi_-_Dreamwalk.png/revision/latest",
             "detailUrl": None
         }
     ]
