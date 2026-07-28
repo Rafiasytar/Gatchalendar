@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_0c14a370",
+        "id": "gi_e7ec332f",
         "gameId": "gi",
         "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
         "description": "In-Game, Anniversary Standard 5-Star Character Selection",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
     },
     {
-        "id": "gi_1e03a65d",
+        "id": "gi_d1725e73",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 4",
         "description": "In-Game",
@@ -24,19 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-05-18"
     },
     {
-        "id": "gi_ab23992c",
-        "gameId": "gi",
-        "title": "Chronicle of the Fatebound Sea",
-        "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
-        "longDescription": "Miliastra Pass is a recurring Event for Miliastra Wonderland. It is a Battle Pass that uses Chronicle EXP gained from weekly and BP period quests to reward  Geodes of Replication, Cosmetics, Interactive Expressions, Lustrous Materials, Lobby Facilities, and Chronicle Caches. It includes the Chronicles of the Sky (basic edition), Chronicles of the Realms, and Epic of the Realms.",
-        "startTime": "2026-07-01T00:00:00",
-        "endTime": "2026-08-10T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/9d/Chronicle_of_the_Fatebound_Sea.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-07-01"
-    },
-    {
-        "id": "gi_ba5330db",
+        "id": "gi_5847c47b",
         "gameId": "gi",
         "title": "Whispers of Stars and Smoke Discount",
         "description": "In-Game, Discount",
@@ -48,7 +36,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Whispers_of_Stars_and_Smoke_Discount"
     },
     {
-        "id": "gi_0c66bdcb",
+        "id": "gi_3fbf89cd",
+        "gameId": "gi",
+        "title": "Chronicle of the Fatebound Sea",
+        "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
+        "longDescription": "Miliastra Pass is a recurring Event for Miliastra Wonderland. It is a Battle Pass that uses Chronicle EXP gained from weekly and BP period quests to reward  Geodes of Replication, Cosmetics, Interactive Expressions, Lustrous Materials, Lobby Facilities, and Chronicle Caches. It includes the Chronicles of the Sky (basic edition), Chronicles of the Realms, and Epic of the Realms.",
+        "startTime": "2026-07-01T00:00:00",
+        "endTime": "2026-08-10T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/9d/Chronicle_of_the_Fatebound_Sea.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-07-01"
+    },
+    {
+        "id": "gi_88006c0e",
         "gameId": "gi",
         "title": "Sunny Summer",
         "description": "In-Game, Battle Pass",
@@ -60,7 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Sunny_Summer"
     },
     {
-        "id": "gi_7fd93737",
+        "id": "gi_53e58e00",
         "gameId": "gi",
         "title": "Sunny Summer Fontinalia",
         "description": "In-Game, Flagship",
@@ -72,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Sunny_Summer_Fontinalia_(Event)"
     },
     {
-        "id": "gi_0f515afc",
+        "id": "gi_15adc4e5",
         "gameId": "gi",
         "title": "Nod-Krai: Where Roads Are Pledged to Cross",
         "description": "In-Game, Repertoire of Myriad Melodies Update",
@@ -84,19 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Nod-Krai:_Where_Roads_Are_Pledged_to_Cross_(Event)"
     },
     {
-        "id": "gi_09bd9b4f",
-        "gameId": "gi",
-        "title": "Raiment Collection: Mellow Warmth",
-        "description": "In-Game, Miliastra Wonderland",
-        "longDescription": "Raiment Collection is a Recurring Event in Miliastra Wonderland that rewards a free 4-Star Cosmetic Set for completing tasks. Raiment Collection has 5 occurrences:",
-        "startTime": "2026-07-01T00:00:00",
-        "endTime": "2026-08-12T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/99/Raiment_Collection_Mellow_Warmth.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-07-01"
-    },
-    {
-        "id": "gi_9648c3d8",
+        "id": "gi_f0fefda4",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Endless Swarm",
         "description": "In-Game, The Forge Realm's Temper",
@@ -108,7 +96,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-07-01"
     },
     {
-        "id": "gi_878eac84",
+        "id": "gi_e86810a8",
+        "gameId": "gi",
+        "title": "Raiment Collection: Mellow Warmth",
+        "description": "In-Game, Miliastra Wonderland",
+        "longDescription": "Raiment Collection is a Recurring Event in Miliastra Wonderland that rewards a free 4-Star Cosmetic Set for completing tasks. Raiment Collection has 5 occurrences:",
+        "startTime": "2026-07-01T00:00:00",
+        "endTime": "2026-08-12T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/99/Raiment_Collection_Mellow_Warmth.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-07-01"
+    },
+    {
+        "id": "gi_52757821",
         "gameId": "gi",
         "title": "When We Look Up at the Moon",
         "description": "In-Game, Exploration Mission",
@@ -120,7 +120,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
     },
     {
-        "id": "gi_79892573",
+        "id": "gi_11e9ed6a",
         "gameId": "gi",
         "title": "Stygian Onslaught: Savage Tremors",
         "description": "In-Game, Stygian Onslaught",
@@ -132,7 +132,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-07-08"
     },
     {
-        "id": "gi_c84c6caf",
+        "id": "gi_0f133012",
         "gameId": "gi",
         "title": "Have a Smashing Summer With Miliastra Wonderland!",
         "description": "Web",
@@ -144,19 +144,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Have_a_Smashing_Summer_With_Miliastra_Wonderland!"
     },
     {
-        "id": "gi_f1549b8f",
-        "gameId": "gi",
-        "title": "Final Long-Range Sightlines",
-        "description": "In-Game",
-        "longDescription": "Final Long-Range Sightlines is an Event in Version \"Luna VIII.\" Unlocks 2026-07-17 10:00",
-        "startTime": "2026-07-17T00:00:00",
-        "endTime": "2026-07-27T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/3/30/Final_Long-Range_Sightlines.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Final_Long-Range_Sightlines"
-    },
-    {
-        "id": "gi_9e2ba644",
+        "id": "gi_898b9761",
         "gameId": "gi",
         "title": "Heated Battle Mode: Automatic Artistry",
         "description": "In-Game, Heated Battle Mode",
@@ -168,7 +156,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Heated_Battle_Mode/2026-07-18"
     },
     {
-        "id": "gi_ca674141",
+        "id": "gi_9f9a5cc3",
         "gameId": "gi",
         "title": "Test Run - Columbina, Raiden Shogun, Jahoda, Ororon, Sethos",
         "description": "In-Game, Test Run",
@@ -180,11 +168,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-07-21"
     },
     {
-        "id": "gi_636e95d2",
+        "id": "gi_064bcd18",
         "gameId": "gi",
         "title": "Dance Dance Easy-Breezy Disco",
         "description": "In-Game, Co-Op",
-        "longDescription": "Dance Dance Easy-Breezy Disco is an Event in Version \"Luna VIII.\"",
+        "longDescription": "Dance Dance Easy-Breezy Disco is an Event in Version \"Luna VIII.\" This event added additional \"This BP Period\" Battle Pass missions to the Sunny Summer Battle Pass. The Battle Pass EXP (BP EXP) obtained from these missions do not count towards the weekly experience limit of 10,000 BP EXP.",
         "startTime": "2026-07-24T00:00:00",
         "endTime": "2026-08-03T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -192,7 +180,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Dance_Dance_Easy-Breezy_Disco"
     },
     {
-        "id": "gi_40e7d26a",
+        "id": "gi_fe0f81b9",
         "gameId": "gi",
         "title": "Starlight Voyage: Splendor Aglow",
         "description": "In-Game, Miliastra Wonderland",
@@ -204,7 +192,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlight_Voyage/2026-07-27"
     },
     {
-        "id": "hsr_25cd6def",
+        "id": "hsr_78316901",
         "gameId": "hsr",
         "title": "Stellar Companions 2026-04-22",
         "description": "In-Game",
@@ -216,7 +204,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_7bc5910d",
+        "id": "hsr_2b0f40ac",
         "gameId": "hsr",
         "title": "Honkai: Star Rail x Round1",
         "description": "Collaboration",
@@ -228,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_38563841",
+        "id": "hsr_03b3e307",
         "gameId": "hsr",
         "title": "Come With Me, Take the Journey",
         "description": "Web",
@@ -240,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_1eb5996e",
+        "id": "hsr_ddce67a4",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-07-15",
         "description": "In-Game, Nameless Honor",
@@ -252,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_7665faa9",
+        "id": "hsr_8b5312ae",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-07-15",
         "description": "In-Game, Login",
@@ -264,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_8592a086",
+        "id": "hsr_8c2003da",
         "gameId": "hsr",
         "title": "Antigraft Brickbuster",
         "description": "In-Game",
@@ -276,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_c24dbc02",
+        "id": "hsr_7074ae60",
         "gameId": "hsr",
         "title": "Fashion Guide of the Cosmos: Resonant Rave",
         "description": "In-Game",
@@ -288,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_a25dd219",
+        "id": "hsr_6bf7304a",
         "gameId": "hsr",
         "title": "Fate Gift 2026-07-15",
         "description": "In-Game, Collaboration",
@@ -300,7 +288,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_57bb06d7",
+        "id": "hsr_1a262919",
         "gameId": "hsr",
         "title": "Aptitude Showcase - Himeko \u2022 Nova, Sparxie, Dan Heng \u2022 Permansor Terrae, Evernight, Serval, Moze, Hanya",
         "description": "In-Game",
@@ -312,19 +300,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_54edc8b8",
-        "gameId": "hsr",
-        "title": "Cyclical Extrapolation: Brilliant Beacon",
-        "description": "Cyclical Extrapolation",
-        "longDescription": "Cyclical Extrapolation: Brilliant Beacon is a Honkai Star Rail event of type Cyclical Extrapolation.",
-        "startTime": "2026-07-20T00:00:00",
-        "endTime": "2026-07-27T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/ad/Location_Context_Game_System_Divergent_Universe_Terminal_Interface.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "hsr_bfecf96c",
+        "id": "hsr_80d4e2f7",
         "gameId": "hsr",
         "title": "Imagenae: Holy Grail War",
         "description": "In-Game, Collaboration",
@@ -336,7 +312,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_0a65c782",
+        "id": "hsr_9c4943b6",
         "gameId": "hsr",
         "title": "Fate/Star Rail Night",
         "description": "In-Game, Collaboration",
@@ -348,7 +324,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_8f696c04",
+        "id": "hsr_c25f0839",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -360,7 +336,31 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_b0d4efb7",
+        "id": "hsr_cdeafcfc",
+        "gameId": "hsr",
+        "title": "Planar Fissure 2026-07-27",
+        "description": "In-Game",
+        "longDescription": "Planar Fissure 2026-07-27 is a Honkai Star Rail event of type In-Game.",
+        "startTime": "2026-07-27T00:00:00",
+        "endTime": "2026-08-10T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/91/Event_Planar_Fissure.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_85704550",
+        "gameId": "hsr",
+        "title": "Cyclical Extrapolation: Supplication for Satisfaction",
+        "description": "Cyclical Extrapolation",
+        "longDescription": "Cyclical Extrapolation: Supplication for Satisfaction is a Honkai Star Rail event of type Cyclical Extrapolation.",
+        "startTime": "2026-07-27T00:00:00",
+        "endTime": "2026-09-03T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/ad/Location_Context_Game_System_Divergent_Universe_Terminal_Interface.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_24f24892",
         "gameId": "wuwa",
         "title": "A Glimpse of Xuanfang",
         "description": "Version 3.5",
@@ -372,7 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_a8ef6a04",
+        "id": "wuwa_1ab76dfd",
         "gameId": "wuwa",
         "title": "Gifts of Aftertune",
         "description": "Version 3.5",
@@ -384,7 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_c9b51a80",
+        "id": "wuwa_3661ee01",
         "gameId": "wuwa",
         "title": "Gifts of Starpath",
         "description": "Version 3.5",
@@ -396,7 +396,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_3f89ba7c",
+        "id": "wuwa_c3457ca4",
         "gameId": "wuwa",
         "title": "Glamour Couture 2026-07-10",
         "description": "Version 3.5",
@@ -408,7 +408,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_f8bbb4f6",
+        "id": "wuwa_bbb099dc",
         "gameId": "wuwa",
         "title": "Mingshen Notices",
         "description": "Version 3.5",
@@ -420,7 +420,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_17658577",
+        "id": "wuwa_79f281ab",
         "gameId": "wuwa",
         "title": "Wuthering Waves Battle Rush 2026-07-10",
         "description": "Version 3.5",
@@ -432,7 +432,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_37bb172b",
+        "id": "wuwa_0e38854f",
         "gameId": "wuwa",
         "title": "Wuthering Waves Fan Creation Event \"Blade of Past Resounds, Lingering Dream Hymns\"",
         "description": "Version 3.5",
@@ -444,7 +444,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_9e6c9e65",
+        "id": "wuwa_9425a41e",
         "gameId": "wuwa",
         "title": "Lament Recon: Tacet Crisis",
         "description": "Version 3.5",
@@ -456,7 +456,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_9898e7ed",
+        "id": "wuwa_181d7185",
         "gameId": "wuwa",
         "title": "Recaptured: Action Highlights",
         "description": "Version 3.5",
@@ -468,7 +468,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_b12e96f7",
+        "id": "wuwa_430350e0",
         "gameId": "wuwa",
         "title": "Bountiful Crescendo 2026-04-02",
         "description": "Version 3.5",
@@ -480,7 +480,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_0d394cae",
+        "id": "wuwa_bcdb08f1",
         "gameId": "wuwa",
         "title": "Undefined Spectrum 2026-07-10",
         "description": "Resonator Convene",
@@ -492,7 +492,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_1b8210cc",
+        "id": "wuwa_79cdaead",
         "gameId": "wuwa",
         "title": "Voices on Azure Feathers 2026-07-10",
         "description": "Resonator Convene",
@@ -504,7 +504,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_6712778c",
+        "id": "wuwa_01c57fac",
         "gameId": "wuwa",
         "title": "When Winter Thaws 2026-07-10",
         "description": "Resonator Convene",
@@ -516,7 +516,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_bcedbdc8",
+        "id": "zzz_86bd0773",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -528,7 +528,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_846c353b",
+        "id": "zzz_6b63a071",
         "gameId": "zzz",
         "title": "All-New Program",
         "description": "Zenless Zone Zero Event",
@@ -540,7 +540,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_250216a7",
+        "id": "zzz_07cf6e5e",
         "gameId": "zzz",
         "title": "New Eridu City Fund",
         "description": "Zenless Zone Zero Event",
@@ -552,19 +552,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_b067cf9d",
-        "gameId": "zzz",
-        "title": "Bangbang! The Genius and the Miracle Chip",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Bangbang! The Genius and the Miracle Chip is a Zenless Zone Zero event.",
-        "startTime": "2026-06-17T00:00:00",
-        "endTime": "2026-07-29T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/72/Event_Bangbang%21_The_Genius_and_the_Miracle_Chip.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_62b303c5",
+        "id": "zzz_9ea827de",
         "gameId": "zzz",
         "title": "Celestial Nexus Intelligence Dossier",
         "description": "Zenless Zone Zero Event",
@@ -576,31 +564,19 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_5624d65c",
+        "id": "zzz_700e48d5",
         "gameId": "zzz",
-        "title": "Assemble! Mock Exam Comeback Plan",
+        "title": "Bangbang! The Genius and the Miracle Chip",
         "description": "Zenless Zone Zero Event",
-        "longDescription": "Assemble! Mock Exam Comeback Plan is a Zenless Zone Zero event.",
-        "startTime": "2026-06-26T00:00:00",
-        "endTime": "2026-07-27T00:00:00",
+        "longDescription": "Bangbang! The Genius and the Miracle Chip is a Zenless Zone Zero event.",
+        "startTime": "2026-06-17T00:00:00",
+        "endTime": "2026-07-29T00:00:00",
         "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a3/Event_Assemble%21_Mock_Exam_Comeback_Plan.png/revision/latest",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/72/Event_Bangbang%21_The_Genius_and_the_Miracle_Chip.png/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "zzz_604de682",
-        "gameId": "zzz",
-        "title": "Art Is Bangboo!",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Art Is Bangboo! is a Zenless Zone Zero event.",
-        "startTime": "2026-07-08T00:00:00",
-        "endTime": "2026-07-27T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/a2/Event_Art_Is_Bangboo%21.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_ff1beb01",
+        "id": "zzz_3e0f983d",
         "gameId": "zzz",
         "title": "\"En-Nah\" Into Your Lap",
         "description": "Zenless Zone Zero Event",
@@ -612,7 +588,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_d06520ed",
+        "id": "zzz_06fd2f9e",
         "gameId": "zzz",
         "title": "The Final Callback 2026-07-8",
         "description": "Zenless Zone Zero Event",
@@ -624,7 +600,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_4b3b389a",
+        "id": "zzz_42123555",
         "gameId": "zzz",
         "title": "First-Generation Void Hunter Returns",
         "description": "Zenless Zone Zero Event",
@@ -636,7 +612,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_5c08209e",
+        "id": "zzz_51fbd901",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -648,7 +624,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_619f49cb",
+        "id": "zzz_21a8fbff",
         "gameId": "zzz",
         "title": "First-Generation Void Hunter Returns",
         "description": "Zenless Zone Zero Event",
@@ -660,19 +636,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_a3f048e0",
-        "gameId": "zzz",
-        "title": "Data Bounty: Combat Simulation",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Data Bounty: Combat Simulation is a Zenless Zone Zero event.",
-        "startTime": "2026-07-22T00:00:00",
-        "endTime": "2026-07-27T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/72/Event_Data_Bounty_Combat_Simulation.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_a8a14d54",
+        "id": "zzz_7d5ec32f",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -684,7 +648,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_292fa922",
+        "id": "zzz_d2aff686",
         "gameId": "zzz",
         "title": "Outlier of Prodigies",
         "description": "Exclusive Channel",
@@ -696,7 +660,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_775fb763",
+        "id": "zzz_bbcb4757",
         "gameId": "zzz",
         "title": "Whimsy in Triple Meter",
         "description": "Exclusive Channel",
@@ -708,7 +672,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_f749af4e",
+        "id": "zzz_5537103a",
         "gameId": "zzz",
         "title": "Exclusive Rescreening",
         "description": "Exclusive Channel",
@@ -720,7 +684,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_11d496ba",
+        "id": "zzz_a305f4eb",
         "gameId": "zzz",
         "title": "Neon Angel",
         "description": "Exclusive Channel",
@@ -732,7 +696,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_4e21b27b",
+        "id": "zzz_daf22466",
         "gameId": "zzz",
         "title": "Paradise Regained",
         "description": "Exclusive Channel",
@@ -740,11 +704,11 @@
         "startTime": "2026-07-29T00:00:00",
         "endTime": "2026-07-29T00:00:00",
         "type": "BANNER",
-        "imageUrl": null,
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/ed/Paradise_Regained.png/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "zzz_93c82741",
+        "id": "zzz_74f4793f",
         "gameId": "zzz",
         "title": "Till the Ends of the Sky",
         "description": "Exclusive Channel",
@@ -756,7 +720,7 @@
         "detailUrl": null
     },
     {
-        "id": "endfield_1df8d69d",
+        "id": "endfield_cca581bb",
         "gameId": "endfield",
         "title": "Version 1.4 Update: Homecoming",
         "description": "6-Month Anniversary",
@@ -768,7 +732,7 @@
         "detailUrl": null
     },
     {
-        "id": "endfield_c74e8cb9",
+        "id": "endfield_e98dcb2b",
         "gameId": "endfield",
         "title": "HEAT RAGE! MEGA ARENA!",
         "description": "Challenge Event",
@@ -780,7 +744,7 @@
         "detailUrl": null
     },
     {
-        "id": "endfield_63fd9f4b",
+        "id": "endfield_e0fa98b2",
         "gameId": "endfield",
         "title": "Blueprint Submission: Industrial Revolution",
         "description": "Community Event",
@@ -792,7 +756,7 @@
         "detailUrl": null
     },
     {
-        "id": "endfield_aa440922",
+        "id": "endfield_b203c3a3",
         "gameId": "endfield",
         "title": "Headhunting Banner: Arcane & Liino",
         "description": "Rate-up Banner",
@@ -804,7 +768,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_1af879d6",
+        "id": "nte_ce69bdc4",
         "gameId": "nte",
         "title": "Shinku Perks (Before the Dawn)",
         "description": "Character Banner",
@@ -816,7 +780,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_76b593f4",
+        "id": "nte_d49c4361",
         "gameId": "nte",
         "title": "Iroi Perks (The Lifeline)",
         "description": "Character Banner",
@@ -828,7 +792,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_8a09bb62",
+        "id": "nte_8fe8e055",
         "gameId": "nte",
         "title": "999 Nights Tabletop Mode",
         "description": "Version 1.2 Main Event",
@@ -840,7 +804,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_345885ae",
+        "id": "nte_2b273f8d",
         "gameId": "nte",
         "title": "Beyond the Rails (Blazing Circle)",
         "description": "Limited Time Event",
@@ -852,7 +816,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_7a0a5408",
+        "id": "nte_f7ee8008",
         "gameId": "nte",
         "title": "Gold Clash Challenge",
         "description": "Limited Time Event",
@@ -864,7 +828,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_f1d5879d",
+        "id": "nte_5f96c6f1",
         "gameId": "nte",
         "title": "Shadow-n-Seek",
         "description": "Asymmetric PvP Event",
@@ -876,7 +840,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_c5c73b93",
+        "id": "nte_e765de00",
         "gameId": "nte",
         "title": "Fishing Frenzy Tournament",
         "description": "Limited Time Event",
@@ -888,7 +852,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_197ec937",
+        "id": "nte_0c6502a7",
         "gameId": "nte",
         "title": "Pixel Surge Mini-game",
         "description": "Retro Arcade Event",
@@ -900,7 +864,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_c5024a63",
+        "id": "nte_c51f8bdb",
         "gameId": "nte",
         "title": "Warren Lucky Flip",
         "description": "Card Flip Event",
@@ -912,7 +876,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_5f100634",
+        "id": "nte_2f8f1491",
         "gameId": "nte",
         "title": "Fons Rush Event",
         "description": "Double Drops Event",
@@ -924,7 +888,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_26d911e6",
+        "id": "nte_9e9044bf",
         "gameId": "nte",
         "title": "Going, Going, Gone Auction",
         "description": "Auction Event",
@@ -936,19 +900,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_153860c8",
-        "gameId": "nte",
-        "title": "Anomaly Hunt: Weekly Boss Challenge (Upcoming)",
-        "description": "Weekly Reset Endgame",
-        "longDescription": "Defeat Level 5+ Anomaly bosses to earn high-tier upgrading materials and currency.",
-        "startTime": "2026-07-20T04:00:00",
-        "endTime": "2026-07-27T03:59:59",
-        "type": "ENDGAME",
-        "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/d/d8/Anomaly_Sighting_Records_-_Sighting_1.2.jpg/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "nte_04bd6b38",
+        "id": "nte_f4682a6a",
         "gameId": "nte",
         "title": "Dreamwalk Corridor: Season 1",
         "description": "Bi-weekly Abyss Reset",
@@ -960,7 +912,7 @@
         "detailUrl": null
     },
     {
-        "id": "nte_2e06d60e",
+        "id": "nte_2fb2a718",
         "gameId": "nte",
         "title": "Dreamwalk Corridor: Season 2",
         "description": "Bi-weekly Abyss Reset",
@@ -972,7 +924,7 @@
         "detailUrl": null
     },
     {
-        "id": "p5x_99f8ba1b",
+        "id": "p5x_10d23ad1",
         "gameId": "p5x",
         "title": "Haunted Beach Shack: The Curse of Shirosato Beach",
         "description": "Version 4.5 Event",
@@ -984,7 +936,7 @@
         "detailUrl": null
     },
     {
-        "id": "p5x_249a0531",
+        "id": "p5x_38c342f6",
         "gameId": "p5x",
         "title": "Character Banner: Beachflower Minami",
         "description": "Featured Phantom Thief",
@@ -993,18 +945,6 @@
         "endTime": "2026-07-30T03:59:59",
         "type": "BANNER",
         "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/75/P5X_Minami_Summer_wallpaper.jpeg/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "p5x_70f20957",
-        "gameId": "p5x",
-        "title": "1st Anniversary Party",
-        "description": "Anniversary Event",
-        "longDescription": "Collect Wish Candy and Scratch-Off Packs to earn a 5\u2606 Thief Select Ticket and other anniversary rewards.",
-        "startTime": "2026-06-26T12:00:00",
-        "endTime": "2026-07-26T23:59:59",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a2/P5X_Wallpaper_3.jpeg/revision/latest",
         "detailUrl": null
     }
 ]
