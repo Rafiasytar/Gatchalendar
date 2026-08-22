@@ -1,174 +1,6 @@
 [
     {
-        "id": "gi_c916de00",
-        "gameId": "gi",
-        "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
-        "description": "In-Game, Anniversary Standard 5-Star Character Selection",
-        "longDescription": "Uncover Lunar Realms, Hone the Eventide Radiance is an Event in Version \"Luna I\". Including Character Ascension Materials, Character Level-Up Materials, Character and Weapon Enhancement Materials, and Local Specialties to level character to Lv. 60.",
-        "startTime": "2025-10-22T00:00:00",
-        "endTime": "2026-09-23T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/99/Uncover_Lunar_Realms%2C_Hone_the_Eventide_Radiance_2025-10-22.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
-    },
-    {
-        "id": "gi_8c3a69b8",
-        "gameId": "gi",
-        "title": "When We Look Up at the Moon",
-        "description": "In-Game, Exploration Mission",
-        "longDescription": "When We Look Up at the Moon is an Event in Version \"Luna VIII.\"",
-        "startTime": "2026-07-01T00:00:00",
-        "endTime": "2026-09-22T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/5/5e/When_We_Look_Up_at_the_Moon.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
-    },
-    {
-        "id": "gi_b118a58e",
-        "gameId": "gi",
-        "title": "To Temper Thyself and Journey Far Cycle 5",
-        "description": "In-Game",
-        "longDescription": "To Temper Thyself and Journey Far is a Recurring Event where players participate in daily challenges to unlock a 5-star character's Stella Fortuna and other rewards.",
-        "startTime": "2026-08-10T00:00:00",
-        "endTime": "2026-11-02T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/6/6e/To_Temper_Thyself_and_Journey_Far.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-08-10"
-    },
-    {
-        "id": "gi_d27c26df",
-        "gameId": "gi",
-        "title": "Mutual Aid in Bloom: Into the Frostlands",
-        "description": "In-Game",
-        "longDescription": "Mutual Aid in Bloom: Into the Frostlands is an Event in Version 7.0. Complete the operations to earn Fervor Coupons. Spend coupons in the Snowballs A-Rollin' challenge to obtain statue parts.",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-08-24T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/c/c4/Mutual_Aid_in_Bloom_Into_the_Frostlands.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Mutual_Aid_in_Bloom:_Into_the_Frostlands"
-    },
-    {
-        "id": "gi_0364b636",
-        "gameId": "gi",
-        "title": "Phantasmagoric Chronicle",
-        "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
-        "longDescription": "Miliastra Pass is a recurring Event for Miliastra Wonderland. It is a Battle Pass that uses Chronicle EXP gained from weekly and BP period quests to reward  Geodes of Replication, Cosmetics, Interactive Expressions, Lustrous Materials, Lobby Facilities, and Chronicle Caches. It includes the Chronicles of the Sky (basic edition), Chronicles of the Realms, and Epic of the Realms.",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Phantasmagoric_Chronicle.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-08-12"
-    },
-    {
-        "id": "gi_f0e70cfa",
-        "gameId": "gi",
-        "title": "Frostfarer",
-        "description": "In-Game, Battle Pass",
-        "longDescription": "The Battle Pass is a recurring Event unlocked at Adventure Rank 20. Once unlocked, players can complete various daily, weekly, and BP Period missions in order to gain Battle Pass EXP (BEP).",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Battle_Pass_Frostfarer.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Frostfarer"
-    },
-    {
-        "id": "gi_e598ad95",
-        "gameId": "gi",
-        "title": "Everwinter Without Mercy",
-        "description": "In-Game, Archon Quest",
-        "longDescription": "Everwinter Without Mercy is an Event in Version 7.0.",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-09-22T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/f/f4/Everwinter_Without_Mercy_Event.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Everwinter_Without_Mercy_(Event)"
-    },
-    {
-        "id": "gi_304c71c3",
-        "gameId": "gi",
-        "title": "Raiment Collection: Gentle Warmth",
-        "description": "In-Game, Miliastra Wonderland",
-        "longDescription": "Raiment Collection is a Recurring Event in Miliastra Wonderland that rewards a free 4-Star Cosmetic Set for completing tasks. Raiment Collection has 6 occurrences:",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-09-23T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/b/b9/Raiment_Collection_Gentle_Warmth.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-08-12"
-    },
-    {
-        "id": "gi_2eb9b38e",
-        "gameId": "gi",
-        "title": "The Forge Realm's Temper: Game of Wits",
-        "description": "In-Game, The Forge Realm's Temper",
-        "longDescription": "The Forge Realm's Temper is a PvE Event gamemode for Genius Invokation TCG. The Forge Realm's Temper has 29 occurrences:",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-09-23T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/2/25/The_Forge_Realm%27s_Temper_Game_of_Wits_2026-08-12.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-08-12"
-    },
-    {
-        "id": "gi_34b492d7",
-        "gameId": "gi",
-        "title": "The Godforsaken Frostlands",
-        "description": "In-Game, Exploration Mission",
-        "longDescription": "The Godforsaken Frostlands is an Event in Version 7.0. Complete \"Gunfire in the Silent Lands\" in the Archon Quest to freely explore",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/d/df/The_Godforsaken_Frostlands.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Godforsaken_Frostlands"
-    },
-    {
-        "id": "gi_e1723224",
-        "gameId": "gi",
-        "title": "Snezhnaya Travel Guide",
-        "description": "Web",
-        "longDescription": "Snezhnaya Travel Guide is a Web Event in Version 7.0. August 12, 2026 \u2013 August 25, 2026 23:59 (UTC+8)",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-08-26T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/b/ba/Snezhnaya_Travel_Guide.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Snezhnaya_Travel_Guide"
-    },
-    {
-        "id": "gi_b717006f",
-        "gameId": "gi",
-        "title": "Snezhnaya Career Test",
-        "description": "Web",
-        "longDescription": "Snezhnaya Career Test is a Web Event in Version 7.0. August 13, 2026 \u2013 August 24, 2026 0:00:00 (UTC+8)",
-        "startTime": "2026-08-13T00:00:00",
-        "endTime": "2026-08-24T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/9/93/Snezhnaya_Career_Test.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Snezhnaya_Career_Test"
-    },
-    {
-        "id": "gi_f31ab306",
-        "gameId": "gi",
-        "title": "Spooky Summer Adventures",
-        "description": "In-Game, Miliastra Wonderland",
-        "longDescription": "Spooky Summer Adventures is an Event in Version 7.0.",
-        "startTime": "2026-08-17T00:00:00",
-        "endTime": "2026-09-04T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/5/54/Spooky_Summer_Adventures.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Spooky_Summer_Adventures"
-    },
-    {
-        "id": "gi_cbec31ff",
-        "gameId": "gi",
-        "title": "Stygian Onslaught",
-        "description": "In-Game, Stygian Onslaught",
-        "longDescription": "Stygian Onslaught is a permanent challenge event. In this mode, the player must fight three powerful enemies, either a Normal Boss or Local Legend equivalent in three separate battlefields. The player must also defeat the enemy within a specific amount of time.",
-        "startTime": "2026-08-19T00:00:00",
-        "endTime": "2026-09-22T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/b/b0/Stygian_Onslaught_2025-10-29.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-08-19"
-    },
-    {
-        "id": "hsr_a3647888",
+        "id": "hsr_58d417c9",
         "gameId": "hsr",
         "title": "Stellar Companions 2026-04-22",
         "description": "In-Game",
@@ -180,7 +12,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_b8572b76",
+        "id": "hsr_b4b39ca9",
         "gameId": "hsr",
         "title": "Honkai: Star Rail x Round1",
         "description": "Collaboration",
@@ -192,7 +24,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_c449e5b3",
+        "id": "hsr_4da8236d",
         "gameId": "hsr",
         "title": "Come With Me, Take the Journey",
         "description": "Web",
@@ -204,7 +36,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_d595603c",
+        "id": "hsr_07c60e1b",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-07-15",
         "description": "In-Game, Nameless Honor",
@@ -216,7 +48,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_eea300fd",
+        "id": "hsr_1fdef8e4",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-07-15",
         "description": "In-Game, Login",
@@ -228,7 +60,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_908f5a99",
+        "id": "hsr_bd420936",
         "gameId": "hsr",
         "title": "Antigraft Brickbuster",
         "description": "In-Game",
@@ -240,7 +72,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_02f574b6",
+        "id": "hsr_cd9acdb1",
         "gameId": "hsr",
         "title": "Fashion Guide of the Cosmos: Resonant Rave",
         "description": "In-Game",
@@ -252,7 +84,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_563e5338",
+        "id": "hsr_0c8dc36e",
         "gameId": "hsr",
         "title": "Fate Gift 2026-07-15",
         "description": "In-Game, Collaboration",
@@ -264,7 +96,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_30269f0c",
+        "id": "hsr_d43b5794",
         "gameId": "hsr",
         "title": "Fate/Star Rail Night",
         "description": "In-Game, Collaboration",
@@ -276,7 +108,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_24b746ce",
+        "id": "hsr_c227e084",
         "gameId": "hsr",
         "title": "Imagenae: Holy Grail War",
         "description": "In-Game, Collaboration",
@@ -288,7 +120,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_791eb9cf",
+        "id": "hsr_79c4fdb8",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -300,7 +132,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_b6d8e614",
+        "id": "hsr_2c30d028",
         "gameId": "hsr",
         "title": "Aptitude Showcase - Himeko \u2022 Nova, Anaxa, Cerydra, Aventurine, Serval, Moze, Hanya",
         "description": "In-Game",
@@ -312,7 +144,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_3e289be3",
+        "id": "hsr_6dc0e5fe",
         "gameId": "hsr",
         "title": "Garden of Plenty 2026-08-14",
         "description": "In-Game",
@@ -324,7 +156,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_a1d7f766",
+        "id": "hsr_395ea429",
         "gameId": "hsr",
         "title": "Cyclical Extrapolation: Cute Corrosion",
         "description": "Cyclical Extrapolation",
@@ -336,7 +168,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_52cbcc2f",
+        "id": "wuwa_8d462807",
         "gameId": "wuwa",
         "title": "False Promise for Tomorrow 2026-08-20",
         "description": "Resonator Convene",
@@ -348,7 +180,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_dee3fea7",
+        "id": "wuwa_a74f8d4b",
         "gameId": "wuwa",
         "title": "Wind of Transcendence 2026-08-20",
         "description": "Resonator Convene",
@@ -360,7 +192,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_206ed737",
+        "id": "zzz_c7087b14",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -372,7 +204,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_9c343249",
+        "id": "zzz_f9d6a5a9",
         "gameId": "zzz",
         "title": "Return to Ridu: Feathers of Reunion",
         "description": "Zenless Zone Zero Event",
@@ -384,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_44473a1c",
+        "id": "zzz_c9788434",
         "gameId": "zzz",
         "title": "Summer Waves Roll In",
         "description": "Zenless Zone Zero Event",
@@ -396,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_e5d59606",
+        "id": "zzz_9446641b",
         "gameId": "zzz",
         "title": "Gift From the Clouds",
         "description": "Zenless Zone Zero Event",
@@ -408,55 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_80c8e246",
-        "gameId": "zzz",
-        "title": "Potential Hypothesis: Hunting Game",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Potential Hypothesis: Hunting Game is a Zenless Zone Zero event.",
-        "startTime": "2026-07-29T00:00:00",
-        "endTime": "2026-09-08T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e8/Event_Potential_Hypothesis_Hunting_Game.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_14fbaa53",
-        "gameId": "zzz",
-        "title": "Phaethon's Grand Reveal of the Year",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Phaethon's Grand Reveal of the Year is a Zenless Zone Zero event.",
-        "startTime": "2026-07-29T00:00:00",
-        "endTime": "2026-09-08T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/55/Event_Phaethon%27s_Grand_Reveal_of_the_Year.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_f27ac384",
-        "gameId": "zzz",
-        "title": "Marcel Anniversary Gifts",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Marcel Anniversary Gifts is a Zenless Zone Zero event.",
-        "startTime": "2026-07-29T00:00:00",
-        "endTime": "2026-09-08T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/da/Event_Marcel_Anniversary_Gift.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_47624e6d",
-        "gameId": "zzz",
-        "title": "New Eridu City Fund",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "New Eridu City Fund is a Zenless Zone Zero event.",
-        "startTime": "2026-07-29T00:00:00",
-        "endTime": "2026-09-08T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/44/New_Eridu_City_Fund.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_8479f284",
+        "id": "zzz_33378ef1",
         "gameId": "zzz",
         "title": "Filmgoer Thank-You Gift",
         "description": "Zenless Zone Zero Event",
@@ -468,19 +252,55 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_d74562a9",
+        "id": "zzz_49b4deb9",
         "gameId": "zzz",
-        "title": "Shiyu Defense: Critical Node",
+        "title": "Marcel Anniversary Gifts",
         "description": "Zenless Zone Zero Event",
-        "longDescription": "Shiyu Defense: Critical Node is a Zenless Zone Zero event.",
-        "startTime": "2026-08-07T00:00:00",
-        "endTime": "2026-08-21T00:00:00",
-        "type": "ENDGAME",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/6/6a/Shiyu_Defense_Critical_Node.png/revision/latest",
+        "longDescription": "Marcel Anniversary Gifts is a Zenless Zone Zero event.",
+        "startTime": "2026-07-29T00:00:00",
+        "endTime": "2026-09-08T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/d/da/Event_Marcel_Anniversary_Gift.png/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "zzz_dce136ec",
+        "id": "zzz_3e881e3c",
+        "gameId": "zzz",
+        "title": "Phaethon's Grand Reveal of the Year",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "Phaethon's Grand Reveal of the Year is a Zenless Zone Zero event.",
+        "startTime": "2026-07-29T00:00:00",
+        "endTime": "2026-09-08T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/55/Event_Phaethon%27s_Grand_Reveal_of_the_Year.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_9f420ff3",
+        "gameId": "zzz",
+        "title": "Potential Hypothesis: Hunting Game",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "Potential Hypothesis: Hunting Game is a Zenless Zone Zero event.",
+        "startTime": "2026-07-29T00:00:00",
+        "endTime": "2026-09-08T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/e8/Event_Potential_Hypothesis_Hunting_Game.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_48d5a51c",
+        "gameId": "zzz",
+        "title": "New Eridu City Fund",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "New Eridu City Fund is a Zenless Zone Zero event.",
+        "startTime": "2026-07-29T00:00:00",
+        "endTime": "2026-09-08T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/44/New_Eridu_City_Fund.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_8611fb09",
         "gameId": "zzz",
         "title": "Snap! Focus Showdown!",
         "description": "Zenless Zone Zero Event",
@@ -492,7 +312,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_08a9db03",
+        "id": "zzz_d1a98caf",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -504,7 +324,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_336a7d7d",
+        "id": "zzz_dca8c519",
         "gameId": "zzz",
         "title": "Crispy Meal Deployment Plan",
         "description": "Zenless Zone Zero Event",
@@ -516,7 +336,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3c2c470e",
+        "id": "zzz_7dc3fb8d",
         "gameId": "zzz",
         "title": "The Great En-Nah Giveaway!",
         "description": "Zenless Zone Zero Event",
@@ -528,7 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_9260ae44",
+        "id": "zzz_246fddde",
         "gameId": "zzz",
         "title": "'Till the Ends of the Sky",
         "description": "Exclusive Channel",
@@ -540,7 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_c8cc5f9d",
+        "id": "zzz_a02ee88c",
         "gameId": "zzz",
         "title": "Exclusive Rescreening",
         "description": "Exclusive Channel",
@@ -552,7 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_138ecf0a",
+        "id": "zzz_ac8009c1",
         "gameId": "zzz",
         "title": "Paradise Regained",
         "description": "Exclusive Channel",
@@ -564,19 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "endfield_a72abe9f",
-        "gameId": "endfield",
-        "title": "Blueprint Submission: Industrial Revolution",
-        "description": "Community Event",
-        "longDescription": "Share your AIC industrial complex layout blueprints with the community for a chance to win exclusive physical merchandise.",
-        "startTime": "2026-07-17T12:00:00",
-        "endTime": "2026-08-20T23:59:59",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/endfield/images/1/10/Bronzer_The_Hub.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "nte_16396901",
+        "id": "nte_e4cf3a39",
         "gameId": "nte",
         "title": "Going, Going, Gone Auction",
         "description": "Auction Event",
