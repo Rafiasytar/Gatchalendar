@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_47ec0362",
+        "id": "gi_e4d75eb0",
         "gameId": "gi",
         "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
         "description": "In-Game, Anniversary Standard 5-Star Character Selection",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
     },
     {
-        "id": "gi_277dd071",
+        "id": "gi_805d3374",
         "gameId": "gi",
         "title": "When We Look Up at the Moon",
         "description": "In-Game, Exploration Mission",
@@ -24,7 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
     },
     {
-        "id": "gi_7ceeeb5c",
+        "id": "gi_06570a42",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 5",
         "description": "In-Game",
@@ -36,7 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-08-10"
     },
     {
-        "id": "gi_3b892195",
+        "id": "gi_b89aca14",
         "gameId": "gi",
         "title": "Frostfarer",
         "description": "In-Game, Battle Pass",
@@ -48,7 +48,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Frostfarer"
     },
     {
-        "id": "gi_91d49846",
+        "id": "gi_5a29523b",
         "gameId": "gi",
         "title": "Phantasmagoric Chronicle",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
@@ -60,7 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-08-12"
     },
     {
-        "id": "gi_ee0988d2",
+        "id": "gi_db4a111a",
         "gameId": "gi",
         "title": "Everwinter Without Mercy",
         "description": "In-Game, Archon Quest",
@@ -72,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Everwinter_Without_Mercy_(Event)"
     },
     {
-        "id": "gi_77f80c15",
+        "id": "gi_610f2fcf",
         "gameId": "gi",
         "title": "Raiment Collection: Gentle Warmth",
         "description": "In-Game, Miliastra Wonderland",
@@ -84,7 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-08-12"
     },
     {
-        "id": "gi_7316045e",
+        "id": "gi_2113fe6c",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Game of Wits",
         "description": "In-Game, The Forge Realm's Temper",
@@ -96,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-08-12"
     },
     {
-        "id": "gi_06a14df8",
+        "id": "gi_eaf36259",
         "gameId": "gi",
         "title": "The Godforsaken Frostlands",
         "description": "In-Game, Exploration Mission",
@@ -108,7 +108,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Godforsaken_Frostlands"
     },
     {
-        "id": "gi_13c7409f",
+        "id": "gi_0c3f8c35",
         "gameId": "gi",
         "title": "Spooky Summer Adventures",
         "description": "In-Game, Miliastra Wonderland",
@@ -120,7 +120,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Spooky_Summer_Adventures"
     },
     {
-        "id": "gi_47df3dce",
+        "id": "gi_3bbbb2e4",
         "gameId": "gi",
         "title": "Stygian Onslaught: Battle of the Starburst",
         "description": "In-Game, Stygian Onslaught",
@@ -132,7 +132,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-08-19"
     },
     {
-        "id": "hsr_e51c5906",
+        "id": "gi_65b479a7",
+        "gameId": "gi",
+        "title": "Great Expeditionist Challenge",
+        "description": "In-Game, Flagship",
+        "longDescription": "Great Expeditionist Challenge is a Flagship Event in Version 7.0. Reach a ranking of 3 to invite  Diona.",
+        "startTime": "2026-08-28T00:00:00",
+        "endTime": "2026-09-14T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/d/db/Great_Expeditionist_Challenge.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Great_Expeditionist_Challenge"
+    },
+    {
+        "id": "hsr_62171dec",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -144,7 +156,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_f690c901",
+        "id": "hsr_e897b736",
         "gameId": "hsr",
         "title": "Cyclical Extrapolation: Financial Freedom",
         "description": "Cyclical Extrapolation",
@@ -156,19 +168,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_e29b1a07",
-        "gameId": "hsr",
-        "title": "Overdrive: Whirlwind Grand Prix",
-        "description": "In-Game",
-        "longDescription": "Overdrive: Whirlwind Grand Prix is a Honkai Star Rail event of type In-Game.",
-        "startTime": "2026-08-26T00:00:00",
-        "endTime": "2026-09-28T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/8b/Event_Overdrive_Whirlwind_Grand_Prix.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "hsr_acf4a2df",
+        "id": "hsr_d61c96dc",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-08-26",
         "description": "In-Game, Login",
@@ -180,7 +180,19 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_597021e6",
+        "id": "hsr_53e06ccf",
+        "gameId": "hsr",
+        "title": "Overdrive: Whirlwind Grand Prix",
+        "description": "In-Game",
+        "longDescription": "Overdrive: Whirlwind Grand Prix is a Honkai Star Rail event of type In-Game.",
+        "startTime": "2026-08-26T00:00:00",
+        "endTime": "2026-09-28T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/8/8b/Event_Overdrive_Whirlwind_Grand_Prix.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_06b73a50",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-08-26",
         "description": "In-Game, Nameless Honor",
@@ -192,7 +204,19 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_caaa16c4",
+        "id": "hsr_d1fd1ffd",
+        "gameId": "hsr",
+        "title": "Aptitude Showcase - Robin \u2022 Summeretto, Hyacine, Dan Heng, Qingque, Gallagher",
+        "description": "In-Game",
+        "longDescription": "Aptitude Showcase - Robin \u2022 Summeretto, Hyacine, Dan Heng, Qingque, Gallagher is a Honkai Star Rail event of type In-Game.",
+        "startTime": "2026-08-26T00:00:00",
+        "endTime": "2026-09-12T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": null,
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_0d5798ea",
         "gameId": "wuwa",
         "title": "False Promise for Tomorrow 2026-08-20",
         "description": "Resonator Convene",
@@ -204,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_9c95e3b8",
+        "id": "wuwa_c45d1c66",
         "gameId": "wuwa",
         "title": "Wind of Transcendence 2026-08-20",
         "description": "Resonator Convene",
@@ -216,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_bdbe415c",
+        "id": "zzz_766750ae",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -228,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_d9b6a2a9",
+        "id": "zzz_45332c42",
         "gameId": "zzz",
         "title": "Return to Ridu: Feathers of Reunion",
         "description": "Zenless Zone Zero Event",
@@ -240,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_ffbc7613",
+        "id": "zzz_e69dc3f6",
         "gameId": "zzz",
         "title": "Summer Waves Roll In",
         "description": "Zenless Zone Zero Event",
@@ -252,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_0076620c",
+        "id": "zzz_d357a0a1",
         "gameId": "zzz",
         "title": "Gift From the Clouds",
         "description": "Zenless Zone Zero Event",
@@ -264,7 +288,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_2c9cbeba",
+        "id": "zzz_7230eda8",
         "gameId": "zzz",
         "title": "Potential Hypothesis: Hunting Game",
         "description": "Zenless Zone Zero Event",
@@ -276,31 +300,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_dc69ff02",
-        "gameId": "zzz",
-        "title": "Filmgoer Thank-You Gift",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Filmgoer Thank-You Gift is a Zenless Zone Zero event.",
-        "startTime": "2026-07-29T00:00:00",
-        "endTime": "2026-09-08T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/77/Event_Filmgoer_Thank-You_Gift_2026-07-29.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_5b2df764",
-        "gameId": "zzz",
-        "title": "New Eridu City Fund",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "New Eridu City Fund is a Zenless Zone Zero event.",
-        "startTime": "2026-07-29T00:00:00",
-        "endTime": "2026-09-08T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/44/New_Eridu_City_Fund.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_f59ceeb6",
+        "id": "zzz_71bde99c",
         "gameId": "zzz",
         "title": "Marcel Anniversary Gifts",
         "description": "Zenless Zone Zero Event",
@@ -312,7 +312,31 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_b5fa30b2",
+        "id": "zzz_7f1b3bbe",
+        "gameId": "zzz",
+        "title": "New Eridu City Fund",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "New Eridu City Fund is a Zenless Zone Zero event.",
+        "startTime": "2026-07-29T00:00:00",
+        "endTime": "2026-09-08T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/44/New_Eridu_City_Fund.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_9a27aaa6",
+        "gameId": "zzz",
+        "title": "Filmgoer Thank-You Gift",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "Filmgoer Thank-You Gift is a Zenless Zone Zero event.",
+        "startTime": "2026-07-29T00:00:00",
+        "endTime": "2026-09-08T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/77/Event_Filmgoer_Thank-You_Gift_2026-07-29.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_c905408c",
         "gameId": "zzz",
         "title": "Phaethon's Grand Reveal of the Year",
         "description": "Zenless Zone Zero Event",
@@ -324,19 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_903462ce",
-        "gameId": "zzz",
-        "title": "Deadly Assault",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Deadly Assault is a Zenless Zone Zero event.",
-        "startTime": "2026-08-14T00:00:00",
-        "endTime": "2026-08-28T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/8/8a/Event_Deadly_Assault.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_c15c39f7",
+        "id": "zzz_cb7cf973",
         "gameId": "zzz",
         "title": "Crispy Meal Deployment Plan",
         "description": "Zenless Zone Zero Event",
@@ -348,7 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_1f5faa7a",
+        "id": "zzz_52e4e43c",
         "gameId": "zzz",
         "title": "The Great En-Nah Giveaway!",
         "description": "Zenless Zone Zero Event",
@@ -360,7 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_17df02ab",
+        "id": "zzz_ec804266",
         "gameId": "zzz",
         "title": "The Final Callback 2026-08-19",
         "description": "Zenless Zone Zero Event",
@@ -372,7 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_e621b27a",
+        "id": "zzz_8ba38b05",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -384,7 +396,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_8f267624",
+        "id": "zzz_ce238a6d",
         "gameId": "zzz",
         "title": "Dangerous Fugitive's Leisurely Vacation",
         "description": "Zenless Zone Zero Event",
@@ -396,7 +408,19 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_97ec331e",
+        "id": "zzz_afd5b707",
+        "gameId": "zzz",
+        "title": "Ding-Dong! Delivery Training in Progress",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "Ding-Dong! Delivery Training in Progress is a Zenless Zone Zero event.",
+        "startTime": "2026-08-28T00:00:00",
+        "endTime": "2026-09-14T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/39/Event_Ding-Dong%21_Delivery_Training_in_Progress.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_5bd464d9",
         "gameId": "zzz",
         "title": "'Till the Ends of the Sky",
         "description": "Exclusive Channel",
@@ -408,7 +432,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_9e459e90",
+        "id": "zzz_65972950",
         "gameId": "zzz",
         "title": "Exclusive Rescreening",
         "description": "Exclusive Channel",
@@ -420,7 +444,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_1abea8c6",
+        "id": "zzz_f797cc9c",
         "gameId": "zzz",
         "title": "Paradise Regained",
         "description": "Exclusive Channel",
@@ -429,18 +453,6 @@
         "endTime": "2026-09-08T00:00:00",
         "type": "BANNER",
         "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/e/ed/Paradise_Regained.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "nte_4c0af5a3",
-        "gameId": "nte",
-        "title": "Going, Going, Gone Auction",
-        "description": "Auction Event",
-        "longDescription": "Bid on antique relics and oddities with other anomaly hunters to win exclusive home furniture blueprints.",
-        "startTime": "2026-08-12T12:00:00",
-        "endTime": "2026-08-26T23:59:59",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/f/f1/Version_1.2_Preview_Special_Program_Premiere_Announcement.png/revision/latest",
         "detailUrl": null
     }
 ]
