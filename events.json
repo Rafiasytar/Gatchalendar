@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_e745e254",
+        "id": "gi_daaf16e9",
         "gameId": "gi",
         "title": "Uncover Lunar Realms, Hone the Eventide Radiance",
         "description": "In-Game, Anniversary 5-Star Character Selection",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Uncover_Lunar_Realms,_Hone_the_Eventide_Radiance/2025-10-22"
     },
     {
-        "id": "gi_24afd2f1",
+        "id": "gi_75c55bda",
         "gameId": "gi",
         "title": "When We Look Up at the Moon",
         "description": "In-Game, Exploration Mission",
@@ -24,7 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/When_We_Look_Up_at_the_Moon"
     },
     {
-        "id": "gi_0338ed98",
+        "id": "gi_8b9b134b",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 5",
         "description": "In-Game, To Temper Thyself and Journey Far",
@@ -36,31 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-08-10"
     },
     {
-        "id": "gi_5d6e325f",
-        "gameId": "gi",
-        "title": "Frostfarer",
-        "description": "In-Game, Battle Pass",
-        "longDescription": "The Battle Pass is a recurring Event unlocked at Adventure Rank 20. Once unlocked, players can complete various daily, weekly, and BP Period missions in order to gain Battle Pass EXP (BEP).",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/2/2b/Battle_Pass_Frostfarer.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Frostfarer"
-    },
-    {
-        "id": "gi_d8bf30ae",
-        "gameId": "gi",
-        "title": "Phantasmagoric Chronicle",
-        "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
-        "longDescription": "Miliastra Pass is a recurring Event for Miliastra Wonderland. It is a Battle Pass that uses Chronicle EXP gained from weekly and BP period quests to reward  Geodes of Replication, Cosmetics, Interactive Expressions, Lustrous Materials, Lobby Facilities, and Chronicle Caches. It includes the Chronicles of the Sky (basic edition), Chronicles of the Realms, and Epic of the Realms.",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/e/e9/Phantasmagoric_Chronicle.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-08-12"
-    },
-    {
-        "id": "gi_db6cdb7e",
+        "id": "gi_4a323d60",
         "gameId": "gi",
         "title": "Everwinter Without Mercy",
         "description": "In-Game, Archon Quest",
@@ -72,7 +48,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Everwinter_Without_Mercy_(Event)"
     },
     {
-        "id": "gi_a57f97ed",
+        "id": "gi_948f0e2c",
         "gameId": "gi",
         "title": "Raiment Collection: Gentle Warmth",
         "description": "In-Game, Miliastra Wonderland",
@@ -84,11 +60,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-08-12"
     },
     {
-        "id": "gi_7d006a04",
+        "id": "gi_ca612fb2",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Game of Wits",
         "description": "In-Game, The Forge Realm's Temper",
-        "longDescription": "The Forge Realm's Temper is a PvE Event gamemode for Genius Invokation TCG. The Forge Realm's Temper has 29 occurrences:",
+        "longDescription": "The Forge Realm's Temper is a PvE Event gamemode for Genius Invokation TCG. The Forge Realm's Temper has 30 occurrences:",
         "startTime": "2026-08-12T00:00:00",
         "endTime": "2026-09-23T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -96,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-08-12"
     },
     {
-        "id": "gi_3155db3f",
+        "id": "gi_37fb08e5",
         "gameId": "gi",
         "title": "The Godforsaken Frostlands",
         "description": "In-Game, Exploration Mission",
@@ -108,7 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Godforsaken_Frostlands"
     },
     {
-        "id": "gi_d678faa0",
+        "id": "gi_e43ce525",
         "gameId": "gi",
         "title": "Stygian Onslaught: Battle of the Starburst",
         "description": "In-Game, Stygian Onslaught",
@@ -120,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-08-19"
     },
     {
-        "id": "gi_2727a3f6",
+        "id": "gi_1c6f750a",
         "gameId": "gi",
         "title": "Test Run - Flins, Ineffa, Aino, Iansan, Lan Yan",
         "description": "In-Game, Test Run",
@@ -132,31 +108,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-09-01"
     },
     {
-        "id": "gi_c1b0af6f",
-        "gameId": "gi",
-        "title": "Starlight Voyage: Joyous Moment",
-        "description": "In-Game, Miliastra Wonderland",
-        "longDescription": "Starlight Voyage is a Recurring Event in Miliastra Wonderland that rewards limited-time Prismatic Crystal for completing tasks. Starlight Voyage has 6 occurrences:",
-        "startTime": "2026-09-07T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/0/01/Starlight_Voyage_Joyous_Moment.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlight_Voyage/2026-09-07"
-    },
-    {
-        "id": "gi_8dc25471",
-        "gameId": "gi",
-        "title": "Overflowing Abundance 2026-09-14",
-        "description": "In-Game",
-        "longDescription": "Overflowing Abundance is a Recurring Event. During the event, the Domains of Mastery and Domains of Forgery will provide double the rewards a maximum of three times each day.  Condensed Resin,  Fragile Resin, and  Transient Resin are not eligible to consume Overflowing Abundance rewards.",
-        "startTime": "2026-09-14T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/5/52/Overflowing_Abundance_2026-09-14.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Overflowing_Abundance/2026-09-14"
-    },
-    {
-        "id": "hsr_9a06dd98",
+        "id": "hsr_f3328ca4",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -168,7 +120,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_6c74826c",
+        "id": "hsr_3781c164",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-08-26",
         "description": "In-Game, Login",
@@ -180,7 +132,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_004fc572",
+        "id": "hsr_a08ba08b",
         "gameId": "hsr",
         "title": "Overdrive: Whirlwind Grand Prix",
         "description": "In-Game",
@@ -192,7 +144,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_5dc1f08d",
+        "id": "hsr_7a629b66",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-08-26",
         "description": "In-Game, Nameless Honor",
@@ -204,19 +156,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_3bd8d5b8",
-        "gameId": "hsr",
-        "title": "Planar Fissure 2026-09-07",
-        "description": "In-Game",
-        "longDescription": "Planar Fissure 2026-09-07 is a Honkai Star Rail event of type In-Game.",
-        "startTime": "2026-09-07T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/9/91/Event_Planar_Fissure.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "hsr_9d63c0f1",
+        "id": "hsr_ac141a6d",
         "gameId": "hsr",
         "title": "Minuscule Great Adventure",
         "description": "In-Game",
@@ -228,7 +168,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_5b83e4c6",
+        "id": "hsr_128901c3",
         "gameId": "hsr",
         "title": "Aptitude Showcase - Aventurine \u2022 Waveflair, Ashveil, Sampo, Hook, Guinaifen",
         "description": "In-Game",
@@ -240,19 +180,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_c415b6e0",
-        "gameId": "hsr",
-        "title": "Cyclical Extrapolation: The Use of the Useless",
-        "description": "Cyclical Extrapolation",
-        "longDescription": "Cyclical Extrapolation: The Use of the Useless is a Honkai Star Rail event of type Cyclical Extrapolation.",
-        "startTime": "2026-09-14T00:00:00",
-        "endTime": "2026-09-21T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/ad/Location_Context_Game_System_Divergent_Universe_Terminal_Interface.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "hsr_cd32f066",
+        "id": "hsr_5f4fadee",
         "gameId": "hsr",
         "title": "Realm of the Strange 2026-09-19",
         "description": "In-Game",
@@ -264,7 +192,19 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_48c82761",
+        "id": "hsr_da8c5d14",
+        "gameId": "hsr",
+        "title": "Cyclical Extrapolation: Truth or Illusion",
+        "description": "Cyclical Extrapolation",
+        "longDescription": "Cyclical Extrapolation: Truth or Illusion is a Honkai Star Rail event of type Cyclical Extrapolation.",
+        "startTime": "2026-09-21T00:00:00",
+        "endTime": "2026-09-28T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/a/ad/Location_Context_Game_System_Divergent_Universe_Terminal_Interface.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "wuwa_973d7877",
         "gameId": "wuwa",
         "title": "Distant May the Starlights Be 2026-09-10",
         "description": "Resonator Convene",
@@ -276,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_d9766256",
+        "id": "wuwa_5be40cfa",
         "gameId": "wuwa",
         "title": "Thousand Futures Mirrored in Snow 2026-09-10",
         "description": "Resonator Convene",
@@ -288,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_737164d4",
+        "id": "wuwa_d7880266",
         "gameId": "wuwa",
         "title": "Where Santu Beckons 2026-09-10",
         "description": "Resonator Convene",
@@ -300,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_a5c631e1",
+        "id": "zzz_6f3a6ec4",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -312,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_8c563311",
+        "id": "zzz_8dd8089f",
         "gameId": "zzz",
         "title": "Annihilation Simulacrum",
         "description": "Zenless Zone Zero Event",
@@ -324,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_5296e8b4",
+        "id": "zzz_7318a14f",
         "gameId": "zzz",
         "title": "New Eridu City Fund",
         "description": "Zenless Zone Zero Event",
@@ -336,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_f573cf36",
+        "id": "zzz_d5f81062",
         "gameId": "zzz",
         "title": "All-New Program",
         "description": "Zenless Zone Zero Event",
@@ -348,7 +288,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_594141dc",
+        "id": "zzz_6c6f98ed",
         "gameId": "zzz",
         "title": "Potential Hypothesis: Reforged in Fire",
         "description": "Zenless Zone Zero Event",
@@ -360,7 +300,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_37ce92f0",
+        "id": "zzz_0c8642a8",
         "gameId": "zzz",
         "title": "Angels Support Operation",
         "description": "Zenless Zone Zero Event",
@@ -372,7 +312,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_114b1629",
+        "id": "zzz_81054e9d",
         "gameId": "zzz",
         "title": "The Final Callback 2026-09-09",
         "description": "Zenless Zone Zero Event",
@@ -384,7 +324,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_7ad379fe",
+        "id": "zzz_616f9748",
         "gameId": "zzz",
         "title": "Vyrium Vacation Album",
         "description": "Zenless Zone Zero Event",
@@ -396,7 +336,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_c8e61e77",
+        "id": "zzz_b7668740",
         "gameId": "zzz",
         "title": "Clink, Clank, Pinball Knight!",
         "description": "Zenless Zone Zero Event",
@@ -408,7 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_6d1d4a03",
+        "id": "zzz_3ef82685",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -420,7 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_692ea22b",
+        "id": "zzz_d9b6f38f",
         "gameId": "zzz",
         "title": "Shadow Chase Showdown",
         "description": "Zenless Zone Zero Event",
@@ -432,7 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_ed9bd70c",
+        "id": "zzz_024ad3a4",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -444,7 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3668805b",
+        "id": "zzz_3e11d7f1",
         "gameId": "zzz",
         "title": "Axiom of Captivation",
         "description": "Exclusive Channel",
@@ -456,7 +396,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_0b82be2f",
+        "id": "zzz_a4e1688d",
         "gameId": "zzz",
         "title": "Bloodmoon Rising",
         "description": "Exclusive Channel",
@@ -468,7 +408,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_82a82fc1",
+        "id": "zzz_1e3d62dc",
         "gameId": "zzz",
         "title": "Cindernite Respite",
         "description": "Exclusive Channel",
@@ -480,7 +420,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_8ca73845",
+        "id": "zzz_a6537137",
         "gameId": "zzz",
         "title": "Cold Rain Wanes in the Night",
         "description": "Exclusive Channel",
