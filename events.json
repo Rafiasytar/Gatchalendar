@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_8b9d0681",
+        "id": "gi_c79f2175",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 5",
         "description": "In-Game, To Temper Thyself and Journey Far",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-08-10"
     },
     {
-        "id": "gi_951dd8d5",
+        "id": "gi_c95d3e60",
         "gameId": "gi",
         "title": "The Godforsaken Frostlands",
         "description": "In-Game, Exploration Mission",
@@ -24,7 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Godforsaken_Frostlands"
     },
     {
-        "id": "gi_a6d8cda2",
+        "id": "gi_49a98f56",
         "gameId": "gi",
         "title": "Silvery Moonlight Chronicle",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
@@ -36,7 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-09-23"
     },
     {
-        "id": "gi_8afc346b",
+        "id": "gi_90c49207",
         "gameId": "gi",
         "title": "Moontrace",
         "description": "In-Game, Battle Pass",
@@ -48,7 +48,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Moontrace"
     },
     {
-        "id": "gi_95951aa4",
+        "id": "gi_c9db5252",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Clever Stratagems",
         "description": "In-Game, The Forge Realm's Temper",
@@ -60,7 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-09-23"
     },
     {
-        "id": "gi_d2f76e55",
+        "id": "gi_71a520a8",
         "gameId": "gi",
         "title": "Across the Frozen Wilds, Honing One's Edge",
         "description": "In-Game, Anniversary 5-Star Character Selection",
@@ -72,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Across_the_Frozen_Wilds,_Honing_One%27s_Edge"
     },
     {
-        "id": "gi_ad9ef7ad",
+        "id": "gi_7f9faa60",
         "gameId": "gi",
         "title": "A Rekviem for the Underworld",
         "description": "In-Game, Archon Quest",
@@ -84,7 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/A_Rekviem_for_the_Underworld_(Event)"
     },
     {
-        "id": "gi_30ae8b38",
+        "id": "gi_8233cc2b",
         "gameId": "gi",
         "title": "Tabletop Troupe: A Gathering on Adventure's Eve",
         "description": "In-Game, Anniversary 5-Star Character Selection",
@@ -96,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Tabletop_Troupe:_A_Gathering_on_Adventure%27s_Eve"
     },
     {
-        "id": "gi_3aa00394",
+        "id": "gi_871dc797",
         "gameId": "gi",
         "title": "Raiment Collection: Warmth of a Sunny Day",
         "description": "In-Game, Miliastra Wonderland",
@@ -108,11 +108,11 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-09-23"
     },
     {
-        "id": "gi_04c22dbe",
+        "id": "gi_fe83d201",
         "gameId": "gi",
         "title": "Silverwing in Pursuit of the Moon",
         "description": "In-Game, Flagship",
-        "longDescription": "Silverwing in Pursuit of the Moon is a Flagship Event in Version 7.1.",
+        "longDescription": "Silverwing in Pursuit of the Moon is a Flagship Event in Version 7.1. This event added additional \"This BP Period\" Battle Pass missions to the Moontrace Battle Pass. The Battle Pass EXP (BP EXP) obtained from these missions do not count towards the weekly experience limit of 10,000 BP EXP.",
         "startTime": "2026-09-24T00:00:00",
         "endTime": "2026-10-12T00:00:00",
         "type": "IN_GAME_EVENT",
@@ -120,7 +120,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Silverwing_in_Pursuit_of_the_Moon"
     },
     {
-        "id": "hsr_893e86ea",
+        "id": "hsr_0f119d94",
+        "gameId": "hsr",
+        "title": "Currency Wars: Zero-Sum Game",
+        "description": "In-Game, Currency Wars",
+        "longDescription": "Currency Wars: Zero-Sum Game is a Honkai Star Rail event of type In-Game, Currency Wars.",
+        "startTime": "2025-11-05T00:00:00",
+        "endTime": "2026-11-11T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/houkai-star-rail/images/7/7b/Event_Currency_Wars_Zero-Sum_Game.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "hsr_81fe49a3",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -132,7 +144,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_33c2e3d6",
+        "id": "hsr_6e28051a",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-08-26",
         "description": "In-Game, Login",
@@ -144,7 +156,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_0eff4869",
+        "id": "hsr_4c4f9a0d",
         "gameId": "hsr",
         "title": "Overdrive: Whirlwind Grand Prix",
         "description": "In-Game",
@@ -156,7 +168,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_2a29f80a",
+        "id": "hsr_3676ffe9",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-08-26",
         "description": "In-Game, Nameless Honor",
@@ -168,7 +180,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_c40d12e4",
+        "id": "hsr_69c94c44",
         "gameId": "hsr",
         "title": "Minuscule Great Adventure",
         "description": "In-Game",
@@ -180,7 +192,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_0d7a4b79",
+        "id": "hsr_7f4c1875",
         "gameId": "hsr",
         "title": "Aptitude Showcase - Aventurine \u2022 Waveflair, Ashveil, Sampo, Hook, Guinaifen",
         "description": "In-Game",
@@ -192,7 +204,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_28858659",
+        "id": "hsr_2c8ad062",
         "gameId": "hsr",
         "title": "Realm of the Strange 2026-09-19",
         "description": "In-Game",
@@ -204,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_cc594e30",
+        "id": "hsr_e3055423",
         "gameId": "hsr",
         "title": "Cyclical Extrapolation: Truth or Illusion",
         "description": "Cyclical Extrapolation",
@@ -216,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_5a996310",
+        "id": "wuwa_fd355934",
         "gameId": "wuwa",
         "title": "Distant May the Starlights Be 2026-09-10",
         "description": "Resonator Convene",
@@ -228,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_0275d8b4",
+        "id": "wuwa_53cc255e",
         "gameId": "wuwa",
         "title": "Thousand Futures Mirrored in Snow 2026-09-10",
         "description": "Resonator Convene",
@@ -240,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_ad2de299",
+        "id": "wuwa_28e0bf7d",
         "gameId": "wuwa",
         "title": "Where Santu Beckons 2026-09-10",
         "description": "Resonator Convene",
@@ -252,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_85263874",
+        "id": "zzz_7cee8245",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -264,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3b56b58b",
+        "id": "zzz_3325efcc",
         "gameId": "zzz",
         "title": "Annihilation Simulacrum",
         "description": "Zenless Zone Zero Event",
@@ -276,7 +288,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_79a47dae",
+        "id": "zzz_6ac23867",
         "gameId": "zzz",
         "title": "New Eridu City Fund",
         "description": "Zenless Zone Zero Event",
@@ -288,7 +300,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_095fe40d",
+        "id": "zzz_71c6aede",
         "gameId": "zzz",
         "title": "All-New Program",
         "description": "Zenless Zone Zero Event",
@@ -300,7 +312,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_c95ade1c",
+        "id": "zzz_6fb545b1",
         "gameId": "zzz",
         "title": "Potential Hypothesis: Reforged in Fire",
         "description": "Zenless Zone Zero Event",
@@ -312,7 +324,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_6f48a86c",
+        "id": "zzz_067cb105",
         "gameId": "zzz",
         "title": "Angels Support Operation",
         "description": "Zenless Zone Zero Event",
@@ -324,7 +336,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3b50aa5b",
+        "id": "zzz_204f96fd",
         "gameId": "zzz",
         "title": "The Final Callback 2026-09-09",
         "description": "Zenless Zone Zero Event",
@@ -336,7 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_00101e30",
+        "id": "zzz_2d718301",
         "gameId": "zzz",
         "title": "Vyrium Vacation Album",
         "description": "Zenless Zone Zero Event",
@@ -348,7 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_a902ce5f",
+        "id": "zzz_9ef1e9cd",
         "gameId": "zzz",
         "title": "Clink, Clank, Pinball Knight!",
         "description": "Zenless Zone Zero Event",
@@ -360,7 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_50d8c959",
+        "id": "zzz_9728cb83",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -372,7 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_e9a8ff33",
+        "id": "zzz_87daddf0",
         "gameId": "zzz",
         "title": "Shadow Chase Showdown",
         "description": "Zenless Zone Zero Event",
@@ -384,7 +396,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_5a87f7b9",
+        "id": "zzz_c8417bac",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -396,7 +408,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3472c439",
+        "id": "zzz_9b04bbc6",
         "gameId": "zzz",
         "title": "Advanced Bounty: Area Patrol",
         "description": "Zenless Zone Zero Event",
@@ -408,7 +420,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_831fd4c6",
+        "id": "zzz_18d415e0",
         "gameId": "zzz",
         "title": "Surprise Screening Plan",
         "description": "Zenless Zone Zero Event",
@@ -420,7 +432,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_e5deb737",
+        "id": "zzz_cee53154",
         "gameId": "zzz",
         "title": "Axiom of Captivation",
         "description": "Exclusive Channel",
@@ -432,7 +444,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_f9f4cf52",
+        "id": "zzz_41cbad8e",
         "gameId": "zzz",
         "title": "Bloodmoon Rising",
         "description": "Exclusive Channel",
@@ -444,7 +456,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_e4c0163b",
+        "id": "zzz_a1bb0015",
         "gameId": "zzz",
         "title": "Cindernite Respite",
         "description": "Exclusive Channel",
@@ -456,7 +468,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_632936de",
+        "id": "zzz_55abd617",
         "gameId": "zzz",
         "title": "Cold Rain Wanes in the Night",
         "description": "Exclusive Channel",
