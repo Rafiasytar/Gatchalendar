@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_dba09115",
+        "id": "gi_d2f241da",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 5",
         "description": "In-Game, To Temper Thyself and Journey Far",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-08-10"
     },
     {
-        "id": "gi_78afe666",
+        "id": "gi_c6c74430",
         "gameId": "gi",
         "title": "The Godforsaken Frostlands",
         "description": "In-Game, Exploration Mission",
@@ -24,19 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Godforsaken_Frostlands"
     },
     {
-        "id": "gi_d74c31d5",
-        "gameId": "gi",
-        "title": "Silvery Moonlight Chronicle",
-        "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
-        "longDescription": "Miliastra Pass is a recurring Event for Miliastra Wonderland. It is a Battle Pass that uses Chronicle EXP gained from weekly and BP period quests to reward  Geodes of Replication, Cosmetics, Interactive Expressions, Lustrous Materials, Lobby Facilities, and Chronicle Caches. It includes the Chronicles of the Sky (basic edition), Chronicles of the Realms, and Epic of the Realms.",
-        "startTime": "2026-09-23T00:00:00",
-        "endTime": "2026-11-02T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Silvery_Moonlight_Chronicle.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-09-23"
-    },
-    {
-        "id": "gi_004f0169",
+        "id": "gi_75e858c2",
         "gameId": "gi",
         "title": "Moontrace",
         "description": "In-Game, Battle Pass",
@@ -48,7 +36,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Moontrace"
     },
     {
-        "id": "gi_ad3fe84d",
+        "id": "gi_40f621c2",
+        "gameId": "gi",
+        "title": "Silvery Moonlight Chronicle",
+        "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
+        "longDescription": "Miliastra Pass is a recurring Event for Miliastra Wonderland. It is a Battle Pass that uses Chronicle EXP gained from weekly and BP period quests to reward  Geodes of Replication, Cosmetics, Interactive Expressions, Lustrous Materials, Lobby Facilities, and Chronicle Caches. It includes the Chronicles of the Sky (basic edition), Chronicles of the Realms, and Epic of the Realms.",
+        "startTime": "2026-09-23T00:00:00",
+        "endTime": "2026-11-02T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/e/ec/Silvery_Moonlight_Chronicle.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-09-23"
+    },
+    {
+        "id": "gi_3d859534",
         "gameId": "gi",
         "title": "Starlit Gala: Wonderland Selects",
         "description": "In-Game, Miliastra Wonderland",
@@ -60,7 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlit_Gala:_Wonderland_Selects"
     },
     {
-        "id": "gi_b3db99a8",
+        "id": "gi_c5fa0c52",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Clever Stratagems",
         "description": "In-Game, The Forge Realm's Temper",
@@ -72,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-09-23"
     },
     {
-        "id": "gi_a540d64a",
+        "id": "gi_f76e8596",
         "gameId": "gi",
         "title": "Tabletop Troupe: A Gathering on Adventure's Eve",
         "description": "In-Game, Anniversary 5-Star Character Selection",
@@ -84,7 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Tabletop_Troupe:_A_Gathering_on_Adventure%27s_Eve"
     },
     {
-        "id": "gi_331c3249",
+        "id": "gi_cdf1e94a",
         "gameId": "gi",
         "title": "Across the Frozen Wilds, Honing One's Edge",
         "description": "In-Game, Anniversary 5-Star Character Selection",
@@ -96,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Across_the_Frozen_Wilds,_Honing_One%27s_Edge"
     },
     {
-        "id": "gi_95b72faa",
+        "id": "gi_5e552571",
         "gameId": "gi",
         "title": "A Rekviem for the Underworld",
         "description": "In-Game, Archon Quest",
@@ -108,7 +108,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/A_Rekviem_for_the_Underworld_(Event)"
     },
     {
-        "id": "gi_1c1edc84",
+        "id": "gi_61464659",
         "gameId": "gi",
         "title": "Raiment Collection: Warmth of a Sunny Day",
         "description": "In-Game, Miliastra Wonderland",
@@ -120,7 +120,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-09-23"
     },
     {
-        "id": "gi_4a67a619",
+        "id": "gi_9e780443",
         "gameId": "gi",
         "title": "Rainbow's End: Resplendent Starlight",
         "description": "In-Game, Login, Mail",
@@ -132,7 +132,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Rainbow%27s_End:_Resplendent_Starlight"
     },
     {
-        "id": "gi_9194c506",
+        "id": "gi_be8f5a45",
         "gameId": "gi",
         "title": "Stygian Onslaught: Luminous Battlefront",
         "description": "In-Game, Stygian Onslaught",
@@ -144,7 +144,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-09-30"
     },
     {
-        "id": "gi_5522731d",
+        "id": "gi_61d1c391",
         "gameId": "gi",
         "title": "Starlit Gala",
         "description": "Web, Miliastra Wonderland",
@@ -156,7 +156,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlit_Gala"
     },
     {
-        "id": "gi_a004de47",
+        "id": "gi_0cb67b0b",
         "gameId": "gi",
         "title": "Heated Battle Mode: Automatic Artistry",
         "description": "In-Game, Heated Battle Mode",
@@ -168,7 +168,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Heated_Battle_Mode/2026-10-10"
     },
     {
-        "id": "gi_2b1794c3",
+        "id": "gi_79a33b7a",
         "gameId": "gi",
         "title": "Test Run - Skirk, Escoffier, Dahlia, Candace, Mika",
         "description": "In-Game, Test Run",
@@ -180,7 +180,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-10-13"
     },
     {
-        "id": "gi_2cbfb66f",
+        "id": "gi_7209772f",
         "gameId": "gi",
         "title": "Starlight Voyage: Heart Unbound",
         "description": "In-Game, Miliastra Wonderland",
@@ -192,7 +192,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlight_Voyage/2026-10-19"
     },
     {
-        "id": "hsr_bd978f69",
+        "id": "gi_08e3bf43",
+        "gameId": "gi",
+        "title": "Carefree Snowball Fight",
+        "description": "In-Game, Co-Op",
+        "longDescription": "Carefree Snowball Fight is an Event in Version 7.1.",
+        "startTime": "2026-10-21T00:00:00",
+        "endTime": "2026-11-02T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/4/46/Carefree_Snowball_Fight.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Carefree_Snowball_Fight"
+    },
+    {
+        "id": "hsr_9462a4f4",
         "gameId": "hsr",
         "title": "Currency Wars: Zero-Sum Game",
         "description": "In-Game, Currency Wars",
@@ -204,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_ce375911",
+        "id": "hsr_d3823e5d",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -216,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_364dacbc",
+        "id": "hsr_3aefb238",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-09-28",
         "description": "In-Game, Nameless Honor",
@@ -228,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_19e33f0a",
+        "id": "hsr_361e9539",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-09-28",
         "description": "In-Game, Login",
@@ -240,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_3a1bbe92",
+        "id": "hsr_9fe2d563",
         "gameId": "hsr",
         "title": "Love, Ghosts & Robots",
         "description": "In-Game",
@@ -252,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_f5cd4549",
+        "id": "hsr_41d0db5e",
         "gameId": "hsr",
         "title": "Planar Fissure 2026-10-12",
         "description": "In-Game",
@@ -264,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_219343c7",
+        "id": "wuwa_8fb92ca9",
         "gameId": "wuwa",
         "title": "Artisan's Search",
         "description": "Version 3.7",
@@ -276,7 +288,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_3aabd63c",
+        "id": "wuwa_5e328f1d",
         "gameId": "wuwa",
         "title": "Across Time's Waxes and Wanes 2026-09-30",
         "description": "Resonator Convene",
@@ -288,7 +300,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_e2eceeec",
+        "id": "wuwa_ab5472b0",
         "gameId": "wuwa",
         "title": "As Full as Tonight, Forever 2026-09-30",
         "description": "Resonator Convene",
@@ -300,7 +312,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_576c55fb",
+        "id": "wuwa_eeb76506",
         "gameId": "wuwa",
         "title": "Horizon of Dawnbreak 2026-09-30",
         "description": "Resonator Convene",
@@ -312,7 +324,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_332a03b3",
+        "id": "zzz_b008462e",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -324,7 +336,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_8a6612a1",
+        "id": "zzz_391c5717",
         "gameId": "zzz",
         "title": "Annihilation Simulacrum",
         "description": "Zenless Zone Zero Event",
@@ -336,7 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_0260713e",
+        "id": "zzz_4ac0300a",
         "gameId": "zzz",
         "title": "Enigma of the Labyrinth: Operation Bagel",
         "description": "Zenless Zone Zero Event",
@@ -348,31 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_4c319b37",
-        "gameId": "zzz",
-        "title": "All-New Program",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "All-New Program is a Zenless Zone Zero event.",
-        "startTime": "2026-09-09T00:00:00",
-        "endTime": "2026-10-20T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/17/Event_All-New_Program_3.2.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_4f11077e",
-        "gameId": "zzz",
-        "title": "Potential Hypothesis: Reforged in Fire",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Potential Hypothesis: Reforged in Fire is a Zenless Zone Zero event.",
-        "startTime": "2026-09-09T00:00:00",
-        "endTime": "2026-10-20T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/3d/Event_Potential_Hypothesis_Reforged_in_Fire.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_22eaa38b",
+        "id": "zzz_b7159892",
         "gameId": "zzz",
         "title": "Angels Support Operation",
         "description": "Zenless Zone Zero Event",
@@ -384,43 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_6fe2a283",
-        "gameId": "zzz",
-        "title": "Surprise Screening Plan",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "Surprise Screening Plan is a Zenless Zone Zero event.",
-        "startTime": "2026-09-23T00:00:00",
-        "endTime": "2026-10-20T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/3/3e/Event_Surprise_Screening_Plan.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_6a9d1985",
-        "gameId": "zzz",
-        "title": "\"En-Nah\" Into Your Lap",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "\"En-Nah\" Into Your Lap is a Zenless Zone Zero event.",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-10-20T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/1/11/Event_En-Nah_Into_Your_Lap_3.2.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_ac25f1ed",
-        "gameId": "zzz",
-        "title": "The Final Callback 2026-09-30",
-        "description": "Zenless Zone Zero Event",
-        "longDescription": "The Final Callback 2026-09-30 is a Zenless Zone Zero event.",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-10-20T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/52/Event_The_Final_Callback_2026-09-30.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_c7927dfa",
+        "id": "zzz_16362e95",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -432,7 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3098254c",
+        "id": "zzz_10fc5b21",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -444,31 +396,43 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_b048449d",
+        "id": "zzz_2eca9f91",
         "gameId": "zzz",
-        "title": "Cindernight Respite",
-        "description": "Exclusive Channel",
-        "longDescription": "Cindernight Respite is a Zenless Zone Zero Exclusive Channel (Banner).",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-10-20T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/a/ad/Cindernight_Respite.png/revision/latest",
+        "title": "The Final Callback 2026-10-21",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "The Final Callback 2026-10-21 is a Zenless Zone Zero event.",
+        "startTime": "2026-10-21T00:00:00",
+        "endTime": "2026-11-11T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": null,
         "detailUrl": null
     },
     {
-        "id": "zzz_76a44c11",
+        "id": "zzz_e3413448",
         "gameId": "zzz",
-        "title": "Cold Rain Wanes in the Night",
-        "description": "Exclusive Channel",
-        "longDescription": "Cold Rain Wanes in the Night is a Zenless Zone Zero Exclusive Channel (Banner).",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-10-20T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/5a/Cold_Rain_Wanes_in_the_Night.png/revision/latest",
+        "title": "New Eridu City Fund",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "New Eridu City Fund is a Zenless Zone Zero event.",
+        "startTime": "2026-10-21T00:00:00",
+        "endTime": "2026-11-30T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/4/44/New_Eridu_City_Fund.png/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "zzz_d1bba3b2",
+        "id": "zzz_a7e78a65",
+        "gameId": "zzz",
+        "title": "All-New Program",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "All-New Program is a Zenless Zone Zero event.",
+        "startTime": "2026-10-21T00:00:00",
+        "endTime": "2026-12-01T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/fc/Event_All-New_Program_3.3.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_5f79944e",
         "gameId": "zzz",
         "title": "Answers in the Wind",
         "description": "Exclusive Channel",
@@ -480,31 +444,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_0f4fc306",
-        "gameId": "zzz",
-        "title": "Graceful Gale",
-        "description": "Exclusive Channel",
-        "longDescription": "Graceful Gale is a Zenless Zone Zero Exclusive Channel (Banner).",
-        "startTime": "2026-10-21T00:00:00",
-        "endTime": "2026-10-21T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/5/5a/Graceful_Gale.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_33748d07",
-        "gameId": "zzz",
-        "title": "Into the Flames of Life",
-        "description": "Exclusive Channel",
-        "longDescription": "Into the Flames of Life is a Zenless Zone Zero Exclusive Channel (Banner).",
-        "startTime": "2026-10-21T00:00:00",
-        "endTime": "2026-10-21T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/7/7f/Into_the_Flames_of_Life.png/revision/latest",
-        "detailUrl": null
-    },
-    {
-        "id": "zzz_b1f3d7da",
+        "id": "zzz_ac8904d8",
         "gameId": "zzz",
         "title": "Outlier of Prodigies",
         "description": "Exclusive Channel",
