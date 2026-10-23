@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_8d787022",
+        "id": "gi_3011b8ab",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 5",
         "description": "In-Game, To Temper Thyself and Journey Far",
@@ -12,7 +12,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-08-10"
     },
     {
-        "id": "gi_6c2b6566",
+        "id": "gi_5c01d8c9",
         "gameId": "gi",
         "title": "The Godforsaken Frostlands",
         "description": "In-Game, Exploration Mission",
@@ -24,7 +24,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Godforsaken_Frostlands"
     },
     {
-        "id": "gi_aeeb9c91",
+        "id": "gi_bb1d4460",
         "gameId": "gi",
         "title": "Moontrace",
         "description": "In-Game, Battle Pass",
@@ -36,7 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Moontrace"
     },
     {
-        "id": "gi_e1bc5dd6",
+        "id": "gi_96172baf",
         "gameId": "gi",
         "title": "Silvery Moonlight Chronicle",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
@@ -48,7 +48,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-09-23"
     },
     {
-        "id": "gi_63c590ad",
+        "id": "gi_43c4f5f8",
         "gameId": "gi",
         "title": "Starlit Gala: Wonderland Selects",
         "description": "In-Game, Miliastra Wonderland",
@@ -60,7 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlit_Gala:_Wonderland_Selects"
     },
     {
-        "id": "gi_38c1b6e1",
+        "id": "gi_58a062e8",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Clever Stratagems",
         "description": "In-Game, The Forge Realm's Temper",
@@ -72,7 +72,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-09-23"
     },
     {
-        "id": "gi_21650e0e",
+        "id": "gi_63853e6f",
         "gameId": "gi",
         "title": "Tabletop Troupe: A Gathering on Adventure's Eve",
         "description": "In-Game, Anniversary 5-Star Character Selection",
@@ -84,7 +84,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Tabletop_Troupe:_A_Gathering_on_Adventure%27s_Eve"
     },
     {
-        "id": "gi_e1d38039",
+        "id": "gi_3a23e391",
         "gameId": "gi",
         "title": "Across the Frozen Wilds, Honing One's Edge",
         "description": "In-Game, Anniversary 5-Star Character Selection",
@@ -96,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Across_the_Frozen_Wilds,_Honing_One%27s_Edge"
     },
     {
-        "id": "gi_980cd40e",
+        "id": "gi_405e88a2",
         "gameId": "gi",
         "title": "A Rekviem for the Underworld",
         "description": "In-Game, Archon Quest",
@@ -108,7 +108,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/A_Rekviem_for_the_Underworld_(Event)"
     },
     {
-        "id": "gi_7df687ad",
+        "id": "gi_ba88cdcd",
         "gameId": "gi",
         "title": "Raiment Collection: Warmth of a Sunny Day",
         "description": "In-Game, Miliastra Wonderland",
@@ -120,7 +120,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-09-23"
     },
     {
-        "id": "gi_3107ed2a",
+        "id": "gi_e209ec82",
         "gameId": "gi",
         "title": "Rainbow's End: Resplendent Starlight",
         "description": "In-Game, Login, Mail",
@@ -132,7 +132,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Rainbow%27s_End:_Resplendent_Starlight"
     },
     {
-        "id": "gi_73dad50a",
+        "id": "gi_fb14179d",
         "gameId": "gi",
         "title": "Stygian Onslaught: Luminous Battlefront",
         "description": "In-Game, Stygian Onslaught",
@@ -144,7 +144,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-09-30"
     },
     {
-        "id": "gi_62151400",
+        "id": "gi_6db2ee57",
         "gameId": "gi",
         "title": "Starlit Gala",
         "description": "Web, Miliastra Wonderland",
@@ -156,7 +156,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlit_Gala"
     },
     {
-        "id": "gi_e2a9bc9b",
+        "id": "gi_b7e74806",
         "gameId": "gi",
         "title": "Heated Battle Mode: Automatic Artistry",
         "description": "In-Game, Heated Battle Mode",
@@ -168,19 +168,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Heated_Battle_Mode/2026-10-10"
     },
     {
-        "id": "gi_f1da9b57",
-        "gameId": "gi",
-        "title": "Predictive Victory Dynamics",
-        "description": "In-Game",
-        "longDescription": "Predictive Victory Dynamics is an Event in Version 7.1. * The timing of this event is quite unusual. Travelers are advised to check the event interface for the relevant times and participate before it's too late!",
-        "startTime": "2026-10-11T00:00:00",
-        "endTime": "2026-10-22T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/1/1d/Predictive_Victory_Dynamics.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Predictive_Victory_Dynamics"
-    },
-    {
-        "id": "gi_b08db1a5",
+        "id": "gi_0e3c69b7",
         "gameId": "gi",
         "title": "Test Run - Skirk, Escoffier, Dahlia, Candace, Mika",
         "description": "In-Game, Test Run",
@@ -192,7 +180,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-10-13"
     },
     {
-        "id": "gi_1c41577c",
+        "id": "gi_47f4be6c",
         "gameId": "gi",
         "title": "Starlight Voyage: Heart Unbound",
         "description": "In-Game, Miliastra Wonderland",
@@ -204,7 +192,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlight_Voyage/2026-10-19"
     },
     {
-        "id": "gi_ef82e1bc",
+        "id": "gi_205d482c",
         "gameId": "gi",
         "title": "Carefree Snowball Fight",
         "description": "In-Game, Co-Op",
@@ -216,7 +204,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Carefree_Snowball_Fight"
     },
     {
-        "id": "hsr_9ecc7d7b",
+        "id": "hsr_337ef29d",
         "gameId": "hsr",
         "title": "Currency Wars: Zero-Sum Game",
         "description": "In-Game, Currency Wars",
@@ -228,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_425cc7c9",
+        "id": "hsr_0d0790fe",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -240,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_7b2117a5",
+        "id": "hsr_89949f59",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-09-28",
         "description": "In-Game, Nameless Honor",
@@ -252,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_076e0e11",
+        "id": "hsr_35b0b051",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-09-28",
         "description": "In-Game, Login",
@@ -264,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_cb4d8324",
+        "id": "hsr_7ac7d6ae",
         "gameId": "hsr",
         "title": "Love, Ghosts & Robots",
         "description": "In-Game",
@@ -276,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_5061ffb2",
+        "id": "hsr_40702796",
         "gameId": "hsr",
         "title": "Planar Fissure 2026-10-12",
         "description": "In-Game",
@@ -288,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_b24c3919",
+        "id": "wuwa_72723142",
         "gameId": "wuwa",
         "title": "Artisan's Search",
         "description": "Version 3.7",
@@ -300,43 +288,43 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_dc409c41",
+        "id": "wuwa_5ad6a741",
         "gameId": "wuwa",
-        "title": "Across Time's Waxes and Wanes 2026-09-30",
+        "title": "Nine Deaths, One Unbent Heart 2026-10-22",
         "description": "Resonator Convene",
-        "longDescription": "Across Time's Waxes and Wanes 2026-09-30 is a Wuthering Waves Resonator Convene (Banner).",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-10-22T00:00:00",
+        "longDescription": "Nine Deaths, One Unbent Heart 2026-10-22 is a Wuthering Waves Resonator Convene (Banner).",
+        "startTime": "2026-10-22T00:00:00",
+        "endTime": "2026-11-11T00:00:00",
         "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/6/64/Across_Time%27s_Waxes_and_Wanes_2026-09-30.jpg/revision/latest",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/a/a3/Nine_Deaths%2C_One_Unbent_Heart_2026-10-22.jpg/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "wuwa_0df24a74",
+        "id": "wuwa_f116ed42",
         "gameId": "wuwa",
-        "title": "As Full as Tonight, Forever 2026-09-30",
+        "title": "Tomorrow in the Frame 2026-10-22",
         "description": "Resonator Convene",
-        "longDescription": "As Full as Tonight, Forever 2026-09-30 is a Wuthering Waves Resonator Convene (Banner).",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-10-22T00:00:00",
+        "longDescription": "Tomorrow in the Frame 2026-10-22 is a Wuthering Waves Resonator Convene (Banner).",
+        "startTime": "2026-10-22T00:00:00",
+        "endTime": "2026-11-11T00:00:00",
         "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/f/fb/As_Full_as_Tonight%2C_Forever_2026-09-30.jpg/revision/latest",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/4/48/Tomorrow_in_the_Frame_2026-10-22.jpg/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "wuwa_4656df78",
+        "id": "wuwa_27c4567a",
         "gameId": "wuwa",
-        "title": "Horizon of Dawnbreak 2026-09-30",
+        "title": "Undefined Spectrum 2026-10-22",
         "description": "Resonator Convene",
-        "longDescription": "Horizon of Dawnbreak 2026-09-30 is a Wuthering Waves Resonator Convene (Banner).",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-10-22T00:00:00",
+        "longDescription": "Undefined Spectrum 2026-10-22 is a Wuthering Waves Resonator Convene (Banner).",
+        "startTime": "2026-10-22T00:00:00",
+        "endTime": "2026-11-11T00:00:00",
         "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/5/58/Horizon_of_Dawnbreak_2026-09-30.jpg/revision/latest",
+        "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/0/01/Undefined_Spectrum_2026-10-22.jpg/revision/latest",
         "detailUrl": null
     },
     {
-        "id": "zzz_5dd10ea9",
+        "id": "zzz_e1cd38c6",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -348,7 +336,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_768cfc7c",
+        "id": "zzz_f98920de",
         "gameId": "zzz",
         "title": "Angels Support Operation",
         "description": "Zenless Zone Zero Event",
@@ -360,7 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_bfb16c53",
+        "id": "zzz_48fb0246",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -372,7 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_fb30b984",
+        "id": "zzz_f30f66b8",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -384,7 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_bad94fee",
+        "id": "zzz_5529bccc",
         "gameId": "zzz",
         "title": "Annihilation Simulacrum",
         "description": "Zenless Zone Zero Event",
@@ -396,7 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_d770f60e",
+        "id": "zzz_54268a9a",
         "gameId": "zzz",
         "title": "The Final Callback 2026-10-21",
         "description": "Zenless Zone Zero Event",
@@ -408,7 +396,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_0ce5e411",
+        "id": "zzz_3025b22e",
         "gameId": "zzz",
         "title": "New Eridu City Fund",
         "description": "Zenless Zone Zero Event",
@@ -420,7 +408,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_dca3ed12",
+        "id": "zzz_32910583",
         "gameId": "zzz",
         "title": "All-New Program",
         "description": "Zenless Zone Zero Event",
@@ -432,7 +420,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_f1ae2bce",
+        "id": "zzz_eb67809d",
         "gameId": "zzz",
         "title": "Spooky Funhouse Tales",
         "description": "Zenless Zone Zero Event",
@@ -444,7 +432,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_82b23566",
+        "id": "zzz_abadd206",
         "gameId": "zzz",
         "title": "Graceful Gale",
         "description": "Exclusive Channel",
@@ -456,7 +444,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_5f812c99",
+        "id": "zzz_285c21a5",
         "gameId": "zzz",
         "title": "Into the Flames of Life",
         "description": "Exclusive Channel",
@@ -468,7 +456,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_5efb63b0",
+        "id": "zzz_ed082f9b",
         "gameId": "zzz",
         "title": "Answers in the Wind",
         "description": "Exclusive Channel",
@@ -480,7 +468,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_dfca042b",
+        "id": "zzz_8e279921",
         "gameId": "zzz",
         "title": "Outlier of Prodigies",
         "description": "Exclusive Channel",
