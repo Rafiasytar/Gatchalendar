@@ -1,114 +1,6 @@
 [
     {
-        "id": "gi_50930413",
-        "gameId": "gi",
-        "title": "The Godforsaken Frostlands",
-        "description": "In-Game, Exploration Mission",
-        "longDescription": "The Godforsaken Frostlands is an Event in Version 7.0. Complete \"Gunfire in the Silent Lands\" in the Archon Quest to freely explore",
-        "startTime": "2026-08-12T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/d/df/The_Godforsaken_Frostlands.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Godforsaken_Frostlands"
-    },
-    {
-        "id": "gi_66339a0b",
-        "gameId": "gi",
-        "title": "Starlit Gala: Wonderland Selects",
-        "description": "In-Game, Miliastra Wonderland",
-        "longDescription": "Starlit Gala: Wonderland Selects is an Event for Miliastra Wonderland in Version 7.1. After Version 7.1 Update \u2013 2026/11/03 04:00",
-        "startTime": "2026-09-23T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/b/be/Starlit_Gala_Wonderland_Selects.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Starlit_Gala:_Wonderland_Selects"
-    },
-    {
-        "id": "gi_6d81a9c4",
-        "gameId": "gi",
-        "title": "Across the Frozen Wilds, Honing One's Edge",
-        "description": "In-Game, Anniversary 5-Star Character Selection",
-        "longDescription": "Across the Frozen Wilds, Honing One's Edge is an Event in Version 7.1. Including Character Ascension Materials, Character Level-Up Materials, Character and Weapon Enhancement Materials, and Local Specialties to level character to Lv. 60.",
-        "startTime": "2026-09-23T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/5/5f/Across_the_Frozen_Wilds%2C_Honing_One%27s_Edge.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Across_the_Frozen_Wilds,_Honing_One%27s_Edge/2026-09-23"
-    },
-    {
-        "id": "gi_88951bea",
-        "gameId": "gi",
-        "title": "A Rekviem for the Underworld",
-        "description": "In-Game, Archon Quest",
-        "longDescription": "A Rekviem for the Underworld is an Event in Version 7.1.",
-        "startTime": "2026-09-23T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/5/5a/A_Rekviem_for_the_Underworld_Event.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/A_Rekviem_for_the_Underworld_(Event)"
-    },
-    {
-        "id": "gi_61491fee",
-        "gameId": "gi",
-        "title": "Tabletop Troupe: A Gathering on Adventure's Eve",
-        "description": "In-Game, Anniversary 5-Star Character Selection",
-        "longDescription": "Tabletop Troupe: A Gathering on Adventure's Eve is an Event in Version 7.1. Including Character Ascension Materials, Character Level-Up Materials, Character and Weapon Enhancement Materials, and Local Specialties to level character to Lv. 60.",
-        "startTime": "2026-09-23T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/7/76/Tabletop_Troupe_A_Gathering_on_Adventure%27s_Eve.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Tabletop_Troupe:_A_Gathering_on_Adventure%27s_Eve"
-    },
-    {
-        "id": "gi_df7be7ad",
-        "gameId": "gi",
-        "title": "Raiment Collection: Warmth of a Sunny Day",
-        "description": "In-Game, Miliastra Wonderland",
-        "longDescription": "Raiment Collection is a Recurring Event in Miliastra Wonderland that rewards a free 4-Star Cosmetic Set for completing tasks. Raiment Collection has 7 occurrences:",
-        "startTime": "2026-09-23T00:00:00",
-        "endTime": "2026-11-04T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/e/ee/Raiment_Collection_Warmth_of_a_Sunny_Day.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-09-23"
-    },
-    {
-        "id": "gi_d8444770",
-        "gameId": "gi",
-        "title": "Rainbow's End: Resplendent Starlight",
-        "description": "In-Game, Login, Mail",
-        "longDescription": "Rainbow's End: Resplendent Starlight is an Event in Version 7.1.",
-        "startTime": "2026-09-28T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/0/0d/Rainbow%27s_End_Resplendent_Starlight.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Rainbow%27s_End:_Resplendent_Starlight"
-    },
-    {
-        "id": "gi_3373d147",
-        "gameId": "gi",
-        "title": "Stygian Onslaught: Luminous Battlefront",
-        "description": "In-Game, Stygian Onslaught",
-        "longDescription": "Stygian Onslaught is a permanent challenge event. In this mode, the player must fight three powerful enemies, either a Normal Boss or Local Legend equivalent in three separate battlefields. The player must also defeat the enemy within a specific amount of time.",
-        "startTime": "2026-09-30T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/b/b0/Stygian_Onslaught_2025-10-29.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Stygian_Onslaught/2026-09-30"
-    },
-    {
-        "id": "gi_616fc38f",
-        "gameId": "gi",
-        "title": "Test Run - Skirk, Escoffier, Dahlia, Candace, Mika",
-        "description": "In-Game, Test Run",
-        "longDescription": "Test Run - Character Trial Event is a Recurring Event that allow players to try out the promoted characters' gameplay in special Domains for a Character Trial. The character's combat specs are fixed, and food items cannot be used. By completing each challenge for the first time, players can gain various rewards such as Primogems, Adventurer's Experience, Mystic Enhancement Ore, Mora, Local Specialties, Character and Weapon Enhancement Materials.",
-        "startTime": "2026-10-13T00:00:00",
-        "endTime": "2026-11-03T00:00:00",
-        "type": "BANNER",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/3/35/Skirk_Card.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-10-13"
-    },
-    {
-        "id": "gi_e2a458df",
+        "id": "gi_5a847409",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 6",
         "description": "In-Game, To Temper Thyself and Journey Far",
@@ -120,7 +12,79 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-11-02"
     },
     {
-        "id": "hsr_ffc24cdc",
+        "id": "gi_be70bada",
+        "gameId": "gi",
+        "title": "Sacred Spirit Chronicle",
+        "description": "In-Game, Battle Pass",
+        "longDescription": "The Battle Pass is a recurring Event unlocked at Adventure Rank 20. Once unlocked, players can complete various daily, weekly, and BP Period missions in order to gain Battle Pass EXP (BEP).",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-12-14T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/c/c2/Battle_Pass_Sacred_Spirit_Chronicle.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Sacred_Spirit_Chronicle"
+    },
+    {
+        "id": "gi_134a9358",
+        "gameId": "gi",
+        "title": "The Forge Realm's Temper: Endless Swarm",
+        "description": "In-Game, The Forge Realm's Temper",
+        "longDescription": "The Forge Realm's Temper is a PvE Event gamemode for Genius Invokation TCG. The Forge Realm's Temper has 31 occurrences:",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-12-15T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/4/41/The_Forge_Realm%27s_Temper_Endless_Swarm_2026-11-04.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-11-04"
+    },
+    {
+        "id": "gi_f757bab9",
+        "gameId": "gi",
+        "title": "Hour of Ruin",
+        "description": "In-Game, Archon Quest",
+        "longDescription": "Hour of Ruin is an Event in Version 7.2.",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-12-15T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Hour_of_Ruin_Event.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Hour_of_Ruin_(Event)"
+    },
+    {
+        "id": "gi_62130e90",
+        "gameId": "gi",
+        "title": "Encounter: Interlude of the Long Journey",
+        "description": "In-Game, Repertoire of Myriad Melodies Update",
+        "longDescription": "Encounter: Interlude of the Long Journey is an Event in Version 7.2.",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-12-15T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/d/de/Encounter_Interlude_of_the_Long_Journey.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Encounter:_Interlude_of_the_Long_Journey_(Event)"
+    },
+    {
+        "id": "gi_17461b0a",
+        "gameId": "gi",
+        "title": "The Grand Defense: Defy the Unjust Judgment",
+        "description": "In-Game, Flagship",
+        "longDescription": "The Grand Defense: Defy the Unjust Judgment is a Flagship Event in Version 7.2.",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-12-16T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/3/34/The_Grand_Defense_Defy_the_Unjust_Judgment.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Grand_Defense:_Defy_the_Unjust_Judgment"
+    },
+    {
+        "id": "gi_31df80ea",
+        "gameId": "gi",
+        "title": "Where Kristall Roots Run Deep",
+        "description": "In-Game, Exploration Mission",
+        "longDescription": "Where Kristall Roots Run Deep is an Event in Version 7.2.",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2027-01-26T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/a/af/Where_Kristall_Roots_Run_Deep.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Where_Kristall_Roots_Run_Deep"
+    },
+    {
+        "id": "hsr_7f700e22",
         "gameId": "hsr",
         "title": "Currency Wars: Zero-Sum Game",
         "description": "In-Game, Currency Wars",
@@ -132,7 +96,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_67deb2b9",
+        "id": "hsr_b3ea8e71",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -144,7 +108,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_ef68f18d",
+        "id": "hsr_598ee805",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-09-28",
         "description": "In-Game, Nameless Honor",
@@ -156,7 +120,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_349d4740",
+        "id": "hsr_b4df3ae7",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-09-28",
         "description": "In-Game, Login",
@@ -168,7 +132,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_54228556",
+        "id": "hsr_26ee3111",
         "gameId": "hsr",
         "title": "Love, Ghosts & Robots",
         "description": "In-Game",
@@ -180,7 +144,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_687a8667",
+        "id": "hsr_fb864f0c",
         "gameId": "hsr",
         "title": "Garden of Plenty 2026-10-30",
         "description": "In-Game",
@@ -192,7 +156,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_60230960",
+        "id": "wuwa_49da66a6",
         "gameId": "wuwa",
         "title": "Nine Deaths, One Unbent Heart 2026-10-22",
         "description": "Resonator Convene",
@@ -204,7 +168,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_66e447b0",
+        "id": "wuwa_aa8c3bbb",
         "gameId": "wuwa",
         "title": "Tomorrow in the Frame 2026-10-22",
         "description": "Resonator Convene",
@@ -216,7 +180,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_0301e652",
+        "id": "wuwa_f6e0e07f",
         "gameId": "wuwa",
         "title": "Undefined Spectrum 2026-10-22",
         "description": "Resonator Convene",
@@ -228,7 +192,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_f26b0a43",
+        "id": "zzz_ceb5ac61",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -240,7 +204,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_9c3e26d7",
+        "id": "zzz_f7f15a70",
         "gameId": "zzz",
         "title": "Angels Support Operation",
         "description": "Zenless Zone Zero Event",
@@ -252,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_086ce3ee",
+        "id": "zzz_6c34981e",
         "gameId": "zzz",
         "title": "Annihilation Simulacrum",
         "description": "Zenless Zone Zero Event",
@@ -264,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_26bdfaf0",
+        "id": "zzz_7651bfe0",
         "gameId": "zzz",
         "title": "The Final Callback 2026-10-21",
         "description": "Zenless Zone Zero Event",
@@ -276,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3fa3d7aa",
+        "id": "zzz_d5812f9d",
         "gameId": "zzz",
         "title": "New Eridu City Fund",
         "description": "Zenless Zone Zero Event",
@@ -288,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_ee5ea69e",
+        "id": "zzz_a9043182",
         "gameId": "zzz",
         "title": "All-New Program",
         "description": "Zenless Zone Zero Event",
@@ -300,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_3dc16c5c",
+        "id": "zzz_ddc4a9d1",
         "gameId": "zzz",
         "title": "Spooky Funhouse Tales",
         "description": "Zenless Zone Zero Event",
@@ -312,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_c24689ef",
+        "id": "zzz_aaf7fea8",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -324,7 +288,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_845d1e48",
+        "id": "zzz_ca991a6f",
         "gameId": "zzz",
         "title": "Cyber Miracle Healer, on Duty!",
         "description": "Zenless Zone Zero Event",
@@ -336,7 +300,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_12f7fb09",
+        "id": "zzz_322bce30",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -348,7 +312,19 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_a61449b7",
+        "id": "zzz_46628e6d",
+        "gameId": "zzz",
+        "title": "Advanced Bounty: Area Patrol",
+        "description": "Zenless Zone Zero Event",
+        "longDescription": "Advanced Bounty: Area Patrol is a Zenless Zone Zero event.",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-11-09T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/zenless-zone-zero/images/f/f5/Event_Advanced_Bounty_Area_Patrol.png/revision/latest",
+        "detailUrl": null
+    },
+    {
+        "id": "zzz_a27ca9a4",
         "gameId": "zzz",
         "title": "Graceful Gale",
         "description": "Exclusive Channel",
@@ -360,7 +336,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_e3b76a0e",
+        "id": "zzz_df250fe8",
         "gameId": "zzz",
         "title": "Into the Flames of Life",
         "description": "Exclusive Channel",
@@ -372,7 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_f1ca58f8",
+        "id": "zzz_8fc5e1ad",
         "gameId": "zzz",
         "title": "Answers in the Wind",
         "description": "Exclusive Channel",
@@ -384,7 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_fc7608bb",
+        "id": "zzz_510e15e9",
         "gameId": "zzz",
         "title": "Outlier of Prodigies",
         "description": "Exclusive Channel",
