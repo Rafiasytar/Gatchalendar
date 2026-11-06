@@ -1,6 +1,6 @@
 [
     {
-        "id": "gi_546039f5",
+        "id": "gi_b34f4d47",
         "gameId": "gi",
         "title": "To Temper Thyself and Journey Far Cycle 6",
         "description": "In-Game, To Temper Thyself and Journey Far",
@@ -12,7 +12,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/To_Temper_Thyself_and_Journey_Far/2026-11-02"
     },
     {
-        "id": "gi_cd7670e5",
+        "id": "gi_1b32d9f6",
+        "gameId": "gi",
+        "title": "Test Run - Mitya, Furina, Valeriy, Charlotte, Rosaria",
+        "description": "In-Game, Test Run",
+        "longDescription": "Test Run - Character Trial Event is a Recurring Event that allow players to try out the promoted characters' gameplay in special Domains for a Character Trial. The character's combat specs are fixed, and food items cannot be used. By completing each challenge for the first time, players can gain various rewards such as Primogems, Adventurer's Experience, Mystic Enhancement Ore, Mora, Local Specialties, Character and Weapon Enhancement Materials.",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-11-24T00:00:00",
+        "type": "BANNER",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/b/be/Mitya_Card.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Test_Run_-_Character_Trial_Event/2026-11-04"
+    },
+    {
+        "id": "gi_33c2c9f1",
         "gameId": "gi",
         "title": "Sacred Spirit Chronicle",
         "description": "In-Game, Battle Pass",
@@ -24,7 +36,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Battle_Pass/Sacred_Spirit_Chronicle"
     },
     {
-        "id": "gi_8b0432a2",
+        "id": "gi_ec2bef48",
         "gameId": "gi",
         "title": "Chronicle of Polyphony",
         "description": "In-Game, Miliastra Pass, Miliastra Wonderland",
@@ -36,7 +48,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Miliastra_Pass/2026-11-04"
     },
     {
-        "id": "gi_bc95319a",
+        "id": "gi_ebc429b9",
         "gameId": "gi",
         "title": "The Forge Realm's Temper: Endless Swarm",
         "description": "In-Game, The Forge Realm's Temper",
@@ -48,19 +60,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Forge_Realm%27s_Temper/2026-11-04"
     },
     {
-        "id": "gi_22c26535",
-        "gameId": "gi",
-        "title": "Hour of Ruin",
-        "description": "In-Game, Archon Quest",
-        "longDescription": "Hour of Ruin is an Event in Version 7.2.",
-        "startTime": "2026-11-04T00:00:00",
-        "endTime": "2026-12-15T00:00:00",
-        "type": "IN_GAME_EVENT",
-        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Hour_of_Ruin_Event.png/revision/latest",
-        "detailUrl": "https://genshin-impact.fandom.com/wiki/Hour_of_Ruin_(Event)"
-    },
-    {
-        "id": "gi_068819e7",
+        "id": "gi_0fc2bb25",
         "gameId": "gi",
         "title": "Encounter: Interlude of the Long Journey",
         "description": "In-Game, Repertoire of Myriad Melodies Update",
@@ -72,7 +72,19 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Encounter:_Interlude_of_the_Long_Journey_(Event)"
     },
     {
-        "id": "gi_1e77b6e1",
+        "id": "gi_5fa7da94",
+        "gameId": "gi",
+        "title": "Hour of Ruin",
+        "description": "In-Game, Archon Quest",
+        "longDescription": "Hour of Ruin is an Event in Version 7.2.",
+        "startTime": "2026-11-04T00:00:00",
+        "endTime": "2026-12-15T00:00:00",
+        "type": "IN_GAME_EVENT",
+        "imageUrl": "https://static.wikia.nocookie.net/gensin-impact/images/1/14/Hour_of_Ruin_Event.png/revision/latest",
+        "detailUrl": "https://genshin-impact.fandom.com/wiki/Hour_of_Ruin_(Event)"
+    },
+    {
+        "id": "gi_fe33c305",
         "gameId": "gi",
         "title": "The Grand Defense: Defy the Unjust Judgment",
         "description": "In-Game, Flagship",
@@ -84,7 +96,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/The_Grand_Defense:_Defy_the_Unjust_Judgment"
     },
     {
-        "id": "gi_7ec7032f",
+        "id": "gi_8e5b6748",
         "gameId": "gi",
         "title": "Raiment Collection: Radiance Ablaze",
         "description": "In-Game, Miliastra Wonderland",
@@ -96,7 +108,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Raiment_Collection/2026-11-04"
     },
     {
-        "id": "gi_41ebaf42",
+        "id": "gi_f5306797",
         "gameId": "gi",
         "title": "Where Kristall Roots Run Deep",
         "description": "In-Game, Exploration Mission",
@@ -108,7 +120,7 @@
         "detailUrl": "https://genshin-impact.fandom.com/wiki/Where_Kristall_Roots_Run_Deep"
     },
     {
-        "id": "hsr_af3e993c",
+        "id": "hsr_318f0ce3",
         "gameId": "hsr",
         "title": "Currency Wars: Zero-Sum Game",
         "description": "In-Game, Currency Wars",
@@ -120,7 +132,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_ceec2d82",
+        "id": "hsr_e76e793b",
         "gameId": "hsr",
         "title": "Fate Contract: Renewal",
         "description": "In-Game, Collaboration",
@@ -132,7 +144,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_dc50f4bb",
+        "id": "hsr_5c9851ee",
         "gameId": "hsr",
         "title": "Nameless Honor 2026-09-28",
         "description": "In-Game, Nameless Honor",
@@ -144,7 +156,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_37717637",
+        "id": "hsr_10c7e7d0",
         "gameId": "hsr",
         "title": "Gift of Odyssey 2026-09-28",
         "description": "In-Game, Login",
@@ -156,7 +168,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_51bbe60d",
+        "id": "hsr_ebc7555d",
         "gameId": "hsr",
         "title": "Love, Ghosts & Robots",
         "description": "In-Game",
@@ -168,7 +180,7 @@
         "detailUrl": null
     },
     {
-        "id": "hsr_d5c7ab09",
+        "id": "hsr_73cd20d4",
         "gameId": "hsr",
         "title": "Garden of Plenty 2026-10-30",
         "description": "In-Game",
@@ -180,7 +192,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_84a77073",
+        "id": "wuwa_89c48e47",
         "gameId": "wuwa",
         "title": "Nine Deaths, One Unbent Heart 2026-10-22",
         "description": "Resonator Convene",
@@ -192,7 +204,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_5a3bd8ed",
+        "id": "wuwa_b17f17ed",
         "gameId": "wuwa",
         "title": "Tomorrow in the Frame 2026-10-22",
         "description": "Resonator Convene",
@@ -204,7 +216,7 @@
         "detailUrl": null
     },
     {
-        "id": "wuwa_9c84a945",
+        "id": "wuwa_21dfac2f",
         "gameId": "wuwa",
         "title": "Undefined Spectrum 2026-10-22",
         "description": "Resonator Convene",
@@ -216,7 +228,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_63160eb5",
+        "id": "zzz_56939593",
         "gameId": "zzz",
         "title": "Myriad Endgame",
         "description": "Zenless Zone Zero Event",
@@ -228,7 +240,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_70db235e",
+        "id": "zzz_9858ed01",
         "gameId": "zzz",
         "title": "Angels Support Operation",
         "description": "Zenless Zone Zero Event",
@@ -240,7 +252,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_52af5e86",
+        "id": "zzz_86afd02d",
         "gameId": "zzz",
         "title": "Annihilation Simulacrum",
         "description": "Zenless Zone Zero Event",
@@ -252,7 +264,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_19563865",
+        "id": "zzz_f395d7f5",
         "gameId": "zzz",
         "title": "The Final Callback 2026-10-21",
         "description": "Zenless Zone Zero Event",
@@ -264,7 +276,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_eee283ea",
+        "id": "zzz_f4143c97",
         "gameId": "zzz",
         "title": "New Eridu City Fund",
         "description": "Zenless Zone Zero Event",
@@ -276,7 +288,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_b94959e0",
+        "id": "zzz_0a0bb3ad",
         "gameId": "zzz",
         "title": "All-New Program",
         "description": "Zenless Zone Zero Event",
@@ -288,7 +300,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_9cd8fbb8",
+        "id": "zzz_789faf77",
         "gameId": "zzz",
         "title": "Spooky Funhouse Tales",
         "description": "Zenless Zone Zero Event",
@@ -300,7 +312,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_4e547c83",
+        "id": "zzz_74350ac1",
         "gameId": "zzz",
         "title": "Deadly Assault",
         "description": "Zenless Zone Zero Event",
@@ -312,7 +324,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_ad15b345",
+        "id": "zzz_c3303037",
         "gameId": "zzz",
         "title": "Cyber Miracle Healer, on Duty!",
         "description": "Zenless Zone Zero Event",
@@ -324,7 +336,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_1615ec88",
+        "id": "zzz_848edd09",
         "gameId": "zzz",
         "title": "Shiyu Defense: Critical Node",
         "description": "Zenless Zone Zero Event",
@@ -336,7 +348,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_2b33635f",
+        "id": "zzz_9dd86dd5",
         "gameId": "zzz",
         "title": "Advanced Bounty: Area Patrol",
         "description": "Zenless Zone Zero Event",
@@ -348,7 +360,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_9aaeb4cf",
+        "id": "zzz_6e3a252c",
         "gameId": "zzz",
         "title": "Graceful Gale",
         "description": "Exclusive Channel",
@@ -360,7 +372,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_fea4f47a",
+        "id": "zzz_884440fa",
         "gameId": "zzz",
         "title": "Into the Flames of Life",
         "description": "Exclusive Channel",
@@ -372,7 +384,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_7f86c126",
+        "id": "zzz_0b4a6d30",
         "gameId": "zzz",
         "title": "Answers in the Wind",
         "description": "Exclusive Channel",
@@ -384,7 +396,7 @@
         "detailUrl": null
     },
     {
-        "id": "zzz_8c209854",
+        "id": "zzz_25c80817",
         "gameId": "zzz",
         "title": "Outlier of Prodigies",
         "description": "Exclusive Channel",
