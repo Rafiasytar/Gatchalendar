@@ -47,16 +47,24 @@ MONTHS = {m: i for i, m in enumerate(
 # Helper umum
 # ---------------------------------------------------------------------------
 
-def http_get(url, params=None, retries=3, timeout=30):
+def http_get(url, params=None, retries=4, timeout=30):
     last = None
     for attempt in range(retries):
         try:
             r = SESSION.get(url, params=params, timeout=timeout)
+            if r.status_code in (403, 429, 503):
+                # Rate limit (sering terjadi dari IP GitHub Actions): tunggu lalu coba lagi
+                retry_after = r.headers.get("Retry-After", "")
+                wait = int(retry_after) if retry_after.isdigit() else 5 * (attempt + 1)
+                print(f"  HTTP {r.status_code} dari {url[:70]} - tunggu {min(wait, 60)} detik")
+                time.sleep(min(wait, 60))
+                last = requests.HTTPError(f"HTTP {r.status_code}")
+                continue
             r.raise_for_status()
             return r
         except Exception as e:  # noqa: BLE001
             last = e
-            time.sleep(1.5 * (attempt + 1))
+            time.sleep(2 * (attempt + 1))
     raise last
 
 
@@ -506,7 +514,7 @@ def game8_article_dates(url):
         return _G8_CACHE[url]
     try:
         text = clean_text(BeautifulSoup(http_get(url).text, "html.parser").get_text(" "))
-        time.sleep(0.4)
+        time.sleep(1.0)  # jangan membanjiri Game8
     except Exception as e:  # noqa: BLE001
         print(f"  Game8 article failed {url}: {e}")
         _G8_CACHE[url] = (None, None)
@@ -776,6 +784,16 @@ def main():
             # Jangan hapus data game ini kalau sumbernya sedang error
             evs = [e for e in prev_valid if e["gameId"] == game_id]
             print(f"   {game_id}: 0 event baru, memakai {len(evs)} event dari data sebelumnya")
+        else:
+            # Jaring pengaman: event yang masih aktif/akan datang di data sebelumnya tapi tidak
+            # terambil kali ini (mis. kena rate limit) tetap dipertahankan.
+            got = {norm_title(e["title"]) for e in evs}
+            kept = [e for e in prev_valid
+                    if e["gameId"] == game_id and parse_iso(e["endTime"]) > NOW
+                    and norm_title(e["title"]) not in got]
+            if kept:
+                print(f"   {game_id}: mempertahankan {len(kept)} event aktif dari data sebelumnya")
+                evs = evs + kept
         for e in evs:
             all_events[e["id"]] = e
         active = sum(1 for e in evs if parse_iso(e["startTime"]) <= NOW < parse_iso(e["endTime"]))
