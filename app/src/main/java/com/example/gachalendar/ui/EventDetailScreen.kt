@@ -17,7 +17,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.gachalendar.model.GameEvent
+import java.time.LocalDateTime
+import java.time.ZoneId
+import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
+import java.util.Locale
+import java.util.TimeZone
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -26,7 +31,9 @@ fun EventDetailScreen(
     onBackClick: () -> Unit
 ) {
     val context = LocalContext.current
-    val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy")
+    val formatter = DateTimeFormatter.ofPattern("d MMM yyyy, HH:mm", Locale("id", "ID"))
+    // Label zona waktu perangkat, mis. "WIB" untuk Asia/Jakarta (Sumatra Barat)
+    val localZoneLabel = TimeZone.getDefault().getDisplayName(false, TimeZone.SHORT, Locale("id", "ID"))
 
     Scaffold(
         topBar = {
@@ -93,9 +100,15 @@ fun EventDetailScreen(
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            text = "${event.startTime.format(formatter)} - ${event.endTime.format(formatter)}",
+                            text = "${event.startTime.format(formatter)} – ${event.endTime.format(formatter)} $localZoneLabel",
                             style = MaterialTheme.typography.bodyLarge,
                             fontWeight = FontWeight.Medium
+                        )
+                        Text(
+                            text = "Waktu server SEA: ${toServerTime(event.startTime).format(formatter)} – " +
+                                "${toServerTime(event.endTime).format(formatter)} (UTC+8)",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.8f)
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
@@ -142,3 +155,7 @@ fun EventDetailScreen(
         }
     }
 }
+
+/** Waktu lokal perangkat -> waktu server SEA (UTC+8). */
+private fun toServerTime(local: LocalDateTime): LocalDateTime =
+    local.atZone(ZoneId.systemDefault()).withZoneSameInstant(ZoneOffset.ofHours(8)).toLocalDateTime()

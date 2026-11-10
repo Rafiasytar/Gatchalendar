@@ -9,7 +9,8 @@ Sumber data (diurutkan dari yang paling akurat):
         -> API pengumuman resmi in-game HoYoverse (server Asia, UTC+8)
   - Arknights: Endfield -> endfield.wiki.gg (timer server Asia, UTC)
   - Wuthering Waves      -> Game8 (event) + Fandom "Featured Resonator Convene" (banner)
-  - Neverness to Everness, Persona 5: The Phantom X -> Game8 (tanggal server Asia/SEA)
+  - Neverness to Everness -> Game8 (tanggal) + pola jam server Asia/SEA
+  - Persona 5: The Phantom X -> situs resmi server SEA p5x-sea.com (jam UTC+8)
 
 Semua waktu ditulis dalam ISO-8601 DENGAN offset (mis. 2026-11-04T11:00:00+08:00)
 sehingga aplikasi bisa mengonversinya ke zona waktu perangkat.
@@ -602,56 +603,191 @@ def scrape_nte_events():
             if not st or not en:
                 print(f"  NTE skip (no reliable dates): {title}")
                 continue
+            # Game8 hanya memberi tanggal. Pola server Asia/SEA NTE (UTC+8): maintenance update
+            # 06:00-11:00, banner & event versi berakhir 05:59 pada tanggal akhirnya.
+            start = datetime(st.year, st.month, st.day, 11, 0, tzinfo=TZ8)
+            end = datetime(en.year, en.month, en.day, 5, 59, 59, tzinfo=TZ8)
+            if end <= start:
+                continue
             events.append(make_event(
-                "nte", title, day_start(st), day_end(en), "BANNER" if is_banner else classify(title),
+                "nte", title, start, end, "BANNER" if is_banner else classify(title),
                 "Limited Banner" if is_banner else "Limited-Time Event",
                 img, "https://game8.co" + href if href.startswith("/") else href))
     return events
 
 
 # ---------------------------------------------------------------------------
-# Persona 5: The Phantom X (Game8, server SEA/GMT+8)
+# Persona 5: The Phantom X - situs resmi server SEA (p5x-sea.com), waktu UTC+8
 # ---------------------------------------------------------------------------
 
+P5X_BASE = "https://www.p5x-sea.com"
+P5X_TIME = r"\d{1,2}:\d{2}\s*(?:AM|PM)"
+P5X_DATE = r"([A-Z][a-z]{2,8})\.?\s+(\d{1,2})(?:st|nd|rd|th)?(?:,\s*(\d{4}))?"
+
+
+def p5x_soup(path):
+    r = http_get(P5X_BASE + path)
+    return BeautifulSoup(r.content.decode("utf-8", "replace"), "html.parser")
+
+
+def p5x_list(category, pages):
+    """category: 1 = News (Update Information), 2 = System (maintenance), 3 = Event."""
+    from urllib.parse import quote
+    items = []
+    for page in range(1, pages + 1):
+        try:
+            soup = p5x_soup(f"/news/en/list_{category}_{page}.html")
+        except Exception as e:  # noqa: BLE001
+            print(f"  P5X list {category}_{page} gagal: {e}")
+            break
+        for a in soup.select("a.systemurl"):
+            img = a.find("img")
+            src = img.get("src") if img else None
+            if src and src.startswith("/"):
+                src = P5X_BASE + quote(src, safe="/:")
+            items.append({"title": a.get("title", "").strip(), "href": a["href"], "img": src})
+        time.sleep(0.5)
+    return items
+
+
+def p5x_clock(t):
+    m = re.match(r"(\d{1,2}):(\d{2})\s*(AM|PM)", t)
+    h, mi, ap = int(m.group(1)), int(m.group(2)), m.group(3)
+    if ap == "PM" and h < 12:
+        h += 12
+    if ap == "AM" and h == 12:
+        h = 0
+    return h, mi
+
+
+def p5x_find_times(text, ref_year):
+    """Cari waktu UTC+8 di teks: 'Nov 20, 2026 at 9:59 AM' / '9:59 AM on Dec 4' / 'Nov 5, 2026'."""
+    found, used = [], []
+
+    def add(pos, span, mon, day, year, clock):
+        month = MONTHS.get(mon[:3].lower())
+        if not month:
+            return
+        y = int(year) if year else ref_year
+        h, mi = p5x_clock(clock) if clock else (0, 0)
+        try:
+            found.append((pos, datetime(y, month, int(day), h, mi, tzinfo=TZ8), clock is not None))
+            used.append(span)
+        except ValueError:
+            pass
+
+    for m in re.finditer(rf"({P5X_TIME})\s+on\s+{P5X_DATE}", text):
+        add(m.start(), m.span(), m.group(2), m.group(3), m.group(4), m.group(1))
+    for m in re.finditer(rf"{P5X_DATE}(?:,?\s+at\s+({P5X_TIME}))?", text):
+        if any(s <= m.start() < e for s, e in used):
+            continue
+        add(m.start(), m.span(), m.group(1), m.group(2), m.group(3), m.group(4))
+    return sorted(found, key=lambda x: x[0])
+
+
+def p5x_fix_year(dt, ref):
+    # Tanggal tanpa tahun (mis. "Dec 4") yang jatuh jauh sebelum awal versi -> tahun berikutnya
+    if dt < ref - timedelta(days=60):
+        return dt.replace(year=dt.year + 1)
+    return dt
+
+
+MAINT_RE = re.compile(
+    r"From\s+\d{1,2}:\d{2}\s*(?:AM|PM)?\s+to\s+(\d{1,2}):(\d{2})\s*(AM|PM)?\s+on\s+" + P5X_DATE)
+
+
 def scrape_p5x_events():
-    print("Fetching Persona 5: The Phantom X (Game8)...")
-    url = "https://game8.co/games/Persona-5-Phantom-X"
-    page = http_get(url).text
+    print("Fetching Persona 5: The Phantom X (official SEA site)...")
     events = []
 
-    # Event: tanggal tersedia langsung di tabel (MM/DD/YYYY - MM/DD/YYYY)
-    secs = game8_sections(page, {"Available Events", "Finished Events", "Upcoming Events",
-                                 "Active Character Banners", "Finished Character Banners",
-                                 "Active Weapon Banners", "Finished Weapon Banners", "Upcoming Banners"})
-    for sect in ("Available Events", "Upcoming Events", "Finished Events"):
-        for title, href, img, date_text in secs.get(sect, []):
-            m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{4})\s*-\s*(\d{1,2})/(\d{1,2})/(\d{4})", date_text)
-            if not m:
-                continue
-            mo1, d1, y1, mo2, d2, y2 = map(int, m.groups())
-            st, en = datetime(y1, mo1, d1).date(), datetime(y2, mo2, d2).date()
-            events.append(make_event("p5x", title, day_start(st), day_end(en), classify(title), "Event",
-                                     img, "https://game8.co" + href))
+    # 1. Jadwal maintenance -> jam selesai maintenance tiap tanggal update
+    maint_end = {}
+    for item in p5x_list(2, 3):
+        if not re.search(r"Maintenance Announcement$", item["title"]):
+            continue
+        try:
+            text = clean_text(p5x_soup(item["href"]).get_text(" "))
+        except Exception:  # noqa: BLE001
+            continue
+        m = MAINT_RE.search(text)
+        if m:
+            h, mi = int(m.group(1)), int(m.group(2))
+            if m.group(3) == "PM" and h < 12:
+                h += 12
+            month = MONTHS.get(m.group(4)[:3].lower())
+            if month and m.group(6):
+                maint_end[datetime(int(m.group(6)), month, int(m.group(5))).date()] = (h, mi)
+        time.sleep(0.4)
 
-    # Banner: tanggal (GMT+8) diambil dari halaman artikel banner
-    for kind in ("Character", "Weapon"):
-        for state in ("Active", "Upcoming", "Finished"):
-            sect = f"{state} {kind} Banners" if state != "Upcoming" else "Upcoming Banners"
-            rows = secs.get(sect, [])
-            if state == "Finished":
-                rows = rows[:8]  # riwayat secukupnya
-            for idx, (title, href, img, _) in enumerate(rows):
-                st, en = game8_article_dates(href)
-                if (not st or not en) and kind == "Weapon":
-                    # Banner senjata berpasangan dengan banner karakter pada urutan yang sama
-                    chars = secs.get(f"{state} Character Banners", [])
-                    if idx < len(chars):
-                        st, en = game8_article_dates(chars[idx][1])
-                if not st or not en:
-                    print(f"  P5X skip (no reliable dates): {title}")
-                    continue
-                events.append(make_event("p5x", title, day_start(st), day_end(en), "BANNER",
-                                         f"{kind} Banner", img, "https://game8.co" + href))
+    # 2. Gambar dari daftar postingan event
+    event_posts = p5x_list(3, 3)
+    stop = {"event", "special", "coming", "contracts", "contract", "most", "wanted", "update", "with", "from",
+            "comes", "phantom"}
+
+    def image_for(title):
+        words = set(re.findall(r"[a-z]{4,}", title.lower())) - stop
+        best, score = None, 0
+        for post in event_posts:
+            s = len(words & set(re.findall(r"[a-z]{4,}", post["title"].lower())))
+            if s > score and post["img"]:
+                best, score = post["img"], s
+        return best
+
+    # 3. Pengumuman "Ver. X Update Information": daftar resmi event & banner + durasinya
+    updates = [i for i in p5x_list(1, 2) if "Update Information" in i["title"]]
+    for upd in updates:
+        try:
+            text = clean_text(p5x_soup(upd["href"]).get_text(" "))
+        except Exception as e:  # noqa: BLE001
+            print(f"  P5X update gagal {upd['title']}: {e}")
+            continue
+        time.sleep(0.4)
+        mver = re.search(r"Ver\.?\s*([\d.]+)", upd["title"])
+        version = mver.group(1) if mver else ""
+        mdate = re.search(r"After maintenance on\s+" + P5X_DATE, text)
+        if not mdate or not mdate.group(3):
+            continue
+        vdate = datetime(int(mdate.group(3)), MONTHS[mdate.group(1)[:3].lower()], int(mdate.group(2))).date()
+        h, mi = maint_end.get(vdate, (15, 0))  # maintenance SEA biasanya 10:00-15:00 UTC+8
+        version_start = datetime(vdate.year, vdate.month, vdate.day, h, mi, tzinfo=TZ8)
+
+        body = text[mdate.end():].split("Important Notes")[0]
+        for chunk in body.split("•"):
+            if "Duration" not in chunk:
+                continue
+            title_part, _, dur = chunk.partition("Duration")
+            title = re.sub(r"^\s*Content\s*", "", title_part).strip(" :-")
+            title = re.sub(r"\s+", " ", title).replace("5 ★", "5★").strip()
+            dur = dur.lstrip(": ")[:220]
+            if not title or len(title) > 120:
+                continue
+            times = [(p, p5x_fix_year(dt, version_start), clk) for p, dt, clk in p5x_find_times(dur, vdate.year)]
+            if not times:
+                continue
+            if re.match(r"(?i)until", dur) or "end of maintenance" in dur.lower() or len(times) == 1:
+                start, (_, end, has_clock) = version_start, times[-1]
+            else:
+                (_, start, s_clock), (_, end, has_clock) = times[0], times[1]
+                if not s_clock:
+                    start = version_start if start.date() == vdate else start.replace(hour=10)
+            if not has_clock:
+                end = end.replace(hour=9, minute=59)  # akhir standar P5X SEA: 09:59 UTC+8
+            end = end.replace(second=59)
+            if end <= start:
+                continue
+            title = re.sub(r"^(?:Event Content\s+|Event:\s*)", "", title)
+            title = re.sub(r"\s+Event$", "", title).rstrip("!")
+            # "5★ Fuuka Yamagishi comes to Most Wanted Phantom Idol Contracts" -> "Most Wanted ...: Fuuka Yamagishi (5★)"
+            mb = re.match(r"^5★\s*(?:Phantom Thief\s+)?(.+?)\s+comes?\s+to\s+(.+)$", title)
+            if mb:
+                title = f"{mb.group(2)}: {mb.group(1)} (5★)"
+            if re.fullmatch(r"(?i)login bonus|phantom pass.*", title):
+                title = f"{title} (Ver. {version})"
+            is_banner = bool(re.search(r"contract", title, re.I))
+            events.append(make_event(
+                "p5x", title, start, end, "BANNER" if is_banner else classify(title),
+                f"Ver. {version} Banner" if is_banner else f"Ver. {version} Event",
+                image_for(title), P5X_BASE + upd["href"]))
     return events
 
 
@@ -674,9 +810,18 @@ def wiki_image(img):
     return url
 
 
+def sort_value_time(td):
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})\s+(\d{1,2}):(\d{2})", td.get("data-sort-value") or "")
+    if not m:
+        return None
+    y, mo, d, h, mi = map(int, m.groups())
+    return datetime(y, mo, d, h, mi, tzinfo=TZ8)
+
+
 def scrape_wuwa_events():
     print("Fetching Wuthering Waves...")
     events = []
+    banner_times = []  # (start, end) jam server tiap fase banner, dipakai untuk menyelaraskan event
 
     # 1. Banner (Fandom - daftar lengkap fase convene, tanggal per fase)
     try:
@@ -696,14 +841,21 @@ def scrape_wuwa_events():
                     continue
                 a_tags = cols[1].find_all("a")
                 title = strip_date_suffix(a_tags[-1].text.strip() if a_tags else cols[1].text.strip())
-                st, en = parse_month_date(cols[2].text), parse_month_date(cols[3].text)
-                if not title or not st or not en:
+                # Wiki menyimpan jam server persis di data-sort-value, mis. "2026-11-12 11:00".
+                # Waktu server SEA = UTC+8.
+                start = sort_value_time(cols[2])
+                end = sort_value_time(cols[3])
+                if end:
+                    end = end + timedelta(seconds=59)
+                if not start or not end:
+                    st, en = parse_month_date(cols[2].text), parse_month_date(cols[3].text)
+                    if not st or not en:
+                        continue
+                    start = datetime(st.year, st.month, st.day, 10, 0, tzinfo=TZ8)
+                    end = datetime(en.year, en.month, en.day, 9, 59, 59, tzinfo=TZ8)
+                if not title or end <= start:
                     continue
-                # Convene WuWa: mulai setelah maintenance / jam 10:00, berakhir 09:59 (UTC+8)
-                start = datetime(st.year, st.month, st.day, 10, 0, tzinfo=TZ8)
-                end = datetime(en.year, en.month, en.day, 9, 59, 59, tzinfo=TZ8)
-                if end <= start:
-                    end = day_end(en)
+                banner_times.append((start, end))
                 events.append(make_event("wuwa", title, start, end, "BANNER", "Featured Resonator Convene",
                                          wiki_image(cols[0].find("img")), None,
                                          f"{title} is a Wuthering Waves Featured Resonator Convene."))
@@ -733,7 +885,15 @@ def scrape_wuwa_events():
                     continue
                 if day_end(en) < NOW - timedelta(days=HISTORY_DAYS):
                     continue
-                events.append(make_event("wuwa", title, day_start(st), day_end(en), classify(title),
+                # Game8 hanya memberi tanggal. Samakan jam dengan fase banner di tanggal yang sama
+                # (awal/akhir versi), selain itu pakai pola server: mulai 10:00, berakhir 03:59 (reset 04:00).
+                start = next((s for s, _ in banner_times if s.date() == st), None) \
+                    or datetime(st.year, st.month, st.day, 10, 0, tzinfo=TZ8)
+                end = next((e for _, e in banner_times if e.date() == en), None) \
+                    or datetime(en.year, en.month, en.day, 3, 59, 59, tzinfo=TZ8)
+                if end <= start:
+                    continue
+                events.append(make_event("wuwa", title, start, end, classify(title),
                                          "Limited-Time Event", img, href_abs))
     except Exception as e:  # noqa: BLE001
         print(f"  Failed WuWa events: {e}")
@@ -772,6 +932,8 @@ def main():
     previous = load_previous()
     # Hanya data format baru (id stabil "game-hash", waktu ber-offset) yang dipertahankan sebagai riwayat
     prev_valid = [e for e in previous if re.match(r"^[a-z0-9]+-[0-9a-f]{12}$", e.get("id", ""))]
+    # Data lama dari sumber yang sudah tidak dipakai (mis. P5X dari Game8 server global) dibuang
+    prev_valid = [e for e in prev_valid if not (e["gameId"] == "p5x" and "game8.co" in (e.get("detailUrl") or ""))]
 
     all_events = {}
     for game_id, fn in scrapers:
