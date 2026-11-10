@@ -1,948 +1,806 @@
+"""
+Gachalendar scraper.
+
+Mengambil jadwal event & banner yang BENAR-BENAR berjalan (dan yang akan datang)
+untuk setiap game, lalu menyimpannya ke events.json.
+
+Sumber data (diurutkan dari yang paling akurat):
+  - Genshin Impact, Honkai: Star Rail, Zenless Zone Zero
+        -> API pengumuman resmi in-game HoYoverse (server Asia, UTC+8)
+  - Arknights: Endfield -> endfield.wiki.gg (timer server Asia, UTC)
+  - Wuthering Waves      -> Game8 (event) + Fandom "Featured Resonator Convene" (banner)
+  - Neverness to Everness, Persona 5: The Phantom X -> Game8 (tanggal server Asia/SEA)
+
+Semua waktu ditulis dalam ISO-8601 DENGAN offset (mis. 2026-11-04T11:00:00+08:00)
+sehingga aplikasi bisa mengonversinya ke zona waktu perangkat.
+"""
+import hashlib
+import html as htmllib
 import json
 import os
+import re
+import time
+from datetime import datetime, timedelta, timezone
+
 import requests
 from bs4 import BeautifulSoup
-import re
-from datetime import datetime, timedelta, timezone
-import uuid
-import time
 
-def parse_date(date_str):
-    try:
-        # Menghapus akhiran ordinal seperti st, nd, rd, th dari tanggal jika ada
-        date_str = re.sub(r'(\d+)(st|nd|rd|th)', r'\1', date_str)
-        dt = datetime.strptime(date_str, '%B %d, %Y')
-        return dt.isoformat()
-    except Exception as e:
-        print(f"Error parsing date {date_str}: {e}")
-        return datetime.now().isoformat()
+TZ8 = timezone(timedelta(hours=8))  # Server Asia / SEA
+NOW = datetime.now(timezone.utc)
 
-def get_event_details(page_title):
-    details = {
-        'image_url': None,
-        'long_description': None
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; GachalendarBot/3.0)"}
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
+
+OUTPUT_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "events.json")
+
+# Event yang lebih lama dari ini di riwayat akan dibuang
+HISTORY_DAYS = 365
+# Pengumuman yang durasinya lebih dari ini dianggap permanen (bukan event)
+MAX_EVENT_DAYS = 150
+
+MONTHS = {m: i for i, m in enumerate(
+    ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], start=1)}
+
+
+# ---------------------------------------------------------------------------
+# Helper umum
+# ---------------------------------------------------------------------------
+
+def http_get(url, params=None, retries=3, timeout=30):
+    last = None
+    for attempt in range(retries):
+        try:
+            r = SESSION.get(url, params=params, timeout=timeout)
+            r.raise_for_status()
+            return r
+        except Exception as e:  # noqa: BLE001
+            last = e
+            time.sleep(1.5 * (attempt + 1))
+    raise last
+
+
+def iso(dt):
+    return dt.astimezone(TZ8).isoformat(timespec="seconds")
+
+
+def clean_text(s):
+    s = htmllib.unescape(re.sub(r"<[^>]+>", " ", s or ""))
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def norm_title(s):
+    return re.sub(r"[^a-z0-9]+", "", (s or "").lower())
+
+
+def make_id(game_id, title, start):
+    key = f"{game_id}|{norm_title(title)}|{start.astimezone(TZ8).date().isoformat()}"
+    return f"{game_id}-{hashlib.sha1(key.encode()).hexdigest()[:12]}"
+
+
+ENDGAME_KW = ["spiral abyss", "imaginarium theater", "stygian onslaught", "memory of chaos", "pure fiction",
+              "apocalyptic shadow", "shiyu defense", "deadly assault", "tower of adversity",
+              "whimpering wastes", "anomaly arbitration", "threshold of"]
+BANNER_KW = ["event wish", "wish ", "warp", "signal search", "channel", "convene", "headhunting", "banner",
+             "contract", "issue"]
+
+
+def classify(title, default="IN_GAME_EVENT"):
+    t = title.lower()
+    if any(k in t for k in ENDGAME_KW):
+        return "ENDGAME"
+    if default == "BANNER" or any(k in t for k in BANNER_KW):
+        return "BANNER"
+    return default
+
+
+def make_event(game_id, title, start, end, type_, description="", image=None, detail=None, long_desc=None):
+    title = re.sub(r"\s+", " ", title).strip()
+    return {
+        "id": make_id(game_id, title, start),
+        "gameId": game_id,
+        "title": title,
+        "description": description or "",
+        "longDescription": long_desc,
+        "startTime": iso(start),
+        "endTime": iso(end),
+        "type": type_,
+        "imageUrl": image,
+        "detailUrl": detail,
     }
-    
-    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
-    
-    # 1. Get fallback image via action=query&prop=pageimages
+
+
+def parse_month_date(text):
+    """'Oct. 14, 2026' / 'October 14, 2026' / 'Sept 4, 2026' -> date atau None."""
+    m = re.search(r"([A-Za-z]{3,9})\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})", text or "")
+    if not m:
+        return None
+    mon = MONTHS.get(m.group(1)[:3].lower())
+    if not mon:
+        return None
     try:
-        url_query = "https://genshin-impact.fandom.com/api.php"
-        params_query = {
-            "action": "query",
-            "prop": "pageimages",
-            "titles": page_title,
-            "pithumbsize": 500,
-            "redirects": 1,
-            "format": "json"
-        }
-        res_query = requests.get(url_query, params=params_query, headers=headers)
-        data_query = res_query.json()
-        pages = data_query.get('query', {}).get('pages', {})
-        for page_id, page_data in pages.items():
-            if 'thumbnail' in page_data and 'source' in page_data['thumbnail']:
-                details['image_url'] = page_data['thumbnail']['source']
-                # Bersihkan URL image
-                if details['image_url'] and '/revision/latest' in details['image_url']:
-                    details['image_url'] = details['image_url'].split('/revision/latest')[0] + '/revision/latest'
-                break
-    except Exception as e:
-        print(f"Failed to get image for {page_title}: {e}")
+        return datetime(int(m.group(3)), mon, int(m.group(2))).date()
+    except ValueError:
+        return None
 
-    # 2. Get detailed description via action=parse
+
+def day_start(d):
+    return datetime(d.year, d.month, d.day, 0, 0, 0, tzinfo=TZ8)
+
+
+def day_end(d):
+    return datetime(d.year, d.month, d.day, 23, 59, 59, tzinfo=TZ8)
+
+
+# ---------------------------------------------------------------------------
+# HoYoverse: Genshin Impact, Honkai: Star Rail, Zenless Zone Zero
+# ---------------------------------------------------------------------------
+
+HOYO_GAMES = {
+    "gi": {
+        "name": "Genshin Impact",
+        "base": "https://sg-hk4e-api.hoyoverse.com/common/hk4e_global/announcement/api/",
+        "query": {"game": "hk4e", "game_biz": "hk4e_global", "lang": "en", "bundle_id": "hk4e_global",
+                  "platform": "pc", "region": "os_asia", "level": "55", "uid": "100000000"},
+    },
+    "hsr": {
+        "name": "Honkai: Star Rail",
+        "base": "https://sg-hkrpg-api.hoyoverse.com/common/hkrpg_global/announcement/api/",
+        "query": {"game": "hkrpg", "game_biz": "hkrpg_global", "lang": "en", "bundle_id": "hkrpg_global",
+                  "platform": "pc", "region": "prod_official_asia", "level": "70", "uid": "100000000",
+                  "channel_id": "1"},
+    },
+    "zzz": {
+        "name": "Zenless Zone Zero",
+        "base": "https://sg-announcement-static.hoyoverse.com/common/nap_global/announcement/api/",
+        "query": {"game": "nap", "game_biz": "nap_global", "lang": "en", "bundle_id": "nap_global",
+                  "platform": "pc", "region": "prod_gf_jp", "level": "60", "uid": "1300000000",
+                  "channel_id": "1"},
+    },
+}
+
+VERSION_DAYS = 42  # Siklus patch HoYoverse: 6 minggu
+
+HOYO_SKIP = re.compile(
+    r"fair use|fair gaming|survey|top-up|community|social media|phishing|known issues|optimization|"
+    r"compatib|faq|gameplay rules|invitation to join|trailer|highlights page|maintenance|update details|"
+    r"now available|what's new|new content overview|store update|new stock|check-in|new stages?\b|"
+    r"mission description|^version \d+\.\d+ update$|preview|livestream|creator contest|wonderland treasures",
+    re.I)
+
+DATE_NUM = r"(\d{4})/(\d{1,2})/(\d{1,2})\s+(\d{1,2}):(\d{2})(?::(\d{2}))?"
+DATE_WORD = r"([A-Z][a-z]+ \d{1,2}, \d{4}),?\s+(\d{1,2}):(\d{2})(?::(\d{2}))?"
+DURATION_KEY = re.compile(
+    r"(Event Wish Duration|Wish Duration|Event Duration|Season Duration|Specified Duration|Event Period|"
+    r"Warp period|Signal Search Event period|Discount Period|Collection Time|Duration|Period)", re.I)
+
+
+def hoyo_plain(content):
+    # Pertahankan isi tag <t> (waktu), buang tag lain
+    # Beberapa game mengirim tag <t> dalam bentuk ter-escape (&lt;t&gt;), jadi unescape dulu
+    text = htmllib.unescape(htmllib.unescape(content or ""))
+    return clean_text(re.sub(r"</?t\b[^>]*>", " ", text))
+
+
+def find_dates(text):
+    """Kembalikan list (posisi, datetime UTC+8) yang muncul di text, terurut."""
+    found = []
+    for m in re.finditer(DATE_NUM, text):
+        y, mo, d, h, mi, s = m.groups()
+        try:
+            found.append((m.start(), datetime(int(y), int(mo), int(d), int(h), int(mi), int(s or 0), tzinfo=TZ8)))
+        except ValueError:
+            pass
+    for m in re.finditer(DATE_WORD, text):
+        d = parse_month_date(m.group(1))
+        if d:
+            found.append((m.start(), datetime(d.year, d.month, d.day, int(m.group(2)), int(m.group(3)),
+                                              int(m.group(4) or 0), tzinfo=TZ8)))
+    return sorted(found, key=lambda x: x[0])
+
+
+def parse_list_time(s):
     try:
-        url_parse = "https://genshin-impact.fandom.com/api.php"
-        params_parse = {
-            "action": "parse",
-            "page": page_title,
-            "redirects": 1,
-            "format": "json",
-            "prop": "text"
-        }
-        res_parse = requests.get(url_parse, params=params_parse, headers=headers)
-        data_parse = res_parse.json()
-        if 'parse' in data_parse:
-            html_content = data_parse['parse']['text']['*']
-            soup = BeautifulSoup(html_content, 'html.parser')
-            content_div = soup.find('div', class_='mw-parser-output')
-            if content_div:
-                paragraphs = content_div.find_all('p', recursive=False)
-                description_parts = []
-                for p in paragraphs:
-                    text = p.text.strip()
-                    if len(text) > 10:
-                        description_parts.append(text)
-                    if len(" ".join(description_parts)) > 150 or len(description_parts) >= 2:
-                        break
-                if description_parts:
-                    details['long_description'] = " ".join(description_parts)
-    except Exception as e:
-        print(f"Failed to get description for {page_title}: {e}")
+        return datetime.strptime(s, "%Y-%m-%d %H:%M:%S").replace(tzinfo=TZ8)
+    except Exception:  # noqa: BLE001
+        return None
 
-    return details
 
-def scrape_genshin_events():
-    url = "https://genshin-impact.fandom.com/api.php"
-    params = {
-        "action": "parse",
-        "page": "Event",
-        "format": "json",
-        "prop": "text"
-    }
-    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
+def hoyo_fetch(cfg):
+    """
+    Ambil daftar pengumuman + kontennya.
+    Catatan: CDN HoYoverse kadang mengembalikan start_time/end_time dalam zona waktu server lain
+    (UTC-5 / UTC+1) walaupun field timezone=8. Karena UTC+8 adalah zona paling timur, kita ambil
+    beberapa kali dan pakai nilai jam TERBESAR. Konten pengumuman (sumber utama) tidak terpengaruh.
+    """
+    items = {}
+    for i in range(4):
+        q = dict(cfg["query"], t=str(int(time.time() * 1000) + i))
+        data = http_get(cfg["base"] + "getAnnList", params=q).json().get("data") or {}
+        groups = (data.get("list") or []) + (data.get("pic_list") or [])
+        stack = list(groups)
+        while stack:
+            g = stack.pop()
+            stack.extend(g.get("type_list") or [])
+            for a in g.get("list") or []:
+                aid = a.get("ann_id")
+                st, en = parse_list_time(a.get("start_time")), parse_list_time(a.get("end_time"))
+                if aid not in items:
+                    items[aid] = dict(a, _st=st, _en=en)
+                else:
+                    prev = items[aid]
+                    if st and (prev["_st"] is None or st > prev["_st"]):
+                        prev["_st"] = st
+                    if en and (prev["_en"] is None or en > prev["_en"]):
+                        prev["_en"] = en
+        time.sleep(0.3)
+
+    content = http_get(cfg["base"] + "getAnnContent", params=cfg["query"]).json().get("data") or {}
+    contents = {c["ann_id"]: c for c in (content.get("list") or []) + (content.get("pic_list") or [])}
+    return items, contents
+
+
+def next_wednesday_11(dt):
+    dt = dt.astimezone(TZ8)
+    days = (2 - dt.weekday()) % 7  # 2 = Rabu (patch HoYoverse selalu Rabu)
+    d = (dt + timedelta(days=days)).date()
+    return datetime(d.year, d.month, d.day, 11, 0, tzinfo=TZ8)
+
+
+MAINT_CTX = re.compile(r"(maintenance on|maintenance will begin(?: at| on)?|begins? at|or above by|before)$", re.I)
+
+
+def hoyo_version_starts(items, contents):
+    """Petakan 'X.Y' -> waktu game tersedia setelah maintenance update versi tsb (UTC+8)."""
+    explicit, fallback = {}, {}
+    for aid, c in contents.items():
+        title = clean_text(c.get("title", "")) + " " + clean_text((items.get(aid) or {}).get("subtitle", ""))
+        mv = re.search(r"Version (\d+\.\d+)", title)
+        if not mv or not re.search(r"update|maintenance|now available", title, re.I):
+            continue
+        ver = mv.group(1)
+        text = hoyo_plain(c.get("content"))
+        # Maintenance update HoYoverse dimulai 06:00 UTC+8 dan berlangsung ~5 jam.
+        # Hanya tanggal yang jelas merujuk ke maintenance (bukan "until <tanggal>").
+        for pos, d in find_dates(text):
+            ctx = text[max(0, pos - 70):pos].strip()
+            if (d.hour, d.minute) == (6, 0) and MAINT_CTX.search(ctx):
+                cand = d + timedelta(hours=5)
+                if ver not in explicit or cand < explicit[ver]:
+                    explicit[ver] = cand
+        st = (items.get(aid) or {}).get("_st")
+        if st:
+            cand = next_wednesday_11(st)
+            if ver not in fallback or cand > fallback[ver]:
+                fallback[ver] = cand
+    anchors = dict(fallback)
+    anchors.update(explicit)
+    return anchors
+
+
+def version_start(anchors, ver):
+    if ver in anchors:
+        return anchors[ver]
+    major, minor = ver.split(".")
+    same = [(int(v.split(".")[1]), d) for v, d in anchors.items() if v.split(".")[0] == major]
+    if same:
+        m, d = min(same, key=lambda x: abs(x[0] - int(minor)))
+        return d + timedelta(days=VERSION_DAYS * (int(minor) - m))
+    return None
+
+
+def version_end(anchors, ver):
+    major, minor = ver.split(".")
+    nxt = anchors.get(f"{major}.{int(minor) + 1}")
+    if nxt:
+        # Versi berakhir saat maintenance versi berikutnya dimulai (06:00)
+        return nxt - timedelta(hours=5, seconds=1)
+    st = version_start(anchors, ver)
+    return st + timedelta(days=VERSION_DAYS) - timedelta(hours=5, seconds=1) if st else None
+
+
+def hoyo_short_title(raw_title, subtitle):
+    t = clean_text(subtitle) or clean_text(raw_title)
+    if len(t) < 4:
+        t = clean_text(raw_title)
+    m = re.match(r'^"([^"]+)"\s*(?:[:\-–]|Event|Outfit|$)', t)
+    if m and not t.lower().startswith('"event wish'):
+        t = m.group(1)
+    t = re.sub(r"\s*(Event Details|Details|Event)$", "", t).strip()
+    t = re.sub(r"^Genius Invokation TCG\s*-\s*", "GI TCG: ", t)
+    t = re.sub(r'^Event Wish\s*(?:-\s*)?"?([^"]+?)"?$', r"Event Wish: \1", t)
+    if t.startswith('"') and t.endswith('"'):
+        t = t[1:-1]
+    return t.strip()
+
+
+def hoyo_featured(game_id, text):
+    pats = {
+        "gi": [r'event-exclusive 5-star character "[^"]+" ([^()]+?) \(',
+               r'event-exclusive 5-star weapons? ([^.]+?) will'],
+        "hsr": [r'limited 5-star character ([^()]+?) \(', r'limited 5-star Light Cone "([^"]+)"'],
+        "zzz": [r'limited S-Rank Agent ([^()]+?) \(', r'limited S-Rank W-Engine ([^()]+?) \('],
+    }[game_id]
+    names = []
+    for p in pats:
+        for m in re.finditer(p, text):
+            n = m.group(1).strip()
+            if n not in names:
+                names.append(n)
+    return names[:4]
+
+
+def hoyo_dates(text, item, anchors):
+    """Tentukan (start, end) dari teks pengumuman resmi."""
+    km = DURATION_KEY.search(text)
+    seg = text[km.start(): km.start() + 420] if km else text[:400]
+    dates = find_dates(seg)
+    after = re.search(r"after (?:the )?Version (\d+\.\d+) [Uu]pdate", seg, re.I)
+    during = re.search(r"(?:throughout(?: the entirety of)?|during|until the end of)(?: the)? Version (\d+\.\d+)",
+                       seg, re.I)
+    start = end = None
+    if after and (not dates or after.start() < dates[0][0]):
+        start = version_start(anchors, after.group(1))
+        later = [d for p, d in dates if p > after.start()]
+        if later:
+            # Event multi-fase (mis. "Preparation Phase ... Play Phase ...") -> pakai akhir fase terakhir
+            end = later[-1] if re.search(r"\bPhase\b", seg) else later[0]
+        elif during:
+            end = version_end(anchors, during.group(1))
+    elif len(dates) >= 2:
+        start, end = dates[0][1], dates[1][1]
+    elif during:
+        start, end = version_start(anchors, during.group(1)), version_end(anchors, during.group(1))
+    elif len(dates) == 1:
+        end = dates[0][1]
+
+    if start is None:
+        start = item.get("_st")
+    if end is None:
+        end = item.get("_en")
+    return start, end, seg
+
+
+def scrape_hoyo(game_id):
+    cfg = HOYO_GAMES[game_id]
+    print(f"Fetching {cfg['name']} (official announcements)...")
+    items, contents = hoyo_fetch(cfg)
+    anchors = hoyo_version_starts(items, contents)
+    print(f"  version anchors: { {k: iso(v) for k, v in anchors.items()} }")
+
     events = []
-    
-    try:
-        print("Fetching Genshin Impact events...")
-        response = requests.get(url, params=params, headers=headers)
-        data = response.json()
-        html_content = data['parse']['text']['*']
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        current_span = soup.find('span', id='Current')
-        if current_span:
-            table = current_span.parent.find_next_sibling('table', class_='wikitable')
-            if table:
-                rows = table.find_all('tr')[1:]
-                for row in rows:
-                    cols = row.find_all(['th', 'td'])
-                    if len(cols) >= 3:
-                        name = cols[0].text.strip()
-                        duration_text = cols[1].text.strip()
-                        event_type_text = cols[2].text.strip()
-                        
-                        dates = re.findall(r'([A-Z][a-z]+ \d{2}, \d{4})', duration_text)
-                        if len(dates) >= 2:
-                            start_time = parse_date(dates[0])
-                            end_time = parse_date(dates[1])
-                        else:
-                            continue
-                            
-                        type_enum = "IN_GAME_EVENT"
-                        if "Banner" in event_type_text or "Character Selection" in event_type_text or "Test Run" in event_type_text or "Epitome Invocation" in event_type_text or "Wishes" in event_type_text:
-                            type_enum = "BANNER"
-                            
-                        image_url = None
-                        detail_url = None
-                        page_title = None
-                        
-                        # Cek link halaman detail
-                        a_tag = cols[0].find('a')
-                        if a_tag and a_tag.get('href'):
-                            detail_url = "https://genshin-impact.fandom.com" + a_tag.get('href')
-                            page_title = a_tag.get('title')
-                            if "/" in page_title: # Terkadang titlenya "Event Name/2024-10-10"
-                                page_title = page_title.split("/")[0]
-                                
-                        # Cek gambar dari tabel
-                        img_tag = cols[0].find('img')
-                        if img_tag:
-                            image_url = img_tag.get('data-src') or img_tag.get('src')
-                            if image_url and image_url.startswith("data:image"):
-                                image_url = None
-                            if image_url and '/revision/latest' in image_url:
-                                image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
-                                
-                        long_desc = None
-                        
-                        # Jika page_title ditemukan, ambil deskripsi panjang dan fallback gambar
-                        if page_title:
-                            print(f"Scraping details for: {page_title}")
-                            details = get_event_details(page_title)
-                            long_desc = details['long_description']
-                            if not image_url and details['image_url']:
-                                image_url = details['image_url']
-                            time.sleep(0.5) # Jeda ringan agar tidak di-block
-                            
-                        # Attempt to fetch character card for Test Run if no image
-                        if not image_url and "Test Run -" in name:
-                            try:
-                                chars = name.split("Test Run -")[1].strip()
-                                first_char = chars.split(",")[0].strip()
-                                print(f"Fetching character card for: {first_char}")
-                                char_url = f"https://genshin-impact.fandom.com/api.php?action=query&prop=pageimages&titles={first_char}&pithumbsize=1000&format=json"
-                                char_res = requests.get(char_url, headers={'User-Agent': 'Gachalendar-Bot/1.0'}).json()
-                                pages = char_res.get('query', {}).get('pages', {})
-                                for page_id, page_data in pages.items():
-                                    if 'thumbnail' in page_data:
-                                        raw_thumb = page_data['thumbnail']['source']
-                                        if '/revision/latest' in raw_thumb:
-                                            image_url = raw_thumb.split('/revision/latest')[0] + '/revision/latest'
-                                        else:
-                                            image_url = raw_thumb
-                                        break
-                            except Exception as e:
-                                print(f"Failed to fetch char card: {e}")
-                            
-                        event = {
-                            "id": f"gi_{uuid.uuid4().hex[:8]}",
-                            "gameId": "gi",
-                            "title": name,
-                            "description": event_type_text,
-                            "longDescription": long_desc,
-                            "startTime": start_time,
-                            "endTime": end_time,
-                            "type": type_enum,
-                            "imageUrl": image_url,
-                            "detailUrl": detail_url
-                        }
-                        events.append(event)
-    except Exception as e:
-        print(f"Failed to scrape Genshin events: {e}")
-        
+    for aid, item in items.items():
+        c = contents.get(aid, {})
+        raw_title = clean_text(c.get("title") or item.get("title"))
+        subtitle = item.get("subtitle") or c.get("subtitle") or ""
+        title = hoyo_short_title(raw_title, subtitle)
+        if not title or HOYO_SKIP.search(title) or HOYO_SKIP.search(raw_title):
+            continue
+        text = hoyo_plain(c.get("content"))
+        if re.search(r"Event Duration\s*〓?\s*Permanent|available long-term|Permanently available", text, re.I):
+            continue
+
+        start, end, seg = hoyo_dates(text, item, anchors)
+        if not start or not end or end <= start:
+            continue
+        if (end - start).days > MAX_EVENT_DAYS:
+            continue
+
+        lower = (raw_title + " " + title).lower()
+        is_banner = bool(re.search(r"event wish|epitome invocation|chronicled wish|event warp|collaboration warp|"
+                                   r"limited-time channels|signal search", lower))
+        type_ = "BANNER" if is_banner else classify(title)
+
+        description = raw_title if raw_title != title else ""
+        if is_banner:
+            feat = hoyo_featured(game_id, text)
+            if feat:
+                description = "Featured: " + ", ".join(feat)
+
+        long_desc = re.sub(r"^[〓■◇●\s]+", "", text)[:600] or None
+        image = item.get("banner") or item.get("img") or c.get("banner") or None
+        if not image:
+            m = re.search(r'<img[^>]+src="([^"]+)"', c.get("content") or "")
+            image = m.group(1) if m else None
+
+        events.append(make_event(game_id, title, start, end, type_, description, image, None, long_desc))
     return events
 
-def scrape_hsr_events():
-    url = "https://honkai-star-rail.fandom.com/api.php"
-    params = {
-        "action": "parse",
-        "page": "Events",
-        "format": "json",
-        "prop": "text"
-    }
-    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
-    events = []
-    
-    try:
-        print("Fetching Honkai Star Rail events...")
-        response = requests.get(url, params=params, headers=headers)
-        data = response.json()
-        html_content = data['parse']['text']['*']
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        tables = soup.find_all('table', class_='wikitable')
-        if tables:
-            rows = tables[0].find_all('tr')[1:] # Current events table
-            for row in rows:
-                cols = row.find_all(['th', 'td'])
-                if len(cols) >= 3:
-                    name_td = cols[0]
-                    a_tags = name_td.find_all('a')
-                    title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
-                    
-                    duration_text = cols[1].text.strip()
-                    type_text = cols[2].text.strip()
-                    
-                    dates = re.findall(r'([A-Z][a-z]+ \d{1,2}, \d{4})', duration_text)
-                    if len(dates) >= 2:
-                        start_time = parse_date(dates[0])
-                        end_time = parse_date(dates[1])
-                    else:
-                        continue
-                        
-                    type_enum = "IN_GAME_EVENT"
-                    if "Warp" in title or "Warp" in type_text or "Character Event" in title:
-                        type_enum = "BANNER"
-                        
-                    image_url = None
-                    img = name_td.find('img')
-                    if img:
-                        image_url = img.get('data-src') or img.get('src')
-                        if image_url and image_url.startswith("data:image"):
-                            image_url = None
-                        if image_url and '/revision/latest' in image_url:
-                            image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
-                            
-                    if not image_url and a_tags:
-                        page_title = a_tags[-1].get('title')
-                        if page_title:
-                            if "/" in page_title:
-                                page_title = page_title.split("/")[0]
-                            try:
-                                print(f"Fetching fallback image for HSR: {page_title}")
-                                url_query = "https://honkai-star-rail.fandom.com/api.php"
-                                params_query = {
-                                    "action": "query",
-                                    "prop": "pageimages",
-                                    "titles": page_title,
-                                    "pithumbsize": 500,
-                                    "redirects": 1,
-                                    "format": "json"
-                                }
-                                res_query = requests.get(url_query, params=params_query, headers=headers).json()
-                                pages = res_query.get('query', {}).get('pages', {})
-                                for page_id, page_data in pages.items():
-                                    if 'thumbnail' in page_data and 'source' in page_data['thumbnail']:
-                                        image_url = page_data['thumbnail']['source']
-                                        if image_url and '/revision/latest' in image_url:
-                                            image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
-                                        break
-                                time.sleep(0.5)
-                            except Exception as e:
-                                print(f"Failed to get fallback image for HSR {page_title}: {e}")
-                            
-                    event = {
-                        "id": f"hsr_{uuid.uuid4().hex[:8]}",
-                        "gameId": "hsr",
-                        "title": title,
-                        "description": type_text,
-                        "longDescription": f"{title} is a Honkai Star Rail event of type {type_text}.",
-                        "startTime": start_time,
-                        "endTime": end_time,
-                        "type": type_enum,
-                        "imageUrl": image_url,
-                        "detailUrl": None
-                    }
-                    events.append(event)
-    except Exception as e:
-        print(f"Failed to scrape HSR events: {e}")
-        
-    return events
 
-def scrape_wuwa_events():
-    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
-    events = []
-    
-    # 1. Scrape Events Page
-    try:
-        print("Fetching Wuthering Waves events...")
-        url = "https://wutheringwaves.fandom.com/api.php"
-        params = {
-            "action": "parse",
-            "page": "Event",
-            "format": "json",
-            "prop": "text"
-        }
-        response = requests.get(url, params=params, headers=headers)
-        data = response.json()
-        html_content = data['parse']['text']['*']
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        for h in soup.find_all(['h2', 'h3']):
-            span = h.find('span', class_='mw-headline')
-            if span and span.text == 'Current':
-                table = h.find_next_sibling('table', class_='article-table')
-                if table:
-                    rows = table.find_all('tr')[1:]
-                    for row in rows:
-                        cols = row.find_all(['th', 'td'])
-                        if len(cols) >= 3:
-                            name_td = cols[0]
-                            a_tags = name_td.find_all('a')
-                            title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
-                            
-                            duration_text = cols[1].text.strip()
-                            version_text = cols[2].text.strip()
-                            
-                            dates = re.findall(r'([A-Z][a-z]+ \d{1,2}, \d{4})', duration_text)
-                            if len(dates) >= 2:
-                                start_time = parse_date(dates[0])
-                                end_time = parse_date(dates[1])
-                            else:
-                                continue
-                                
-                            type_enum = "IN_GAME_EVENT"
-                                
-                            image_url = None
-                            img = name_td.find('img')
-                            if img:
-                                image_url = img.get('data-src') or img.get('src')
-                                if image_url and image_url.startswith("data:image"):
-                                    image_url = None
-                                if image_url and '/revision/latest' in image_url:
-                                    image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
-                                    
-                            event = {
-                                "id": f"wuwa_{uuid.uuid4().hex[:8]}",
-                                "gameId": "wuwa",
-                                "title": title,
-                                "description": f"Version {version_text}",
-                                "longDescription": f"{title} is a Wuthering Waves event in Version {version_text}.",
-                                "startTime": start_time,
-                                "endTime": end_time,
-                                "type": type_enum,
-                                "imageUrl": image_url,
-                                "detailUrl": None
-                            }
-                            events.append(event)
-    except Exception as e:
-        print(f"Failed to scrape WuWa events: {e}")
-        
-    # 2. Scrape Convene Banners Page
-    try:
-        print("Fetching Wuthering Waves convenes...")
-        url = "https://wutheringwaves.fandom.com/api.php"
-        params = {
-            "action": "parse",
-            "page": "Featured_Resonator_Convene",
-            "format": "json",
-            "prop": "text"
-        }
-        response = requests.get(url, params=params, headers=headers)
-        data = response.json()
-        html_content = data['parse']['text']['*']
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        for h in soup.find_all(['h2', 'h3']):
-            span = h.find('span', class_='mw-headline')
-            if span and span.text == 'List of Featured Resonator Convenes':
-                table = h.find_next_sibling('table')
-                if table:
-                    rows = table.find_all('tr')[1:]
-                    for row in rows:
-                        cols = row.find_all(['th', 'td'])
-                        # Format is typically Image, Name, Start, End, Version
-                        if len(cols) >= 4:
-                            name_td = cols[1]
-                            a_tags = name_td.find_all('a')
-                            title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
-                            
-                            start_text = cols[2].text.strip()
-                            end_text = cols[3].text.strip()
-                            
-                            start_time = parse_date(start_text)
-                            end_time = parse_date(end_text)
-                            
-                            if not start_time or not end_time:
-                                continue
-                                
-                            image_url = None
-                            img = cols[0].find('img')
-                            if img:
-                                image_url = img.get('data-src') or img.get('src')
-                                if image_url and image_url.startswith("data:image"):
-                                    image_url = None
-                                if image_url and '/revision/latest' in image_url:
-                                    image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
-                                    
-                            event = {
-                                "id": f"wuwa_{uuid.uuid4().hex[:8]}",
-                                "gameId": "wuwa",
-                                "title": title,
-                                "description": "Resonator Convene",
-                                "longDescription": f"{title} is a Wuthering Waves Resonator Convene (Banner).",
-                                "startTime": start_time,
-                                "endTime": end_time,
-                                "type": "BANNER",
-                                "imageUrl": image_url,
-                                "detailUrl": None
-                            }
-                            events.append(event)
-    except Exception as e:
-        print(f"Failed to scrape WuWa convenes: {e}")
-        
-    return events
-
-def scrape_zzz_events():
-    headers = {'User-Agent': 'Gachalendar-Bot/2.0'}
-    events = []
-    
-    # 1. Scrape Events Page
-    try:
-        print("Fetching ZZZ events...")
-        url = "https://zenless-zone-zero.fandom.com/api.php"
-        params = {
-            "action": "parse",
-            "page": "Event",
-            "format": "json",
-            "prop": "text"
-        }
-        response = requests.get(url, params=params, headers=headers)
-        data = response.json()
-        html_content = data['parse']['text']['*']
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        for h in soup.find_all(['h2', 'h3']):
-            span = h.find('span', class_='mw-headline')
-            if span and span.text == 'Current':
-                table = h.find_next_sibling('table')
-                if table:
-                    rows = table.find_all('tr')[1:]
-                    for row in rows:
-                        cols = row.find_all(['th', 'td'])
-                        if len(cols) >= 3:
-                            name_td = cols[0]
-                            a_tags = name_td.find_all('a')
-                            title = a_tags[-1].text.strip() if a_tags else name_td.text.strip()
-                            
-                            duration_text = cols[1].text.strip()
-                            
-                            # Matches "June 17, 2026", "TBA"
-                            dates = re.findall(r'([A-Z][a-z]+ \d{1,2}, \d{4}|TBA)', duration_text)
-                            start_time, end_time = None, None
-                            if len(dates) >= 1:
-                                start_time = parse_date(dates[0]) if dates[0] != "TBA" else None
-                            if len(dates) >= 2:
-                                end_time = parse_date(dates[1]) if dates[1] != "TBA" else None
-                            
-                            if not start_time or not end_time:
-                                continue
-                            
-                            type_enum = "IN_GAME_EVENT"
-                            image_url = None
-                            img = name_td.find('img')
-                            if img:
-                                image_url = img.get('data-src') or img.get('src')
-                                if image_url and image_url.startswith("data:image"):
-                                    image_url = None
-                                if image_url and '/revision/latest' in image_url:
-                                    image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
-                                    
-                            event = {
-                                "id": f"zzz_{uuid.uuid4().hex[:8]}",
-                                "gameId": "zzz",
-                                "title": title,
-                                "description": "Zenless Zone Zero Event",
-                                "longDescription": f"{title} is a Zenless Zone Zero event.",
-                                "startTime": start_time,
-                                "endTime": end_time,
-                                "type": type_enum,
-                                "imageUrl": image_url,
-                                "detailUrl": None
-                            }
-                            events.append(event)
-    except Exception as e:
-        print(f"Failed to scrape ZZZ events: {e}")
-        
-    # 2. Scrape Exclusive Channels
-    try:
-        print("Fetching ZZZ banners...")
-        url = "https://zenless-zone-zero.fandom.com/api.php"
-        params = {
-            "action": "parse",
-            "page": "Exclusive_Channel",
-            "format": "json",
-            "prop": "text"
-        }
-        response = requests.get(url, params=params, headers=headers)
-        data = response.json()
-        html_content = data['parse']['text']['*']
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        for h in soup.find_all(['h2', 'h3']):
-            span = h.find('span', class_='mw-headline')
-            if span and 'Current' in span.text:
-                for node in h.find_next_siblings():
-                    if node.name in ['h2', 'h3']:
-                        break
-                    if node.name == 'div' and 'hatnote' in node.get('class', []):
-                        a_tag = node.find('a')
-                        if a_tag:
-                            title_text = a_tag.text.strip()
-                            if "/" in title_text:
-                                title, start_date = title_text.split("/", 1)
-                            else:
-                                title = title_text
-                                start_date = None
-                            
-                            start_time = None
-                            if start_date:
-                                try:
-                                    start_time = datetime.strptime(start_date, "%Y-%m-%d").isoformat()
-                                except:
-                                    pass
-                                    
-                            next_node = node.find_next_sibling('div', class_='countdownevent')
-                            end_time = None
-                            if next_node:
-                                asia_span = next_node.find('span', class_='countdowndate')
-                                if asia_span:
-                                    end_str = asia_span.text.strip()
-                                    try:
-                                        match = re.search(r'([A-Z][a-z]+ \d{1,2}, \d{4})', end_str)
-                                        if match:
-                                            end_time = parse_date(match.group(1))
-                                    except:
-                                        pass
-                                        
-                            if not start_time or not end_time:
-                                continue
-                                        
-                            image_url = None
-                            try:
-                                print(f"Fetching fallback image for ZZZ Banner: {title}")
-                                url_query = "https://zenless-zone-zero.fandom.com/api.php"
-                                params_query = {
-                                    "action": "query",
-                                    "prop": "pageimages",
-                                    "titles": title,
-                                    "pithumbsize": 500,
-                                    "redirects": 1,
-                                    "format": "json"
-                                }
-                                res_query = requests.get(url_query, params=params_query, headers=headers).json()
-                                pages = res_query.get('query', {}).get('pages', {})
-                                for page_id, page_data in pages.items():
-                                    if 'thumbnail' in page_data and 'source' in page_data['thumbnail']:
-                                        image_url = page_data['thumbnail']['source']
-                                        if image_url and '/revision/latest' in image_url:
-                                            image_url = image_url.split('/revision/latest')[0] + '/revision/latest'
-                                        break
-                                time.sleep(0.5)
-                            except Exception as e:
-                                pass
-                                
-                            event = {
-                                "id": f"zzz_{uuid.uuid4().hex[:8]}",
-                                "gameId": "zzz",
-                                "title": title,
-                                "description": "Exclusive Channel",
-                                "longDescription": f"{title} is a Zenless Zone Zero Exclusive Channel (Banner).",
-                                "startTime": start_time,
-                                "endTime": end_time,
-                                "type": "BANNER",
-                                "imageUrl": image_url,
-                                "detailUrl": None
-                            }
-                            events.append(event)
-    except Exception as e:
-        print(f"Failed to scrape ZZZ convenes: {e}")
-        
-    return events
+# ---------------------------------------------------------------------------
+# Arknights: Endfield (endfield.wiki.gg) - timer server Asia
+# ---------------------------------------------------------------------------
 
 def scrape_endfield_events():
-    print("Fetching Arknights Endfield events...")
-    events = [
-        {
-            "id": f"endfield_{uuid.uuid4().hex[:8]}",
-            "gameId": "endfield",
-            "title": "Version 1.4 Update: Homecoming",
-            "description": "6-Month Anniversary",
-            "longDescription": "Celebrate the six-month anniversary with the new 'Homecoming' update. Conclude the Wuling story arc and explore Yinglung Pass!",
-            "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-08-20T03:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/a/a9/Locations_Talos-II_Cinematic.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"endfield_{uuid.uuid4().hex[:8]}",
-            "gameId": "endfield",
-            "title": "HEAT RAGE! MEGA ARENA!",
-            "description": "Challenge Event",
-            "longDescription": "Test your combat tactics in the Mega Arena. Complete challenge stages to earn Oroberyl x1200 and a special portrait frame.",
-            "startTime": "2026-07-30T12:00:00",
-            "endTime": "2026-08-13T04:00:00",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/2/2a/Location_Jinlong.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"endfield_{uuid.uuid4().hex[:8]}",
-            "gameId": "endfield",
-            "title": "Blueprint Submission: Industrial Revolution",
-            "description": "Community Event",
-            "longDescription": "Share your AIC industrial complex layout blueprints with the community for a chance to win exclusive physical merchandise.",
-            "startTime": "2026-07-17T12:00:00",
-            "endTime": "2026-08-20T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/1/10/Bronzer_The_Hub.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"endfield_{uuid.uuid4().hex[:8]}",
-            "gameId": "endfield",
-            "title": "Headhunting Banner: Arcane & Liino",
-            "description": "Rate-up Banner",
-            "longDescription": "Increased drop rate for new 6-star Operators: Arcane (Nature Caster) and Liino (Electric Supporter).",
-            "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-07-30T03:59:59",
-            "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/endfield/images/4/40/AvywennaSplashart.png/revision/latest",
-            "detailUrl": None
-        }
-    ]
+    print("Fetching Arknights: Endfield (endfield.wiki.gg)...")
+    api = "https://endfield.wiki.gg/api.php"
+    events = []
+    seen = set()
+
+    def parse_page(page):
+        data = http_get(api, params={"action": "parse", "page": page, "format": "json", "prop": "text",
+                                     "redirects": 1}).json()
+        return BeautifulSoup(data["parse"]["text"]["*"], "html.parser")
+
+    def timer_of(block):
+        # Ambil timer server Asia (biasanya yang pertama); fallback ke timer pertama apapun
+        timers = block.select("[data-start][data-end]")
+        if not timers:
+            return None, None
+        pick = next((t for t in timers if "asia" in t.get_text(" ").lower()), timers[0])
+        try:
+            st = datetime.fromisoformat(pick["data-start"])
+            en = datetime.fromisoformat(pick["data-end"])
+            return st, en
+        except ValueError:
+            return None, None
+
+    def image_of(block):
+        img = block.find("img")
+        if not img:
+            return None
+        src = img.get("src") or ""
+        if src.startswith("/"):
+            src = "https://endfield.wiki.gg" + src
+        return src.split("?")[0] or None
+
+    def link_of(block):
+        a = block.find("a", href=True)
+        if a and a["href"].startswith("/wiki/"):
+            return "https://endfield.wiki.gg" + a["href"]
+        return None
+
+    pages = []
+    for p in ("Main Page", "Event"):
+        try:
+            pages.append(parse_page(p))
+        except Exception as e:  # noqa: BLE001
+            print(f"  Failed to load Endfield page {p}: {e}")
+
+    for soup in pages:
+        for b in soup.select(".mp-banner"):
+            h = b.select_one(".mp-banner-header")
+            title = h.get_text(" ", strip=True) if h else None
+            st, en = timer_of(b)
+            if not title or not st or (title, st) in seen:
+                continue
+            seen.add((title, st))
+            is_weapon = title.lower().endswith("issue")
+            events.append(make_event(
+                "endfield", title, st, en, "BANNER",
+                "Weapon Issue" if is_weapon else "Headhunting",
+                image_of(b), link_of(b),
+                f"{title} - {'Arsenal Issue (weapon banner)' if is_weapon else 'Headhunting (operator banner)'}."))
+        for b in soup.select(".mp-event"):
+            n = b.select_one(".mp-event-name")
+            title = n.get_text(" ", strip=True) if n else None
+            t = b.select_one(".mp-event-type")
+            etype = t.get_text(" ", strip=True) if t else ""
+            st, en = timer_of(b)
+            if not title or not st or (title, st) in seen:
+                continue
+            seen.add((title, st))
+            type_ = "ENDGAME" if "challenge" in etype.lower() and "contingency" in title.lower() else classify(title)
+            events.append(make_event("endfield", title, st, en, type_, etype, image_of(b), link_of(b),
+                                     f"{title} ({etype})." if etype else None))
     return events
+
+
+# ---------------------------------------------------------------------------
+# Game8 helpers (NTE, P5X, WuWa)
+# ---------------------------------------------------------------------------
+
+_G8_CACHE = {}
+
+
+def game8_article_dates(url):
+    """
+    Baca halaman artikel Game8 dan ambil Start/End date.
+    Mengutamakan tanggal server Asia/SEA/GMT+8 jika tersedia.
+    """
+    if not url:
+        return None, None
+    if url.startswith("/"):
+        url = "https://game8.co" + url
+    if url in _G8_CACHE:
+        return _G8_CACHE[url]
+    try:
+        text = clean_text(BeautifulSoup(http_get(url).text, "html.parser").get_text(" "))
+        time.sleep(0.4)
+    except Exception as e:  # noqa: BLE001
+        print(f"  Game8 article failed {url}: {e}")
+        _G8_CACHE[url] = (None, None)
+        return None, None
+
+    def pick(label):
+        m = re.search(label + r"\s*:?\s*(.{0,160})", text)
+        if not m:
+            return None
+        chunk = m.group(1)
+        # Potong sebelum label berikutnya
+        chunk = re.split(r"End Date|Start Date|Countdown", chunk)[0] if label.startswith("Start") else chunk
+        # Cari tanggal yang ditandai Asia/SEA/GMT+8
+        for dm in re.finditer(r"([A-Za-z]{3,9}\.? \d{1,2},? \d{4})\s*\(([^)]*)\)", chunk):
+            if re.search(r"Asia|SEA|GMT\+8|UTC\+8", dm.group(2)):
+                return parse_month_date(dm.group(1))
+        return parse_month_date(chunk)
+
+    st = pick(r"Start(?: Date)?")
+    en = pick(r"End(?: Date)?")
+    if not st or not en:
+        # Pola alternatif: "October 21, 2026 – November 11, 2026" atau "10/21/2026 - 11/11/2026"
+        m = re.search(r"([A-Z][a-z]{2,8}\.? \d{1,2},? \d{4})\s*[-–~to]+\s*([A-Z][a-z]{2,8}\.? \d{1,2},? \d{4})", text)
+        if m:
+            st, en = st or parse_month_date(m.group(1)), en or parse_month_date(m.group(2))
+    if st and en and en < st:
+        st, en = None, None
+    _G8_CACHE[url] = (st, en)
+    return st, en
+
+
+def game8_sections(page_html, headings):
+    """Kembalikan {heading: [(title, href, img, date_text)]} dari tabel di bawah heading h3/h4."""
+    soup = BeautifulSoup(page_html, "html.parser")
+    result = {}
+    for h in soup.find_all(["h3", "h4"]):
+        name = h.get_text(" ", strip=True)
+        if name not in headings or name in result:
+            continue
+        table = h.find_next("table")
+        rows = []
+        if table:
+            for td in table.find_all("td"):
+                a = td.find("a", href=True)
+                if not a:
+                    continue
+                img = td.find("img")
+                img_url = img and (img.get("data-src") or img.get("src"))
+                if img_url and img_url.startswith("data:"):
+                    img_url = None
+                title = a.get_text(" ", strip=True) or (img.get("alt") if img else "")
+                date_text = td.get_text(" ", strip=True).replace(title, "", 1).strip(" |")
+                # Tanggal kadang di sel sebelah (td berikutnya)
+                sib = td.find_next_sibling("td")
+                if sib and not sib.find("a") and re.search(r"\d{4}", sib.get_text()):
+                    date_text = (date_text + " " + sib.get_text(" ", strip=True)).strip()
+                rows.append((title, a["href"], img_url, date_text))
+        result[name] = rows
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Neverness to Everness (Game8)
+# ---------------------------------------------------------------------------
 
 def scrape_nte_events():
-    print("Fetching Neverness to Everness events...")
-    events = [
-        # === Banners (Rate Up) ===
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Shinku Perks (Before the Dawn)",
-            "description": "Character Banner",
-            "longDescription": "Rate up banner for the new 5-star Cosmos Esper, Shinku! Play her trial stage and unlock her signature weapon.",
-            "startTime": "2026-07-08T12:00:00",
-            "endTime": "2026-07-29T23:59:59",
-            "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/23/Shinku_-_Board.jpg/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Iroi Perks (The Lifeline)",
-            "description": "Character Banner",
-            "longDescription": "Rate up banner for the new 5-star Sunward Island Esper, Iroi! Deploy her on the battlefield alongside her loyal companions.",
-            "startTime": "2026-07-29T12:00:00",
-            "endTime": "2026-08-19T23:59:59",
-            "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/5/55/Iroi_Introduction.png/revision/latest",
-            "detailUrl": None
-        },
-        # === Limited Time Events ===
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "999 Nights Tabletop Mode",
-            "description": "Version 1.2 Main Event",
-            "longDescription": "Explore the supernatural urban city in a new tabletop board game mode. Gather tokens to redeem exclusive rewards, dye, and upgrade items.",
-            "startTime": "2026-07-08T12:00:00",
-            "endTime": "2026-08-19T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/d/dc/ETD6_999_Nights.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Stamina Recharge Event",
-            "description": "Limited Resource Buff",
-            "longDescription": "Get double reward drops from select Anomaly Hunts and simulation challenges daily up to 3 times.",
-            "startTime": "2026-07-13T04:00:00",
-            "endTime": "2026-07-20T03:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/c/cb/Version_1.2_Event_Calendar_Wallpaper_%28Desktop%29.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Beyond the Rails (Blazing Circle)",
-            "description": "Limited Time Event",
-            "longDescription": "Challenge special city tracks using your customizable vehicles. Beat the target time to earn Annulith and car dyes.",
-            "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-07-30T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/1/15/Version_1.2_Event_Calendar_Wallpaper_%28Mobile%29.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Gold Clash Challenge",
-            "description": "Limited Time Event",
-            "longDescription": "Fight waves of enemies within a time limit. Earn high scores to unlock rewards including Annulith and leveling guides.",
-            "startTime": "2026-07-20T12:00:00",
-            "endTime": "2026-08-03T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/f/f1/Version_1.2_Preview_Special_Program_Premiere_Announcement.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Shadow-n-Seek",
-            "description": "Asymmetric PvP Event",
-            "longDescription": "Participate in hide and seek matches in the neon city. Hunter and Hider roles earn special event currency for the exchange shop.",
-            "startTime": "2026-07-25T12:00:00",
-            "endTime": "2026-08-08T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/b/b5/MP_-_Shinku.jpg/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Fishing Frenzy Tournament",
-            "description": "Limited Time Event",
-            "longDescription": "Catch rare Anomalous fish in Hethereau's waters. Place trophies in your garage or trade them for premium items.",
-            "startTime": "2026-08-03T12:00:00",
-            "endTime": "2026-08-19T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/38/Iroi.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Pixel Surge Mini-game",
-            "description": "Retro Arcade Event",
-            "longDescription": "Play classic arcade cabinets at Eibon antique shop and complete daily high score challenges.",
-            "startTime": "2026-08-03T12:00:00",
-            "endTime": "2026-08-10T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/5/5a/Shinku_Dawn_Patrol_Portrait.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Warren Lucky Flip",
-            "description": "Card Flip Event",
-            "longDescription": "Spend event tickets to flip cards and match matching pairs. Jackpot board rewards character and vehicle cosmetics.",
-            "startTime": "2026-08-05T12:00:00",
-            "endTime": "2026-08-19T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/2/20/999_Nights_-_Shinku.jpg/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Fons Rush Event",
-            "description": "Double Drops Event",
-            "longDescription": "Claim double rewards from Leyline-style Fons extractors for 7 days.",
-            "startTime": "2026-08-10T04:00:00",
-            "endTime": "2026-08-17T03:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/c/cb/Version_1.2_Event_Calendar_Wallpaper_%28Desktop%29.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Going, Going, Gone Auction",
-            "description": "Auction Event",
-            "longDescription": "Bid on antique relics and oddities with other anomaly hunters to win exclusive home furniture blueprints.",
-            "startTime": "2026-08-12T12:00:00",
-            "endTime": "2026-08-26T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/f/f1/Version_1.2_Preview_Special_Program_Premiere_Announcement.png/revision/latest",
-            "detailUrl": None
-        },
-        # === Endgame Content ===
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Anomaly Hunt: Weekly Boss Challenge",
-            "description": "Weekly Reset Endgame",
-            "longDescription": "Defeat Level 5+ Anomaly bosses to earn high-tier upgrading materials and currency. Adjust your team element composition to exploit weekly boss weaknesses.",
-            "startTime": "2026-07-13T04:00:00",
-            "endTime": "2026-07-20T03:59:59",
-            "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/d/d8/Anomaly_Sighting_Records_-_Sighting_1.2.jpg/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Anomaly Hunt: Weekly Boss Challenge (Upcoming)",
-            "description": "Weekly Reset Endgame",
-            "longDescription": "Defeat Level 5+ Anomaly bosses to earn high-tier upgrading materials and currency.",
-            "startTime": "2026-07-20T04:00:00",
-            "endTime": "2026-07-27T03:59:59",
-            "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/d/d8/Anomaly_Sighting_Records_-_Sighting_1.2.jpg/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Dreamwalk Corridor: Season 1",
-            "description": "Bi-weekly Abyss Reset",
-            "longDescription": "Conquer deep dreams in the Corridor to earn Annulith and character ascension resources. Floors reset bi-weekly with varying elemental buffs.",
-            "startTime": "2026-07-15T04:00:00",
-            "endTime": "2026-07-29T03:59:59",
-            "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/39/Iroi_-_Dreamwalk.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"nte_{uuid.uuid4().hex[:8]}",
-            "gameId": "nte",
-            "title": "Dreamwalk Corridor: Season 2",
-            "description": "Bi-weekly Abyss Reset",
-            "longDescription": "Floors reset bi-weekly with varying elemental buffs. Conquer deep dreams in the Corridor to earn Annulith.",
-            "startTime": "2026-07-29T04:00:00",
-            "endTime": "2026-08-12T03:59:59",
-            "type": "ENDGAME",
-            "imageUrl": "https://static.wikia.nocookie.net/neverness-to-everness/images/3/39/Iroi_-_Dreamwalk.png/revision/latest",
-            "detailUrl": None
-        }
-    ]
+    print("Fetching Neverness to Everness (Game8)...")
+    url = "https://game8.co/games/Neverness-to-Everness"
+    events = []
+    page = http_get(url).text
+    secs = game8_sections(page, {"Current Banners", "Upcoming Banners", "Previous Banners",
+                                 "Current Events", "Upcoming Events", "Previous Events"})
+    for sect, rows in secs.items():
+        is_banner = "Banner" in sect
+        for title, href, img, date_text in rows:
+            if not title:
+                continue
+            st, en = game8_article_dates(href)
+            listed = parse_month_date(date_text)
+            # Fallback dari tabel utama bila artikel tidak memuat tanggal
+            if not st and listed and not re.search(r"until", date_text, re.I):
+                st = listed
+            if not en and listed and re.search(r"until", date_text, re.I):
+                en = listed
+            if not st or not en:
+                print(f"  NTE skip (no reliable dates): {title}")
+                continue
+            events.append(make_event(
+                "nte", title, day_start(st), day_end(en), "BANNER" if is_banner else classify(title),
+                "Limited Banner" if is_banner else "Limited-Time Event",
+                img, "https://game8.co" + href if href.startswith("/") else href))
     return events
+
+
+# ---------------------------------------------------------------------------
+# Persona 5: The Phantom X (Game8, server SEA/GMT+8)
+# ---------------------------------------------------------------------------
 
 def scrape_p5x_events():
-    print("Fetching Persona 5: The Phantom X events (SEA Server)...")
-    events = [
-        {
-            "id": f"p5x_{uuid.uuid4().hex[:8]}",
-            "gameId": "p5x",
-            "title": "Haunted Beach Shack: The Curse of Shirosato Beach",
-            "description": "Version 4.5 Event",
-            "longDescription": "Explore Shirosato Beach and complete event missions for exclusive summer rewards.",
-            "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-07-30T03:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/7f/P5X_Minami_Miyashita_Marian_Summer_Background.png/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"p5x_{uuid.uuid4().hex[:8]}",
-            "gameId": "p5x",
-            "title": "Character Banner: Beachflower Minami",
-            "description": "Featured Phantom Thief",
-            "longDescription": "Boosted drop rate for 5-star Phantom Thief 'Beachflower Minami' in the limited summer banner.",
-            "startTime": "2026-07-16T12:00:00",
-            "endTime": "2026-07-30T03:59:59",
-            "type": "BANNER",
-            "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/7/75/P5X_Minami_Summer_wallpaper.jpeg/revision/latest",
-            "detailUrl": None
-        },
-        {
-            "id": f"p5x_{uuid.uuid4().hex[:8]}",
-            "gameId": "p5x",
-            "title": "1st Anniversary Party",
-            "description": "Anniversary Event",
-            "longDescription": "Collect Wish Candy and Scratch-Off Packs to earn a 5☆ Thief Select Ticket and other anniversary rewards.",
-            "startTime": "2026-06-26T12:00:00",
-            "endTime": "2026-07-26T23:59:59",
-            "type": "IN_GAME_EVENT",
-            "imageUrl": "https://static.wikia.nocookie.net/megamitensei/images/a/a2/P5X_Wallpaper_3.jpeg/revision/latest",
-            "detailUrl": None
-        }
-    ]
+    print("Fetching Persona 5: The Phantom X (Game8)...")
+    url = "https://game8.co/games/Persona-5-Phantom-X"
+    page = http_get(url).text
+    events = []
+
+    # Event: tanggal tersedia langsung di tabel (MM/DD/YYYY - MM/DD/YYYY)
+    secs = game8_sections(page, {"Available Events", "Finished Events", "Upcoming Events",
+                                 "Active Character Banners", "Finished Character Banners",
+                                 "Active Weapon Banners", "Finished Weapon Banners", "Upcoming Banners"})
+    for sect in ("Available Events", "Upcoming Events", "Finished Events"):
+        for title, href, img, date_text in secs.get(sect, []):
+            m = re.search(r"(\d{1,2})/(\d{1,2})/(\d{4})\s*-\s*(\d{1,2})/(\d{1,2})/(\d{4})", date_text)
+            if not m:
+                continue
+            mo1, d1, y1, mo2, d2, y2 = map(int, m.groups())
+            st, en = datetime(y1, mo1, d1).date(), datetime(y2, mo2, d2).date()
+            events.append(make_event("p5x", title, day_start(st), day_end(en), classify(title), "Event",
+                                     img, "https://game8.co" + href))
+
+    # Banner: tanggal (GMT+8) diambil dari halaman artikel banner
+    for kind in ("Character", "Weapon"):
+        for state in ("Active", "Upcoming", "Finished"):
+            sect = f"{state} {kind} Banners" if state != "Upcoming" else "Upcoming Banners"
+            rows = secs.get(sect, [])
+            if state == "Finished":
+                rows = rows[:8]  # riwayat secukupnya
+            for idx, (title, href, img, _) in enumerate(rows):
+                st, en = game8_article_dates(href)
+                if (not st or not en) and kind == "Weapon":
+                    # Banner senjata berpasangan dengan banner karakter pada urutan yang sama
+                    chars = secs.get(f"{state} Character Banners", [])
+                    if idx < len(chars):
+                        st, en = game8_article_dates(chars[idx][1])
+                if not st or not en:
+                    print(f"  P5X skip (no reliable dates): {title}")
+                    continue
+                events.append(make_event("p5x", title, day_start(st), day_end(en), "BANNER",
+                                         f"{kind} Banner", img, "https://game8.co" + href))
     return events
 
-def main():
-    print("Mulai mengambil data jadwal event dari internet...")
-    genshin_events = scrape_genshin_events()
-    print(f"Berhasil mendapatkan {len(genshin_events)} event Genshin Impact.")
-    
-    hsr_events = scrape_hsr_events()
-    print(f"Berhasil mendapatkan {len(hsr_events)} event Honkai Star Rail.")
-    
-    wuwa_events = scrape_wuwa_events()
-    print(f"Berhasil mendapatkan {len(wuwa_events)} event Wuthering Waves.")
-    
-    zzz_events = scrape_zzz_events()
-    print(f"Berhasil mendapatkan {len(zzz_events)} event Zenless Zone Zero.")
-    
-    endfield_events = scrape_endfield_events()
-    print(f"Berhasil mendapatkan {len(endfield_events)} event Arknights Endfield.")
-    
-    nte_events = scrape_nte_events()
-    print(f"Berhasil mendapatkan {len(nte_events)} event Neverness to Everness.")
-    
-    p5x_events = scrape_p5x_events()
-    print(f"Berhasil mendapatkan {len(p5x_events)} event Persona 5: The Phantom X.")
-    
-    all_events = genshin_events + hsr_events + wuwa_events + zzz_events + endfield_events + nte_events + p5x_events
-    
-    # Filter event yang sudah berakhir berdasarkan waktu Indonesia (WIB / UTC+7)
-    indo_tz = timezone(timedelta(hours=7))
-    now_indo = datetime.now(indo_tz).replace(tzinfo=None)
-    
-    active_events = []
-    for event in all_events:
-        # Classify Event Type based on title keywords
-        title_lower = event.get("title", "").lower()
-        if any(kw in title_lower for kw in ["abyss", "theatre", "theater", "shiyu defense", "memory of chaos", "pure fiction", "apocalyptic shadow", "tower of adversity", "divergent universe", "simulated universe", "anomaly hunt", "dreamwalk corridor"]):
-            event["type"] = "ENDGAME"
-        elif any(kw in title_lower for kw in ["banner", "convene", "headhunting", "gaze north to the rift hh permit"]):
-            event["type"] = "BANNER"
 
-        if event.get("endTime"):
-            try:
-                # dt berbentuk datetime naif misal 2026-03-05 00:00:00
-                dt = datetime.fromisoformat(event["endTime"])
-                # Tambahkan toleransi 1 hari (karena end_date bisa jadi hari H sampai 23:59)
-                end_time_plus_1 = dt + timedelta(days=1)
-                if end_time_plus_1 < now_indo:
-                    print(f"Skipping expired event: {event['title']} (Ended: {dt})")
+# ---------------------------------------------------------------------------
+# Wuthering Waves: event dari Game8, banner dari Fandom
+# ---------------------------------------------------------------------------
+
+def strip_date_suffix(title):
+    return re.sub(r"\s+\d{4}-\d{2}-\d{2}$", "", title or "").strip()
+
+
+def wiki_image(img):
+    if not img:
+        return None
+    url = img.get("data-src") or img.get("src")
+    if not url or url.startswith("data:"):
+        return None
+    if "/revision/latest" in url:
+        url = url.split("/revision/latest")[0] + "/revision/latest"
+    return url
+
+
+def scrape_wuwa_events():
+    print("Fetching Wuthering Waves...")
+    events = []
+
+    # 1. Banner (Fandom - daftar lengkap fase convene, tanggal per fase)
+    try:
+        data = http_get("https://wutheringwaves.fandom.com/api.php", params={
+            "action": "parse", "page": "Featured_Resonator_Convene", "format": "json", "prop": "text"}).json()
+        soup = BeautifulSoup(data["parse"]["text"]["*"], "html.parser")
+        for h in soup.find_all(["h2", "h3"]):
+            span = h.find("span", class_="mw-headline")
+            if not span or span.text.strip() != "List of Featured Resonator Convenes":
+                continue
+            table = h.find_next_sibling("table")
+            if not table:
+                continue
+            for row in table.find_all("tr")[1:]:
+                cols = row.find_all(["th", "td"])
+                if len(cols) < 4:
                     continue
-            except Exception as e:
-                pass
-        active_events.append(event)
+                a_tags = cols[1].find_all("a")
+                title = strip_date_suffix(a_tags[-1].text.strip() if a_tags else cols[1].text.strip())
+                st, en = parse_month_date(cols[2].text), parse_month_date(cols[3].text)
+                if not title or not st or not en:
+                    continue
+                # Convene WuWa: mulai setelah maintenance / jam 10:00, berakhir 09:59 (UTC+8)
+                start = datetime(st.year, st.month, st.day, 10, 0, tzinfo=TZ8)
+                end = datetime(en.year, en.month, en.day, 9, 59, 59, tzinfo=TZ8)
+                if end <= start:
+                    end = day_end(en)
+                events.append(make_event("wuwa", title, start, end, "BANNER", "Featured Resonator Convene",
+                                         wiki_image(cols[0].find("img")), None,
+                                         f"{title} is a Wuthering Waves Featured Resonator Convene."))
+    except Exception as e:  # noqa: BLE001
+        print(f"  Failed WuWa convenes: {e}")
 
-    output_file = "events.json"
-    with open(output_file, 'w') as f:
-        json.dump(active_events, f, indent=4)
-        
-    print(f"Berhasil menyimpan {len(active_events)} event aktif ke dalam {output_file}")
+    # 2. Event (Game8 - Current/Upcoming + daftar per versi, tanggal dari artikel)
+    try:
+        page = http_get("https://game8.co/games/Wuthering-Waves").text
+        soup = BeautifulSoup(page, "html.parser")
+        wanted = {"Current Events", "Upcoming Events"}
+        for h in soup.find_all("h4"):
+            if re.match(r"Version [\d.]+ Events and Game Modes", h.get_text(" ", strip=True)):
+                wanted.add(h.get_text(" ", strip=True))
+        secs = game8_sections(page, wanted)
+        seen = set()
+        for sect, rows in secs.items():
+            for title, href, img, _ in rows:
+                if not href or "/archives/" not in href:
+                    continue
+                href_abs = href if href.startswith("http") else "https://game8.co" + href
+                if href_abs in seen:
+                    continue
+                seen.add(href_abs)
+                st, en = game8_article_dates(href_abs)
+                if not st or not en or (en - st).days > MAX_EVENT_DAYS:
+                    continue
+                if day_end(en) < NOW - timedelta(days=HISTORY_DAYS):
+                    continue
+                events.append(make_event("wuwa", title, day_start(st), day_end(en), classify(title),
+                                         "Limited-Time Event", img, href_abs))
+    except Exception as e:  # noqa: BLE001
+        print(f"  Failed WuWa events: {e}")
+    return events
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def load_previous():
+    try:
+        with open(OUTPUT_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:  # noqa: BLE001
+        return []
+
+
+def parse_iso(s):
+    dt = datetime.fromisoformat(s)
+    return dt if dt.tzinfo else dt.replace(tzinfo=TZ8)
+
+
+def main():
+    print(f"Mulai mengambil jadwal event... (now = {iso(NOW.astimezone(TZ8))})")
+    scrapers = [
+        ("gi", lambda: scrape_hoyo("gi")),
+        ("hsr", lambda: scrape_hoyo("hsr")),
+        ("zzz", lambda: scrape_hoyo("zzz")),
+        ("wuwa", scrape_wuwa_events),
+        ("endfield", scrape_endfield_events),
+        ("nte", scrape_nte_events),
+        ("p5x", scrape_p5x_events),
+    ]
+
+    previous = load_previous()
+    # Hanya data format baru (id stabil "game-hash", waktu ber-offset) yang dipertahankan sebagai riwayat
+    prev_valid = [e for e in previous if re.match(r"^[a-z0-9]+-[0-9a-f]{12}$", e.get("id", ""))]
+
+    all_events = {}
+    for game_id, fn in scrapers:
+        try:
+            evs = fn()
+        except Exception as e:  # noqa: BLE001
+            print(f"!! Scraper {game_id} gagal: {e}")
+            evs = []
+        if not evs:
+            # Jangan hapus data game ini kalau sumbernya sedang error
+            evs = [e for e in prev_valid if e["gameId"] == game_id]
+            print(f"   {game_id}: 0 event baru, memakai {len(evs)} event dari data sebelumnya")
+        for e in evs:
+            all_events[e["id"]] = e
+        active = sum(1 for e in evs if parse_iso(e["startTime"]) <= NOW < parse_iso(e["endTime"]))
+        upcoming = sum(1 for e in evs if parse_iso(e["startTime"]) > NOW)
+        print(f"   {game_id}: {len(evs)} event (aktif {active}, akan datang {upcoming})")
+
+    # Gabungkan riwayat dari run sebelumnya (event yang sudah selesai)
+    cutoff = NOW - timedelta(days=HISTORY_DAYS)
+    keys = {(e["gameId"], norm_title(e["title"]), e["startTime"][:10]) for e in all_events.values()}
+    for e in prev_valid:
+        if e["id"] in all_events:
+            continue
+        k = (e["gameId"], norm_title(e["title"]), e["startTime"][:10])
+        if k in keys:
+            continue
+        if cutoff < parse_iso(e["endTime"]) <= NOW:
+            all_events[e["id"]] = e
+
+    result = [e for e in all_events.values() if parse_iso(e["endTime"]) > cutoff]
+    result.sort(key=lambda e: (e["gameId"], e["startTime"], e["title"]))
+
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+    print(f"Berhasil menyimpan {len(result)} event ke {OUTPUT_FILE}")
+
 
 if __name__ == "__main__":
     main()

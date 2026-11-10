@@ -32,10 +32,14 @@ fun GameCalendarScreen(
     events: List<GameEvent>,
     onBackClick: () -> Unit,
     onEventClick: (GameEvent) -> Unit,
-    onRefresh: () -> Unit
+    onRefresh: () -> Unit,
+    onHistoryClick: () -> Unit
 ) {
-    val gameEvents = events.filter { it.gameId == game.id }
-        .sortedBy { it.endTime }
+    val now by rememberCurrentTime()
+    val gameEvents = remember(events, game, now) {
+        events.filter { it.gameId == game.id && it.endTime.isAfter(now) }
+            .sortedBy { it.endTime }
+    }
 
     var isTimelineView by remember { mutableStateOf(false) }
     var selectedTab by remember { mutableStateOf(0) }
@@ -43,9 +47,10 @@ fun GameCalendarScreen(
     val filteredEvents = remember(gameEvents, selectedTab) {
         gameEvents.filter { event ->
             when (selectedTab) {
-                0 -> event.type == EventType.BANNER
-                1 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
-                2 -> event.type == EventType.ENDGAME
+                0 -> true
+                1 -> event.type == EventType.BANNER
+                2 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
+                3 -> event.type == EventType.ENDGAME
                 else -> true
             }
         }
@@ -90,6 +95,13 @@ fun GameCalendarScreen(
                         }
                     },
                     actions = {
+                        IconButton(onClick = onHistoryClick) {
+                            Icon(
+                                imageVector = Icons.History,
+                                contentDescription = "Riwayat",
+                                tint = Color.White
+                            )
+                        }
                         IconButton(onClick = onRefresh) {
                             Icon(
                                 imageVector = Icons.Default.Refresh,
@@ -142,7 +154,7 @@ fun GameCalendarScreen(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    val tabTitles = listOf("Banner Rate Up", "Event Terbatas", "Konten Endgame")
+                    val tabTitles = listOf("Semua", "Banner", "Event", "Endgame")
                     tabTitles.forEachIndexed { index, title ->
                         val isSelected = selectedTab == index
                         Box(

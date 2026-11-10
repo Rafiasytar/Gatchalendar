@@ -11,7 +11,7 @@ object DummyData {
         Game(id = "hsr", name = "Honkai: Star Rail", developer = "Hoyoverse", imageUrl = "https://play-lh.googleusercontent.com/aWrGocSA7hEuk1qAPe7L4T57LvLKrwwH26cK2_LOqxRQMQX7j3uHYojC-EKWgYEV2PdrmE0ahqvvhLhXrAGk6Q=w240-h480"),
         Game(id = "zzz", name = "Zenless Zone Zero", developer = "Hoyoverse", imageUrl = "https://play-lh.googleusercontent.com/-ZZaqZBQ7EBjH4j0hyHX-0Fu0jUtnoOc-LwydvgQmsXWBZLxyAhxPcmIakzZB7NFurlK4Mj0pbvYe0pHYSuv4p8=w240-h480"),
         Game(id = "wuwa", name = "Wuthering Waves", developer = "Kuro Games", imageUrl = "https://play-lh.googleusercontent.com/f8SoRHdK3E8ofPV6ZbXG-TkcNtXiGmgXnPLl_zjHh6OsSQ1yZqbDIDWFI2P7UCnAQGY_C9VUv2Q8P87CIAqH=w240-h480"),
-        Game(id = "endfield", name = "Arknights Endfield", developer = "Hypergryph", imageUrl = "https://play-lh.googleusercontent.com/l6FVNa293RykBWy88TqEhUakIcGSC8bRygSnKOBgztln48JX-WzMWnrBAETrKZsxDNC4HhwCsvfle_UI7rBE"),
+        Game(id = "endfield", name = "Arknights: Endfield", developer = "Hypergryph", imageUrl = "android.resource://com.example.gachalendar/drawable/icon_endfield_new"),
         Game(id = "nte", name = "Neverness to Everness", developer = "Hotta Studio", imageUrl = "https://play-lh.googleusercontent.com/TGl3DdDbi4hty6ooOhEvv_2s5tkpGLbL6derP8y5hK-_Bw--Ve375b08ba9HHQ9ueRpoQ9oye1T_T24BJriLUmw"),
         Game(id = "p5x", name = "Persona 5: The Phantom X", developer = "Perfect World Games", imageUrl = "https://play-lh.googleusercontent.com/ILTvSTvGulNfs6FUQJeeYdB-dbS9Eo7LDkJ2wjM-jFrpamWgEhdVKhJ752Yn8wyEgmEoVd3nDFd9Dncf_RzKGA")
     )

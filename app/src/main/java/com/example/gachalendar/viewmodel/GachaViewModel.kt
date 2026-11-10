@@ -1,16 +1,18 @@
 package com.example.gachalendar.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.gachalendar.data.DummyData
 import com.example.gachalendar.model.Game
 import com.example.gachalendar.model.GameEvent
 import com.example.gachalendar.network.RetrofitInstance
+import com.example.gachalendar.notification.EventNotificationManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class GachaViewModel : ViewModel() {
+class GachaViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _games = MutableStateFlow<List<Game>>(DummyData.games)
     val games: StateFlow<List<Game>> = _games
@@ -28,28 +30,36 @@ class GachaViewModel : ViewModel() {
         fetchEvents()
     }
 
+    private var lastFetchMs = 0L
+
     fun refreshEvents() {
-        fetchEvents(isForceRefresh = true)
+        fetchEvents()
     }
 
-    private fun fetchEvents(isForceRefresh: Boolean = false) {
+    /** Dipanggil setiap aplikasi kembali ke foreground; hindari fetch berulang dalam 1 menit. */
+    fun refreshIfStale() {
+        if (System.currentTimeMillis() - lastFetchMs > 60_000L && !_isLoading.value) {
+            fetchEvents()
+        }
+    }
+
+    private fun fetchEvents() {
+        lastFetchMs = System.currentTimeMillis()
         viewModelScope.launch {
             _isLoading.value = true
             try {
-                // Fetch data from API
-                val fetchedEvents = if (isForceRefresh) {
-                    RetrofitInstance.api.getEvents(System.currentTimeMillis())
-                } else {
-                    RetrofitInstance.api.getEvents()
-                }
+                // Selalu pakai cache-buster agar tidak mendapat events.json lama dari cache CDN
+                val fetchedEvents = RetrofitInstance.api.getEvents(System.currentTimeMillis())
                 _events.value = fetchedEvents
                 _errorMessage.value = null
+                EventNotificationManager.scheduleRemindersForEvents(getApplication(), fetchedEvents)
             } catch (e: Exception) {
                 // If API fails, fallback to DummyData for now so the app doesn't break
                 if (_events.value.isEmpty()) {
                     _events.value = DummyData.events
                 }
                 _errorMessage.value = "Failed to fetch from server, using local data."
+                EventNotificationManager.scheduleRemindersForEvents(getApplication(), _events.value)
             } finally {
                 _isLoading.value = false
             }

@@ -39,12 +39,17 @@ fun CombinedCalendarScreen(
     events: List<GameEvent>,
     onBackClick: () -> Unit,
     onEventClick: (GameEvent) -> Unit,
-    onRefresh: () -> Unit
+    onRefresh: () -> Unit,
+    onHistoryClick: () -> Unit
 ) {
-    // Sort events by end time (closest to ending first)
-    val activeEvents = events
-        .filter { it.endTime.isAfter(LocalDateTime.now()) }
-        .sortedBy { it.endTime }
+    val now by rememberCurrentTime()
+    
+    // Filter active and upcoming events (exclude ended events)
+    val activeEvents = remember(events, now) {
+        events
+            .filter { it.endTime.isAfter(now) }
+            .sortedBy { it.endTime }
+    }
 
     var isTimelineView by remember { mutableStateOf(false) }
     var selectedTab by remember { mutableStateOf(0) }
@@ -52,20 +57,22 @@ fun CombinedCalendarScreen(
     val filteredActiveEvents = remember(activeEvents, selectedTab) {
         activeEvents.filter { event ->
             when (selectedTab) {
-                0 -> event.type == EventType.BANNER
-                1 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
-                2 -> event.type == EventType.ENDGAME
+                0 -> true
+                1 -> event.type == EventType.BANNER
+                2 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
+                3 -> event.type == EventType.ENDGAME
                 else -> true
             }
         }
     }
 
-    val filteredAllEvents = remember(events, selectedTab) {
-        events.filter { event ->
+    val filteredAllEvents = remember(activeEvents, selectedTab) {
+        activeEvents.filter { event ->
             when (selectedTab) {
-                0 -> event.type == EventType.BANNER
-                1 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
-                2 -> event.type == EventType.ENDGAME
+                0 -> true
+                1 -> event.type == EventType.BANNER
+                2 -> event.type == EventType.IN_GAME_EVENT || event.type == EventType.LOGIN_EVENT || event.type == EventType.MAINTENANCE || event.type == EventType.OTHER
+                3 -> event.type == EventType.ENDGAME
                 else -> true
             }
         }
@@ -101,6 +108,13 @@ fun CombinedCalendarScreen(
                         }
                     },
                     actions = {
+                        IconButton(onClick = onHistoryClick) {
+                            Icon(
+                                imageVector = Icons.History,
+                                contentDescription = "Riwayat",
+                                tint = Color.White
+                            )
+                        }
                         IconButton(onClick = onRefresh) {
                             Icon(
                                 imageVector = Icons.Default.Refresh,
@@ -153,7 +167,7 @@ fun CombinedCalendarScreen(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    val tabTitles = listOf("Banner Rate Up", "Event Terbatas", "Konten Endgame")
+                    val tabTitles = listOf("Semua", "Banner", "Event", "Endgame")
                     tabTitles.forEachIndexed { index, title ->
                         val isSelected = selectedTab == index
                         Box(
@@ -235,23 +249,44 @@ fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
         }
     }
 
-    val totalSeconds = ChronoUnit.SECONDS.between(currentTime, event.endTime)
-
-    val timeLeftText = if (totalSeconds > 0) {
-        val daysLeft = totalSeconds / (24 * 3600)
-        val hoursLeft = (totalSeconds % (24 * 3600)) / 3600
-        val minutesLeft = (totalSeconds % 3600) / 60
-        val secondsLeft = totalSeconds % 60
-
-        if (daysLeft > 0) {
-            "$daysLeft hari, $hoursLeft jam, $minutesLeft mnt, $secondsLeft dtk"
-        } else if (hoursLeft > 0) {
-            "$hoursLeft jam, $minutesLeft mnt, $secondsLeft dtk"
-        } else {
-            "$minutesLeft mnt, $secondsLeft dtk"
+    val formatter = remember { java.time.format.DateTimeFormatter.ofPattern("d MMM yyyy", java.util.Locale("id", "ID")) }
+    
+    val isUpcoming = currentTime.isBefore(event.startTime)
+    val isEnded = currentTime.isAfter(event.endTime)
+    
+    val (timeLeftText, badgeBgColor, badgeTextColor) = remember(currentTime, event) {
+        when {
+            isEnded -> {
+                val dateRange = "${event.startTime.format(formatter)} - ${event.endTime.format(formatter)}"
+                Triple(dateRange, Color(0xFF374151), Color(0xFFD1D5DB)) // Dark gray container, light text for premium look
+            }
+            isUpcoming -> {
+                val secondsToStart = ChronoUnit.SECONDS.between(currentTime, event.startTime)
+                val days = secondsToStart / (24 * 3600)
+                val hours = (secondsToStart % (24 * 3600)) / 3600
+                val minutes = (secondsToStart % 3600) / 60
+                val seconds = secondsToStart % 60
+                val text = "Mulai dalam: " + when {
+                    days > 0 -> "${days}h ${hours}j ${minutes}m ${seconds}s"
+                    hours > 0 -> "${hours}j ${minutes}m ${seconds}s"
+                    else -> "${minutes}m ${seconds}s"
+                }
+                Triple(text, Color(0xFF064E3B), Color(0xFF34D399)) // Dark green container, bright text
+            }
+            else -> {
+                val secondsToEnd = ChronoUnit.SECONDS.between(currentTime, event.endTime)
+                val days = secondsToEnd / (24 * 3600)
+                val hours = (secondsToEnd % (24 * 3600)) / 3600
+                val minutes = (secondsToEnd % 3600) / 60
+                val seconds = secondsToEnd % 60
+                val text = "Selesai dalam: " + when {
+                    days > 0 -> "${days}h ${hours}j ${minutes}m ${seconds}s"
+                    hours > 0 -> "${hours}j ${minutes}m ${seconds}s"
+                    else -> "${minutes}m ${seconds}s"
+                }
+                Triple(text, Color(0xFF7F1D1D), Color(0xFFFCA5A5)) // Dark red container, bright text
+            }
         }
-    } else {
-        "Event Telah Berakhir!"
     }
 
     Card(
@@ -308,8 +343,8 @@ fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
 
             // Time left badge (Top Right)
             Surface(
-                color = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.9f),
-                shape = MaterialTheme.shapes.small,
+                color = badgeBgColor,
+                shape = RoundedCornerShape(4.dp),
                 modifier = Modifier
                     .align(Alignment.TopEnd)
                     .padding(8.dp)
@@ -317,7 +352,7 @@ fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
                 Text(
                     text = timeLeftText,
                     style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onErrorContainer,
+                    color = badgeTextColor,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
                 )
@@ -339,7 +374,13 @@ fun EventCard(event: GameEvent, onClick: () -> Unit = {}) {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Gim: ${event.gameId.uppercase()} | Tipe: ${if (event.type.name == "BANNER") "Banner Karakter" else "Event Dalam Gim"}",
+                    text = "Gim: ${event.gameId.uppercase()} | Tipe: ${
+                        when (event.type.name) {
+                            "BANNER" -> "Banner Karakter"
+                            "ENDGAME" -> "Konten Endgame"
+                            else -> "Event Terbatas"
+                        }
+                    }",
                     style = MaterialTheme.typography.labelSmall,
                     color = if (event.imageUrl != null) Color.LightGray else MaterialTheme.colorScheme.onSecondaryContainer.copy(alpha = 0.8f)
                 )

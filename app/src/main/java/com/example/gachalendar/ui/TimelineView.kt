@@ -12,6 +12,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -38,10 +39,23 @@ fun TimelineView(
     val laneHeight = 60.dp
     val headerHeight = 80.dp
 
-    // Define timeline range (from 7 days ago to 23 days in the future, total 31 days)
+    val localeId = remember { java.util.Locale("id", "ID") }
+    val dayFormatter = remember { DateTimeFormatter.ofPattern("d", localeId) }
+    val dayNameFormatter = remember { DateTimeFormatter.ofPattern("EEE", localeId) }
+    val monthFormatter = remember { DateTimeFormatter.ofPattern("MMM", localeId) }
+
+    // Define timeline range dynamically based on all events
     val today = remember { LocalDate.now() }
-    val startGridDate = remember { today.minusDays(7) }
-    val endGridDate = remember { today.plusDays(23) }
+    val startGridDate = remember(events, today) {
+        val earliestEventDate = events.map { it.startTime.toLocalDate() }.minOrNull()
+        val baseDate = earliestEventDate?.minusDays(2) ?: today.minusDays(7)
+        if (baseDate.isAfter(today.minusDays(2))) today.minusDays(2) else baseDate
+    }
+    val endGridDate = remember(events, today) {
+        val latestEventDate = events.map { it.endTime.toLocalDate() }.maxOrNull()
+        val baseDate = latestEventDate?.plusDays(2) ?: today.plusDays(23)
+        if (baseDate.isBefore(today.plusDays(7))) today.plusDays(7) else baseDate
+    }
 
     val totalDays = remember(startGridDate, endGridDate) {
         ChronoUnit.DAYS.between(startGridDate, endGridDate).toInt() + 1
@@ -88,6 +102,16 @@ fun TimelineView(
 
     val horizontalScrollState = rememberScrollState()
     val verticalScrollState = rememberScrollState()
+
+    val density = androidx.compose.ui.platform.LocalDensity.current
+    LaunchedEffect(dates) {
+        val todayIndex = dates.indexOf(LocalDate.now())
+        if (todayIndex != -1) {
+            val dayWidthPx = with(density) { 64.dp.toPx() }
+            val scrollPosition = (todayIndex * dayWidthPx - with(density) { 64.dp.toPx() * 2 }).coerceAtLeast(0f)
+            horizontalScrollState.scrollTo(scrollPosition.toInt())
+        }
+    }
 
     // Main horizontal scroll container
     Box(
@@ -151,9 +175,6 @@ fun TimelineView(
             ) {
                 dates.forEach { date ->
                     val isToday = date == today
-                    val dayFormatter = DateTimeFormatter.ofPattern("d")
-                    val dayNameFormatter = DateTimeFormatter.ofPattern("E")
-                    val monthFormatter = DateTimeFormatter.ofPattern("MMM")
 
                     Column(
                         modifier = Modifier
@@ -163,21 +184,15 @@ fun TimelineView(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.Top
                     ) {
-                        // Month label
-                        if (date == startGridDate || date.dayOfMonth == 1) {
-                            Text(
-                                text = date.format(monthFormatter),
-                                style = MaterialTheme.typography.labelSmall,
-                                fontWeight = FontWeight.Bold,
-                                color = Color.White,
-                                fontSize = 10.sp
-                            )
-                        } else {
-                            Text(
-                                text = "",
-                                fontSize = 10.sp
-                            )
-                        }
+                        // Month label (uniform placeholder to avoid vertical shift/clipping of day names)
+                        val isMonthStart = date == startGridDate || date.dayOfMonth == 1
+                        Text(
+                            text = if (isMonthStart) date.format(monthFormatter) else "Jan",
+                            style = MaterialTheme.typography.labelSmall,
+                            fontWeight = FontWeight.Bold,
+                            color = if (isMonthStart) Color.White else Color.Transparent,
+                            fontSize = 10.sp
+                        )
 
                         Spacer(modifier = Modifier.height(4.dp))
 
@@ -255,6 +270,18 @@ fun TimelineView(
                                 val startOffsetDp = (startOffsetDays * 64).toInt().dp
                                 val widthDp = (durationDays * 64 - 4).toInt().dp // Subtract 4dp for padding between cards
 
+                                // Sticky text offset calculation
+                                val density = androidx.compose.ui.platform.LocalDensity.current
+                                val dayWidthPx = with(density) { 64.dp.toPx() }
+                                val cardStartPx = startOffsetDays * dayWidthPx
+                                val cardWidthPx = durationDays * dayWidthPx - with(density) { 4.dp.toPx() }
+                                val scrollPx = horizontalScrollState.value.toFloat()
+                                
+                                // We want the text to slide, but not push the thumbnail off-screen (thumbnail + padding is about 50dp)
+                                val maxShiftPx = maxOf(0f, cardWidthPx - with(density) { 70.dp.toPx() })
+                                val shiftPx = (scrollPx - cardStartPx).coerceIn(0f, maxShiftPx)
+                                val shiftDp = with(density) { shiftPx.toDp() }
+
                                 Surface(
                                     modifier = Modifier
                                         .offset(x = startOffsetDp)
@@ -322,7 +349,7 @@ fun TimelineView(
                                         Row(
                                             modifier = Modifier
                                                 .fillMaxSize()
-                                                .padding(start = 12.dp, end = 4.dp),
+                                                .padding(start = 12.dp + shiftDp, end = 4.dp),
                                             verticalAlignment = Alignment.CenterVertically,
                                             horizontalArrangement = Arrangement.SpaceBetween
                                         ) {
