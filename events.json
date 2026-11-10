@@ -1968,78 +1968,6 @@
     "detailUrl": null
   },
   {
-    "id": "wuwa-3f33007dedbc",
-    "gameId": "wuwa",
-    "title": "3.7 Moonlit Path",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-09-30T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4626932/54872c5ccd673e77fbb8276644b5795d.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/624672"
-  },
-  {
-    "id": "wuwa-43fbac8992b9",
-    "gameId": "wuwa",
-    "title": "Back to Solaris",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-09-30T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4625278/8e0f314f34d6616a561d8ca858e401c3.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/546269"
-  },
-  {
-    "id": "wuwa-e997cdd98ed3",
-    "gameId": "wuwa",
-    "title": "Blooms for the Shadow",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-09-30T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4625279/660d801c78cd4048bb9d7d7f49574245.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/625201"
-  },
-  {
-    "id": "wuwa-3aa5745e3ce5",
-    "gameId": "wuwa",
-    "title": "Cubie Wars",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-09-30T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4625282/6c9943bfd2438e2a8302dea4e71fd2b1.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/624734"
-  },
-  {
-    "id": "wuwa-3311aa605c78",
-    "gameId": "wuwa",
-    "title": "Dreams in the Capsule",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-09-30T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4625275/f1be6b5cf02d16c6f408d5ccefc9c9d7.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/625190"
-  },
-  {
-    "id": "wuwa-659c426a8434",
-    "gameId": "wuwa",
-    "title": "Gifts of the Waking Moon",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-09-30T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4625280/e728776ae74877458f95a88826b73fb0.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/624835"
-  },
-  {
     "id": "wuwa-95f3fdc0759a",
     "gameId": "wuwa",
     "title": "Across Time's Waxes and Wanes",
@@ -2088,18 +2016,6 @@
     "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/624776"
   },
   {
-    "id": "wuwa-414ba4767a2c",
-    "gameId": "wuwa",
-    "title": "Gifts of Singing Drizzle",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-10-22T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4625281/0aee0e2bb34eab7e9244698e1b71de72.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/624839"
-  },
-  {
     "id": "wuwa-77feff443abc",
     "gameId": "wuwa",
     "title": "Nine Deaths, One Unbent Heart",
@@ -2134,78 +2050,6 @@
     "type": "BANNER",
     "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/0/01/Undefined_Spectrum_2026-10-22.jpg/revision/latest",
     "detailUrl": null
-  },
-  {
-    "id": "wuwa-e87677ac0501",
-    "gameId": "wuwa",
-    "title": "Ascendant Aces",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-10-29T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4614446/cdcb3527a24117c8addb1f5c3d9e6495.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/456482"
-  },
-  {
-    "id": "wuwa-b957d75b8527",
-    "gameId": "wuwa",
-    "title": "Past Dreams, Traced Seals",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-10-29T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4625276/e775d96d8ac757134ab6c2669cfd88e8.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/625197"
-  },
-  {
-    "id": "wuwa-12831ed25656",
-    "gameId": "wuwa",
-    "title": "Chord Cleansing",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-11-04T00:00:00+08:00",
-    "endTime": "2026-11-11T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/3911426/29433b0424a78c40dc82c8c47006f7b7.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/457211"
-  },
-  {
-    "id": "wuwa-96084681ea5e",
-    "gameId": "wuwa",
-    "title": "Gifts of Bygone Dreams",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-11-12T00:00:00+08:00",
-    "endTime": "2026-12-21T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/q6r4gha4vyeali4dhkf9gq0tfn21",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/637716"
-  },
-  {
-    "id": "wuwa-40591e18570a",
-    "gameId": "wuwa",
-    "title": "Gifts of Starpath",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-11-12T00:00:00+08:00",
-    "endTime": "2026-12-21T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/4543891/11da7769caba76502ab36390593dd33d.png/show",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/607465"
-  },
-  {
-    "id": "wuwa-167a9aa20f35",
-    "gameId": "wuwa",
-    "title": "Second Coming of Solaris: Unwritten Dreams",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-11-12T00:00:00+08:00",
-    "endTime": "2026-12-21T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/mbzjre4e1yrhi6a1cguriulnrotk",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/636103"
   },
   {
     "id": "wuwa-55e2c7faaf59",
@@ -2244,42 +2088,6 @@
     "detailUrl": null
   },
   {
-    "id": "wuwa-eea14d0d8693",
-    "gameId": "wuwa",
-    "title": "Lahai-Roi Blocks: Turnabout",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-11-19T00:00:00+08:00",
-    "endTime": "2026-12-03T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/eo50ccl1vd03qzoiei4zc7iixm7y",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/586674"
-  },
-  {
-    "id": "wuwa-e5a7514287a4",
-    "gameId": "wuwa",
-    "title": "Dreamfield Odyssey",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-12-03T00:00:00+08:00",
-    "endTime": "2026-12-21T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/hshemhwfsksjsihpdtban06g2m3m",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/637722"
-  },
-  {
-    "id": "wuwa-d072ad631a6c",
-    "gameId": "wuwa",
-    "title": "Lollo Campaign: Groundwork",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-12-03T00:00:00+08:00",
-    "endTime": "2026-12-17T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/wxgy8jfne9yze5k04fuoq37kg0bf",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/458245"
-  },
-  {
     "id": "wuwa-aa69f8eb2388",
     "gameId": "wuwa",
     "title": "Blessings From Dewy Winds",
@@ -2314,18 +2122,6 @@
     "type": "BANNER",
     "imageUrl": null,
     "detailUrl": null
-  },
-  {
-    "id": "wuwa-1f80dda370ce",
-    "gameId": "wuwa",
-    "title": "Whither the Wind",
-    "description": "Limited-Time Event",
-    "longDescription": null,
-    "startTime": "2026-12-07T00:00:00+08:00",
-    "endTime": "2026-12-21T23:59:59+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://img.game8.co/loy3fn30mjya4p6vr7cvu7i04c90",
-    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/637717"
   },
   {
     "id": "zzz-7d977ab96434",
