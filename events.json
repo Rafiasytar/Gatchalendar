@@ -492,6 +492,42 @@
     "detailUrl": null
   },
   {
+    "id": "hsr-0adb2671ede0",
+    "gameId": "hsr",
+    "title": "Razer | Honkai: Star Rail Collaboration Collection Is Officially Live",
+    "description": "",
+    "longDescription": "Ctrl + Alt + Win. Control, alter, and win the battle! Inspired by Silver Wolf Lv.999's meta-breaking spirit, the Razer | Honkai: Star Rail collaboration collection is now for sale. The gaming chair, keyboard, mouse, and headset are now available to help Trailblazers level up their combat gear and break the established rules. Purchase any product to unlock corresponding in-game rewards (Stellar Jades, credits, and Traveler's Guides) and receive merchandise such as the limited-edition Silver Wolf LV.999 collaboration sticker. Check it out",
+    "startTime": "2026-11-12T10:00:00+08:00",
+    "endTime": "2026-11-16T10:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/09/c63009d5837cc33befac27b826732adb_442732141432335057_transformed.png",
+    "detailUrl": null
+  },
+  {
+    "id": "hsr-f7a8614b3f69",
+    "gameId": "hsr",
+    "title": "EP: \"Ex Nihilo\"",
+    "description": "",
+    "longDescription": "Upon the first echo of \"Aha\", the Elation shall be born anew. Let's dance on the edge of illusion and reality! Tonight, a miracle will be created by all! Watch now",
+    "startTime": "2026-11-12T12:00:00+08:00",
+    "endTime": "2026-11-16T00:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/a31cb3608f69ad125fffb7ed29aaf136_4113149653152038742_transformed.png",
+    "detailUrl": null
+  },
+  {
+    "id": "hsr-22048d2443ab",
+    "gameId": "hsr",
+    "title": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
+    "description": "",
+    "longDescription": "Hello, Trailblazers! The Honkai: Star Rail Planarcadia OST, \"Let There Be Laughter (Part 3),\" is now officially online. The album includes 48 original tracks created by the HOYO-MiX music team for Honkai: Star Rail, including \"Ex Nihilo,\" the combat background music for the battle against the Divine Skull of Indulgence. Please give it a listen! Check it out",
+    "startTime": "2026-11-12T12:00:00+08:00",
+    "endTime": "2026-11-19T00:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
+    "detailUrl": null
+  },
+  {
     "id": "nte-b7e61f80cd00",
     "gameId": "nte",
     "title": "Misty Tipsy Style",
