@@ -377,10 +377,22 @@
     "title": "Nameless Honor Update",
     "description": "Version 4.7 \"Nameless Honor\" Update",
     "longDescription": "Dear Trailblazers, During the event, Trailblazers can increase their Nameless Honor level to obtain rewards such as Star Rail Passes, Self-Modeling Resins, and Tracks of Destiny . After unlocking Nameless Glory, you will immediately obtain Stellar Jade ×680 . In addition, increasing Nameless Honor levels will allow Trailblazers to obtain Light Cone Memory Shard ×1, Star Rail Special Pass ×4, a 4-star Light Cone of your choice, Variable Dice ×1, Self-Modeling Resin ×2, Relic Remains, the universal Path material Tears of Dreams , and more! If the Trailblazer unlocks the Nameless Medal, in additi",
-    "startTime": "2026-11-07T12:00:00+08:00",
+    "startTime": "2026-11-07T05:00:00+08:00",
     "endTime": "2026-12-21T03:59:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/10/18/aacaeb10e01d7922cd349ae6adae1d5b_7855367392222189577_transformed.png",
+    "detailUrl": null
+  },
+  {
+    "id": "hsr-4b2c569b7fa1",
+    "gameId": "hsr",
+    "title": "Version 4.7 Now, Lay Laughter to All Stars Discord Quest",
+    "description": "Version 4.7 Now, Lay Laughter to All Stars Discord Quest Event",
+    "longDescription": "Hello, Trailblazers! The Version 4.7 Now, Lay Laughter to All Stars Discord Quest event is now open! Launch the Discord desktop app and play Honkai: Star Rail for 15 minutes or more to experience the Version 4.7 content, and you can get in-game rewards (including Stellar Jades). Go claim yours now! Learn More Note: Rewards are limited. Rewards will be distributed in the order that the redemption codes are claimed after completing the quest, on a first-come, first-served basis.",
+    "startTime": "2026-11-11T07:05:00+08:00",
+    "endTime": "2026-11-16T07:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/7cf04fa1755ecaca8da5a09da5109f7b_2047135704375057628_transformed.png",
     "detailUrl": null
   },
   {
@@ -480,25 +492,13 @@
     "detailUrl": null
   },
   {
-    "id": "hsr-4b2c569b7fa1",
-    "gameId": "hsr",
-    "title": "Version 4.7 Now, Lay Laughter to All Stars Discord Quest",
-    "description": "Version 4.7 Now, Lay Laughter to All Stars Discord Quest Event",
-    "longDescription": "Hello, Trailblazers! The Version 4.7 Now, Lay Laughter to All Stars Discord Quest event is now open! Launch the Discord desktop app and play Honkai: Star Rail for 15 minutes or more to experience the Version 4.7 content, and you can get in-game rewards (including Stellar Jades). Go claim yours now! Learn More Note: Rewards are limited. Rewards will be distributed in the order that the redemption codes are claimed after completing the quest, on a first-come, first-served basis.",
-    "startTime": "2026-11-11T14:05:00+08:00",
-    "endTime": "2026-11-16T14:00:00+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/7cf04fa1755ecaca8da5a09da5109f7b_2047135704375057628_transformed.png",
-    "detailUrl": null
-  },
-  {
     "id": "hsr-0adb2671ede0",
     "gameId": "hsr",
     "title": "Razer | Honkai: Star Rail Collaboration Collection Is Officially Live",
     "description": "",
     "longDescription": "Ctrl + Alt + Win. Control, alter, and win the battle! Inspired by Silver Wolf Lv.999's meta-breaking spirit, the Razer | Honkai: Star Rail collaboration collection is now for sale. The gaming chair, keyboard, mouse, and headset are now available to help Trailblazers level up their combat gear and break the established rules. Purchase any product to unlock corresponding in-game rewards (Stellar Jades, credits, and Traveler's Guides) and receive merchandise such as the limited-edition Silver Wolf LV.999 collaboration sticker. Check it out",
-    "startTime": "2026-11-12T10:00:00+08:00",
-    "endTime": "2026-11-16T10:00:00+08:00",
+    "startTime": "2026-11-12T03:00:00+08:00",
+    "endTime": "2026-11-16T03:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/09/c63009d5837cc33befac27b826732adb_442732141432335057_transformed.png",
     "detailUrl": null
@@ -509,8 +509,8 @@
     "title": "EP: \"Ex Nihilo\"",
     "description": "",
     "longDescription": "Upon the first echo of \"Aha\", the Elation shall be born anew. Let's dance on the edge of illusion and reality! Tonight, a miracle will be created by all! Watch now",
-    "startTime": "2026-11-12T12:00:00+08:00",
-    "endTime": "2026-11-16T00:00:00+08:00",
+    "startTime": "2026-11-12T05:00:00+08:00",
+    "endTime": "2026-11-15T17:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/a31cb3608f69ad125fffb7ed29aaf136_4113149653152038742_transformed.png",
     "detailUrl": null
@@ -521,8 +521,8 @@
     "title": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
     "description": "",
     "longDescription": "Hello, Trailblazers! The Honkai: Star Rail Planarcadia OST, \"Let There Be Laughter (Part 3),\" is now officially online. The album includes 48 original tracks created by the HOYO-MiX music team for Honkai: Star Rail, including \"Ex Nihilo,\" the combat background music for the battle against the Divine Skull of Indulgence. Please give it a listen! Check it out",
-    "startTime": "2026-11-12T12:00:00+08:00",
-    "endTime": "2026-11-19T00:00:00+08:00",
+    "startTime": "2026-11-12T05:00:00+08:00",
+    "endTime": "2026-11-18T17:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
     "detailUrl": null
