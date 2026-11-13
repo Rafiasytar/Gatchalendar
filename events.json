@@ -2374,5 +2374,17 @@
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/12/22febd5a647b79e18e35f5ff9acbd8fb_9089167348688457316_transformed.jpg",
     "detailUrl": null
+  },
+  {
+    "id": "zzz-0b4b84de8994",
+    "gameId": "zzz",
+    "title": "Repair! Drifting Art",
+    "description": "\"Repair! Drifting Art\" Event Details",
+    "longDescription": "Event Duration 2026/11/16 10:00 (server time) – 2026/11/30 03:59 (server time) Event Rewards Requirements Reach Inter-Knot Lv. 20 and complete Main Story Chapter 1 - Intermission to participate Event Details • During the event, Proxies can head to Booastrum and talk with the Drifting Art Launcherboo to repair the art collection and complete puzzles. • There are a total of 5 sets of puzzles, and they will unlock one after the other at specified times. • Complete the event puzzles to obtain Polychromes , Boopons , and upgrade materials as rewards.",
+    "startTime": "2026-11-16T10:00:00+08:00",
+    "endTime": "2026-11-30T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/06/38f18365b0860fe3068b1d4e7279bf9a_2800978738502432550_transformed.jpg",
+    "detailUrl": null
   }
 ]
