@@ -480,6 +480,18 @@
     "detailUrl": null
   },
   {
+    "id": "hsr-e6a084107467",
+    "gameId": "hsr",
+    "title": "\"Astral Express Strategy Guide\" Website Update: Version 4.7 Strategy Guides Contest Event Is In Full Swing!",
+    "description": "",
+    "longDescription": "Hello, Trailblazers! Team comp secrets and build experience for Aeon ★ Aha, strategy considerations for the Treasures Lightward gameplay, flashes of inspiration when clearing stages, clever combinations in Currency Wars... We cordially invite you to embark on this new interstellar journey With wisdom as your pen and courage as your ink, write your own unique chapter. Share inspiration, exchange insights, and journey hand in hand with fellow pathstriders among the stars, letting the radiance of thought and creativity illuminate the cosmic seas! Submit your strategy guide, share your exclusive t",
+    "startTime": "2026-11-11T14:00:00+08:00",
+    "endTime": "2026-12-22T23:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/306379e843a6c9d5cebb60cb21963873_7131580304207762869_transformed.jpg",
+    "detailUrl": null
+  },
+  {
     "id": "hsr-4b2c569b7fa1",
     "gameId": "hsr",
     "title": "Version 4.7 Now, Lay Laughter to All Stars Discord Quest",
@@ -526,6 +538,18 @@
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
     "detailUrl": null
+  },
+  {
+    "id": "nte-cbc3921e1343",
+    "gameId": "nte",
+    "title": "Bright Moon Special",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-05-12T11:00:00+08:00",
+    "endTime": "2026-09-30T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/4498503/a63dd8d6a4bd790e5f2136802764c590.png/show",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/599331"
   },
   {
     "id": "nte-b7e61f80cd00",
@@ -1068,6 +1092,18 @@
     "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/627921"
   },
   {
+    "id": "nte-68582c6ce471",
+    "gameId": "nte",
+    "title": "Nocturne Special",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-09-30T11:00:00+08:00",
+    "endTime": "2026-10-21T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/4522439/37c3382edd41b629e6737984fdb1dce9.png/show",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/603921"
+  },
+  {
     "id": "nte-0ec7b192cd18",
     "gameId": "nte",
     "title": "Pukaland Travelogue",
@@ -1210,6 +1246,78 @@
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://img.game8.co/gmpazxf4cf4ozr2l50x8o5xybi4v",
     "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/632551"
+  },
+  {
+    "id": "nte-c5f27ce2db29",
+    "gameId": "nte",
+    "title": "Android Dreams",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-11-11T11:00:00+08:00",
+    "endTime": "2026-12-02T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/dpk2f38s2n2trlo4uknbk1fs0c58",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/638161"
+  },
+  {
+    "id": "nte-abecf4a9f29f",
+    "gameId": "nte",
+    "title": "Before the Dawn",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-11-11T11:00:00+08:00",
+    "endTime": "2026-12-02T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/4551211/e5f02b8c0e1dede94043d7cb584e819a.png/show",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/608875"
+  },
+  {
+    "id": "nte-fa87d1388d64",
+    "gameId": "nte",
+    "title": "Before the Dawn (Rerun)",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-11-11T11:00:00+08:00",
+    "endTime": "2026-12-02T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/8aervizftgfwgh21pafciu8ovkw3",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/608875"
+  },
+  {
+    "id": "nte-62bb012a1d6e",
+    "gameId": "nte",
+    "title": "Echo Special",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-11-11T11:00:00+08:00",
+    "endTime": "2026-12-02T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/neauq1p5tvrn3qwcm69sqorf65ob",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/638169"
+  },
+  {
+    "id": "nte-5b6aa815f99e",
+    "gameId": "nte",
+    "title": "Resolve Special",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-11-11T11:00:00+08:00",
+    "endTime": "2026-12-02T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/4551006/c2be39bf598868ff0cc37b44c20e3501.png/show",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/608874"
+  },
+  {
+    "id": "nte-1bb55f7e9351",
+    "gameId": "nte",
+    "title": "Resolve Special (Rerun)",
+    "description": "Limited Banner",
+    "longDescription": null,
+    "startTime": "2026-11-11T11:00:00+08:00",
+    "endTime": "2026-12-02T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://img.game8.co/4551006/c2be39bf598868ff0cc37b44c20e3501.png/show",
+    "detailUrl": "https://game8.co/games/Neverness-to-Everness/archives/608874"
   },
   {
     "id": "p5x-5b2397798fce",
@@ -2142,7 +2250,7 @@
     "description": "Limited-Time Event",
     "longDescription": null,
     "startTime": "2026-11-12T11:00:00+08:00",
-    "endTime": "2026-12-21T03:59:59+08:00",
+    "endTime": "2026-12-03T09:59:59+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://img.game8.co/mbzjre4e1yrhi6a1cguriulnrotk",
     "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/636103"
@@ -2182,6 +2290,30 @@
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://img.game8.co/eo50ccl1vd03qzoiei4zc7iixm7y",
     "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/586674"
+  },
+  {
+    "id": "wuwa-e86cd0662c12",
+    "gameId": "wuwa",
+    "title": "Ascendant Aces",
+    "description": "Limited-Time Event",
+    "longDescription": null,
+    "startTime": "2026-11-26T10:00:00+08:00",
+    "endTime": "2026-12-21T03:59:59+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://img.game8.co/rtvfiu0bt91jytu32p8q1gl4h87q",
+    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/456482"
+  },
+  {
+    "id": "wuwa-dc11f725ff93",
+    "gameId": "wuwa",
+    "title": "Bountiful Crescendo",
+    "description": "Limited-Time Event",
+    "longDescription": null,
+    "startTime": "2026-11-26T10:00:00+08:00",
+    "endTime": "2026-12-03T09:59:59+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://img.game8.co/4275761/9da27892047354ac11aa10f31f884f89.png/show",
+    "detailUrl": "https://game8.co/games/Wuthering-Waves/archives/458244"
   },
   {
     "id": "wuwa-aa69f8eb2388",
