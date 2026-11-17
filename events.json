@@ -377,7 +377,7 @@
     "title": "Nameless Honor Update",
     "description": "Version 4.7 \"Nameless Honor\" Update",
     "longDescription": "Dear Trailblazers, During the event, Trailblazers can increase their Nameless Honor level to obtain rewards such as Star Rail Passes, Self-Modeling Resins, and Tracks of Destiny . After unlocking Nameless Glory, you will immediately obtain Stellar Jade ×680 . In addition, increasing Nameless Honor levels will allow Trailblazers to obtain Light Cone Memory Shard ×1, Star Rail Special Pass ×4, a 4-star Light Cone of your choice, Variable Dice ×1, Self-Modeling Resin ×2, Relic Remains, the universal Path material Tears of Dreams , and more! If the Trailblazer unlocks the Nameless Medal, in additi",
-    "startTime": "2026-11-07T12:00:00+08:00",
+    "startTime": "2026-11-07T05:00:00+08:00",
     "endTime": "2026-12-21T03:59:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/10/18/aacaeb10e01d7922cd349ae6adae1d5b_7855367392222189577_transformed.png",
@@ -504,6 +504,18 @@
     "detailUrl": null
   },
   {
+    "id": "hsr-22048d2443ab",
+    "gameId": "hsr",
+    "title": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
+    "description": "",
+    "longDescription": "Hello, Trailblazers! The Honkai: Star Rail Planarcadia OST, \"Let There Be Laughter (Part 3),\" is now officially online. The album includes 48 original tracks created by the HOYO-MiX music team for Honkai: Star Rail, including \"Ex Nihilo,\" the combat background music for the battle against the Divine Skull of Indulgence. Please give it a listen! Check it out",
+    "startTime": "2026-11-12T05:00:00+08:00",
+    "endTime": "2026-11-18T17:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
+    "detailUrl": null
+  },
+  {
     "id": "hsr-0adb2671ede0",
     "gameId": "hsr",
     "title": "Razer | Honkai: Star Rail Collaboration Collection Is Officially Live",
@@ -525,18 +537,6 @@
     "endTime": "2026-11-16T00:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/a31cb3608f69ad125fffb7ed29aaf136_4113149653152038742_transformed.png",
-    "detailUrl": null
-  },
-  {
-    "id": "hsr-22048d2443ab",
-    "gameId": "hsr",
-    "title": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
-    "description": "",
-    "longDescription": "Hello, Trailblazers! The Honkai: Star Rail Planarcadia OST, \"Let There Be Laughter (Part 3),\" is now officially online. The album includes 48 original tracks created by the HOYO-MiX music team for Honkai: Star Rail, including \"Ex Nihilo,\" the combat background music for the battle against the Divine Skull of Indulgence. Please give it a listen! Check it out",
-    "startTime": "2026-11-12T12:00:00+08:00",
-    "endTime": "2026-11-19T00:00:00+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
     "detailUrl": null
   },
   {
@@ -2496,13 +2496,13 @@
     "detailUrl": null
   },
   {
-    "id": "zzz-7232b626f7d7",
+    "id": "zzz-8f9986ad5ef8",
     "gameId": "zzz",
     "title": "ZZZ X Discord",
     "description": "Zenless Zone Zero × Discord",
     "longDescription": "Dear Proxies, The first batch of Agents and Bangboo have now landed on Discord! Join the official Zenless Zone Zero Discord Server and customize your unique Inter-Knot look! Join the Official Zenless Zone Zero Discord Server: Shop Now",
-    "startTime": "2026-11-13T02:00:00+08:00",
-    "endTime": "2026-11-20T02:00:00+08:00",
+    "startTime": "2026-11-12T13:00:00+08:00",
+    "endTime": "2026-11-19T13:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/12/22febd5a647b79e18e35f5ff9acbd8fb_9089167348688457316_transformed.jpg",
     "detailUrl": null
@@ -2517,6 +2517,18 @@
     "endTime": "2026-11-30T03:59:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/06/38f18365b0860fe3068b1d4e7279bf9a_2800978738502432550_transformed.jpg",
+    "detailUrl": null
+  },
+  {
+    "id": "zzz-ec9c85436cee",
+    "gameId": "zzz",
+    "title": "Version 3.4 Special Program Announcement",
+    "description": "Version 3.4 \"The Finality of the Day\" Special Program Announcement",
+    "longDescription": "Dear Proxies, The Zenless Zone Zero Version 3.4 \"The Finality of the Day\" Special Program will begin on November 20 at 18:30 (UTC+8) ! The light of the Celestial Nexus flickers under the Hive Lord Hollow's shadow, and the city in the sky faces the gravest crisis since its founding. Can the three Sunbringers break the deadlock amid all these competing forces and bring tomorrow's sun back to Roscaelifer? What's more, visitors from beyond the skies will bring about an unexpected encounter... In addition to unveiling the latest intel on Sunbringer , Kafka , and Robin , we will also be dropping an ",
+    "startTime": "2026-11-17T05:30:00+08:00",
+    "endTime": "2026-11-20T05:30:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/17/3efae5e70a7ad4b2d8655c5b2346c580_275312225195196558_transformed.png",
     "detailUrl": null
   }
 ]
