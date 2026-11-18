@@ -156,6 +156,18 @@
     "detailUrl": "https://endfield.wiki.gg/wiki/The_Stars_Are_With_Me"
   },
   {
+    "id": "endfield-0d39690797f2",
+    "gameId": "endfield",
+    "title": "Sanity Supply",
+    "description": "Limited-Time Event",
+    "longDescription": "Sanity Supply (Limited-Time Event).",
+    "startTime": "2026-11-18T04:00:00+08:00",
+    "endTime": "2026-11-25T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Sanity_Supply_event.png/480px-Sanity_Supply_event.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Sanity_Supply"
+  },
+  {
     "id": "gi-9e50e56b3c32",
     "gameId": "gi",
     "title": "To Temper Thyself and Journey Far",
@@ -312,6 +324,18 @@
     "detailUrl": null
   },
   {
+    "id": "gi-01e3c3ba059d",
+    "gameId": "gi",
+    "title": "Stress Block Smashing Project",
+    "description": "\"Stress Block Smashing Project\" Event: Digging Challenge",
+    "longDescription": "Event Rewards〓 〓Event Duration〓 2026/11/20 10:00 – 2026/11/30 03:59 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" ※Complete Archon Quests Chapter VII: Act VI \"A Yesterday Sent From Beyond\" and Story Quest \"Tapirus Somniator Chapter: Act I\" first to get the best experience from this event. 〓Event Details〓 ● During the event, Travelers need to operate the \"Diggytron\" to dig up various blocks within the area. ● Dig up blocks to earn score. Once your score reaches specified thresholds, you can claim the corresponding rewards. ● Th",
+    "startTime": "2026-11-20T10:00:00+08:00",
+    "endTime": "2026-11-30T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/10/22/26e63efacb631860bb8d404707efe35e_390885997757580082_transformed.png",
+    "detailUrl": null
+  },
+  {
     "id": "hsr-b8449dd2c677",
     "gameId": "hsr",
     "title": "Wishpower UP! Down with Voracity!",
@@ -377,7 +401,7 @@
     "title": "Nameless Honor Update",
     "description": "Version 4.7 \"Nameless Honor\" Update",
     "longDescription": "Dear Trailblazers, During the event, Trailblazers can increase their Nameless Honor level to obtain rewards such as Star Rail Passes, Self-Modeling Resins, and Tracks of Destiny . After unlocking Nameless Glory, you will immediately obtain Stellar Jade ×680 . In addition, increasing Nameless Honor levels will allow Trailblazers to obtain Light Cone Memory Shard ×1, Star Rail Special Pass ×4, a 4-star Light Cone of your choice, Variable Dice ×1, Self-Modeling Resin ×2, Relic Remains, the universal Path material Tears of Dreams , and more! If the Trailblazer unlocks the Nameless Medal, in additi",
-    "startTime": "2026-11-07T12:00:00+08:00",
+    "startTime": "2026-11-07T05:00:00+08:00",
     "endTime": "2026-12-21T03:59:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/10/18/aacaeb10e01d7922cd349ae6adae1d5b_7855367392222189577_transformed.png",
@@ -504,6 +528,18 @@
     "detailUrl": null
   },
   {
+    "id": "hsr-22048d2443ab",
+    "gameId": "hsr",
+    "title": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
+    "description": "",
+    "longDescription": "Hello, Trailblazers! The Honkai: Star Rail Planarcadia OST, \"Let There Be Laughter (Part 3),\" is now officially online. The album includes 48 original tracks created by the HOYO-MiX music team for Honkai: Star Rail, including \"Ex Nihilo,\" the combat background music for the battle against the Divine Skull of Indulgence. Please give it a listen! Check it out",
+    "startTime": "2026-11-12T05:00:00+08:00",
+    "endTime": "2026-11-18T17:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
+    "detailUrl": null
+  },
+  {
     "id": "hsr-0adb2671ede0",
     "gameId": "hsr",
     "title": "Razer | Honkai: Star Rail Collaboration Collection Is Officially Live",
@@ -525,18 +561,6 @@
     "endTime": "2026-11-16T00:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/a31cb3608f69ad125fffb7ed29aaf136_4113149653152038742_transformed.png",
-    "detailUrl": null
-  },
-  {
-    "id": "hsr-22048d2443ab",
-    "gameId": "hsr",
-    "title": "Planarcadia Brand-New OST \"Let There Be Laughter (Part 3)\" Now Online",
-    "description": "",
-    "longDescription": "Hello, Trailblazers! The Honkai: Star Rail Planarcadia OST, \"Let There Be Laughter (Part 3),\" is now officially online. The album includes 48 original tracks created by the HOYO-MiX music team for Honkai: Star Rail, including \"Ex Nihilo,\" the combat background music for the battle against the Divine Skull of Indulgence. Please give it a listen! Check it out",
-    "startTime": "2026-11-12T12:00:00+08:00",
-    "endTime": "2026-11-19T00:00:00+08:00",
-    "type": "IN_GAME_EVENT",
-    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/1e69c4301b7a61762076c79475ee8aa6_3283176396531917610_transformed.jpg",
     "detailUrl": null
   },
   {
@@ -1522,6 +1546,66 @@
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://www.p5x-sea.com/news/CmsnewsImg/0/build/en%C3%A6%C2%B4%C2%BB%C3%A5%C2%8A%C2%A8%C3%A5%C2%85%C2%AC%C3%A5%C2%91%C2%8A_1920x1080.jpg",
     "detailUrl": "https://www.p5x-sea.com/news/en/view/20261103/4f113de2.html"
+  },
+  {
+    "id": "p5x-3fc628c79112",
+    "gameId": "p5x",
+    "title": "Limited 5★ Double Contract Unbridled Radiance",
+    "description": "Ver. 4.13 Banner",
+    "longDescription": null,
+    "startTime": "2026-11-20T15:00:00+08:00",
+    "endTime": "2026-12-18T09:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": null,
+    "detailUrl": "https://www.p5x-sea.com/news/en/view/20261118/d73315a8.html"
+  },
+  {
+    "id": "p5x-7ef20a0889a0",
+    "gameId": "p5x",
+    "title": "Login Bonus (Ver. 4.13)",
+    "description": "Ver. 4.13 Event",
+    "longDescription": null,
+    "startTime": "2026-11-20T15:00:00+08:00",
+    "endTime": "2026-12-04T09:59:59+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": null,
+    "detailUrl": "https://www.p5x-sea.com/news/en/view/20261118/d73315a8.html"
+  },
+  {
+    "id": "p5x-a91c6dd10500",
+    "gameId": "p5x",
+    "title": "Most Wanted Phantom Idol Contracts for 5★ Phantom Thieves Gunslinger Shun and Tenebre Shoki",
+    "description": "Ver. 4.13 Banner",
+    "longDescription": null,
+    "startTime": "2026-11-20T15:00:00+08:00",
+    "endTime": "2026-12-18T09:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://www.p5x-sea.com/news/CmsnewsImg/0/build/en%C3%A6%C2%B4%C2%BB%C3%A5%C2%8A%C2%A8%C3%A5%C2%85%C2%AC%C3%A5%C2%91%C2%8A_1920x1080.jpg",
+    "detailUrl": "https://www.p5x-sea.com/news/en/view/20261118/d73315a8.html"
+  },
+  {
+    "id": "p5x-0d3fe7a1b59b",
+    "gameId": "p5x",
+    "title": "New Bonds",
+    "description": "Ver. 4.13 Event",
+    "longDescription": null,
+    "startTime": "2026-11-20T15:00:00+08:00",
+    "endTime": "2026-12-18T09:59:59+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": null,
+    "detailUrl": "https://www.p5x-sea.com/news/en/view/20261118/d73315a8.html"
+  },
+  {
+    "id": "p5x-7325af3250f2",
+    "gameId": "p5x",
+    "title": "Shadow Hunt",
+    "description": "Ver. 4.13 Event",
+    "longDescription": null,
+    "startTime": "2026-11-20T15:00:00+08:00",
+    "endTime": "2026-12-18T09:59:59+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": null,
+    "detailUrl": "https://www.p5x-sea.com/news/en/view/20261118/d73315a8.html"
   },
   {
     "id": "wuwa-52c55787d414",
