@@ -2633,10 +2633,22 @@
     "title": "Version 3.4 Special Program Announcement",
     "description": "Version 3.4 \"The Finality of the Day\" Special Program Announcement",
     "longDescription": "Dear Proxies, The Zenless Zone Zero Version 3.4 \"The Finality of the Day\" Special Program will begin on November 20 at 18:30 (UTC+8) ! The light of the Celestial Nexus flickers under the Hive Lord Hollow's shadow, and the city in the sky faces the gravest crisis since its founding. Can the three Sunbringers break the deadlock amid all these competing forces and bring tomorrow's sun back to Roscaelifer? What's more, visitors from beyond the skies will bring about an unexpected encounter... In addition to unveiling the latest intel on Sunbringer , Kafka , and Robin , we will also be dropping an ",
-    "startTime": "2026-11-17T05:30:00+08:00",
-    "endTime": "2026-11-20T05:30:00+08:00",
+    "startTime": "2026-11-17T18:30:00+08:00",
+    "endTime": "2026-11-20T18:30:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/17/3efae5e70a7ad4b2d8655c5b2346c580_275312225195196558_transformed.png",
+    "detailUrl": null
+  },
+  {
+    "id": "zzz-2219ba848aa4",
+    "gameId": "zzz",
+    "title": "The Final Battle Before Dawn",
+    "description": "\"The Final Battle Before Dawn\" Event Details",
+    "longDescription": "Event Duration 2026/11/20 04:00 (server time) – 2026/12/01 03:59 (server time) Event Rewards Requirements Reach Inter-Knot Lv. 5 , and unlock the Event feature in the Main Story Prologue \"The Hare and the Proxy\" Event Details • During the event, log in for a total of 7 days to obtain Polychrome ×480 ! • Visit the event webpage to pre-register for Version 3.4 to receive Polychrome ×100 via in-game mail after the Version 3.4 update. Complete event webpage missions to also obtain another Polychrome ×60 , and a commemorative namecard after the Version 3.4 update. Invite friends to return or regist",
+    "startTime": "2026-11-20T04:00:00+08:00",
+    "endTime": "2026-12-01T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/19/900b1933ef1145fad58e354f45e95ccf_7060237584997049167_transformed.jpg",
     "detailUrl": null
   }
 ]
