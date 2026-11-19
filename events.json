@@ -336,6 +336,54 @@
     "detailUrl": null
   },
   {
+    "id": "gi-c5f1d0c058a0",
+    "gameId": "gi",
+    "title": "GI TCG: Heated Battle Mode",
+    "description": "\"Genius Invokation TCG\" Heated Battle Mode: Sprinting Stratagems",
+    "longDescription": "Event Rewards〓 〓Special Rules〓 During the Roll Phase: Receive 4 Omni Dice and 4 different random Elemental Dice. The first Action Card played each Round will cost 2 fewer Elemental Dice. Switching Character Cards is always a Fast Action. 〓Event Duration〓 2026/11/21 10:00 - 2026/12/07 03:59 〓Eligibility〓 Adventure Rank 32 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" And complete the World Quest \"Battlefield of Dice, Cats, and Cards\" 〓Event Details〓 ● After the event starts, Travelers can go to the Invitation Board of The Cat's Tail to participate in \"Genius ",
+    "startTime": "2026-11-21T10:00:00+08:00",
+    "endTime": "2026-12-07T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2024/08/15/84e7290fb24b81ac89b7e1809c4b26ed_1559196153906586455.jpg",
+    "detailUrl": null
+  },
+  {
+    "id": "gi-8399cf4edcc2",
+    "gameId": "gi",
+    "title": "Event Wish: Epitome Invocation",
+    "description": "Featured: Lightbearing Moonshard (Sword) and Golden Frostbound Oath (Bow)",
+    "longDescription": "Travelers, stock up on weapons and characters in \"Epitome Invocation\" to make your party stronger in combat! 〓Event Wish Details〓 Event Wish Duration Promotional Weapons (5-Star) Featured Weapons (4-Star) 2026/11/24 18:00 - 2026/12/15 14:59 Lightbearing Moonshard (Sword) Golden Frostbound Oath (Bow) Portable Power Saw (Claymore) Range Gauge (Bow) Sacrificial Sword (Sword) Favonius Lance (Polearm) Eye of Perception (Catalyst) ● During this event wish, the event-exclusive 5-star weapons Lightbearing Moonshard (Sword) and Golden Frostbound Oath (Bow) will receive a huge drop-rate boost ! ● During",
+    "startTime": "2026-11-24T18:00:00+08:00",
+    "endTime": "2026-12-15T14:59:00+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/15fb09b86109a9517beb9183e89e1906_4296343326285390127_transformed.png",
+    "detailUrl": null
+  },
+  {
+    "id": "gi-0d076770261d",
+    "gameId": "gi",
+    "title": "Event Wish: Harmonious Abundance",
+    "description": "Featured: Zibai",
+    "longDescription": "Travelers, stock up on weapons and characters in the event wish to make your party stronger in combat! 〓Event Wish Details〓 Event Wish Duration Promotional Character (5-Star) Featured Characters (4-Star) 2026/11/24 18:00 - 2026/12/15 14:59 \"White Horse's Fleeting Spring\" Zibai (Geo) \"Nightmare's Burning Heart\" Illuga (Geo) \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) \"Eclipsing Star\" Ningguang (Geo) ● During this event wish, the event-exclusive 5-star character \"White Horse's Fleeting Spring\" Zibai (Geo) will receive a huge drop-rate boost ! ● During this event wish, the 4-star characters \"Night",
+    "startTime": "2026-11-24T18:00:00+08:00",
+    "endTime": "2026-12-15T14:59:00+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/e2c619b94dd87549d0d47868b71b60ef_6572500111887862760_transformed.png",
+    "detailUrl": null
+  },
+  {
+    "id": "gi-d84c8340c74d",
+    "gameId": "gi",
+    "title": "Event Wish: Ya-hoho! Compendium",
+    "description": "Featured: Linnea",
+    "longDescription": "Travelers, stock up on weapons and characters in the event wish to make your party stronger in combat! 〓Event Wish Details〓 Event Wish Duration Promotional Character (5-Star) Featured Characters (4-Star) 2026/11/24 18:00 - 2026/12/15 14:59 \"Augur of Wonders\" Linnea (Geo) \"Nightmare's Burning Heart\" Illuga (Geo) \"Clinky-Clank Gadgets-A-Gogo\" Aino (Hydro) \"Eclipsing Star\" Ningguang (Geo) ● During this Event Wish, the event-exclusive 5-star character \"Augur of Wonders\" Linnea (Geo) will receive a huge drop rate boost ! ● During this event wish, the 4-star characters \"Nightmare's Burning Heart\" Il",
+    "startTime": "2026-11-24T18:00:00+08:00",
+    "endTime": "2026-12-15T14:59:00+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/265a5b94d4bb4c579478a2af5074649c_574905966576030019_transformed.png",
+    "detailUrl": null
+  },
+  {
     "id": "hsr-b8449dd2c677",
     "gameId": "hsr",
     "title": "Wishpower UP! Down with Voracity!",
@@ -1606,30 +1654,6 @@
     "type": "IN_GAME_EVENT",
     "imageUrl": null,
     "detailUrl": "https://www.p5x-sea.com/news/en/view/20261118/d73315a8.html"
-  },
-  {
-    "id": "wuwa-52c55787d414",
-    "gameId": "wuwa",
-    "title": "Between Light and Shadow",
-    "description": "Featured Resonator Convene",
-    "longDescription": "Between Light and Shadow is a Wuthering Waves Featured Resonator Convene.",
-    "startTime": "2025-10-30T10:00:00+08:00",
-    "endTime": "2025-11-19T11:59:59+08:00",
-    "type": "BANNER",
-    "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/d/dd/Between_Light_and_Shadow_2025-10-30.jpg/revision/latest",
-    "detailUrl": null
-  },
-  {
-    "id": "wuwa-b8f93bb8afab",
-    "gameId": "wuwa",
-    "title": "Wanderer Knows No Far and Near",
-    "description": "Featured Resonator Convene",
-    "longDescription": "Wanderer Knows No Far and Near is a Wuthering Waves Featured Resonator Convene.",
-    "startTime": "2025-10-30T10:00:00+08:00",
-    "endTime": "2025-11-19T11:59:59+08:00",
-    "type": "BANNER",
-    "imageUrl": "https://static.wikia.nocookie.net/wutheringwaves/images/c/c2/Wanderer_Knows_No_Far_and_Near_2025-10-30.jpg/revision/latest",
-    "detailUrl": null
   },
   {
     "id": "wuwa-d22527afac61",
