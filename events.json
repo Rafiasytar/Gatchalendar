@@ -176,20 +176,20 @@
     "startTime": "2026-11-21T19:40:00+08:00",
     "endTime": "2026-11-25T06:00:00+08:00",
     "type": "IN_GAME_EVENT",
-    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Shroomy_Gathering_event.png/480px-Shroomy_Gathering_event.png",
     "detailUrl": "https://endfield.wiki.gg/wiki/Shroomy_Gathering"
   },
   {
-    "id": "endfield-c00702207fbe",
+    "id": "endfield-c256d341e1d0",
     "gameId": "endfield",
-    "title": "Shroomy Gathering",
-    "description": "Sign-In Event",
-    "longDescription": "Shroomy Gathering (Sign-In Event).",
-    "startTime": "2026-11-22T04:00:00+08:00",
-    "endTime": "2026-11-25T06:00:00+08:00",
+    "title": "Season of Scattering",
+    "description": "Echoes of War Event",
+    "longDescription": "Season of Scattering (Echoes of War Event).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2026-12-15T06:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
-    "detailUrl": "https://endfield.wiki.gg/wiki/Shroomy_Gathering"
+    "detailUrl": "https://endfield.wiki.gg/wiki/Season_of_Scattering"
   },
   {
     "id": "gi-9e50e56b3c32",
@@ -473,7 +473,7 @@
     "title": "Nameless Honor Update",
     "description": "Version 4.7 \"Nameless Honor\" Update",
     "longDescription": "Dear Trailblazers, During the event, Trailblazers can increase their Nameless Honor level to obtain rewards such as Star Rail Passes, Self-Modeling Resins, and Tracks of Destiny . After unlocking Nameless Glory, you will immediately obtain Stellar Jade ×680 . In addition, increasing Nameless Honor levels will allow Trailblazers to obtain Light Cone Memory Shard ×1, Star Rail Special Pass ×4, a 4-star Light Cone of your choice, Variable Dice ×1, Self-Modeling Resin ×2, Relic Remains, the universal Path material Tears of Dreams , and more! If the Trailblazer unlocks the Nameless Medal, in additi",
-    "startTime": "2026-11-07T05:00:00+08:00",
+    "startTime": "2026-11-07T12:00:00+08:00",
     "endTime": "2026-12-21T03:59:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/10/18/aacaeb10e01d7922cd349ae6adae1d5b_7855367392222189577_transformed.png",
@@ -633,6 +633,18 @@
     "endTime": "2026-11-16T00:00:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/03/a31cb3608f69ad125fffb7ed29aaf136_4113149653152038742_transformed.png",
+    "detailUrl": null
+  },
+  {
+    "id": "hsr-23fdf1794837",
+    "gameId": "hsr",
+    "title": "Planar Fissure",
+    "description": "Planar Fissure Event: Planar Ornaments Drop Rate Doubled for a Limited Time",
+    "longDescription": "Event Period 2026/11/23 04:00:00 - 2026/12/07 03:59:00 Participation Requirement Unlock Planar Ornament Event Details During the Planar Fissure event, receive double rewards when obtaining Immersion Rewards or performing Ornament Extraction in the Simulated Universe. You will get additional rewards on top of default drops after consuming an event double reward opportunity and Immersifiers (or Trailblaze Power). During the event, the number of double reward opportunities is limited and can be viewed in the Planar Fissure event page. The double reward count will not reset during the event. Be su",
+    "startTime": "2026-11-23T04:00:00+08:00",
+    "endTime": "2026-12-07T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/06/22/7d5eeebab1c60716249e3c8e3bcdcac6_3528540804291998260_transformed.png",
     "detailUrl": null
   },
   {
