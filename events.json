@@ -168,6 +168,30 @@
     "detailUrl": "https://endfield.wiki.gg/wiki/Sanity_Supply"
   },
   {
+    "id": "endfield-251fb22bb158",
+    "gameId": "endfield",
+    "title": "Shroomy Gathering",
+    "description": "Sign-In Event",
+    "longDescription": "Shroomy Gathering (Sign-In Event).",
+    "startTime": "2026-11-21T19:40:00+08:00",
+    "endTime": "2026-11-25T06:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Shroomy_Gathering"
+  },
+  {
+    "id": "endfield-c00702207fbe",
+    "gameId": "endfield",
+    "title": "Shroomy Gathering",
+    "description": "Sign-In Event",
+    "longDescription": "Shroomy Gathering (Sign-In Event).",
+    "startTime": "2026-11-22T04:00:00+08:00",
+    "endTime": "2026-11-25T06:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Shroomy_Gathering"
+  },
+  {
     "id": "gi-9e50e56b3c32",
     "gameId": "gi",
     "title": "To Temper Thyself and Journey Far",
