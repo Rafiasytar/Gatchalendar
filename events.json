@@ -188,7 +188,7 @@
     "startTime": "2026-11-25T12:00:00+08:00",
     "endTime": "2026-12-15T06:00:00+08:00",
     "type": "IN_GAME_EVENT",
-    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Echoes_of_War_event.png/480px-Echoes_of_War_event.png",
     "detailUrl": "https://endfield.wiki.gg/wiki/Season_of_Scattering"
   },
   {
@@ -2685,6 +2685,18 @@
     "endTime": "2026-12-01T03:59:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/19/900b1933ef1145fad58e354f45e95ccf_7060237584997049167_transformed.jpg",
+    "detailUrl": null
+  },
+  {
+    "id": "zzz-010f37a3a04c",
+    "gameId": "zzz",
+    "title": "Data Bounty: Combat Simulation",
+    "description": "\"Data Bounty: Combat Simulation\" Event Details",
+    "longDescription": "Event Duration 2026/11/25 04:00 (server time) – 2026/11/30 03:59 (server time) Requirements Unlock Combat Simulation in Main Story Chapter 1 \"Cat's Lost & Found\" Event Details • During the \"Data Bounty: Combat Simulation\" event, Proxies can enter Combat Simulation, select any enemy card, and successfully complete challenges to obtain double rewards! • During the event, 5 enemy cards will be buffed each day. Buffs will be reset each day at 04:00 (server time).",
+    "startTime": "2026-11-25T04:00:00+08:00",
+    "endTime": "2026-11-30T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/20/8b1808e30e9ee5e820e165b9605c49b5_5990213197090078061_transformed.jpg",
     "detailUrl": null
   }
 ]
