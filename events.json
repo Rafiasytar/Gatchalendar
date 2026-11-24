@@ -180,6 +180,18 @@
     "detailUrl": "https://endfield.wiki.gg/wiki/Shroomy_Gathering"
   },
   {
+    "id": "endfield-a1d993b305a7",
+    "gameId": "endfield",
+    "title": "Anvil, Backpack, Plus A Pot o'Honey",
+    "description": "Headhunting",
+    "longDescription": "Anvil, Backpack, Plus A Pot o'Honey - Headhunting (operator banner).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2026-12-23T11:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Anvil%2C_Backpack%2C_Plus_A_Pot_o%27Honey_banner.png/360px-Anvil%2C_Backpack%2C_Plus_A_Pot_o%27Honey_banner.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Headhunting/Banners"
+  },
+  {
     "id": "endfield-79254f49857d",
     "gameId": "endfield",
     "title": "Array Building: Mend the Old Gash",
@@ -226,6 +238,18 @@
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://endfield.wiki.gg/images/thumb/Echoes_of_War_event.png/480px-Echoes_of_War_event.png",
     "detailUrl": "https://endfield.wiki.gg/wiki/Season_of_Scattering"
+  },
+  {
+    "id": "endfield-575e88385cb6",
+    "gameId": "endfield",
+    "title": "To Every Wish Adrift",
+    "description": "Headhunting",
+    "longDescription": "To Every Wish Adrift - Headhunting (operator banner).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2026-12-16T11:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/To_Every_Wish_Adrift_banner.png/360px-To_Every_Wish_Adrift_banner.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Headhunting/Banners"
   },
   {
     "id": "gi-9e50e56b3c32",
