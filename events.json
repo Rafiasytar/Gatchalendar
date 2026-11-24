@@ -180,6 +180,42 @@
     "detailUrl": "https://endfield.wiki.gg/wiki/Shroomy_Gathering"
   },
   {
+    "id": "endfield-79254f49857d",
+    "gameId": "endfield",
+    "title": "Array Building: Mend the Old Gash",
+    "description": "Building Event",
+    "longDescription": "Array Building: Mend the Old Gash (Building Event).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2027-01-07T06:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Array_Building:_Mend_the_Old_Gash"
+  },
+  {
+    "id": "endfield-c816a6e086cb",
+    "gameId": "endfield",
+    "title": "Caps! Shrooms! FUNGI!",
+    "description": "Guide Event",
+    "longDescription": "Caps! Shrooms! FUNGI! (Guide Event).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2026-12-23T12:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Caps!_Shrooms!_FUNGI!"
+  },
+  {
+    "id": "endfield-0abbf4500713",
+    "gameId": "endfield",
+    "title": "I Dream of Honey Waffles",
+    "description": "Narrative Event",
+    "longDescription": "I Dream of Honey Waffles (Narrative Event).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2027-01-07T06:00:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/I_Dream_of_Honey_Waffles"
+  },
+  {
     "id": "endfield-c256d341e1d0",
     "gameId": "endfield",
     "title": "Season of Scattering",
