@@ -200,7 +200,7 @@
     "startTime": "2026-11-25T12:00:00+08:00",
     "endTime": "2027-01-07T06:00:00+08:00",
     "type": "IN_GAME_EVENT",
-    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Array_Building_Mend_the_Old_Gash_event.png/480px-Array_Building_Mend_the_Old_Gash_event.png",
     "detailUrl": "https://endfield.wiki.gg/wiki/Array_Building:_Mend_the_Old_Gash"
   },
   {
@@ -212,8 +212,32 @@
     "startTime": "2026-11-25T12:00:00+08:00",
     "endTime": "2026-12-23T12:00:00+08:00",
     "type": "IN_GAME_EVENT",
-    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Caps%21_Shrooms%21_FUNGI%21_event.png/480px-Caps%21_Shrooms%21_FUNGI%21_event.png",
     "detailUrl": "https://endfield.wiki.gg/wiki/Caps!_Shrooms!_FUNGI!"
+  },
+  {
+    "id": "endfield-531c53cd2c07",
+    "gameId": "endfield",
+    "title": "Casual Roamer Issue",
+    "description": "Weapon Issue",
+    "longDescription": "Casual Roamer Issue - Arsenal Issue (weapon banner).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2027-01-07T05:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": null,
+    "detailUrl": "https://endfield.wiki.gg/wiki/Special:Upload?wpDestFile=Casual_Roamer_issue.png"
+  },
+  {
+    "id": "endfield-5dc32160b6ba",
+    "gameId": "endfield",
+    "title": "Floaty Traveler Issue",
+    "description": "Weapon Issue",
+    "longDescription": "Floaty Traveler Issue - Arsenal Issue (weapon banner).",
+    "startTime": "2026-11-25T12:00:00+08:00",
+    "endTime": "2026-12-16T11:59:59+08:00",
+    "type": "BANNER",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/Floaty_Traveler_issue.png/255px-Floaty_Traveler_issue.png",
+    "detailUrl": "https://endfield.wiki.gg/wiki/Arsenal_Exchange/Issues"
   },
   {
     "id": "endfield-0abbf4500713",
@@ -224,7 +248,7 @@
     "startTime": "2026-11-25T12:00:00+08:00",
     "endTime": "2027-01-07T06:00:00+08:00",
     "type": "IN_GAME_EVENT",
-    "imageUrl": "https://endfield.wiki.gg/images/thumb/Event_Placeholder_Image.png/480px-Event_Placeholder_Image.png",
+    "imageUrl": "https://endfield.wiki.gg/images/thumb/I_Dream_of_Honey_Waffles_narrative_event.png/480px-I_Dream_of_Honey_Waffles_narrative_event.png",
     "detailUrl": "https://endfield.wiki.gg/wiki/I_Dream_of_Honey_Waffles"
   },
   {
@@ -468,6 +492,18 @@
     "detailUrl": null
   },
   {
+    "id": "gi-3fa59e1ef81b",
+    "gameId": "gi",
+    "title": "Frames of Fierce Splendor",
+    "description": "\"Frames of Fierce Splendor\" Event: Photography Challenge",
+    "longDescription": "Event Rewards〓 〓Event Duration〓 2026/11/27 10:00 – 2026/12/07 03:59 〓Eligibility〓 Adventure Rank 20 or above Complete Archon Quest Prologue: Act III \"Song of the Dragon and Freedom\" Complete the \"Gunfire in the Silent Lands\" quest of the Archon Quest Chapter VII: Act I \"Everwinter Without Mercy.\" ※Complete the World Quests in the Snezhnaya Adventure Journal first to get the best experience from this event. 〓Event Details〓 ● Visit the designated photo-taking spots and use the \"Power-Framing\" Kamera to capture various scenes according to specific requirements. ● After the event begins, 2 new pho",
+    "startTime": "2026-11-27T10:00:00+08:00",
+    "endTime": "2026-12-07T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/11/10/bd067e18ac1d6203eba38a07fc477863_6235007342202945544_transformed.png",
+    "detailUrl": null
+  },
+  {
     "id": "hsr-b8449dd2c677",
     "gameId": "hsr",
     "title": "Wishpower UP! Down with Voracity!",
@@ -533,7 +569,7 @@
     "title": "Nameless Honor Update",
     "description": "Version 4.7 \"Nameless Honor\" Update",
     "longDescription": "Dear Trailblazers, During the event, Trailblazers can increase their Nameless Honor level to obtain rewards such as Star Rail Passes, Self-Modeling Resins, and Tracks of Destiny . After unlocking Nameless Glory, you will immediately obtain Stellar Jade ×680 . In addition, increasing Nameless Honor levels will allow Trailblazers to obtain Light Cone Memory Shard ×1, Star Rail Special Pass ×4, a 4-star Light Cone of your choice, Variable Dice ×1, Self-Modeling Resin ×2, Relic Remains, the universal Path material Tears of Dreams , and more! If the Trailblazer unlocks the Nameless Medal, in additi",
-    "startTime": "2026-11-07T12:00:00+08:00",
+    "startTime": "2026-11-07T05:00:00+08:00",
     "endTime": "2026-12-21T03:59:00+08:00",
     "type": "IN_GAME_EVENT",
     "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/10/18/aacaeb10e01d7922cd349ae6adae1d5b_7855367392222189577_transformed.png",
