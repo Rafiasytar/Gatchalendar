@@ -516,6 +516,18 @@
     "detailUrl": null
   },
   {
+    "id": "gi-35fefff3f30f",
+    "gameId": "gi",
+    "title": "Starlight Voyage: Spontaneous Composition",
+    "description": "Participate in \"Starlight Voyage: Spontaneous Composition\" to Obtain Prismatic Crystals, the Token for the Colorful Surprise Box",
+    "longDescription": "Event Duration〓 Event Duration: 2026/11/30 10:00 – 2026/12/14 03:59 Quest Completion Period: 2026/11/30 10:00 – 2026/12/10 04:00 〓Event Rewards〓 Prismatic Crystals 〓Eligibility〓 After awakening your Miliastra Wonderland Manekin 〓Event Details〓 ● During the quest completion period, Travelers can obtain \"Sightseeing Experiences\" by completing Starlight Voyage event stages. ● After the event begins, the available stages in Starlight Voyage and the maximum obtainable Sightseeing Experiences will gradually increase over time. On Day 1, the cap is 800, and it will increase by 400 every two days ther",
+    "startTime": "2026-11-30T10:00:00+08:00",
+    "endTime": "2026-12-14T03:59:00+08:00",
+    "type": "IN_GAME_EVENT",
+    "imageUrl": "https://sdk.hoyoverse.com/upload/ann/2026/10/26/9d1cd8acd4db7535f308d8009ef8d9b4_6283565022499899306_transformed.jpg",
+    "detailUrl": null
+  },
+  {
     "id": "hsr-b8449dd2c677",
     "gameId": "hsr",
     "title": "Wishpower UP! Down with Voracity!",
